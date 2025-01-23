@@ -1,0 +1,68 @@
+.typography-heading h1, .typography-heading h2, .typography-heading h3, .typography-heading h4 {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 130% !important;
+}
+.typography-heading h1 {
+  font-size: 48px !important;
+}
+.typography-heading h2 {
+  font-size: 40px !important;
+}
+.typography-heading h3 {
+  font-size: 24px !important;
+}
+.typography-heading h4 {
+  font-size: 18px !important;
+}
+
+.p-large p, .p-medium p, .p-small p {
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  font-weight: 400 !important;
+  font-family: "Inter", sans-serif;
+}
+
+.p-large p {
+  font-size: 24px !important;
+}
+
+.p-medium p {
+  font-size: 16px !important;
+}
+
+.p-small p {
+  font-size: 14px !important;
+}
+
+@media (max-width: 1024px) {
+  .typography-heading h1 {
+    font-size: 36px !important;
+  }
+  .typography-heading h2 {
+    font-size: 32px !important;
+  }
+  .typography-heading h3 {
+    font-size: 20px !important;
+  }
+  .typography-heading h4 {
+    font-size: 14px !important;
+  }
+  .p-large p {
+    font-size: 20px !important;
+  }
+  .p-medium p {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 767px) {
+  .typography-heading h1 {
+    font-size: 32px !important;
+  }
+  .typography-heading h2 {
+    font-size: 28px !important;
+  }
+  .typography-heading h3 {
+    font-size: 16px !important;
+  }
+}/*# sourceMappingURL=Typography-v2.css.map */

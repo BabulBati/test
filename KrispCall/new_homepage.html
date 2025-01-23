@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="max-width: 1280px; margin: 50px auto;">
+    <!-- <div class="happy_customer_tab">
+        <div class="button_div active">
+            <button class="tablinks tab_buttons" onclick="openCity(event, 'volopay')"><img
+                    src="https://krispcall.com/wp-content/uploads/2024/01/volopay-dark-logo.png" alt=""></button>
+        </div>
+        <div class="button_div">
+            <button class="tablinks tab_buttons" onclick="openCity(event, 'otl')"><img
+                    src="https://krispcall.com/wp-content/uploads/2024/01/OTL-dark-logo.png" alt=""></button>
+        </div>
+        <div class="button_div">
+            <button class="tablinks tab_buttons" onclick="openCity(event, 'ls')"><img
+                    src="https://krispcall.com/wp-content/uploads/2023/10/ls-logo.png" alt=""></button>
+        </div>
+        <div class="button_div">
+            <button class="tablinks tab_buttons" onclick="openCity(event, 'invisawear')"><img
+                    src="https://krispcall.com/wp-content/uploads/2024/01/INVISAWEAR-dark-logo.png" alt=""></button>
+        </div>
+        <div class="button_div">
+            <button class="tablinks more_button" onclick="openNewTab()">+ 20 more</button>
+        </div>
+    </div>
+
+    <div class="customer-experience-container">
+        <div id="volopay" class="tabcontent" style="display:block;">
+            <div class="happy_customer">
+                <div class="image">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/04/Tamara-Wood-img.webp" alt="">
+                </div>
+                <div class="content">
+                    <div class="heading">
+                        <p>Adapting to changing needs</p>
+                    </div>
+                    <div class="experience">
+                        <p>“The IVR phone menu we built in KrispCall allowed us to achieve or exceed customer
+                            expectations in handling urgent issues.”</p>
+                    </div>
+                    <div class="name-position">
+                        <p class="name">Tamara Wood</p>
+                        <p class="position">Vice President of Customer Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="otl" class="tabcontent">
+            <div class="happy_customer">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="content">
+                    <div class="heading">
+                        <p>Adapting to changing needs 2</p>
+                    </div>
+                    <div class="experience">
+                        <p>“The IVR phone menu we built in KrispCall allowed us to achieve or exceed customer
+                            expectations in handling urgent issues.”</p>
+                    </div>
+                    <div class="name-position">
+                        <p>Tamara Wood</p>
+                        <p>Vice President of Customer Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ls" class="tabcontent">
+            <div class="happy_customer">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="content">
+                    <div class="heading">
+                        <p>Adapting to changing needs 3</p>
+                    </div>
+                    <div class="experience">
+                        <p>“The IVR phone menu we built in KrispCall allowed us to achieve or exceed customer
+                            expectations in handling urgent issues.”</p>
+                    </div>
+                    <div class="name-position">
+                        <p>Tamara Wood</p>
+                        <p>Vice President of Customer Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="invisawear" class="tabcontent">
+            <div class="happy_customer">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="content">
+                    <div class="heading">
+                        <p>Adapting to changing needs 4</p>
+                    </div>
+                    <div class="experience">
+                        <p>“The IVR phone menu we built in KrispCall allowed us to achieve or exceed customer
+                            expectations in handling urgent issues.”</p>
+                    </div>
+                    <div class="name-position">
+                        <p>Tamara Wood</p>
+                        <p>Vice President of Customer Operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nextbutton_div">
+
+            <button id="prevbutton" class="prevnext" onclick="prevTab()"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M22 12.4291C22 12.2396 21.9248 12.058 21.7908 11.924C21.6569 11.7901 21.4752 11.7148 21.2858 11.7148H4.43969L8.93512 7.22082C9.00153 7.15442 9.0542 7.07558 9.09014 6.98882C9.12608 6.90205 9.14458 6.80906 9.14458 6.71514C9.14458 6.62123 9.12608 6.52823 9.09014 6.44147C9.0542 6.3547 9.00153 6.27587 8.93512 6.20946C8.86871 6.14305 8.78988 6.09038 8.70311 6.05444C8.61635 6.0185 8.52335 6 8.42944 6C8.33552 6 8.24253 6.0185 8.15576 6.05444C8.069 6.09038 7.99016 6.14305 7.92376 6.20946L2.20983 11.9234C2.14332 11.9897 2.09055 12.0685 2.05454 12.1553C2.01853 12.2421 2 12.3351 2 12.4291C2 12.523 2.01853 12.616 2.05454 12.7028C2.09055 12.7896 2.14332 12.8684 2.20983 12.9347L7.92376 18.6487C7.99016 18.7151 8.069 18.7678 8.15576 18.8037C8.24253 18.8396 8.33552 18.8581 8.42944 18.8581C8.52335 18.8581 8.61635 18.8396 8.70311 18.8037C8.78988 18.7678 8.86871 18.7151 8.93512 18.6487C9.00153 18.5823 9.0542 18.5034 9.09014 18.4167C9.12608 18.3299 9.14458 18.2369 9.14458 18.143C9.14458 18.0491 9.12608 17.9561 9.09014 17.8693C9.0542 17.7825 9.00153 17.7037 8.93512 17.6373L4.43969 13.1433H21.2858C21.4752 13.1433 21.6569 13.0681 21.7908 12.9341C21.9248 12.8002 22 12.6185 22 12.4291Z"
+                        fill="#242424" />
+                </svg></button>
+            <button id="nextbutton" class="prevnext" onclick="nextTab()"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2 12.4291C2 12.2396 2.07525 12.058 2.2092 11.924C2.34314 11.7901 2.52481 11.7148 2.71424 11.7148H19.5603L15.0649 7.22082C14.9985 7.15442 14.9458 7.07558 14.9099 6.98882C14.8739 6.90205 14.8554 6.80906 14.8554 6.71514C14.8554 6.62123 14.8739 6.52823 14.9099 6.44147C14.9458 6.3547 14.9985 6.27587 15.0649 6.20946C15.1313 6.14305 15.2101 6.09038 15.2969 6.05444C15.3837 6.0185 15.4766 6 15.5706 6C15.6645 6 15.7575 6.0185 15.8442 6.05444C15.931 6.09038 16.0098 6.14305 16.0762 6.20946L21.7902 11.9234C21.8567 11.9897 21.9095 12.0685 21.9455 12.1553C21.9815 12.2421 22 12.3351 22 12.4291C22 12.523 21.9815 12.616 21.9455 12.7028C21.9095 12.7896 21.8567 12.8684 21.7902 12.9347L16.0762 18.6487C16.0098 18.7151 15.931 18.7678 15.8442 18.8037C15.7575 18.8396 15.6645 18.8581 15.5706 18.8581C15.4766 18.8581 15.3837 18.8396 15.2969 18.8037C15.2101 18.7678 15.1313 18.7151 15.0649 18.6487C14.9985 18.5823 14.9458 18.5034 14.9099 18.4167C14.8739 18.3299 14.8554 18.2369 14.8554 18.143C14.8554 18.0491 14.8739 17.9561 14.9099 17.8693C14.9458 17.7825 14.9985 17.7037 15.0649 17.6373L19.5603 13.1433H2.71424C2.52481 13.1433 2.34314 13.0681 2.2092 12.9341C2.07525 12.8002 2 12.6185 2 12.4291Z"
+                        fill="#242424" />
+                </svg></button>
+        </div>
+    </div>
+    <script>
+        var currentTab = 0;
+
+        function openCity(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("button_div");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.parentElement.classList.add("active");
+
+            for (i = 0; i < tablinks.length; i++) {
+                if (tablinks[i].className.includes("active")) {
+                    currentTab = i;
+                    break;
+                }
+            }
+        }
+        function openNewTab() {
+            window.open('#');
+        }
+
+        function prevTab() {
+            var tablinks = document.getElementsByClassName("tablinks");
+            if (currentTab > 0) {
+                currentTab--;
+                tablinks[currentTab].click();
+            }
+        }
+
+        function nextTab() {
+            var tablinks = document.getElementsByClassName("tablinks");
+            if (currentTab < tablinks.length - 1) {
+                if (tablinks[currentTab + 1].classList.contains("more_button")) {
+                    openNewTab();
+                } else {
+                    currentTab++;
+                    tablinks[currentTab].click();
+                }
+            }
+        }
+
+    </script> -->
+
+
+    <div class="rating_container">
+
+        <!-- G2 -->
+        <div class="rating_box">
+            <div class="image">
+                <img src="https://krispcall.com/wp-content/uploads/2024/04/g2_logo-icon.svg" alt="">
+            </div>
+            <div class="content">
+                <div class="p-large">
+                    <p>4.4</p>
+                    <div class="rating">
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="half_star star"></div>
+                    </div>
+                </div>
+                <div class="p-medium">
+                    <p>on G2</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Trustpilot -->
+        <div class="rating_box">
+            <div class="image">
+                <img src="https://krispcall.com/wp-content/uploads/2024/04/trustpilot_logo-icon.svg" alt="">
+            </div>
+            <div class="content">
+                <div class="p-large">
+                    <p>4.1</p>
+                    <div class="rating">
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="gray_star star"></div>
+                    </div>
+                </div>
+                <div class="p-medium">
+                    <p>on Trustpilot</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- GetApp -->
+        <div class="rating_box">
+            <div class="image">
+                <img src="https://krispcall.com/wp-content/uploads/2024/04/getapp_logo-icon.svg" alt="">
+            </div>
+            <div class="content">
+                <div class="p-large">
+                    <p>4.0</p>
+                    <div class="rating">
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="gray_star star"></div>
+                    </div>
+                </div>
+                <div class="p-medium">
+                    <p>on GetApp</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Capterra -->
+        <div class="rating_box">
+            <div class="image">
+                <img src="https://krispcall.com/wp-content/uploads/2024/04/capterra_logo-icon.svg" alt="">
+            </div>
+            <div class="content">
+                <div class="p-large">
+                    <p>4.0</p>
+                    <div class="rating">
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="full_star star"></div>
+                        <div class="gray_star star"></div>
+                    </div>
+                </div>
+                <div class="p-medium">
+                    <p>on Capterra</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

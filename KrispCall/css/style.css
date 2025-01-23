@@ -1,0 +1,84 @@
+.features-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+}
+.features-list-container .features-container {
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 628px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.features-list-container .features-container .feature-container-contents {
+  padding: 48px 48px 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.features-list-container .features-container .feature-container-contents h2 {
+  color: #10003A !important;
+  margin: 0;
+  padding: 0;
+}
+.features-list-container .features-container .feature-container-contents p {
+  color: #251A43 !important;
+  margin: 0;
+  padding: 0;
+}
+.features-list-container .features-container .feature-container-images {
+  margin: 0 auto;
+  transition: 0.4s ease-in-out;
+}
+.features-list-container .features-container .feature-container-images:hover {
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.05);
+}
+.features-list-container .features-container .feature-container-images img {
+  max-width: 100%;
+  display: block;
+}
+.features-list-container .features-yellow-background {
+  background: #FBE089;
+}
+.features-list-container .features-blue-background {
+  background: #81E1F7;
+}
+.features-list-container .features-purple-background {
+  background: #8251EE;
+}
+.features-list-container .features-purple-background .feature-container-contents h2 {
+  color: #ffffff !important;
+  margin: 0;
+  padding: 0;
+}
+.features-list-container .features-purple-background .feature-container-contents p {
+  color: #ffffff !important;
+  margin: 0;
+  padding: 0;
+}
+.features-list-container .features-pink-background {
+  background: #E889FB;
+}
+.features-list-container .features-white-background {
+  background: #ffffff;
+}
+.features-list-container a {
+  text-decoration: none;
+}
+
+@media (max-width: 1023px) {
+  .features-list-container .features-container .feature-container-contents {
+    padding: 24px 24px 0 24px;
+  }
+}
+@media (max-width: 767px) {
+  .features-list-container {
+    grid-template-columns: 1fr;
+  }
+  .features-list-container .features-container {
+    max-width: 353px;
+  }
+}/*# sourceMappingURL=style.css.map */

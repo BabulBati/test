@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="typography.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: lightgray;
+            padding: 80px 0;
+        }
+
+        .prebuilt-connections-container {
+            margin: 0 auto;
+            max-width: 998px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+        }
+
+        .prebuilt-connections-list {
+            padding: 24px;
+            border-radius: 4px;
+            background: #FFF;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+            justify-content: space-between;
+        }
+
+        .prebuilt-connections-imagebox {
+            max-width: 119px;
+            width: 100%;
+            height: 54px;
+            border-radius: 10px;
+        }
+
+        .prebuilt-connections-imagebox img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prebuilt-connections-buttonbox button {
+            flex: 1;
+            width: 142px;
+            width: 100%;
+            border-radius: 8px;
+            padding: 16px 24px;
+            background: #390179;
+            color: #fff;
+            border: none;
+            font-family: 'Heebo', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 142.857%;
+        }
+
+        .prebuilt-connections-contentbox {
+            display: flex;
+            max-width: 641px;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+        }
+
+        @media (max-width:1023px) {
+            .prebuilt-connections-container {
+                max-width: 656px;
+                width: 100%;
+                gap: 12px;
+
+            }
+
+            .prebuilt-connections-contentbox {
+                flex: 1 0 0;
+            }
+
+            .prebuilt-connections-imagebox {
+                max-width: 92px;
+                width: 100%;
+            }
+
+            .prebuilt-connections-list {
+                padding: 16px;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="prebuilt-connections-container">
+        <div class="prebuilt-connections-list foundation-heading paragraph-large">
+            <div class="prebuilt-connections-imagebox">
+                <img src="" alt="">
+            </div>
+            <div class="prebuilt-connections-contentbox">
+                <h3>Add rows to Google Sheets for new calls in KrispCall</h3>
+                <p>Google Sheets + KrispCall</p>
+            </div>
+            <div class="prebuilt-connections-buttonbox">
+                <a href="">
+                    <button>Try this Zap</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

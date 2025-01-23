@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hellobar {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+            background: #EBD1FF;
+            box-shadow: 0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.00), 0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.00), 0px 20px 13px 0px rgba(0, 0, 0, 0.00), 0px 38.519px 25.482px 0px rgba(0, 0, 0, 0.01), 0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.01), 0px 100px 80px 0px rgba(0, 0, 0, 0.01);
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hellobar-left {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            height: 100%;
+            padding-left: 13%;
+        }
+
+
+        .hellobar-left .images {
+            height: 100%;
+        }
+
+        .hellobar-left .images img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hellobar-contents {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .hellobar-contents P {
+            color: #001233;
+            font-family: 'Inter';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+        }
+
+        .hellobar-heading {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .hellobar-heading p {
+            color: #001233 !important;
+            font-family: 'Inter' !important;
+            font-size: 27.305px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 109.871%;
+            letter-spacing: -0.273px;
+        }
+
+        .hellobar-button {
+            margin-right: 10px;
+        }
+
+        .hellobar-button a {
+            text-decoration: none;
+            border-radius: 8px;
+            background: #390179;
+            box-shadow: 2px 6px 30px 0px rgba(52, 6, 104, 0.16);
+            width: 142px;
+            padding: 16px 24px;
+            color: #FFF;
+            text-align: center;
+            font-family: 'Manrope' !important;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 142.857%;
+        }
+
+        .hellobar-cross-icon {
+            padding-right: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hellobar">
+        <div class="hellobar-left">
+
+            <div class="images">
+                <img src="img/zapier.png" alt="">
+            </div>
+            <div class="hellobar-contents">
+                <div class="hellobar-heading">
+                    <p>Zapier integration is</p> <img src="img/live.png" alt="">
+                </div>
+                <p>KrispCall now supports Zapier Bets! Connect & elevate your workflow seamlessly</p>
+            </div>
+
+        </div>
+
+        <div class="hellobar-button">
+            <a href="">Integrate Now</a>
+        </div>
+
+        <div class="hellobar-cross-icon">
+            <img src="img/Button → ×.png" alt="">
+        </div>
+
+    </div>
+</body>
+
+</html>

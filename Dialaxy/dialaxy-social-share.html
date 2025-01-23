@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .top{
+            height: 300vh;
+            background-color: gray;
+        }
+        .bottom{
+            height: 50vh;
+            background-color: lightblue;
+        }
+        .share-container {
+            position: fixed;
+            top: 397px;
+            right: 40px;
+            display: flex;
+            align-items: center;
+            width: auto;
+            width: 130px;
+            justify-content: end;
+            z-index: 800;
+        }
+
+        .share-container:hover .share-icons-container {
+            visibility: visible;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .share-container:hover .share-icon {
+            background-color: #083009;
+            transition: 0.5s;
+        }
+
+        .share-icon svg {
+            fill: #083009;
+            transition: 0.5s;
+        }
+
+        .share-container:hover .share-icon svg {
+            fill: white;
+            transition: 0.5s;
+        }
+
+        .share-container:hover .share-icons-buttons {
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .share-icon,
+        .share-icons-buttons {
+            width: 48px;
+            height: 48px;
+            background-color: #68DE6D;
+            border-radius: 8px;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .share-icons-buttons {
+            opacity: 0.1;
+            cursor: pointer;
+        }
+
+        .share-icons-container {
+            margin-right: -48px;
+            visibility: hidden;
+            opacity: 0.1;
+            transition: 0.5s;
+        }
+
+        .share-icons-buttons {
+            position: relative;
+            margin: 12px 0;
+
+        }
+
+        .share-icons-buttons:nth-child(1) {
+            right: 30px;
+        }
+
+        .share-icons-buttons:nth-child(2) {
+            right: 75px;
+        }
+
+        .share-icons-buttons:nth-child(3) {
+            right: 75px;
+        }
+
+        .share-icons-buttons:nth-child(4) {
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="share-container">
+        <div class="share-icons-container">
+            <div class="share-icons-buttons copy-link-button ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z"
+                        stroke="#083009" stroke-width="1.5" />
+                    <path
+                        d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5"
+                        stroke="#083009" stroke-width="1.5" />
+                </svg>
+            </div>
+            <div class="social-media-buttons  facebook-button share-icons-buttons ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path
+                        d="M16.5 6.74219H13.5C12.9477 6.74219 12.5 7.18991 12.5 7.74219V10.7422H16.5C16.6137 10.7397 16.7216 10.7926 16.7892 10.8841C16.8568 10.9756 16.8758 11.0942 16.84 11.2022L16.1 13.4022C16.0318 13.6041 15.8431 13.7406 15.63 13.7422H12.5V21.2422C12.5 21.5183 12.2761 21.7422 12 21.7422H9.5C9.22386 21.7422 9 21.5183 9 21.2422V13.7422H7.5C7.22386 13.7422 7 13.5183 7 13.2422V11.2422C7 10.9661 7.22386 10.7422 7.5 10.7422H9V7.74219C9 5.53305 10.7909 3.74219 13 3.74219H16.5C16.7761 3.74219 17 3.96605 17 4.24219V6.24219C17 6.51833 16.7761 6.74219 16.5 6.74219Z"
+                        fill="#083009" />
+                </svg>
+            </div>
+            <div class="social-media-buttons twitter-button share-icons-buttons ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path
+                        d="M20.973 7.20178C20.5086 7.8213 19.9472 8.36171 19.3105 8.80214C19.3105 8.96397 19.3105 9.1258 19.3105 9.29663C19.3156 12.2355 18.1417 15.0535 16.052 17.1189C13.9622 19.1843 11.1314 20.3243 8.1943 20.2833C6.49624 20.289 4.81992 19.9013 3.29667 19.1505C3.21453 19.1146 3.16156 19.0334 3.16187 18.9437V18.8448C3.16187 18.7157 3.26648 18.6111 3.39552 18.6111C5.06467 18.556 6.67427 17.9773 7.99659 16.9568C6.48578 16.9263 5.12644 16.0313 4.50085 14.6551C4.46926 14.58 4.47909 14.4937 4.52682 14.4276C4.57454 14.3615 4.65325 14.3251 4.7345 14.3315C5.19367 14.3776 5.65743 14.3349 6.10045 14.2056C4.43264 13.8594 3.17946 12.4748 3.00011 10.7801C2.99374 10.6988 3.03017 10.6201 3.09625 10.5723C3.16232 10.5246 3.24849 10.5147 3.32363 10.5464C3.77119 10.7439 4.25434 10.8479 4.74349 10.852C3.28209 9.89284 2.65086 8.06843 3.2068 6.4106C3.26419 6.24951 3.40206 6.1305 3.56975 6.09732C3.73743 6.06413 3.91021 6.12166 4.02457 6.24877C5.99664 8.34763 8.70629 9.59834 11.5821 9.73717C11.5085 9.44323 11.4723 9.14114 11.4743 8.8381C11.5012 7.2491 12.4844 5.83359 13.9636 5.25425C15.4427 4.67492 17.1251 5.04641 18.2232 6.19482C18.9716 6.05223 19.6952 5.80083 20.3709 5.44859C20.4204 5.41769 20.4832 5.41769 20.5327 5.44859C20.5636 5.49811 20.5636 5.5609 20.5327 5.61042C20.2054 6.3599 19.6525 6.9885 18.9511 7.40857C19.5653 7.33734 20.1687 7.19245 20.7484 6.97702C20.7972 6.9438 20.8613 6.9438 20.9101 6.97702C20.951 6.99572 20.9816 7.03149 20.9937 7.0748C21.0058 7.11811 20.9982 7.16456 20.973 7.20178Z"
+                        fill="#083009" />
+                </svg>
+            </div>
+            <div class="social-media-buttons linkedin-button share-icons-buttons ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5 3.22656H19C20.1046 3.22656 21 4.12199 21 5.22656V19.2266C21 20.3312 20.1046 21.2266 19 21.2266H5C3.89543 21.2266 3 20.3312 3 19.2266V5.22656C3 4.12199 3.89543 3.22656 5 3.22656ZM8 18.2266C8.27614 18.2266 8.5 18.0027 8.5 17.7266V10.7266C8.5 10.4505 8.27614 10.2266 8 10.2266H6.5C6.22386 10.2266 6 10.4505 6 10.7266V17.7266C6 18.0027 6.22386 18.2266 6.5 18.2266H8ZM7.25 9.22656C6.42157 9.22656 5.75 8.55499 5.75 7.72656C5.75 6.89813 6.42157 6.22656 7.25 6.22656C8.07843 6.22656 8.75 6.89813 8.75 7.72656C8.75 8.55499 8.07843 9.22656 7.25 9.22656ZM17.5 18.2266C17.7761 18.2266 18 18.0027 18 17.7266V13.1266C18.0325 11.5374 16.8576 10.1811 15.28 9.98656C14.177 9.88581 13.1083 10.401 12.5 11.3266V10.7266C12.5 10.4505 12.2761 10.2266 12 10.2266H10.5C10.2239 10.2266 10 10.4505 10 10.7266V17.7266C10 18.0027 10.2239 18.2266 10.5 18.2266H12C12.2761 18.2266 12.5 18.0027 12.5 17.7266V13.9766C12.5 13.1482 13.1716 12.4766 14 12.4766C14.8284 12.4766 15.5 13.1482 15.5 13.9766V17.7266C15.5 18.0027 15.7239 18.2266 16 18.2266H17.5Z"
+                        fill="#083009" />
+                </svg>
+            </div>
+        </div>
+        <div class="share-icon ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                <path
+                    d="M17.25 9.11387V18.1139C17.25 18.5117 17.092 18.8932 16.8107 19.1745C16.5294 19.4558 16.1478 19.6139 15.75 19.6139H2.25C1.85218 19.6139 1.47064 19.4558 1.18934 19.1745C0.908035 18.8932 0.75 18.5117 0.75 18.1139V9.11387C0.75 8.71605 0.908035 8.33452 1.18934 8.05321C1.47064 7.77191 1.85218 7.61387 2.25 7.61387H4.5C4.69891 7.61387 4.88968 7.69289 5.03033 7.83354C5.17098 7.97419 5.25 8.16496 5.25 8.36387C5.25 8.56278 5.17098 8.75355 5.03033 8.8942C4.88968 9.03485 4.69891 9.11387 4.5 9.11387H2.25V18.1139H15.75V9.11387H13.5C13.3011 9.11387 13.1103 9.03485 12.9697 8.8942C12.829 8.75355 12.75 8.56278 12.75 8.36387C12.75 8.16496 12.829 7.97419 12.9697 7.83354C13.1103 7.69289 13.3011 7.61387 13.5 7.61387H15.75C16.1478 7.61387 16.5294 7.77191 16.8107 8.05321C17.092 8.33452 17.25 8.71605 17.25 9.11387ZM5.78063 5.1445L8.25 2.67418V11.3639C8.25 11.5628 8.32902 11.7535 8.46967 11.8942C8.61032 12.0349 8.80109 12.1139 9 12.1139C9.19891 12.1139 9.38968 12.0349 9.53033 11.8942C9.67098 11.7535 9.75 11.5628 9.75 11.3639V2.67418L12.2194 5.1445C12.3601 5.28523 12.551 5.36429 12.75 5.36429C12.949 5.36429 13.1399 5.28523 13.2806 5.1445C13.4214 5.00377 13.5004 4.81289 13.5004 4.61387C13.5004 4.41485 13.4214 4.22398 13.2806 4.08325L9.53063 0.333246C9.46097 0.263514 9.37825 0.208195 9.2872 0.170451C9.19616 0.132708 9.09856 0.113281 9 0.113281C8.90144 0.113281 8.80384 0.132708 8.71279 0.170451C8.62175 0.208195 8.53903 0.263514 8.46937 0.333246L4.71937 4.08325C4.57864 4.22398 4.49958 4.41485 4.49958 4.61387C4.49958 4.81289 4.57864 5.00377 4.71938 5.1445C4.86011 5.28523 5.05098 5.36429 5.25 5.36429C5.44902 5.36429 5.63989 5.28523 5.78063 5.1445Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="top"></div>
+<div class="bottom"></div>
+
+    <!-- <script>
+        const copyLinkButton = document.querySelector('.copy-link-button');
+        
+        const url = window.location.href;
+    
+        copyLinkButton.addEventListener('click', () => {
+            // Copy the URL to the clipboard
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    alert('Link copied!');
+                })
+                .catch((err) => {
+                    console.error('Error copying link: ', err);
+                });
+        });
+    
+        const shareButtons = document.querySelectorAll('.social-media-buttons');
+        shareButtons.forEach(div => {
+            div.addEventListener('click', () => {
+                console.log('Button clicked:', div.classList[1]);
+                // Get the social media platform from the button's class name
+                const platform = div.classList[1];
+                // Set the URL to share based on the social media platform
+                let shareUrl;
+                switch (platform) {
+                    case 'facebook-button':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                    case 'twitter-button':
+                        shareUrl = `https://twitter.com/share?url=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                    case 'linkedin-button':
+                        shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                }
+                
+                // Open a new window to share the URL
+                window.open(shareUrl, '_blank','width=600,height=400');
+            });
+        });
+
+        
+
+    </script> -->
+    
+
+    <script>
+        const copyLinkButton = document.querySelector('.copy-link-button');
+        const shareContainer = document.querySelector('.share-container');
+        const topDiv = document.querySelector('.top');
+    
+        const url = window.location.href;
+    
+        copyLinkButton.addEventListener('click', () => {
+            // Copy the URL to the clipboard
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    alert('Link copied!');
+                })
+                .catch((err) => {
+                    console.error('Error copying link: ', err);
+                });
+        });
+    
+        const shareButtons = document.querySelectorAll('.social-media-buttons');
+        shareButtons.forEach(div => {
+            div.addEventListener('click', () => {
+                console.log('Button clicked:', div.classList[1]);
+                // Get the social media platform from the button's class name
+                const platform = div.classList[1];
+                // Set the URL to share based on the social media platform
+                let shareUrl;
+                switch (platform) {
+                    case 'facebook-button':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                    case 'twitter-button':
+                        shareUrl = `https://twitter.com/share?url=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                    case 'linkedin-button':
+                        shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+                        console.log('Share URL:', shareUrl);
+                        break;
+                }
+    
+                // Open a new window to share the URL
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            });
+        });
+    
+        // Add scroll event listener to hide share-container when it reaches the bottom of top div
+        window.addEventListener('scroll', () => {
+            const topDivBottom = topDiv.getBoundingClientRect().bottom;
+            console.log(topDivBottom);
+            // if (topDivBottom <= 0) {
+            //     console.log(topDivBottom);
+            //     // shareContainer.style.display = 'none';
+            // } else {
+            //     shareContainer.style.display = 'flex';
+            // }
+        });
+    </script>
+    
+    
+</body>
+
+</html>

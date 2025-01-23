@@ -1,0 +1,131 @@
+/* typography */
+/* Headings */
+.customtypo-heading h1,
+.customtypo-heading h2,
+.customtypo-heading h3,
+.customtypo-heading h4,
+.customtypo-heading h5,
+.customtypo-heading h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 130% !important;
+  font-family: "Manrope";
+}
+.customtypo-heading h1 {
+  font-size: 48px !important;
+}
+.customtypo-heading h2 {
+  font-size: 40px !important;
+}
+.customtypo-heading h3 {
+  font-size: 32px !important;
+}
+.customtypo-heading h4 {
+  font-size: 24px !important;
+}
+.customtypo-heading h5 {
+  font-size: 20px !important;
+}
+.customtypo-heading h6 {
+  font-size: 18px !important;
+}
+.customtypo-heading.custom-regular h4,
+.customtypo-heading.custom-regular h5,
+.customtypo-heading.custom-regular h6 {
+  font-weight: 400 !important;
+}
+.customtypo-heading.custom-semibold h5,
+.customtypo-heading.custom-semibold h6 {
+  font-weight: 600 !important;
+}
+
+/* Paragraph and text */
+.customtext-2xl p, .customtext-xl p, .customtext-l p, .customtext-m p, .customtext-s p {
+  font-family: "Inter" !important;
+  letter-spacing: -0.02em;
+}
+.customtext-2xl.custom-regular p, .customtext-xl.custom-regular p, .customtext-l.custom-regular p, .customtext-m.custom-regular p, .customtext-s.custom-regular p {
+  font-weight: 400;
+}
+.customtext-2xl.custom-medium p, .customtext-xl.custom-medium p, .customtext-l.custom-medium p, .customtext-m.custom-medium p, .customtext-s.custom-medium p {
+  font-weight: 500;
+}
+.customtext-2xl.custom-semibold p, .customtext-xl.custom-semibold p, .customtext-l.custom-semibold p, .customtext-m.custom-semibold p, .customtext-s.custom-semibold p {
+  font-weight: 600;
+}
+.customtext-xl p, .customtext-l p, .customtext-m p, .customtext-s p {
+  line-height: 150% !important;
+}
+.customtext-2xl p {
+  line-height: 130%;
+  font-size: 24px !important;
+}
+.customtext-xl p {
+  font-size: 20px !important;
+}
+.customtext-l p {
+  font-size: 18px !important;
+}
+.customtext-m p {
+  font-size: 16px !important;
+}
+.customtext-s p {
+  font-size: 14px !important;
+}
+
+@media (max-width: 1024px) {
+  .customtypo-heading h1,
+  .customtypo-heading h2 {
+    font-size: 32px !important;
+  }
+  .customtypo-heading h3 {
+    font-size: 24px !important;
+  }
+  .customtypo-heading h4 {
+    font-size: 20px !important;
+  }
+  .customtypo-heading h5 {
+    font-size: 18px !important;
+  }
+  .customtypo-heading h6 {
+    font-size: 16px !important;
+  }
+  .customtext-2xl p {
+    font-size: 20px !important;
+  }
+  .customtext-xl p {
+    font-size: 18px !important;
+  }
+  .customtext-l p {
+    font-size: 16px !important;
+  }
+  .customtext-m p {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 767px) {
+  .customtypo-heading h1,
+  .customtypo-heading h2 {
+    font-size: 28px !important;
+  }
+  .customtypo-heading h3 {
+    font-size: 20px !important;
+  }
+  .customtypo-heading h4,
+  .customtypo-heading h5 {
+    font-size: 16px !important;
+  }
+  .customtypo-heading h6 {
+    font-size: 14px !important;
+  }
+  .customtext-2xl p {
+    font-size: 18px !important;
+  }
+  .customtext-xl p {
+    font-size: 16px !important;
+  }
+  .customtext-l p {
+    font-size: 14px !important;
+  }
+}
+/* typography end *//*# sourceMappingURL=typo.css.map */

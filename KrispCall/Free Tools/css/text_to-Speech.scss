@@ -1,0 +1,413 @@
+body {
+    margin: 80px auto;
+    // background: radial-gradient(50% 100% at 50% 0%, #6902df 0%, #390179 100%);
+    // background-repeat: no-repeat;
+}
+
+.text-to-voice {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(209, 212, 220, 0.5);
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.text-area {
+    padding: 24px 24px 16px;
+    height: 332px;
+}
+
+.voice-media {
+    background: #f9f9f9 !important;
+    padding: 12px 24px;
+    gap: 16px;
+}
+
+.voice-control {
+    flex-grow: 1;
+    gap: 16px;
+}
+
+#waveform {
+    flex-grow: 1;
+    display: none;
+}
+
+textarea {
+    width: 100%;
+    border: none !important;
+    resize: none !important;
+    outline: none !important;
+    flex-grow: 1;
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    color: #242424 !important;
+    line-height: 150% !important;
+    letter-spacing: -0.02em !important;
+    font-size: 16px !important;
+    font-family: "Inter", serif !important;
+    &::placeholder {
+        color: #a8a8a8 !important;
+    }
+}
+
+#charCount {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    color: #a8a8a8;
+}
+
+#playButton {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+#downloadButton {
+    background: #8733ff !important;
+    cursor: pointer;
+    border: none !important;
+    color: #ffffff !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-family: "Inter", serif !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.01em !important;
+    font-weight: 600 !important;
+    height: 44px !important;
+    svg {
+        margin-right: 8px;
+        path {
+            stroke: #fff;
+        }
+    }
+
+    &:disabled {
+        background: #e0e0e0 !important ;
+        color: #a8a8a8 !important;
+        svg path {
+            stroke: #a8a8a8;
+        }
+    }
+}
+
+.voice-type {
+    height: 100%;
+}
+.custom-dropdown {
+    position: relative;
+    height: 100%;
+}
+
+.c-toggle {
+    gap: 8px;
+    user-select: none;
+    cursor: pointer;
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.c-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 242px;
+    z-index: 1;
+    bottom: calc(100% + 20px);
+    overflow: hidden;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+.c-drop_item {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & > div {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &:hover {
+        background-color: #f9f9f9;
+    }
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.c-spiner {
+    background: #a8a8a8;
+    width: 32px;
+    height: 32px;
+    border-radius: 50em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-loader {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: c-rotation 1s linear infinite;
+}
+
+@keyframes c-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Progress bar container */
+#audio-progress-container {
+    width: 100%;
+    height: 20px;
+    background-image: url("https://krispcall.com//wp-content/uploads/2024/11/audio-wave.png");
+    background-repeat: repeat-x;
+    background-position-y: center;
+}
+
+/* Progress image (color.png) will fill the bar */
+#audio-progress-bar {
+    height: 100%;
+    background-image: url("https://krispcall.com//wp-content/uploads/2024/11/color-audio-vave.png");
+    background-repeat: repeat-x;
+    width: 0%; /* Start at 0% width */
+    background-position-y: center;
+}
+
+// Music Dropdowm
+.bkg_music-dropdown {
+    position: relative;
+    width: 257px;
+    margin-left: 12px;
+    height: 100%;
+}
+
+.bkg_music-toggle {
+    gap: 12px;
+    justify-content: space-between;
+    flex-grow: 1;
+    border-radius: 8px;
+    border: 1px solid rgba(209, 212, 220, 0.5);
+    background: #fff;
+    height: 44px;
+    padding: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.bkg_music-menu {
+    position: absolute;
+    width: 222px;
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+    bottom: calc(100% + 20px);
+    left: 0;
+    display: none;
+    cursor: auto;
+    li {
+        padding: 8px 14px;
+        color: #4d4950;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        font-weight: 400 !important;
+        font-family: "Inter", serif !important;
+        &:first-child {
+            color: #7d7d7d;
+        }
+        &:hover:not(:first-child) {
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+    }
+}
+
+.music-icon {
+    border-radius: 50%;
+    background: linear-gradient(180deg, #b68af4 -17.59%, #8733ff 117.59%);
+    box-shadow:
+        0px 4px 8px 0px rgba(124, 32, 255, 0.08),
+        0px 2px 4px 0px rgba(124, 32, 255, 0.24);
+    width: 26px;
+    aspect-ratio: 1;
+    svg {
+        width: 13px;
+        aspect-ratio: 1;
+    }
+}
+
+.selected-music {
+    margin: 0 0 0 8px;
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    textarea {
+        font-size: 14px !important;
+    }
+
+    .bkg_music-dropdown {
+        width: unset;
+    }
+
+    .music-icon {
+        width: 32px;
+        svg {
+            width: 16px;
+        }
+    }
+    .selected-music {
+        display: none;
+    }
+    .bkg_music-toggle {
+        gap: 8px;
+        border-radius: unset;
+        border: unset;
+        background: transparent;
+        height: unset;
+        padding: unset;
+    }
+}
+
+@media (max-width: 767px) {
+    .text-area {
+        padding: 16px;
+        height: 340px;
+    }
+
+    #downloadButton {
+        padding: 8px 16px !important;
+        font-size: 14px !important;
+        height: 36px !important;
+    }
+
+    .voice-media {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .voice-control {
+        gap: 12px;
+    }
+
+    .c-toggle {
+        img {
+            height: 24px;
+            width: 24px;
+        }
+    }
+    #playButton {
+        svg {
+            height: 28px;
+            width: 28px;
+        }
+    }
+    .c-drop_item {
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    .c-spiner {
+        width: 28px;
+        height: 28px;
+    }
+
+    .c-loader {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bkg_music-dropdown {
+        margin-left: 4px;
+    }
+    .music-icon {
+        width: 24px;
+        svg {
+            width: 12px;
+        }
+    }
+
+    .bkg_music-toggle,
+    .c-toggle {
+        gap: 4px;
+    }
+}
+
+/* Error Message */
+.error-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.error_message-div {
+    text-align: center;
+    background: #fff;
+    border: 1px solid rgba(209, 212, 220, 0.2);
+    border-radius: 12px;
+    color: #242424;
+    box-shadow:
+        0px 20px 24px -4px rgba(10, 13, 18, 0.08),
+        0px 8px 8px -4px rgba(10, 13, 18, 0.03);
+    width: 320px;
+    padding: 32px 20px;
+    * {
+        margin: 0;
+    }
+}
+
+.unlock-now {
+    display: flex;
+    width: 140px;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 20px;
+    background: #f2f2f2;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #242424;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-size: "Inter", serif !important;
+}
+
+@media (max-width: 767px) {
+    .error_message-div {
+        padding: 32px 16px;
+        max-width: 300px;
+    }
+}

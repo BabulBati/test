@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <title>Local Numbers</title>
+    <style>
+        .lns-container {
+            background: linear-gradient(to right, #F5F6F5 55%, #FFDA79 45%);
+        }
+
+        .lns .slick-slide {
+            margin: 0;
+        }
+
+        .lns {
+            display: flex;
+        }
+
+        .lns-l-container {
+            width: 55%;
+            background-color: #F5F6F5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .lns-r-container {
+            width: 45%;
+            background-color: #FFDA79;
+        }
+
+        .lns-right {
+            height: 100%;
+            margin: 80px 0;
+        }
+
+        .lns-left {
+            margin: 80px 0 0;
+        }
+
+        .lns .image {
+            display: flex !important;
+            justify-content: flex-end;
+        }
+
+        .lns .image img {
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .lns .text-side h3 {
+            font-size: 40px !important;
+            line-height: 130% !important;
+            font-weight: 700 !important;
+            color: #3d3358;
+            margin: 0;
+        }
+
+        .lns .text-side p {
+            margin-top: 24px;
+            font-size: 16px !important;
+            line-height: 140% !important;
+            color: #564d6d;
+            max-width: 470px;
+        }
+
+        .lns .button_counter {
+            margin: 0 0 64px;
+        }
+
+        #current-slide {
+            color: #390179;
+            font-size: 32px;
+        }
+
+        .lns .slide-count {
+            color: #B099C9;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .lns .buttons {
+            margin-bottom: 64px;
+            display: inline-flex;
+            gap: 12px;
+        }
+
+        .lns .buttons button {
+            border: none !important;
+            background: #ffffff !important;
+            box-shadow: none !important;
+            color: #000000;
+            border-radius: 50rem;
+            padding: 5px;
+            line-height: 100%;
+            transform: translateY(0) !important;
+        }
+
+        @media (max-width:991px) {
+            .lns-container {
+                background: none;
+            }
+
+            .lns {
+                flex-direction: column;
+            }
+
+            .lns-r-container {
+                width: 100%;
+            }
+
+            .lns-l-container {
+                width: 100%;
+                gap: 32px;
+            }
+
+            .lns-right {
+                margin: 64px 56px;
+            }
+
+            .lns-left {
+                margin: 64px 56px 0;
+            }
+
+            .lns .button_counter {
+                margin: 0 56px 64px;
+                display: flex;
+                justify-content: center;
+                position: relative;
+            }
+
+            .lns .buttons {
+                margin: 0;
+            }
+            .lns .slide-count{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .lns .image {
+                display: flex !important;
+                justify-content: center;
+            }
+
+        }
+
+        @media (max-width:767px) {
+
+            .lns-l-container {
+                gap: 24px;
+            }
+
+            .lns-right {
+                margin: 48px 32px;
+            }
+
+            .lns-left {
+                margin: 48px 32px 0;
+            }
+
+            .lns .button_counter {
+                margin: 0 32px 48px;
+            }
+            .lns .slide-count{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="lns">
+        <div class="lns-l-container">
+            <div class="lns-left">
+                <div class="text-side">
+                    <h3>Iceland Local Numbers</h3>
+                    <p>Use Iceland local numbers to increase your business credibility among local clients and
+                        improve your local presence. If you are operating anywhere in Iceland, you can reach
+                        your target market and attract new customers by using local Iceland phone numbers.</p>
+                </div>
+
+                <div class="text-side">
+                    <h3>Iceland Toll-Free Numbers</h3>
+                    <p>Your audience and customers will be more engaged with your brand if you offer them a
+                        cost-free calling option. You can use Iceland Toll-free Numbers to provide convenience
+                        for your customers and boost your customer satisfaction score.</p>
+                </div>
+
+                <div class="text-side">
+                    <h3>Iceland Vanity Phone Number</h3>
+                    <p>Make your business phone numbers match your theme by selecting Customize business phone
+                        numbers. By using Iceland vanity numbers, you can tilt marketing campaigns in your
+                        favor. When your Vanity numbers are displayed, your business can easily be recognized by
+                        potential customers.</p>
+                </div>
+
+                <div class="text-side">
+                    <h3>Port Your Iceland Number</h3>
+                    <p>KrispCall lets you keep your existing Iceland phone numbers and add more to them by
+                        importing them. Easily port your Iceland numbers and offer your customers a unique
+                        experience.</p>
+                </div>
+            </div>
+            <div class="button_counter">
+                <div class="buttons">
+                    <button id="prev-button">&#x1F868;</button>
+                    <button id="next-button">&#x1F86A;</button>
+                </div>
+                <div class="slide-count">
+                    <span id="current-slide">01</span> / <span id="total-slides"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="lns-r-container">
+            <div class="lns-right">
+                <div class="image">
+                    <img src="https://krispcall.com/wp-content/uploads/2022/08/Iceland-Local-Numbers.webp" alt="">
+                </div>
+
+                <div class="image">
+                    <img src="https://krispcall.com/wp-content/uploads/2022/08/Iceland-Toll-Free-Numbers.webp" alt="">
+                </div>
+
+                <div class="image">
+                    <img src="https://krispcall.com/wp-content/uploads/2022/08/Iceland-Vanity-Phone-Number.webp" alt="">
+                </div>
+
+                <div class="image">
+                    <img src="https://krispcall.com/wp-content/uploads/2022/08/Port-Your-Iceland-Number.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lns-left').slick({
+                speed: 10,
+                arrows: false,
+                fade: true,
+                infinite: true,
+                asNavFor: '.lns-right',
+                draggable: false,
+                swipe: false
+            });
+            $('.lns-right').slick({
+                speed: 10,
+                asNavFor: '.lns-left',
+                dots: false,
+                infinite: true,
+                prevArrow: $('#prev-button'),
+                nextArrow: $('#next-button'),
+                fade: true,
+                draggable: false,
+                swipe: false
+            });
+
+            // Get the total number of slides in .lns-left and display it
+            var totalSlides = $('.lns-left .text-side').length;
+            $('#total-slides').text('0' + totalSlides);
+
+            // Update the current slide number
+            $('.lns-left').on('afterChange', function (event, slick, currentSlide) {
+                var currentSlideNumber = currentSlide + 1;
+                var formattedCurrentSlideNumber = ('0' + currentSlideNumber);
+                $('#current-slide').text(formattedCurrentSlideNumber);
+            });
+
+            // Initialize the current slide number
+            $('#current-slide').text('01');
+        });
+    </script>
+</body>
+
+</html>

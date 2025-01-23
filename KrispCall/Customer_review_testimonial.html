@@ -1,0 +1,389 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+<style>
+    .cr-box {
+        display: flex;
+        background-color: #FFFFFF;
+        border-radius: 24px;
+        padding: 24px 24px 24px 56px;
+        gap: 32px;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    .cr-details {
+        flex: 1;
+        display: flex;
+        gap: 8px;
+    }
+
+    .cr-image {
+        max-width: 338px;
+        width: 100%;
+        aspect-ratio: 1;
+        background-color: #FAFAFA;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cr-image img {
+        max-width: 100%;
+    }
+
+    .customer-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 0 0;
+    }
+
+    .customer-avatar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .c-avatar-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .c-avatar-image img {
+        max-width: 100%;
+    }
+
+    .c-avatar-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .customer-review p {
+        font-size: 16px !important;
+        line-height: 150% !important;
+        color: #141414;
+        margin: 0;
+    }
+
+    .c-avatar-name h3 {
+        font-family: 'Heebo';
+        font-size: 18px !important;
+        line-height: 150% !important;
+        font-weight: 400 !important;
+        color: #141414;
+        margin: 0;
+    }
+
+    .c-avatar-position p {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 150% !important;
+        color: #666666;
+        margin: 0;
+    }
+
+    .cr-quotation-mark img {
+        width: 48px;
+    }
+
+    .cr .slick-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cr .slick-next {
+        right: 0 !important;
+    }
+
+    .cr .slick-prev {
+        left: 0 !important;
+    }
+
+    .cr .slick-next:before,
+    .cr .slick-prev:before {
+        font-family: none !important;
+        background-color: #603493;
+        font-size: 20px;
+        line-height: 100%;
+        opacity: 1;
+        color: #fff;
+        border-radius: 50rem;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #603493;
+    }
+
+    .cr .slick-next:before {
+        content: '\1F868';
+    }
+
+    .cr .slick-prev:before {
+        content: '\1F868';
+    }
+
+    .cr .slick-disabled:before {
+        opacity: 1 !important;
+        background-color: #fff;
+        border: 1px solid #E9DFF4;
+        color: #603493;
+    }
+
+    .cr .slick-arrow:hover, .cr .slick-arrow:active{
+        box-shadow: none !important;
+        transition: none !important;
+        transform: translateY(-20px) !important;
+    }
+
+    @media (max-width:1399px) {
+        .cr .slick-next {
+            right: -30px !important;
+        }
+
+        .cr .slick-prev {
+            left: -30px !important;
+        }
+    }
+
+    @media (max-width:1199px) {
+        .cr-box {
+            padding: 24px 24px 24px 48px;
+            gap: 24px;
+        }
+
+        .cr-image {
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width:991px) {
+        .cr-box {
+            flex-direction: column-reverse;
+            padding: 24px;
+        }
+
+        .cr-details {
+            flex-direction: column;
+        }
+
+        .cr-image {
+            max-width: 100%;
+            height: 150px;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .cr-image img[alt="Pinnacle Advisors"] {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+        }
+
+        .customer-details {
+            padding-top: 4px;
+        }
+
+        .cr-quotation-mark img {
+            max-width: 24px;
+        }
+
+        .cr .slick-dots li {
+            margin: 0 !important;
+        }
+
+        .cr .slick-dots li button {
+            width: 12px !important;
+            height: 12px !important;
+        }
+
+        .cr .slick-dots li button {
+            background: #E5E5E5 !important;
+            transform: translateY(0) !important;
+        }
+
+        .cr .slick-dots li.slick-active button {
+            background: #390179 !important;
+        }
+    }
+
+    @media(max-width:767px) {
+        .cr-box {
+            flex-direction: column-reverse;
+            padding: 20px;
+        }
+
+        .cr-image {
+            height: 90px;
+            max-width: 100%;
+        }
+
+        .cr-image img {
+            height: 100%;
+            width: auto;
+        }
+
+        .cr-image img[alt="PAANA Construction"] {
+            height: 40%;
+        }
+
+        .cr-details {
+            flex-direction: column;
+        }
+
+        .customer-details {
+            padding-top: 0px;
+        }
+
+        .cr-quotation-mark img {
+            max-width: 20px;
+        }
+
+        .customer-review p {
+            font-size: 14px !important;
+        }
+
+        .c-avatar-name h3 {
+            font-size: 16px !important;
+        }
+
+        .c-avatar-position p {
+            font-size: 12px !important;
+        }
+
+    }
+</style>
+
+<div class="cr cr-container">
+
+    <!-- Leslie Cordell -->
+    <div class="cr-box-row">
+        <div class="cr-box">
+            <div class="cr-details">
+                <div class="cr-quotation-mark">
+                    <img src="/wp-content/uploads/2023/09/unnamed-file.png" alt="">
+                </div>
+                <div class="customer-details">
+                    <div class="customer-review">
+                        <p>I effortlessly acquired Canada and UK numbers, enabling me to expand my business reach. The support team's responsiveness and friendliness are unmatched, ensuring I'm always connected. Whether it's receiving texts or calls, it's almost instant. The interface? Simply brilliant.
+                        </p>
+                    </div>
+                    <div class="customer-avatar">
+                        <div class="c-avatar-image">
+                            <img src="/wp-content/uploads/2024/03/Leslie-Cordell.png" alt="">
+                        </div>
+                        <div class="c-avatar-details">
+                            <div class="c-avatar-name">
+                                <h3>Leslie Cordell</h3>
+                            </div>
+                            <div class="c-avatar-position">
+                                <p>Director, Mega Mash Media Pte. Ltd</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cr-image">
+                <img src="/wp-content/uploads/2024/03/mega-mash.png" alt="Mega Mash Media">
+            </div>
+        </div>
+    </div>
+
+    <!-- Memelaos Glaros -->
+    <div class="cr-box-row">
+        <div class="cr-box">
+            <div class="cr-details">
+                <div class="cr-quotation-mark">
+                    <img src="/wp-content/uploads/2023/09/unnamed-file.png" alt="">
+                </div>
+                <div class="customer-details">
+                    <div class="customer-review">
+                        <p>KrispCall has been very beneficial for my team at PAANA --both our remote and local members. It gives us a central space for outgoing and incoming communication with our clients, organizing our sales efforts and customer resolutions. Since using KrispCall, PAANA has seen a significant increase in our customer base and in our turnaround times at PAANA Construction.</p>
+                    </div>
+                    <div class="customer-avatar">
+                        <div class="c-avatar-image">
+                            <img src="/wp-content/uploads/2024/03/Menelaos-Glaros.png" alt="">
+                        </div>
+                        <div class="c-avatar-details">
+                            <div class="c-avatar-name">
+                                <h3>Menelaos Glaros</h3>
+                            </div>
+                            <div class="c-avatar-position">
+                                <p>Director, PAANA Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cr-image">
+                <img src="/wp-content/uploads/2024/03/PAANA.png" alt="PAANA Construction">
+            </div>
+        </div>
+    </div>
+
+    <!-- Vidhi Ashik Mody -->
+    <div class="cr-box-row">
+        <div class="cr-box">
+            <div class="cr-details">
+                <div class="cr-quotation-mark">
+                    <img src="/wp-content/uploads/2023/09/unnamed-file.png" alt="">
+                </div>
+                <div class="customer-details">
+                    <div class="customer-review">
+                        <p>KrispCall is a great application and has helped me in my outsourcing business to a huge extent. I can easily attend incoming phone/video calls from Mumbai, India and make outgoing calls to my clients situated in Sydney, Australia. Due to this, there has been an increase in the number of clients over the last 3 months. Look forward to staying connected with my clients via KrispCall.</p>
+                    </div>
+                    <div class="customer-avatar">
+                        <div class="c-avatar-image">
+                            <img src="/wp-content/uploads/2024/06/Vidhi-Ashik-Mody-48x48-img.png"
+                                alt="">
+                        </div>
+                        <div class="c-avatar-details">
+                            <div class="c-avatar-name">
+                                <h3>Vidhi Ashik Mody</h3>
+                            </div>
+                            <div class="c-avatar-position">
+                                <p>Founder, Pinnacle Advisors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cr-image">
+                <img src="/wp-content/uploads/2024/06/Pinnacle-Advisors-img.png"
+                    alt="Pinnacle Advisors">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.cr-container').slick({
+            speed: 100,
+            infinite: false,
+            fade: true,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        arrows: false,
+                        dots: true,
+                        adaptiveHeight: true
+                    }
+                }
+            ]
+        });
+    });
+</script>

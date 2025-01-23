@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container-virtual-page-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-evenly;
+    }
+
+    .box-virtual-page-box {
+      width: calc(33.33% - 24px);
+      box-sizing: border-box;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      .box-virtual-page-box {
+        width: calc(50% - 24px);
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .box-virtual-page-box {
+        width: calc(100% - 24px);
+      }
+    }
+
+    #seeMoreBtn,
+    #seeLessBtn {
+      cursor: pointer;
+      padding: 8px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-virtual-page-box" id="boxContainer">
+    <div class="box-virtual-page-box">Box 1</div>
+    <div class="box-virtual-page-box">Box 2</div>
+    <div class="box-virtual-page-box">Box 3</div>
+    <div class="box-virtual-page-box">Box 4</div>
+    <div class="box-virtual-page-box">Box 5</div>
+    <div class="box-virtual-page-box">Box 6</div>
+    <div class="box-virtual-page-box">Box 7</div>
+    <div class="box-virtual-page-box ">Box 8</div>
+    <div class="box-virtual-page-box ">Box 9</div>
+    <div class="box-virtual-page-box ">Box 10</div>
+    <div class="box-virtual-page-box ">Box 11</div>
+    <div class="box-virtual-page-box ">Box 12</div>
+    <div class="box-virtual-page-box ">Box 13</div>
+    <div class="box-virtual-page-box ">Box 14</div>
+    <div class="box-virtual-page-box ">Box 15</div>
+  </div>
+
+  <button id="seeMoreBtn" style="display: none" onclick="toggleBoxes(true)">See more</button>
+  <button id="seeLessBtn" style="display: none" onclick="toggleBoxes(false)">See less</button>
+
+  <script>
+    let visibleBoxes = { desktop: 15, tab: 6, mobile: 4 };
+    const additionalBoxes = 4;
+
+    function toggleBoxes(seeMore) {
+      const boxes = document.querySelectorAll('.box-virtual-page-box');
+      const seeMoreBtn = document.getElementById('seeMoreBtn');
+      const seeLessBtn = document.getElementById('seeLessBtn');
+
+      if (window.innerWidth >= 1024) {
+        visibleBoxes.desktop = seeMore ? visibleBoxes.desktop + additionalBoxes : Math.max(visibleBoxes.desktop - additionalBoxes, 15);
+      } else if (window.innerWidth >= 768) {
+        visibleBoxes.tab = seeMore ? visibleBoxes.tab + additionalBoxes : Math.max(visibleBoxes.tab - additionalBoxes, 6);
+      } else {
+        visibleBoxes.mobile = seeMore ? visibleBoxes.mobile + additionalBoxes : Math.max(visibleBoxes.mobile - additionalBoxes, 4);
+      }
+
+      boxes.forEach((box, index) => {
+        box.style.display = index < visibleBoxes[getViewType()] ? 'block' : 'none';
+      });
+
+      seeMoreBtn.style.display = visibleBoxes[getViewType()] < boxes.length ? 'inline-block' : 'none';
+      seeLessBtn.style.display = visibleBoxes[getViewType()] > 6 ? 'inline-block' : 'none';
+    }
+
+    function getViewType() {
+      return window.innerWidth >= 1024 ? 'desktop' : (window.innerWidth >= 768 ? 'tab' : 'mobile');
+    }
+
+    function updateBoxesVisibility() {
+      const boxes = document.querySelectorAll('.box-virtual-page-box');
+      const viewType = getViewType();
+
+      visibleBoxes[viewType] = Math.max(visibleBoxes[viewType], 4); // Ensure a minimum of 4 visible boxes
+
+      boxes.forEach((box, index) => {
+        box.style.display = index < visibleBoxes[viewType] ? 'block' : 'none';
+      });
+
+      const seeMoreBtn = document.getElementById('seeMoreBtn');
+      const seeLessBtn = document.getElementById('seeLessBtn');
+      seeMoreBtn.style.display = (visibleBoxes[viewType] < boxes.length && window.innerWidth < 1024) ? 'inline-block' : 'none';
+      seeLessBtn.style.display = (visibleBoxes[viewType] > 6 && window.innerWidth < 1024) ? 'inline-block' : 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateBoxesVisibility);
+    window.addEventListener('resize', updateBoxesVisibility);
+
+  </script>
+
+</body>
+
+</html>

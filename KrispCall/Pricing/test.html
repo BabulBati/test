@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Menu Example</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 20px;
+        }
+
+        .sticky-element {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+            /* Initially, it is in normal flow */
+            transition: top 0.3s ease;
+        }
+
+        .other-content {
+            margin-top: 20px;
+        }
+
+        /* Style when the element becomes fixed */
+        .sticky-element.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            /* Ensure it stays on top */
+            background-color: #444;
+            /* Slightly change background color when sticky */
+        }
+
+        /* Add some space below the sticky element when it becomes fixed */
+        .sticky-element.fixed+.other-content {
+            padding-top: 60px;
+            /* Adjust this based on the height of your sticky element */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 800px; background-color: gray;"></div>
+    <div class="content">
+        <!-- Sticky Element (e.g., Menu) -->
+        <div class="sticky-element">
+            This is the sticky menu or element.
+        </div>
+
+        <!-- Content that makes the page scrollable -->
+        <div class="other-content">
+            <h2>Scroll down to see the sticky behavior!</h2>
+            <p>Scroll down to see how the sticky element behaves as you scroll...</p>
+            <div style="height: 2000px;"></div> <!-- Large height to allow scrolling -->
+        </div>
+    </div>
+    <div style="height: 1200px; background-color: blanchedalmond;" class="no-sticky"></div>
+
+    <script>
+        $(document).ready(function () {
+            var $stickyElement = $('.sticky-element'); // The element you want to make sticky
+            var stickyOffset = $stickyElement.offset().top; // Get initial position of the sticky element
+            var $noStickySection = $('.no-sticky'); // The section where the sticky element should stop being fixed
+            var noStickyOffset = $noStickySection.offset().top; // Get the position of the "no-sticky" section
+            var noStickyHeight = $noStickySection.outerHeight(); // Get the height of the "no-sticky" section
+
+            // Listen to the scroll event
+            $(window).on('scroll', function () {
+                var scrollPosition = $(window).scrollTop(); // Get the current scroll position
+
+                // If the scroll position is greater than or equal to the initial position, make it fixed
+                if (scrollPosition >= stickyOffset && scrollPosition < noStickyOffset - $stickyElement.outerHeight()) {
+                    $stickyElement.addClass('fixed'); // Add the 'fixed' class to make it sticky
+                } else {
+                    $stickyElement.removeClass('fixed'); // Remove the 'fixed' class when scrolling back up
+                }
+
+                // If the scroll position reaches the bottom of the "no-sticky" section, remove the 'fixed' class
+                if (scrollPosition >= noStickyOffset - $stickyElement.outerHeight()) {
+                    $stickyElement.removeClass('fixed'); // Remove the 'fixed' class when reaching "no-sticky"
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

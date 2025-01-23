@@ -1,0 +1,377 @@
+<style>
+  .iti.iti--allow-dropdown {
+    height: 52px;
+  }
+
+  .search-form .iti__selected-flag {
+    background: transparent !important;
+    padding: 0 !important;
+    min-height: unset !important;
+    display: inline-flex;
+    height: 100%;
+    padding-left: 16px !important;
+  }
+
+  .search-form .iti__arrow {
+    position: relative !important;
+    top: unset;
+    right: unset;
+    transform: unset;
+  }
+
+  #checkNumberPorting {
+    background: #f9f9f9 !important;
+    border: none !important;
+    display: block !important;
+    min-height: unset !important;
+    height: 100% !important;
+    padding: 16px 16px 16px 64px !important;
+    color: #242424 !important;
+    font-family: "Inter" !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 20px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  #checkNumberPorting::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+  }
+
+  .dropdown.bootstrap-select {
+    margin: 0;
+  }
+
+  .dropdown.bootstrap-select button {
+    padding: 16px !important;
+    color: #242424 !important;
+    font-family: "Inter" !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 20px !important;
+    letter-spacing: -0.02em !important;
+    height: 52px;
+    margin: 0;
+  }
+
+  .portnumber-div {
+    max-width: 776px;
+    width: 100%;
+  }
+
+  #check-porting {
+    padding: 16px 24px !important;
+    height: 52px !important;
+    min-width: unset !important;
+    color: #fff;
+    font-family: "Inter" !important;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    border-radius: 8px !important;
+    background: #8733ff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  #check-porting .preloader-sm {
+    height: 16px;
+    width: 16px;
+    margin: 0 0 0 4px;
+  }
+
+  #check-porting .preloader-sm:after {
+    height: 16px;
+    width: 16px;
+  }
+
+  .portnumber_row {
+    gap: 16px;
+  }
+
+  @media (min-width: 992px) {
+    .select_div,
+    .input_div {
+      width: 100%;
+    }
+  }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .select_div {
+      width: 70%;
+    }
+    .input_div {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    #check-porting {
+      padding: 16px 12px !important;
+      font-size: 14px;
+    }
+    .portnumber_row {
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .search-form .iti__selected-flag {
+      padding-left: 8px !important;
+    }
+
+    .iti.iti--allow-dropdown {
+      height: 36px;
+    }
+    #check-porting {
+      padding: 8px 20px !important;
+      height: 36px !important;
+    }
+    #checkNumberPorting {
+      padding: 8px 8px 8px 56px !important;
+      font-size: 14px !important;
+    }
+    .dropdown.bootstrap-select button {
+      height: 36px !important;
+      padding: 8px !important;
+      font-size: 14px !important;
+    }
+    .portnumber_row {
+      flex-direction: column;
+    }
+
+    #check-porting .preloader-sm {
+      height: 14px;
+      width: 14px;
+      margin: 0 0 0 4px;
+    }
+
+    #check-porting .preloader-sm:after {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  .numberport_result .card {
+    flex-grow: 1;
+    max-width: 100%;
+    margin: 48px 0 0 !important;
+    padding: 32px !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(135, 51, 255, 0.5) !important;
+  }
+
+  .numberport_result .card .card--success {
+    border-radius: 8px !important;
+    border: 1px solid #a635ff !important;
+    background: rgba(166, 53, 255, 0.2) !important;
+    padding: 8px !important;
+  }
+
+  .numberport_result .card .card--success p {
+    color: #fff !important;
+    font-family: "Inter" !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: -0.02em;
+  }
+  .numberport_result .card .card--success p strong {
+    font-weight: 400 !important;
+  }
+
+  .numberport_result .card-result {
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+
+  .numberport_result .card.bg-transparent {
+    flex-grow: 1;
+    width: calc((100% - 200px) - 16px);
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .numberport_result .card.bg-white {
+    width: 200px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #portingEmail {
+    height: 52px !important;
+    min-width: unset !important;
+    padding: 16px !important;
+    color: #333333 !important;
+    font-family: "Inter";
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.02em !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    margin: 0 !important;
+  }
+
+  .numberport_result .card.bg-white button {
+    height: 52px !important;
+    border-radius: 8px !important;
+    background: #8733ff !important;
+    padding: 16px 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    border: none !important;
+    font-family: "Inter";
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.02em !important;
+  }
+  .card-details,
+  .card--success {
+    margin: 28px 0 0 !important;
+  }
+  .card-details ul {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 24px;
+  }
+  .card-details ul li {
+    flex-grow: 1;
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-details ul li:first-child {
+    width: 100%;
+  }
+  .card-details ul li:not(:first-child) {
+    width: calc((100% / 2) - 12px);
+  }
+
+  .card-details ul li:not(:last-child) {
+    margin: 0 !important;
+  }
+  .card-details ul li span {
+    font-family: "Inter" !important;
+    font-size: 16px !important;
+    line-height: 150% !important;
+    letter-spacing: -0.02em !important;
+  }
+  .card-details ul li span:first-child {
+    color: rgba(244, 244, 244, 0.9) !important;
+    font-weight: 400 !important;
+  }
+  .card-details ul li span:last-child {
+    color: #f4f4f4 !important;
+    font-weight: 600 !important;
+  }
+
+  .card h4 {
+    color: #f4f4f4 !important;
+    margin: 0 !important;
+    font-family: "Manrope" !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 130% !important;
+    letter-spacing: -0.02em;
+  }
+</style>
+
+
+<!--SEARCH NUMBER-->
+<section class="">
+  <div class="container-virtual-search">
+    <div class="bg-primary-gradient-radial block-relative px-3 border-r-16">
+      <div class="block-absolute--right pr-0">
+        <img src="/wp-content/themes/mitech/src/assets/images/world-map-2.png" alt="Call" />
+      </div>
+      <div class="container-virtual-search">
+        <div class="search-form search-form--table item-center py-5">
+          <div class="block-absolute--left w-auto">
+            <img src="/wp-content/themes/mitech/src/assets/images/world-map.png" alt="Call" />
+          </div>
+          <div class="center-item block-relative portnumber-div">
+            <div class="text-center customtypo-heading">
+              <h2 class="pb-3 text-white">Check Phone Number for Porting</h2>
+              <!-- <p>Get local, mobile, and toll-free virtual phone numbers from 100+ countries and expand your business worldwide.</p> -->
+            </div>
+            <div class="p-0 mt-2">
+              <div class="search-form">
+                <div class="check-num" id="search-num">
+                  <form action="#">
+                    <div class="d-flex justify-content-center portnumber_row">
+                      <div class="input_div flex-grow-1">
+                        <!-- <input type="tel" class="checkNumberPorting" placeholder="Enter your phone number" id="portNumber" name="check-numPorting" required />
+                            <input type="text" class="checkNumberPorting" id="checkNumberPorting" name="check-numPorting" /> -->
+                        <input type="tel" class="checkNumberPorting" placeholder="Enter your phone number"
+                          id="checkNumberPorting" name="check-numPorting" required />
+                        <!-- <input type="text" class="checkNumberPorting" id="checkNumberPorting" name="check-numPorting" /> -->
+                      </div>
+                      <div class="select_div flex-grow-1">
+                        <select class="selectpicker" data-search="on" id="portType" required data-display="static">
+                          <option value="">Select Type</option>
+                          <option value="mobile">Mobile</option>
+                          <option value="local">Local</option>
+                          <option value="tollfree">Toll Free</option>
+                        </select>
+                      </div>
+                      <button class="check-porting flex-shrink-0" type="button" id="check-porting">
+                        Check Porting<span class="preloader preloader-sm"></span>
+                      </button>
+                    </div>
+                  </form>
+                  <div class="search-results collapse collapsing show numberport_result" id="search-results">
+                    <div class="d-flex align-items-center flex-wrap card-result" id="selected-list">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const checkNumberPortingInput = document.getElementById("checkNumberPorting");
+
+  // Initialize intl-tel-input
+  const ittiport = window.intlTelInput(checkNumberPortingInput, {
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    onlyCountries: [
+        "au", "at", "be", "br", "ca", "cz", "dk", "fr", "fi", "de", 
+        "ie", "it", "lu", "mx", "nl", "nz", "no", "pr", "pt", "ro", 
+        "es", "si", "ch", "gb"
+    ],
+  });
+
+  function updateMirroredInput() {
+    const countryData = ittiport.getSelectedCountryData();
+    const dialCode = `+${countryData.dialCode}`;
+    const inputValue = checkNumberPortingInput.value.trim();
+
+    // Add dial code only if user starts typing
+    if (inputValue && !inputValue.startsWith(dialCode)) {
+      if (inputValue.startsWith("+")) {
+        const existingDialCode = inputValue.match(/^\+\d+/);
+        if (existingDialCode) {
+          checkNumberPortingInput.value = inputValue; // Keep existing if already has a valid dial code
+        }
+      } else {
+        checkNumberPortingInput.value = `${dialCode}${inputValue}`;
+      }
+    }
+  }
+
+  // Add event listeners
+  checkNumberPortingInput.addEventListener("input", updateMirroredInput);
+  checkNumberPortingInput.addEventListener("countrychange", updateMirroredInput);
+</script>

@@ -1,0 +1,405 @@
+#footer {
+  background: #0d0d0d;
+  padding: 80px 0 66px;
+}
+#footer ul {
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+#footer a {
+  text-decoration: none !important;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Get International Numbers */
+.international-numbers-container {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1e1e1e;
+}
+
+.international-number-text {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.international-number-text i {
+  font-size: 12px;
+  margin-left: 4px;
+}
+.international-number-text .bi-arrow-90deg-up::before {
+  transform: rotate(180deg);
+  font-weight: 600 !important;
+}
+
+.international-numbers {
+  padding: 8px 0;
+  gap: 35px;
+}
+.international-numbers a {
+  color: #bf99ea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  font-family: "Inter";
+}
+
+.countries {
+  gap: 12px;
+}
+.countries p {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Inter";
+  margin: 0;
+  padding: 0;
+}
+
+#internationalnumbers_button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.countries-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0 !important;
+}
+.countries-lists ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+.countries-lists ul a {
+  color: #a8a8a8;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Inter";
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.countries-lists h5 {
+  color: #a8a8a8;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  font-family: "Inter";
+  margin-bottom: 16px;
+}
+
+.europe-countries {
+  display: flex;
+  gap: 48px;
+}
+
+.contact-krispcall {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.contact-krispcall .contact-krispcall-text {
+  color: #fff;
+  font-family: "Manrope";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+.contact-krispcall .emails {
+  display: inline-flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.contact-krispcall .emails a {
+  color: #bf99ea;
+  font-family: "Inter";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.menu_footer {
+  display: flex;
+  gap: 80px;
+  margin-top: 24px;
+}
+.menu_footer h5 {
+  color: #fff;
+  font-family: "Manrope";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.menu_footer li {
+  line-height: 100%;
+}
+.menu_footer a {
+  color: #a8a8a8;
+  font-family: "Inter";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.menu_footer .see_all-button a {
+  color: #bf99ea;
+  font-family: "Inter";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.company-div ul,
+.compare-div ul,
+.solutions-div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.integrations-div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.solutions-list {
+  display: flex;
+  gap: 80px;
+}
+
+.social-div {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-social-side {
+  display: inline-flex;
+  gap: 24px;
+}
+
+.social-links-div {
+  display: inline-flex;
+  gap: 16px;
+}
+
+.app-download-side {
+  display: inline-flex;
+  gap: 16px;
+}
+
+.horizontal-line {
+  background: #323232;
+  height: 1px;
+  width: 100%;
+  margin: 32px 0;
+}
+
+.footer-bottom-div {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-bottom-div .left-side {
+  display: inline-flex;
+  gap: 16px;
+}
+.footer-bottom-div .left-side a {
+  color: #a8a8a8;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.footer-bottom-div .right-side {
+  color: #a8a8a8;
+  font-family: "Inter";
+  font-size: 13.3px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (min-width: 992px) {
+  .f_menu-item .collapse {
+    display: block;
+  }
+}
+.f-accordion-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.f-accordion-button {
+  display: none;
+}
+
+@media (max-width: 1399px) {
+  .international-numbers {
+    gap: 12px;
+  }
+  .countries {
+    gap: 8px;
+  }
+  #internationalnumbers_button {
+    gap: 4px;
+  }
+}
+@media (max-width: 1199px) {
+  .europe-countries {
+    gap: 32px;
+  }
+}
+@media (max-width: 991px) {
+  .international-numbers-container {
+    padding: 32px 16px;
+    flex-wrap: wrap;
+  }
+  .international-numbers {
+    gap: 24px 40px;
+    flex-wrap: wrap;
+  }
+  .countries,
+  #internationalnumbers_button {
+    flex: 1 0 calc(50% - 40px);
+  }
+  .international-number-text {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  .countries-lists {
+    gap: 24px 89px;
+    justify-content: flex-start;
+  }
+  .europe-countries {
+    gap: 48px;
+  }
+  .f_menu-item {
+    border-bottom: 1px solid #323232;
+    padding: 24px 8px;
+  }
+  .f_menu-item:first-child {
+    border-top: 1px solid #323232;
+  }
+  h5.f-accordion-header {
+    margin: 0;
+  }
+  .integrations-div ul {
+    gap: 16px;
+  }
+  .menu_footer .collapse {
+    margin-top: 16px;
+  }
+  .logo-social-side {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .horizontal-line {
+    display: none;
+  }
+  .footer-bottom-div {
+    margin-top: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .footer-bottom-div .left-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .menu_footer {
+    display: block;
+  }
+  .f-accordion-button {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .international-numbers-container {
+    padding: 12px;
+  }
+  .international-numbers {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .countries-lists {
+    max-width: 320px;
+    gap: 24px 40px;
+    justify-content: space-between;
+  }
+  #europe-list {
+    width: 100%;
+  }
+  .europe-countries {
+    gap: 0 40px;
+    justify-content: space-between;
+  }
+  .countries,
+  #internationalnumbers_button {
+    flex: 1 0 100%;
+  }
+  .international-number-text {
+    font-size: 16px;
+  }
+  .solutions-list {
+    flex-wrap: wrap;
+    row-gap: 16px;
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+  }
+  .social-div {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer-bottom-div {
+    margin-top: 24px;
+    gap: 24px;
+  }
+  .footer-bottom-div .left-side {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-bottom-div .left-side a {
+    padding: 8px 0;
+  }
+}
+@media (max-width: 325px) {
+  .countries-lists li {
+    width: 100%;
+  }
+  .europe-countries {
+    flex-wrap: wrap;
+  }
+  .europe-countries ul {
+    flex: 1 0 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,405 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+    /* Get International Numbers */
+    .international-numbers-container {
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: #1E1E1E;
+    }
+
+    .international-numbers-container a {
+        text-decoration: none !important;
+    }
+
+    .international-number-text {
+        color: #FFF;
+        font-size: 20px;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+
+    .international-number-text i {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+    .international-number-text .bi-arrow-90deg-up::before {
+        transform: rotate(180deg);
+        font-weight: 600 !important;
+    }
+
+    .international-numbers {
+        padding: 8px 0;
+        gap: 40px;
+    }
+
+    .international-numbers a {
+        color: #BF99EA;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        font-family: 'Heebo';
+    }
+
+    .country {
+        gap: 12px;
+    }
+
+    .country p {
+        color: #fff;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: 'Heebo';
+        margin: 0;
+        padding: 0;
+    }
+
+    #internationalnumbers_button {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .country-lists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 24px 0 0;
+    }
+
+    .country-lists ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .country-lists ul li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .country-lists ul li a {
+        color: #A8A8A8;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: 'Heebo';
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .country-lists h5 {
+        color: #A8A8A8;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        font-family: 'Heebo';
+        margin-bottom: 16px;
+    }
+
+    .europe-countries {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:0 48px;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+    @media (max-width:1399px) {
+        .international-numbers {
+            gap: 12px;
+        }
+
+        .country {
+            gap: 8px;
+        }
+
+        #internationalnumbers_button {
+            gap: 4px;
+        }
+    }
+
+    @media(max-width:1199px) {
+        .europe-countries {
+            gap:0 32px;
+        }
+    }
+
+    @media(max-width:991px) {
+        .international-numbers-container {
+            padding: 32px 16px;
+            flex-wrap: wrap;
+        }
+
+        .international-numbers {
+            gap: 24px 40px;
+            flex-wrap: wrap;
+        }
+
+        .country,
+        #internationalnumbers_button {
+            flex: 1 0 calc(50% - 40px);
+        }
+
+        .international-number-text {
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .country-lists {
+            gap: 24px 93px;
+            justify-content: flex-start;
+        }
+
+        .europe-countries {
+            gap:0 48px;
+        }
+
+    }
+
+    @media(max-width:767px) {
+        .international-numbers-container {
+            padding: 12px;
+        }
+
+        .international-numbers {
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .country,
+        #internationalnumbers_button {
+            flex: 1 0 100%;
+        }
+
+        .international-number-text {
+            font-size: 16px;
+        }
+    }
+</style>
+<div class="international-numbers-container">
+    <div class="international-number-text">
+        Get International Numbers for<i class="bi bi-arrow-90deg-up"></i>
+    </div>
+    <div class="d-flex align-items-center justify-content-between international-numbers">
+        <div class="country d-inline-flex align-items-center">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/05/fi_330459.png" alt="">
+            <p>US Phone Number</p>
+        </div>
+        <div class="country d-inline-flex align-items-center">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/05/fi_330459.png" alt="">
+            <p>UK Phone Number</p>
+        </div>
+        <div class="country d-inline-flex align-items-center">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/05/fi_330459.png" alt="">
+            <p>Australia Phone Number</p>
+        </div>
+        <div class="country d-inline-flex align-items-center">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/05/fi_330459.png" alt="">
+            <p>Canada Phone Number</p>
+        </div>
+        <div class="country d-inline-flex align-items-center">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/05/fi_330459.png" alt="">
+            <p>France Phone Number</p>
+        </div>
+        <a data-bs-toggle="collapse" href="#internationalnumbers" role="button" aria-expanded="false"
+            aria-controls="internationalnumbers" id="internationalnumbers_button">
+            See all country <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                fill="none" id="rotateIcon">
+                <path d="M5 7.29199L10 12.292L15 7.29199" stroke="#4D4950" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </a>
+    </div>
+    <div class="collapse" id="internationalnumbers">
+        <!-- <div class="int-numbers"> -->
+        <ul class="country-lists" id="country-lists">
+
+            <!-- Africa -->
+            <li id="africa-list">
+                <h5>Africa</h5>
+                <ul>
+                    <li><a href="/virtual-phone-number/algeria/"><span
+                                class="iti__flag  iti__dz d-inline-block"></span>Algeria </a></li>
+                    <li><a href="/virtual-phone-number/benin/"><span
+                                class="iti__flag  iti__ar d-inline-block"></span>Benin </a></li>
+                    <li><a href="/virtual-phone-number/ghana/"><span
+                                class="iti__flag  iti__au d-inline-block"></span>Ghana </a></li>
+                    <li><a href="/virtual-phone-number/kenya/"><span
+                                class="iti__flag  iti__at d-inline-block"></span>Kenya </a></li>
+                    <li><a href="/virtual-phone-number/mali/"><span
+                                class="iti__flag  iti__bb d-inline-block"></span>Mali </a></li>
+                    <li><a href="/virtual-phone-number/mauritius/"><span
+                                class="iti__flag  iti__be d-inline-block"></span>Mauritius </a></li>
+                    <li><a href="/virtual-phone-number/namibia/"><span
+                                class="iti__flag  iti__bj d-inline-block"></span>Namibia </a></li>
+                    <li><a href="/virtual-phone-number/south-africa/"><span
+                                class="iti__flag  iti__ba d-inline-block"></span>South Africa</a></li>
+                    <li><a href="/virtual-phone-number/tunisia/"><span
+                                class="iti__flag  iti__br d-inline-block"></span>Tunisia </a></li>
+                    <li><a href="/virtual-phone-number/uganda/"><span
+                                class="iti__flag  iti__bg d-inline-block"></span>Uganda </a></li>
+                </ul>
+            </li>
+
+            <!-- Asia-Pacific -->
+            <li id="asia-pacific-list">
+                <h5>Asia-Pacific</h5>
+                <ul>
+                    <li><a href="/virtual-phone-number/australia/"><span
+                                class="iti__flag  iti__au d-inline-block"></span>Australia </a></li>
+                    <li><a href="/virtual-phone-number/hong-kong/"><span
+                                class="iti__flag  iti__dz d-inline-block"></span>Hong Kong </a></li>
+                    <li><a href="/virtual-phone-number/indonesia/"><span
+                                class="iti__flag  iti__id d-inline-block"></span>Indonesia</a></li>
+                    <li><a href="/virtual-phone-number/israel/"><span
+                                class="iti__flag  iti__il d-inline-block"></span>Israel</a></li>
+                    <li><a href="/virtual-phone-number/macau/"><span
+                                class="iti__flag  iti__mo d-inline-block"></span>Macau</a></li>
+                    <li><a href="/virtual-phone-number/malaysia/"><span
+                                class="iti__flag  iti__my d-inline-block"></span>Malaysia</a></li>
+                    <li><a href="/virtual-phone-number/new-zealand-number/"><span
+                                class="iti__flag  iti__nz d-inline-block"></span>New Zealand </a></li>
+                    <li><a href="/virtual-phone-number/philippines/"><span
+                                class="iti__flag  iti__ph d-inline-block"></span>Philippines</a></li>
+                    <li><a href="/virtual-phone-number/singapore/"><span
+                                class="iti__flag  iti__sg d-inline-block"></span>Singapore</a></li>
+                    <li><a href="/virtual-phone-number/thailand/"><span
+                                class="iti__flag  iti__th d-inline-block"></span>Thailand</a></li>
+                </ul>
+
+            </li>
+
+            <!-- Europe -->
+            <li id="europe-list">
+                <h5>Europe</h5>
+                <ul class="europe-countries">
+                    <li><a href="/virtual-phone-number/austria/"><span
+                                class="iti__flag  iti__at d-inline-block"></span>Austria</a></li>
+                    <li><a href="/virtual-phone-number/belgium/"><span
+                                class="iti__flag  iti__be d-inline-block"></span>Belgium</a></li>
+                    <li><a href="/virtual-phone-number/bosnia-and-herzegovina/"><span
+                                class="iti__flag  iti__ba d-inline-block"></span>Bosnia &amp; Herzegovina</a></li>
+                    <li><a href="/virtual-phone-number/bulgaria/"><span
+                                class="iti__flag  iti__bg d-inline-block"></span>Bulgaria</a></li>
+                    <li><a href="/virtual-phone-number/croatia/"><span
+                                class="iti__flag  iti__hr d-inline-block"></span>Croatia</a></li>
+                    <li><a href="/virtual-phone-number/czech-republic/"><span
+                                class="iti__flag  iti__cz d-inline-block"></span>Czech Republic</a></li>
+                    <li><a href="/virtual-phone-number/denmark/"><span
+                                class="iti__flag  iti__dk d-inline-block"></span>Denmark</a></li>
+                    <li><a href="/virtual-phone-number/estonia/"><span
+                                class="iti__flag  iti__ee d-inline-block"></span>Estonia</a></li>
+                    <li><a href="/virtual-phone-number/finland/"><span
+                                class="iti__flag  iti__fi d-inline-block"></span>Finland</a></li>
+                    <li><a href="/virtual-phone-number/france/"><span
+                                class="iti__flag  iti__fr d-inline-block"></span>France</a></li>
+                    <li><a href="/virtual-phone-number/germany/"><span
+                                class="iti__flag  iti__de d-inline-block"></span>Germany</a></li>
+                    <li><a href="/virtual-phone-number/hungary/"><span
+                                class="iti__flag  iti__hu d-inline-block"></span>Hungary</a></li>
+                    <li><a href="/virtual-phone-number/iceland-number/"><span
+                                class="iti__flag  iti__is d-inline-block"></span>Iceland</a></li>
+                    <li><a href="/virtual-phone-number/ireland/"><span
+                                class="iti__flag  iti__ie d-inline-block"></span>Ireland</a></li>
+                    <li><a href="/virtual-phone-number/lithuania/"><span
+                                class="iti__flag  iti__lt d-inline-block"></span>Lithuania</a></li>
+                    <li><a href="/virtual-phone-number/netherlands/"><span
+                                class="iti__flag  iti__nl d-inline-block"></span>Netherlands</a></li>
+                    <li><a href="/virtual-phone-number/poland/"><span
+                                class="iti__flag  iti__pl d-inline-block"></span>Poland</a></li>
+                    <li><a href="/virtual-phone-number/portugal/"><span
+                                class="iti__flag  iti__pt d-inline-block"></span>Portugal</a></li>
+                    <li><a href="/virtual-phone-number/romania/"><span
+                                class="iti__flag  iti__ro d-inline-block"></span>Romania</a></li>
+                    <li><a href="/virtual-phone-number/slovakia/"><span
+                                class="iti__flag  iti__sk d-inline-block"></span>Slovakia</a></li>
+                    <li><a href="/virtual-phone-number/slovenia/"><span
+                                class="iti__flag  iti__si d-inline-block"></span>Slovenia</a></li>
+                    <li><a href="/virtual-phone-number/sweden/"><span
+                                class="iti__flag  iti__se d-inline-block"></span>Sweden</a></li>
+                    <li><a href="/virtual-phone-number/switzerland/"><span
+                                class="iti__flag  iti__ch d-inline-block"></span>Switzerland</a></li>
+                    <li><a href="/virtual-phone-number/united-kingdom/"><span
+                                class="iti__flag  iti__gb d-inline-block"></span>UK</a></li>
+                </ul>
+            </li>
+
+            <!-- North America -->
+            <li id="north-america-list">
+                <h5>North America</h5>
+                <ul>
+                    <li><a href="/virtual-phone-number/barbados/"><span
+                                class="iti__flag  iti__bb d-inline-block"></span>Barbados</a></li>
+                    <li><a href="/virtual-phone-number/canada/"><span
+                                class="iti__flag  iti__ca d-inline-block"></span>Canada</a></li>
+                    <li><a href="/virtual-phone-number/cayman-islands/"><span
+                                class="iti__flag  iti__ky d-inline-block"></span>Cayman Islands </a></li>
+                    <li><a href="/virtual-phone-number/mexico/"><span
+                                class="iti__flag  iti__mx d-inline-block"></span>Mexico</a></li>
+                    <li><a href="/virtual-phone-number/puerto-rico/"><span
+                                class="iti__flag  iti__pr d-inline-block"></span>Puerto Rico</a></li>
+                    <li><a href="/virtual-phone-number/trinidad-and-tobago/"><span
+                                class="iti__flag  iti__tt d-inline-block"></span>Trinidad &amp; Tobago</a>
+                    </li>
+                    <li><a href="/virtual-phone-number/usa/"><span class="iti__flag  iti__us d-inline-block"></span>US
+                        </a></li>
+                </ul>
+            </li>
+
+            <!-- South America -->
+            <li id="sorth-america-list">
+                <h5>South America</h5>
+                <ul>
+                    <li><a href="/virtual-phone-number/argentina/"><span
+                                class="iti__flag  iti__ar d-inline-block"></span>Argentina</a></li>
+                    <li><a href="/virtual-phone-number/brazil-number/"><span
+                                class="iti__flag  iti__br d-inline-block"></span>Brazil</a></li>
+                    <li><a href="/virtual-phone-number/chile/"><span
+                                class="iti__flag  iti__cl d-inline-block"></span>Chile</a></li>
+                    <li><a href="/virtual-phone-number/colombia/"><span
+                                class="iti__flag  iti__co d-inline-block"></span>Colombia</a></li>
+                    <li><a href="/virtual-phone-number/ecuador/"><span
+                                class="iti__flag  iti__ec d-inline-block"></span>Ecuador</a></li>
+                    <li><a href="/virtual-phone-number/el-salvador/"><span
+                                class="iti__flag  iti__sv d-inline-block"></span>El Salvador</a></li>
+                    <li><a href="/virtual-phone-number/grenada/"><span
+                                class="iti__flag  iti__gd d-inline-block"></span>Grenada</a></li>
+                    <li><a href="/virtual-phone-number/panama/"><span
+                                class="iti__flag  iti__pa d-inline-block"></span>Panama</a></li>
+                    <li><a href="/virtual-phone-number/peru/"><span
+                                class="iti__flag  iti__pe d-inline-block"></span>Peru</a></li>
+                </ul>
+            </li>
+
+        </ul>
+        <!-- </div> -->
+    </div>
+</div>
+<script>
+    document.getElementById('internationalnumbers_button').addEventListener('click', function () {
+        document.getElementById('rotateIcon').classList.toggle('rotate');
+    });
+
+</script>

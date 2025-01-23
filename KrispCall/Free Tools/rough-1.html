@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Tools Text to Speech test</title>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/typo.css">
+  <link rel="stylesheet" href="css/text_to-Speech.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="free-tools-hero-container position-relative">
+
+      <div class="text-to-voice">
+        <div class="text-area d-flex flex-column">
+          <textarea id="text" oninput="updateCharacterCount()"
+            placeholder="Type or paste something and instantly convert into speech..."></textarea>
+          <div class="customtext-s custom-regular">
+            <p id="charCount">0/300</p>
+          </div>
+        </div>
+
+        <div class="voice-media d-flex">
+          <!-- Voice and Background Music div -->
+          <div class="d-inline-flex align-items-center">
+            <!-- Voice Dropdown -->
+            <div class="voice-type d-inline-flex align-items-center">
+              <div class="custom-dropdown d-inline-flex align-items-center">
+                <div class="c-toggle d-inline-flex align-items-center" id="c-dropdownButton">
+                  <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                    alt="" />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                    <path
+                      d="M3.3173 4.57566C3.25634 4.63918 3.20798 4.71462 3.17498 4.79766C3.14198 4.8807 3.125 4.96972 3.125 5.05962C3.125 5.14951 3.14198 5.23853 3.17498 5.32157C3.20798 5.40461 3.25634 5.48005 3.3173 5.54357L7.03631 9.42434C7.09719 9.48795 7.16948 9.53841 7.24906 9.57285C7.32864 9.60728 7.41395 9.625 7.5001 9.625C7.58625 9.625 7.67155 9.60728 7.75113 9.57285C7.83071 9.53841 7.90301 9.48795 7.96388 9.42434L11.6829 5.54357C11.7438 5.48002 11.7921 5.40457 11.8251 5.32153C11.858 5.23849 11.875 5.1495 11.875 5.05962C11.875 4.96974 11.858 4.88074 11.8251 4.7977C11.7921 4.71467 11.7438 4.63922 11.6829 4.57566C11.622 4.51211 11.5497 4.4617 11.4701 4.4273C11.3905 4.3929 11.3052 4.3752 11.2191 4.3752C11.133 4.3752 11.0477 4.3929 10.9681 4.4273C10.8885 4.4617 10.8162 4.51211 10.7553 4.57566L7.5001 7.97156L4.24486 4.57566C4.18399 4.51205 4.1117 4.46159 4.03212 4.42715C3.95254 4.39272 3.86723 4.375 3.78108 4.375C3.69493 4.375 3.60963 4.39272 3.53005 4.42715C3.45047 4.46159 3.37817 4.51205 3.3173 4.57566Z"
+                      fill="#333333" fill-opacity="0.5" />
+                  </svg>
+                </div>
+
+                <div class="c-menu" id="voiceDropDownMenu" style="display: none;">
+                  <!-- Voice Joanna -->
+                  <div class="c-drop_item" data-value="Joanna">
+                    <img
+                      src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                      alt="Sophia" />
+                    <div>
+                      <div class="customtext-m custom-medium">
+                        <p style="color: #242424;">Sophia</p>
+                      </div>
+                      <div class="customtext-s custom-regular">
+                        <p style="color: #4D4950;">Female</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Voice Matthew -->
+                  <div class="c-drop_item" data-value="Matthew">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-david-img.png"
+                      alt="David" />
+                    <div>
+                      <div class="customtext-m custom-medium">
+                        <p style="color: #242424;">David</p>
+                      </div>
+                      <div class="customtext-s custom-regular">
+                        <p style="color: #4D4950;">Male</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Voice Amy -->
+                  <div class="c-drop_item" data-value="Amy">
+                    <img
+                      src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-Grace-img.png"
+                      alt="Grace" />
+                    <div>
+                      <div class="customtext-m custom-medium">
+                        <p style="color: #242424;">Grace</p>
+                      </div>
+                      <div class="customtext-s custom-regular">
+                        <p style="color: #4D4950;">Female</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Voice Brian -->
+                  <div class="c-drop_item" data-value="Brian">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-peter-img.png"
+                      alt="Peter" />
+                    <div>
+                      <div class="customtext-m custom-medium">
+                        <p style="color: #242424;">Peter</p>
+                      </div>
+                      <div class="customtext-s custom-regular">
+                        <p style="color: #4D4950;">Male</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Music Dropbown -->
+            <div class="bkg_music-dropdown d-flex align-items-center">
+              <div class="bkg_music-toggle d-flex align-items-center" id="bkg_music-dropdownButton">
+                <div class="d-inline-flex align-items-center">
+                  <div class="music-icon d-inline-flex align-items-center justify-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M14.6561 2.896V10.976C14.6549 11.5801 14.4488 12.166 14.0712 12.6376C13.6937 13.1092 13.1672 13.4386 12.578 13.572C11.9887 13.7052 11.3717 13.6346 10.8279 13.3714C10.2841 13.1082 9.84575 12.6682 9.58468 12.1235C9.32362 11.5787 9.25522 10.9614 9.39082 10.3726C9.52635 9.78396 9.85775 9.25869 10.3308 8.88296C10.8038 8.50715 11.3904 8.30316 11.9945 8.30436C12.5987 8.30549 13.1845 8.51176 13.6561 8.88936V6.22266L6.67608 7.48936V11.6894C6.67608 12.2168 6.51972 12.7323 6.2267 13.1708C5.93368 13.6094 5.5172 13.9512 5.02992 14.153C4.54266 14.3548 4.00648 14.4076 3.4892 14.3048C2.97191 14.2019 2.49676 13.9479 2.12382 13.575C1.75088 13.202 1.49692 12.7269 1.39402 12.2096C1.29112 11.6923 1.34392 11.1561 1.54575 10.6688C1.74759 10.1816 2.08938 9.76509 2.52791 9.47209C2.96644 9.17909 3.48202 9.02269 4.00944 9.02269C4.62171 9.02389 5.21494 9.23575 5.68945 9.62269V4.68266C5.68206 4.22175 5.8379 3.77308 6.12943 3.416C6.4281 3.0672 6.83768 2.8318 7.28942 2.74934L13.2227 1.66266C13.4913 1.61333 13.7686 1.65549 14.0104 1.7824C14.2521 1.9093 14.4442 2.11362 14.5561 2.36266C14.6304 2.53026 14.6647 2.71287 14.6561 2.896Z"
+                        fill="white" />
+                    </svg>
+                  </div>
+                  <div class="selected-music customtext-s custom-regular">
+                    <p id="select-music">No Background Music</p>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none"
+                  class="bgMusic-dropdownSVG">
+                  <path
+                    d="M3.3173 4.57566C3.25634 4.63918 3.20798 4.71462 3.17498 4.79766C3.14198 4.8807 3.125 4.96972 3.125 5.05962C3.125 5.14951 3.14198 5.23853 3.17498 5.32157C3.20798 5.40461 3.25634 5.48005 3.3173 5.54357L7.03631 9.42434C7.09719 9.48795 7.16948 9.53841 7.24906 9.57285C7.32864 9.60728 7.41395 9.625 7.5001 9.625C7.58625 9.625 7.67155 9.60728 7.75113 9.57285C7.83071 9.53841 7.90301 9.48795 7.96388 9.42434L11.6829 5.54357C11.7438 5.48002 11.7921 5.40457 11.8251 5.32153C11.858 5.23849 11.875 5.1495 11.875 5.05962C11.875 4.96974 11.858 4.88074 11.8251 4.7977C11.7921 4.71467 11.7438 4.63922 11.6829 4.57566C11.622 4.51211 11.5497 4.4617 11.4701 4.4273C11.3905 4.3929 11.3052 4.3752 11.2191 4.3752C11.133 4.3752 11.0477 4.3929 10.9681 4.4273C10.8885 4.4617 10.8162 4.51211 10.7553 4.57566L7.5001 7.97156L4.24486 4.57566C4.18399 4.51205 4.1117 4.46159 4.03212 4.42715C3.95254 4.39272 3.86723 4.375 3.78108 4.375C3.69493 4.375 3.60963 4.39272 3.53005 4.42715C3.45047 4.46159 3.37817 4.51205 3.3173 4.57566Z"
+                    fill="#333333" fill-opacity="0.5" />
+                </svg>
+              </div>
+
+              <ul class="bkg_music-menu" id="bkg_musicMenu">
+                <li>Select background music</li>
+                <li data-value="">No Background Music</li>
+                <li data-value="Country.mp3">Country</li>
+                <li data-value="dreamer.mp3">Dreamer</li>
+                <li data-value="Fresh.mp3">Fresh</li>
+                <li data-value="Waterfall.mp3">Waterfall</li>
+                <li data-value="Strings and Piano.mp3">Instrumental</li>
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- Audio Control div -->
+          <div class="voice-control d-flex align-items-center justify-content-between">
+            <!-- Audio Control Button -->
+            <div id="playButton" onclick="playAudio()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                <path
+                  d="M16.4987 2.3335C13.7957 2.3335 11.1534 3.135 8.90592 4.63672C6.65844 6.13843 4.90675 8.27288 3.87235 10.7701C2.83795 13.2674 2.56731 16.0154 3.09464 18.6664C3.62196 21.3175 4.92359 23.7526 6.83491 25.6639C8.74623 27.5752 11.1814 28.8768 13.8324 29.4042C16.4835 29.9315 19.2315 29.661 21.7287 28.6266C24.226 27.5922 26.3604 25.8404 27.862 23.593C29.3638 21.3455 30.1654 18.7032 30.1654 16.0002C30.1618 12.3766 28.7208 8.90248 26.1586 6.34026C23.5964 3.77802 20.1223 2.33703 16.4987 2.3335ZM22.232 16.4268C22.1086 16.6875 21.9259 16.9158 21.6987 17.0935L15.352 22.0268C15.0847 22.2407 14.7599 22.3706 14.4187 22.4002H14.232C13.9548 22.3972 13.6818 22.3335 13.432 22.2135C13.1231 22.0579 12.8609 21.8232 12.672 21.5335C12.4973 21.2388 12.4052 20.9027 12.4053 20.5602V11.4001C12.4024 11.0717 12.49 10.7487 12.6587 10.4668C12.8295 10.1799 13.0795 9.9484 13.3787 9.80018C13.6622 9.63931 13.9867 9.56514 14.312 9.58683C14.6443 9.59587 14.9676 9.69746 15.2454 9.88016L21.592 14.1202C21.8359 14.2779 22.0374 14.4931 22.1787 14.7468C22.3218 14.9992 22.3996 15.2834 22.4054 15.5735C22.4151 15.8676 22.3558 16.1599 22.232 16.4268Z"
+                  fill="#8733FF" />
+              </svg>
+            </div>
+
+            <!-- waveform container -->
+            <div id="waveform"></div>
+
+            <!-- Audio Progress bar container -->
+            <div id="audio-progress-container">
+              <div id="audio-progress-bar"></div>
+            </div>
+
+            <!-- Audio Download Button -->
+            <button id="downloadButton" onclick="downloadAudio()" class="d-flex align-items-center" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 12.6981V2.67725" stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"
+                  stroke-linecap="round" />
+                <path
+                  d="M6.14453 9.16162L9.44945 12.4665C9.59561 12.6113 9.79303 12.6925 9.9987 12.6925C10.2044 12.6925 10.4018 12.6113 10.5479 12.4665L13.8529 9.16162"
+                  stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M2.29297 11.5415V15.3957C2.29297 15.9068 2.496 16.3969 2.8574 16.7583C3.21879 17.1197 3.70896 17.3228 4.22005 17.3228H15.7825C16.2936 17.3228 16.7838 17.1197 17.1452 16.7583C17.5066 16.3969 17.7096 15.9068 17.7096 15.3957V11.5415"
+                  stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg> Download
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="error-div d-flex align-items-center justify-content-center">
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  let previousText = "", audioUrl = "", lastText = "", lastVoice = "", lastMusic = "";
+  const sourceKrispCall = "KrispCall";
+
+
+  // Voice DropDown
+  const voiceDropDown = document.getElementById("c-dropdownButton");
+  const voiceDropDownMenu = document.getElementById("voiceDropDownMenu");
+  const voiceDropDownSVG = document.querySelector("#c-dropdownButton svg");
+  const voiceItems = document.querySelectorAll(".c-drop_item");
+  // initial Voice
+  let selectedVoice = "Joanna";
+
+  // Music DropDown
+  const bgMusicDropDown = document.getElementById('bkg_music-dropdownButton');
+  const musicDropDownSVG = document.querySelector(".bgMusic-dropdownSVG");
+  const bgMusicMenu = document.getElementById('bkg_musicMenu');
+  const selectMusic = document.getElementById('select-music');
+  const menuItems = bgMusicMenu.querySelectorAll('li');
+  // initial Music
+  let selectedBGMusic = "";
+
+  const svgPlayIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+  <path d="M16.4987 2.3335C13.7957 2.3335 11.1534 3.135 8.90592 4.63672C6.65844 6.13843 4.90675 8.27288 3.87235 10.7701C2.83795 13.2674 2.56731 16.0154 3.09464 18.6664C3.62196 21.3175 4.92359 23.7526 6.83491 25.6639C8.74623 27.5752 11.1814 28.8768 13.8324 29.4042C16.4835 29.9315 19.2315 29.661 21.7287 28.6266C24.226 27.5922 26.3604 25.8404 27.862 23.593C29.3638 21.3455 30.1654 18.7032 30.1654 16.0002C30.1618 12.3766 28.7208 8.90248 26.1586 6.34026C23.5964 3.77802 20.1223 2.33703 16.4987 2.3335ZM22.232 16.4268C22.1086 16.6875 21.9259 16.9158 21.6987 17.0935L15.352 22.0268C15.0847 22.2407 14.7599 22.3706 14.4187 22.4002H14.232C13.9548 22.3972 13.6818 22.3335 13.432 22.2135C13.1231 22.0579 12.8609 21.8232 12.672 21.5335C12.4973 21.2388 12.4052 20.9027 12.4053 20.5602V11.4001C12.4024 11.0717 12.49 10.7487 12.6587 10.4668C12.8295 10.1799 13.0795 9.9484 13.3787 9.80018C13.6622 9.63931 13.9867 9.56514 14.312 9.58683C14.6443 9.59587 14.9676 9.69746 15.2454 9.88016L21.592 14.1202C21.8359 14.2779 22.0374 14.4931 22.1787 14.7468C22.3218 14.9992 22.3996 15.2834 22.4054 15.5735C22.4151 15.8676 22.3558 16.1599 22.232 16.4268Z" fill="#8733FF"/>
+</svg>`;
+  const svgPausedicon = `<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+  <path d="M6.67176 25.4941C5.36662 24.2335 4.32559 22.7257 3.60942 21.0585C2.89325 19.3913 2.51628 17.5982 2.50052 15.7837C2.48475 13.9693 2.8305 12.1699 3.51759 10.4905C4.20467 8.81115 5.21934 7.28543 6.50239 6.00239C7.78543 4.71934 9.31115 3.70467 10.9905 3.01759C12.6699 2.3305 14.4693 1.98475 16.2837 2.00052C18.0982 2.01628 19.8913 2.39325 21.5585 3.10942C23.2257 3.82559 24.7335 4.86662 25.9941 6.17176C28.4833 8.74901 29.8606 12.2008 29.8295 15.7837C29.7983 19.3667 28.3612 22.794 25.8276 25.3276C23.294 27.8612 19.8667 29.2983 16.2837 29.3295C12.7008 29.3606 9.24901 27.9833 6.67176 25.4941ZM12.9167 10.3669C12.5393 10.3669 12.2334 10.6728 12.2334 11.0502V20.6157C12.2334 20.993 12.5393 21.2989 12.9167 21.2989H14.2832C14.6605 21.2989 14.9664 20.993 14.9664 20.6157V11.0502C14.9664 10.6728 14.6605 10.3669 14.2832 10.3669H12.9167ZM18.3827 10.3669C18.0053 10.3669 17.6994 10.6728 17.6994 11.0502V20.6157C17.6994 20.993 18.0053 21.2989 18.3827 21.2989H19.7492C20.1265 21.2989 20.4324 20.993 20.4324 20.6157V11.0502C20.4324 10.6728 20.1265 10.3669 19.7492 10.3669H18.3827Z" fill="#8733FF"/>
+</svg>`;
+
+  // Voice Dropdown menu toggle
+  function toggleVoiceDropdown() {
+    voiceDropDownMenu.style.display = voiceDropDownMenu.style.display === "block" ? "none" : "block";
+    voiceDropDownSVG.style.transform = voiceDropDownSVG.style.transform === "rotate(-180deg)" ? "rotate(0deg)" : "rotate(-180deg)";
+  }
+
+  voiceDropDown.addEventListener("click", () => {
+    toggleVoiceDropdown()
+  })
+
+  voiceItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      selectedVoice = item.dataset.value;
+      voiceDropDown.querySelector("img").src = item.querySelector("img").src;
+      toggleVoiceDropdown()
+    });
+  });
+  // Voice Dropdown menu end
+
+  // Music Dropdown menu
+  function toggleMusicDropDown() {
+    bgMusicMenu.style.display = bgMusicMenu.style.display === "block" ? "none" : "block";
+    musicDropDownSVG.style.transform = musicDropDownSVG.style.transform === "rotate(-180deg)" ? "rotate(0deg)" : "rotate(-180deg)";
+  }
+
+  bgMusicDropDown.addEventListener("click", () => {
+    toggleMusicDropDown();
+  })
+
+  // Add event listeners to each <li> item except first <li>
+  menuItems.forEach((item, index) => {
+    if (index > 0) {
+      item.addEventListener("click", () => {
+        selectedBGMusic = item.dataset.value;
+        selectMusic.textContent = item.textContent;
+        toggleMusicDropDown();
+      });
+    }
+  });
+  // Music Dropdown menu end
+
+  // Event Listener for click out side Dropdown menus 
+  document.addEventListener("click", function (event) {
+
+    if (!document.querySelector(".custom-dropdown").contains(event.target)) {
+      voiceDropDownMenu.style.display = "none";
+      voiceDropDownSVG.style.transform = "rotate(0deg)";
+    }
+    if (!document.querySelector(".bkg_music-dropdown").contains(event.target)) {
+      bgMusicMenu.style.display = "none";
+      musicDropDownSVG.style.transform = "rotate(0deg)";
+    }
+  });
+
+  // Function to update character count
+  function updateCharacterCount() {
+    const textArea = document.getElementById("text");
+    const maxLength = 300;
+    const currentLength = textArea.value.length;
+
+    if (currentLength > maxLength) {
+      textArea.value = previousText;
+    } else {
+      previousText = textArea.value;
+      document.getElementById(
+        "charCount"
+      ).innerText = `${currentLength}/${maxLength}`;
+    }
+  }
+
+  // Load wavesurfer
+  const wavesurfer = WaveSurfer.create({
+    container: "#waveform",
+  });
+
+  async function playAudio() {
+    const text = document.getElementById("text").value;
+    const voice = selectedVoice;
+    const playButton = document.getElementById("playButton");
+    const downloadButton = document.getElementById("downloadButton");
+    const bgMusic = selectedBGMusic;
+
+    if (!text.trim()) {
+      alert("Please enter some text.");
+      return;
+    }
+
+    if (text === lastText && voice === lastVoice && bgMusic === lastMusic && audioUrl) {
+      if (wavesurfer.isPlaying()) {
+        wavesurfer.pause(); // If playing, pause it
+        playButton.innerHTML = svgPlayIcon;
+      } else {
+        wavesurfer.play(); // If paused, play it
+        playButton.innerHTML = svgPausedicon;
+      }
+      return;
+    }
+
+    downloadButton.disabled = true;
+
+    try {
+      playButton.innerHTML =
+        '<div class="c-spiner"><span class="c-loader"></span><div>';
+      playButton.style.pointerEvents = "none";
+
+      const response = await fetch(
+        `https://freetools.marktivities.guru/phone/voiceMail/?sentence=${encodeURIComponent(
+          text
+        )}&voice=${encodeURIComponent(voice)}&source=${sourceKrispCall}&bgMusic=${encodeURIComponent(bgMusic)}`
+      );
+
+      if (response.ok) {
+        const audioBlob = await response.blob();
+        audioUrl = URL.createObjectURL(audioBlob);
+
+        wavesurfer.load(audioUrl);
+        wavesurfer.on("ready", function () {
+          wavesurfer.play();
+          wavesurfer.setOptions({ interact: true });
+        });
+
+        // Change button playback completes
+        wavesurfer.on("finish", function () {
+          playButton.innerHTML = svgPlayIcon;
+        });
+
+        // Update the progress bar as the audio plays
+        wavesurfer.on("audioprocess", function () {
+          var audiocurrentTime = wavesurfer.getCurrentTime(); // Get the current playback time
+          var audioduration = wavesurfer.getDuration(); // Get the total duration of the audio
+
+          // Calculate progress as a percentage
+          var audioprogress = (audiocurrentTime / audioduration) * 100;
+
+          // Update the progress bar width
+          var audioprogressBar = document.getElementById("audio-progress-bar");
+          audioprogressBar.style.width = audioprogress + "%";
+        });
+
+        lastText = text;
+        lastVoice = voice;
+        lastMusic = bgMusic;
+
+        playButton.innerHTML = svgPausedicon;
+
+        playButton.style.pointerEvents = "auto";
+        downloadButton.disabled = false;
+      } else {
+        if (response.status === 403) {
+
+          const textToVoice = document.querySelector(".text-to-voice");
+          const errorDiv = document.querySelector(".error-div");
+
+          if (textToVoice) {
+            textToVoice.style.filter = "blur(2.5px)";
+          } else {
+            console.error("Element '.text-to-voice' not found.");
+          }
+
+          if (errorDiv) {
+            errorDiv.innerHTML = `
+      <div class="error_message-div">
+        <div class="limit-head customtext-l custom-medium" style="margin-bottom: 8px;">
+          <p style="color: #242424;">Maximum Limit Reached</p>
+        </div>
+        <div class="limit-text customtext-s custom-regular" style="margin-bottom: 24px;">
+          <p style="color: #4D4950;">You have reached the maximum limit for generating text-to-speech responses.</p>
+        </div>
+        <a class="unlock-now d-flex align-items-center justify-content-center" href="https://krispcall.com/request-api-for-free-tools/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <mask id="mask0_758_2367" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+              <path d="M20 0H0V20H20V0Z" fill="white" />
+            </mask>
+            <g mask="url(#mask0_758_2367)">
+              <path
+                d="M19.6 10.2273C19.6 9.51822 19.5364 8.83642 19.4182 8.18182H10V12.05H15.3818C15.15 13.3 14.4455 14.3591 13.3864 15.0682V17.5773H16.6182C18.5091 15.8364 19.6 13.2727 19.6 10.2273Z"
+                fill="#4285F4" />
+              <path
+                d="M9.99988 20C12.6999 20 14.9635 19.1045 16.618 17.5773L13.3862 15.0682C12.4908 15.6682 11.3453 16.0227 9.99988 16.0227C7.39528 16.0227 5.19078 14.2636 4.40438 11.9H1.06348V14.4909C2.70898 17.7591 6.09078 20 9.99988 20Z"
+                fill="#34A853" />
+              <path
+                d="M4.4045 11.9C4.2045 11.3 4.0909 10.6591 4.0909 9.99999C4.0909 9.34089 4.2045 8.69999 4.4045 8.09999V5.50909H1.0636C0.3864 6.85909 0 8.38639 0 9.99999C0 11.6136 0.3864 13.1409 1.0636 14.4909L4.4045 11.9Z"
+                fill="#FBBC04" />
+              <path
+                d="M9.99988 3.9773C11.468 3.9773 12.7862 4.4818 13.8226 5.4727L16.6908 2.6045C14.959 0.9909 12.6953 0 9.99988 0C6.09078 0 2.70898 2.2409 1.06348 5.5091L4.40438 8.1C5.19078 5.7364 7.39528 3.9773 9.99988 3.9773Z"
+                fill="#E94235" />
+            </g>
+          </svg> Unlock now
+        </a>
+      </div>
+    `;
+            errorDiv.style.zIndex = "1";
+          } else {
+            console.error("Element '.error-div' not found.");
+          }
+        }
+        document.getElementById("limit-msg").classList.add("show");
+        playButton.innerHTML = svgPlayIcon;
+
+        playButton.style.pointerEvents = "auto";
+        alert("Error: Unable to generate audio.");
+      }
+    } catch (error) {
+      console.error("Failed to load audio:", error);
+      playButton.innerHTML = svgPlayIcon;
+
+      playButton.style.pointerEvents = "auto";
+      alert("Error: Unable to generate audio.");
+    }
+  }
+
+  function downloadAudio() {
+    if (!audioUrl) {
+      alert("No audio available to download.");
+      return;
+    }
+    const downloadLink = document.createElement("a");
+    downloadLink.href = audioUrl;
+    downloadLink.download = "generated_audio_Krispcall.mp3";
+    downloadLink.click();
+  }
+</script>
+
+
+</html>

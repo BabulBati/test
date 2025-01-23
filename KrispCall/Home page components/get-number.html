@@ -1,0 +1,100 @@
+<style>
+    .container-virtual-search:not(.container-virtual-search .container-virtual-search)>div {
+        border-radius: 16px;
+        border: 1px solid rgba(209, 212, 220, 0.50);
+        background: #FFF;
+    }
+
+    table td,
+    th {
+        color: #4D4950 !important;
+    }
+
+    table tr td {
+        background: transparent !important;
+    }
+
+    table tbody tr:hover {
+        background: #F6F7F9 !important;
+    }
+
+    .icon.btn-type {
+        color: #fff !important;
+    }
+
+    tbody .border-none td.icon.btn-abilities {
+        color: #4D4950 !important;
+        border-radius: 4px !important;
+        border: 1px solid #D1D4DC !important;
+    }
+
+    .card-table p {
+        color: #4D4950 !important;
+    }
+
+    .maps-div {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+
+    .maps-div>img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+
+    .left-map {
+        left: -18.7%;
+        aspect-ratio: 401/382;
+    }
+
+    .right-map {
+        right: 0;
+        aspect-ratio: 272/382;
+    }
+</style>
+<div class="container-virtual-search position-relative">
+    <div class="maps-div position-absolute">
+        <img src="/wp-content/themes/mitech/src/assets/images/world-map.png" alt="" class="left-map">
+        <img src="/wp-content/themes/mitech/src/assets/images/world-map-2.png" alt="" class=" right-map">
+    </div>
+    <div class="search-form search-form--table item-center two-col py-5 min-h-494">
+        <div class="center-item block-relative">
+            <div class="align-items-center d-flex pl-0 max-527">
+                <div class="text-center">
+                    <h2 style="color: #242424;">Get a Virtual Number</h2>
+                    <p style="color: #4D4950;">Get local, mobile, and toll-free virtual phone numbers from
+                        100+ countries and expand
+                        your business worldwide.</p>
+                </div>
+            </div>
+            <div class="p-0 mt-5">
+                <div class="search-num search-num--table" id="search-num">
+                    <form action="#" id="search-number" class="max-527">
+                        <div class="form-row justify-content-center m-0">
+                            <div class="col-md col-fixed-width p-0">
+                                <div class="form-group form-ccwrapper text-left mb-0">
+                                    <input type="text" class="form-control" id="phoneNum" name="phone-num" required>
+                                </div>
+                            </div>
+                            <div class="col-auto ml-2 ml-md-0 pr-0">
+                                <div class="form-action text-center">
+                                    <button class="btn btn-primary-lt" id="search-open">Search<span
+                                            class="preloader preloader-sm"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="search-results collapse" id="search-results">
+                        <div class="selected-list selected-list-table" id="selected-list">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

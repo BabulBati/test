@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Animation</title>
+    <style>
+        p {
+            margin: 0;
+            font-size: 40px;
+            line-height: 150%;
+        }
+
+        :root {
+            --font-size: 48px;
+        }
+
+        h1.test {
+            margin: 0;
+            font-size: var(--font-size);
+            letter-spacing: -0.02rem;
+            font-weight: 700;
+            line-height: 130%;
+            text-align: center;
+        }
+
+        .r-div {
+            display: flex !important;
+            justify-content: center;
+            position: relative;
+            /* background-color: red; */
+            transition: height 0.3s ease;
+        }
+
+        .r-div span {
+            position: absolute;
+            opacity: 0;
+            will-change: transform, opacity;
+            color: #8733ff;
+            text-rendering: geometricPrecision;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100%;
+            text-align: center;
+            transform-origin: top;
+        }
+
+        .flip-out {
+            animation: outAnimation 1.3s ease;
+        }
+
+        .flip-in {
+            animation: inAnimation 1.3s ease;
+        }
+
+        @keyframes inAnimation {
+            0% {
+                transform: rotateX(90deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotateX(0deg) translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes outAnimation {
+            0% {
+                transform: rotateX(0deg) translateY(0px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotateX(90deg) translateY(calc(-1 * var(--font-size)));
+                opacity: 0.5;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --font-size: 28px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1 class="test"><span style="color: #8733ff;">AI powered</span> modern phone app for your
+        <br><span class="r-div">
+            <span style="opacity: 1;">CRM Platform</span>
+            <span>Customer Engagement Tool</span>
+            <span>Sales Automation Solution</span>
+            <span>Customer Support Software</span>
+            <span>Helpdesk System</span>
+            <span>Marketing Automation Suite</span>
+            <span>Business Communication Hub</span>
+            <span>Contact Center Software</span>
+            <span>Customer Experience Platform</span>
+            <span>Lead Management System</span>
+        </span>
+    </h1>
+    <p>haha hehe huhu dudu </p>
+
+    <script>
+        $(document).ready(function () {
+            var totalSpans = $('.r-div span').length;
+            var currentIndex = 0;
+
+            function adjustRDivHeight(index) {
+                var $span = $('.r-div span').eq(index);
+                var spanHeight = $span.outerHeight();
+                $('.r-div').css('height', spanHeight + 'px');
+            }
+
+            function animateSpans() {
+                var $currentSpan = $('.r-div span').eq(currentIndex);
+                var $nextSpan = $('.r-div span').eq((currentIndex + 1) % totalSpans);
+
+                $currentSpan.addClass('flip-out');
+                $nextSpan.addClass('flip-in');
+
+                $currentSpan.css('opacity', '0');
+                $nextSpan.css('opacity', '1');
+
+                // Adjust the height dynamically during the animation
+                adjustRDivHeight((currentIndex + 1) % totalSpans);
+
+                setTimeout(function () {
+                    $currentSpan.removeClass('flip-out');
+                    $nextSpan.removeClass('flip-in');
+
+                    currentIndex = (currentIndex + 1) % totalSpans;
+
+                    setTimeout(animateSpans, 1000);
+                }, 2000);
+            }
+
+            // Initial height adjustment based on the first visible span
+            adjustRDivHeight(0);
+
+            // Start the animation
+            setTimeout(animateSpans, 1000);
+
+            // Recalculate height on window resize
+            $(window).resize(function () {
+                adjustRDivHeight(currentIndex);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

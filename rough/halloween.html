@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Images with Random Timing</title>
+    <style>
+        #imageContainer {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .moving-image {
+            position: absolute;
+            bottom: -150px;
+            animation: moveUp linear;
+            width: 150px;
+        }
+
+        @keyframes moveUp {
+            0% {
+                bottom: -150px;
+            }
+
+            100% {
+                bottom: 100vh;
+            }
+        }
+
+        /* Positioning the button set at the bottom center */
+        .button-set {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            gap: 8px;
+            background-color: #FF5722;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-set>div {
+            cursor: pointer;
+        }
+
+        .button-set>div img {
+            width: 24px;
+            /* Adjust size as needed */
+            height: 24px;
+            /* Maintain aspect ratio */
+        }
+
+        /* Share Popup Styling */
+        .share-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            z-index: 1000;
+        }
+
+        .share-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .close-popup {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .share-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .share-option {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .share-option:hover {
+            text-decoration: underline;
+        }
+
+        .share-link {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        #shareLink {
+            width: 100%;
+            padding: 6px;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container for flying bats -->
+    <div id="imageContainer"></div>
+
+    <!-- Buttons  -->
+    <div id="buttonSet" class="button-set">
+        <div  onclick="closeButtonSet()">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/10/close_dm.png" alt="Close"
+                class="icon-close">
+        </div>
+        <div  onclick="flyBats()" id="addImageButton">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/10/bat.png" alt="Fly Bats" class="icon-bat">
+        </div>
+        <div  onclick="toggleSharePopup()">
+            <img src="https://staging.krispcall.com/wp-content/uploads/2024/10/close_dm.png" alt="Share"
+                class="icon-share">
+        </div>
+    </div>
+
+    <!-- Share Popup -->
+    <div id="sharePopup" class="share-popup">
+        <div class="share-header">
+            <span>Share</span>
+            <button onclick="toggleSharePopup()" class="close-popup">✖</button>
+        </div>
+        <div class="share-options">
+            <a href="#" onclick="shareOnFacebook()" class="share-option">Facebook</a>
+            <a href="#" onclick="shareOnWhatsApp()" class="share-option">WhatsApp</a>
+            <a href="#" onclick="shareOnTwitter()" class="share-option">X</a>
+            <a href="mailto:?subject=Check this out&body=Visit https://yourwebsite.com" class="share-option">Email</a>
+        </div>
+        <div class="share-link">
+            <span>Click to copy link</span>
+            <input type="text" value="https://yourwebsite.com" id="shareLink" readonly onclick="copyLink()">
+        </div>
+    </div>
+
+    <script>
+       
+            const container = document.getElementById('imageContainer');
+            const addImageButton = document.getElementById('addImageButton');
+            const numImages = 15;
+    
+            // Close the entire button set
+            function closeButtonSet() {
+                document.getElementById("buttonSet").style.display = "none";
+            }
+    
+            // Function to create and add a moving image
+            function addMovingImage() {
+                const img = document.createElement('img');
+                img.src = 'https://i.pinimg.com/originals/d9/7a/6d/d97a6d99e7bde5141805653993793a9f.gif';
+                img.alt = 'Moving Image';
+                img.className = 'moving-image';
+    
+                // Generate a random horizontal position within the container's width
+                const randomLeft = Math.random() * (window.innerWidth - 150); // Subtract image width
+                img.style.left = `${randomLeft}px`; // Set the random horizontal position
+    
+                // Generate a random animation duration between 3s and 10s
+                const randomDuration = Math.random() * 7 + 3; // Random duration between 3s and 10s
+                img.style.animationDuration = `${randomDuration}s`; // Set the random duration
+    
+                // Append the image to the container
+                container.appendChild(img);
+            }
+    
+            // Display images with random intervals
+            function displayBats() {
+                for (let i = 0; i < numImages; i++) {
+                    const randomDelay = Math.random() * 3000;
+                    setTimeout(addMovingImage, randomDelay);
+                }
+            }
+    
+            // Initialize with a certain number of images
+            displayBats();
+    
+            // Add event listener to the button
+            addImageButton.addEventListener('click', displayBats);
+    
+            // Toggle the share popup visibility
+            function toggleSharePopup() {
+                const popup = document.getElementById("sharePopup");
+                popup.style.display = popup.style.display === "none" || !popup.style.display ? "block" : "none";
+            }
+    
+            // Share on Facebook
+            function shareOnFacebook() {
+                const url = encodeURIComponent("https://yourwebsite.com");
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank", "width=600,height=400");
+            }
+    
+            // Share on WhatsApp
+            function shareOnWhatsApp() {
+                const url = encodeURIComponent("https://yourwebsite.com");
+                window.open(`https://api.whatsapp.com/send?text=${url}`, "_blank", "width=600,height=400");
+            }
+    
+            // Share on Twitter (X)
+            function shareOnTwitter() {
+                const url = encodeURIComponent("https://yourwebsite.com");
+                const text = encodeURIComponent("Check out this amazing website!");
+                window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, "_blank", "width=600,height=400");
+            }
+    
+            // Copy link to clipboard
+            function copyLink() {
+                const shareLink = document.getElementById("shareLink");
+                shareLink.select();
+                shareLink.setSelectionRange(0, 99999); // For mobile devices
+                document.execCommand("copy");
+                alert("Link copied to clipboard!");
+            }
+    
+            // Hide button set on scroll
+            window.addEventListener('scroll', function () {
+                const buttonSet = document.getElementById("buttonSet");
+    
+                // Check if page is scrolled from top
+                if (window.scrollY > 0) {
+                    buttonSet.style.display = "none";
+                } else {
+                    buttonSet.style.display = "flex";
+                }
+            });
+       
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+/* typography */
+/* Headings */
+.customtypo-heading {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 130% !important;
+        font-family: "Manrope";
+    }
+
+    h1 {
+        font-size: 48px !important;
+    }
+    h2 {
+        font-size: 40px !important;
+    }
+    h3 {
+        font-size: 32px !important;
+    }
+    h4 {
+        font-size: 24px !important;
+    }
+    h5 {
+        font-size: 20px !important;
+    }
+    h6 {
+        font-size: 18px !important;
+    }
+    &.custom-regular {
+        h4,
+        h5,
+        h6 {
+            font-weight: 400 !important;
+        }
+    }
+    &.custom-semibold {
+        h5,
+        h6 {
+            font-weight: 600 !important;
+        }
+    }
+}
+
+/* Paragraph and text */
+.customtext {
+    &-2xl,
+    &-xl,
+    &-l,
+    &-m,
+    &-s {
+        p {
+            font-family: "Inter" !important;
+            letter-spacing: -0.02em;
+        }
+        &.custom-regular p{
+            font-weight: 400;
+        }
+        &.custom-medium p{
+            font-weight: 500;
+        }
+        &.custom-semibold p{
+            font-weight: 600;
+        }
+    }
+    &-xl,
+    &-l,
+    &-m,
+    &-s {
+        p {
+            line-height: 150% !important;
+        }
+    }
+    &-2xl p {
+        line-height: 130%;
+        font-size: 24px !important;
+    }
+    &-xl p {
+        font-size: 20px !important;
+    }
+    &-l p {
+        font-size: 18px !important;
+    }
+    &-m p {
+        font-size: 16px !important;
+    }
+    &-s p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .customtypo-heading {
+        h1,
+        h2 {
+            font-size: 32px !important;
+        }
+        h3 {
+            font-size: 24px !important;
+        }
+        h4 {
+            font-size: 20px !important;
+        }
+        h5 {
+            font-size: 18px !important;
+        }
+        h6 {
+            font-size: 16px !important;
+        }
+    }
+
+    .customtext {
+        &-2xl p {
+            font-size: 20px !important;
+        }
+        &-xl p {
+            font-size: 18px !important;
+        }
+        &-l p {
+            font-size: 16px !important;
+        }
+        &-m p {
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .customtypo-heading {
+        h1,
+        h2 {
+            font-size: 28px !important;
+        }
+
+        h3 {
+            font-size: 20px !important;
+        }
+        h4,
+        h5 {
+            font-size: 16px !important;
+        }
+        h6 {
+            font-size: 14px !important;
+        }
+    }
+
+    .customtext {
+        &-2xl p {
+            font-size: 18px !important;
+        }
+        &-xl p {
+            font-size: 16px !important;
+        }
+        &-l p {
+            font-size: 14px !important;
+        }
+    }
+}
+/* typography end */

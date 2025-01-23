@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap");
+
+.search-section-coverage {
+    text-align: center;
+    max-width: 410px;
+    margin: 32px auto;
+    width: 100%;
+    gap: 16px;
+    align-items: center;
+
+    #search-button-coverage {
+        padding: 16px 24px;
+        background-color: #8733ff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: "Inter";
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        border-radius: 8px;
+        height: 52px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.tabs-coverage {
+    text-align: center;
+    & > div {
+        background-color: #f9f9f9;
+        justify-content: center;
+        padding: 12px;
+        gap: 12px;
+        display: inline-flex;
+        border-radius: 12px;
+    }
+}
+
+.tab-coverage {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #242424;
+    border: none !important;
+    border-radius: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    .check__iocn {
+        display: none;
+    }
+    &.active {
+        background-color: #3374ff;
+        color: #fff;
+        .check__iocn {
+            display: inline-flex;
+        }
+    }
+}
+.countries-coverage {
+    max-width: 846px;
+    margin: 0 auto;
+}
+.country-coverage {
+    display: none; /* Hidden by default */
+    border-right: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+}
+
+.country-coverage.active {
+    display: block;
+}
+
+.country-header-coverage {
+    background-color: #f9f9f9;
+    padding: 16px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Align chevron to the right */
+    align-items: center;
+    transition: background-color 0.3s ease;
+    &:not(.active):hover {
+        background-color: #f4f4f4;
+    }
+    &.active {
+        border-bottom: 1px solid #ebebeb;
+        .chevron-coverage svg {
+            transform: rotate(0);
+        }
+    }
+    .chevron-coverage svg {
+        transition: transform 0.3s ease;
+        transform: rotate(180deg);
+    }
+    .country-name-coverage {
+        display: flex;
+        align-items: center;
+        flex-grow: 1; /* Allows text and flag to occupy space to the left */
+        a {
+            text-decoration: none;
+            margin: 0;
+            color: #4d4950;
+            font-family: "Inter";
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+            &:hover{
+                color: #8733FF !important;
+            }
+        }
+    }
+    .flag-coverage {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+}
+
+.country-details-coverage {
+    display: none;
+    background-color: #fff;
+    ul {
+        margin: 0;
+        list-style: none !important;
+        padding: 0;
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            transition: background-color 0.2s ease;
+            &:hover {
+                background-color: #f4eefa;
+            }
+            p {
+                display: inline-flex;
+                align-items: center;
+                margin: 0;
+                font-family: "Inter";
+                font-size: 14px;
+                line-height: 150%;
+                letter-spacing: -0.02em;
+                font-weight: 500;
+                color: #4d4950;
+                &:first-child {
+                    gap: 6px;
+                }
+                &:last-child {
+                    gap: 16px;
+                }
+            }
+        }
+    }
+    &.open {
+        display: block;
+        ul li {
+            border-bottom: 1px solid #ebebeb;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// Search
+.coverage-search-input {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    input {
+        padding: 16px 24px 16px 16px;
+        height: 52px;
+        border-radius: 8px;
+        border: 1px solid #d1d4dc !important;
+        background: #fff !important;
+        flex-grow: 1;
+        font-family: "Inter" !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 20px !important;
+        letter-spacing: -0.01em !important;
+        color: #242424 !important;
+        &:focus-visible {
+            outline: none !important;
+        }
+        &::placeholder {
+            color: #a8a8a8 !important;
+        }
+    }
+
+    #clear-button-coverage {
+        background: none;
+        border: none;
+
+        cursor: pointer;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 !important;
+        line-height: 100%;
+        svg {
+            height: 32px;
+            width: 32px;
+        }
+    }
+}
+
+.coverage-tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .tooltip_i_div,
+    .tooltip_doc_div {
+        display: none;
+        position: absolute;
+        top: 100%;
+        padding-top: 8px;
+        z-index: 1;
+    }
+    .tooltip_i_div {
+        left: 0;
+        width: 162px;
+    }
+    .tooltip_doc_div {
+        right: 0;
+        width: 336px;
+        .tooltip_text {
+            max-height: 300px;
+            overflow-y: scroll;
+
+            /* Style the entire scrollbar */
+            &::-webkit-scrollbar {
+                width: 8px; /* Horizontal scrollbar width */
+            }
+
+            /* Style the track (background) */
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            /* Style the thumb (the draggable part) */
+            &::-webkit-scrollbar-thumb {
+                background: #5e5e5e; /* Darker thumb color */
+                border-radius: 50rem;
+            }
+
+            /* Optional: Style the button on the scrollbar (usually arrows) */
+            &::-webkit-scrollbar-button {
+                background-color: transparent;
+                height: 8px;
+            }
+        }
+    }
+    .tooltip_text {
+        padding: 8px 12px;
+        background-color: #242424;
+        color: #ffffff;
+        font-size: 12px;
+        font-family: "Inter";
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        border-radius: 8px;
+        display: block;
+    }
+
+    &:hover {
+        svg path {
+            fill: #242424;
+        }
+        .tooltip_i_div,
+        .tooltip_doc_div {
+            display: block;
+        }
+    }
+}
+
+.contact_support-text {
+    cursor: pointer;
+    &:hover {
+        color: #3374ff !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .search-section-coverage {
+        max-width: 527px;
+        margin: 64px auto 24px;
+    }
+
+    .coverage-search-input {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        input {
+            font-size: 14px !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .search-section-coverage {
+        max-width: 100%;
+        margin: 48px auto 20px;
+        gap: 12px;
+
+        #search-button-coverage {
+            padding: 12px 24px;
+            height: 44px;
+        }
+    }
+
+    .coverage-search-input {
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        min-width: 0;
+        input {
+            padding: 12px 24px 12px 16px;
+            height: 44px;
+            min-width: 0 !important;
+        }
+
+        #clear-button-coverage {
+            font-size: 20px;
+
+            svg {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+
+    .tabs-coverage {
+        text-align: unset;
+        overflow: scroll;
+        scrollbar-width: none; /* Firefox-specific */
+        -ms-overflow-style: none; /* IE and Edge */
+        scroll-behavior: smooth; /* Smooth scroll effect */
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        & > div {
+            justify-content: flex-start;
+        }
+    }
+
+    .country-details-coverage ul li {
+        gap: 12px;
+        position: relative;
+    }
+
+    .coverage-tooltip {
+        position: unset;
+        
+        .tooltip_i_div,
+        .tooltip_doc_div {
+            top: 70%;
+            padding: 5px;
+        }
+        .tooltip_i_div {
+            width: 100%;
+        }
+        .tooltip_doc_div {
+            width: 100%;
+        }
+    }
+}

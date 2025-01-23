@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrispCall hero Slider</title>
+  <style>
+    body {
+      background-color: #280155;
+    }
+
+    .hero-mobile-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      padding-top: 8px;
+      overflow: hidden;
+      justify-content: center;
+      gap: 17px;
+    }
+
+    .mobile-slider-container {
+      padding-top: 18px;
+      width: 271px;
+      height: 334px;
+    }
+
+    .mobile-slider {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Slides */
+    .mobile-slide {
+      position: absolute;
+    }
+
+    .mobile-slide img {
+      width: 100%;
+    }
+
+    .mobile-slide:nth-child(1) {
+      z-index: 3;
+      transform: scale(1);
+      filter: brightness(100%);
+    }
+
+    .mobile-slide:nth-child(2) {
+      z-index: 2;
+      top: -26px;
+      transform: scale(0.9);
+      filter: brightness(55%);
+    }
+
+    .mobile-slide:nth-child(3) {
+      z-index: 1;
+      top: -51px;
+      transform: scale(0.8);
+      filter: brightness(35%);
+    }
+
+    /* Next and Previous Buttons */
+    .mobile-nextButton,
+    .mobile-prevButton {
+      z-index: 4;
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: transparent;
+      border: none;
+    }
+
+    .mobile-nextButton svg:active,
+    .mobile-prevButton svg:active {
+      scale: 0.8;
+    }
+
+    /* Animations */
+    @keyframes slideLeftAnimation {
+      0% {
+        transform: scaleX(1) translateX(0);
+        z-index: 3;
+        top: 0;
+        filter: brightness(100%);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scaleX(0.8) translateX(-90%);
+        z-index: 3;
+        top: -4px;
+        filter: brightness(90%);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scaleX(0.8) translateX(0);
+        z-index: 2;
+        top: -8px;
+        filter: brightness(35%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRightAnimation {
+      0% {
+        transform: scaleX(1) translateX(0);
+        z-index: 3;
+        top: 0;
+        filter: brightness(100%);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scaleX(0.8) translateX(90%);
+        z-index: 3;
+        top: -8px;
+        filter: brightness(90%);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scaleX(0.8) translateX(0);
+        z-index: 1;
+        top: -16px;
+        filter: brightness(35%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popAnimation {
+      from {
+        transform: scale(0.9);
+        opacity: 0.9;
+        filter: brightness(90%);
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+        filter: brightness(100%);
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero-mobile-container">
+    <!-- Previous Button -->
+    <div class="mobile-prevButton" onclick="mobilePreviousSlide()"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+        viewBox="0 0 32 32" fill="none">
+        <path
+          d="M16 20.384L16.9173 19.4667L14.1173 16.6667H20.6667V15.3333H14.1173L16.9173 12.5333L16 11.616L11.616 16L16 20.384ZM16.004 28C14.3453 28 12.7853 27.6853 11.324 27.056C9.86356 26.4258 8.59289 25.5707 7.512 24.4907C6.43111 23.4116 5.57556 22.1422 4.94533 20.6827C4.31511 19.2231 4 17.6636 4 16.004C4 14.3453 4.31467 12.7853 4.944 11.324C5.57422 9.86356 6.42933 8.59289 7.50933 7.512C8.58844 6.43111 9.85778 5.57556 11.3173 4.94533C12.7769 4.31511 14.3364 4 15.996 4C17.6547 4 19.2147 4.31467 20.676 4.944C22.1364 5.57422 23.4071 6.42933 24.488 7.50933C25.5689 8.58844 26.4244 9.85778 27.0547 11.3173C27.6849 12.7769 28 14.3364 28 15.996C28 17.6547 27.6853 19.2147 27.056 20.676C26.4258 22.1364 25.5707 23.4071 24.4907 24.488C23.4116 25.5689 22.1422 26.4244 20.6827 27.0547C19.2231 27.6849 17.6636 28 16.004 28Z"
+          fill="white" />
+      </svg></div>
+
+    <!-- Slider -->
+    <div class="mobile-slider-container">
+      <div class="mobile-slider">
+        <div class="mobile-slide" id="mobile-slide1">
+          <img src="https://krispcall.com/wp-content/uploads/2023/11/langing0.3-mobile-hero-image-1.png" alt="">
+        </div>
+        <div class="mobile-slide" id="mobile-slide2">
+          <img src="https://krispcall.com/wp-content/uploads/2023/11/langing0.3-mobile-hero-image-2.png" alt="">
+        </div>
+        <div class="mobile-slide" id="mobile-slide3">
+          <img src="https://krispcall.com/wp-content/uploads/2023/11/langing0.3-mobile-hero-image-3.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <div class="mobile-nextButton" onclick="mobileNextSlide()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+        viewBox="0 0 32 32" fill="none">
+        <path
+          d="M16 11.616L15.0827 12.5333L17.8827 15.3333H11.3333V16.6667H17.8827L15.0827 19.4667L16 20.384L20.384 16L16 11.616ZM15.996 4C17.6547 4 19.2147 4.31467 20.676 4.944C22.1364 5.57422 23.4071 6.42933 24.488 7.50933C25.5689 8.58844 26.4244 9.85778 27.0547 11.3173C27.6849 12.7769 28 14.3364 28 15.996C28 17.6547 27.6853 19.2147 27.056 20.676C26.4258 22.1364 25.5707 23.4071 24.4907 24.488C23.4116 25.5689 22.1422 26.4244 20.6827 27.0547C19.2231 27.6849 17.6636 28 16.004 28C14.3453 28 12.7853 27.6853 11.324 27.056C9.86356 26.4258 8.59289 25.5707 7.512 24.4907C6.43111 23.4116 5.57555 22.1422 4.94533 20.6827C4.31511 19.2231 4 17.6636 4 16.004C4 14.3453 4.31467 12.7853 4.944 11.324C5.57422 9.86356 6.42933 8.59289 7.50933 7.512C8.58844 6.43111 9.85778 5.57555 11.3173 4.94533C12.7769 4.31511 14.3364 4 15.996 4Z"
+          fill="white" />
+      </svg></div>
+  </div>
+
+  <script>
+    let mobileCurrentSlide = 1;
+    const mobileSlider = document.querySelector('.mobile-slider');
+
+    //Previous Button
+    function mobilePreviousSlide() {
+      const previousSlide = mobileCurrentSlide;
+      mobileCurrentSlide = mobileCurrentSlide - 1;
+      if (mobileCurrentSlide < 1) {
+        mobileCurrentSlide = 3;
+      }
+      updateSlide(previousSlide, 'slideLeftAnimation');
+    }
+
+    //Next Button
+    function mobileNextSlide() {
+      const nextSlide = mobileCurrentSlide;
+      mobileCurrentSlide = (mobileCurrentSlide % 3) + 1;
+      updateSlide(nextSlide, 'slideRightAnimation');
+    }
+
+    //Update Slide 
+    function updateSlide(slideDirection, animationName) {
+      const mobileSlides = [document.getElementById('mobile-slide1'), document.getElementById('mobile-slide2'), document.getElementById('mobile-slide3')];
+
+      mobileSlides.forEach((mobileSlide, index) => {
+
+        const zIndex = (mobileCurrentSlide === 2 ? [1, 3, 2] : (mobileCurrentSlide === 3 ? [2, 1, 3] : [3, 2, 1]))[index];
+        const scale = (mobileCurrentSlide === 2 ? [0.8, 1, 0.9] : (mobileCurrentSlide === 3 ? [0.9, 0.8, 1] : [1, 0.9, 0.8]))[index];
+        const top = (mobileCurrentSlide === 2 ? [-51, 0, -26] : (mobileCurrentSlide === 3 ? [-26, -51, 0] : [0, -26, -51]))[index];
+        const bright = (mobileCurrentSlide === 2 ? [35, 100, 55] : (mobileCurrentSlide === 3 ? [55, 35, 100] : [100, 55, 35]))[index];
+
+        // Apply animation to the previous slide
+        if (index + 1 === slideDirection) {
+          mobileSlide.style.animation = `${animationName} 0.5s ease-in-out`;
+          mobileSlide.addEventListener('animationend', () => {
+            mobileSlide.style.animation = ''; // Reset animation property
+          });
+        } else {
+          mobileSlide.style.animation = ''; // Reset animation for other slides
+        }
+
+        // Apply animation to the current slide
+        if (index + 1 === mobileCurrentSlide) {
+          mobileSlide.style.animation = "popAnimation 0.5s ease-in-out";
+        }
+
+        mobileSlide.style.zIndex = zIndex;
+        mobileSlide.style.transform = `scale(${scale})`;
+        mobileSlide.style.top = `${top}px`;
+        mobileSlide.style.filter = `brightness(${bright}%)`;
+      });
+    }
+
+    // Swipe functionality
+    let mobilestartX;
+    let mobiledeltaX;
+
+    mobileSlider.addEventListener('touchstart', (e) => {
+      mobilestartX = e.touches[0].clientX;
+    });
+
+    mobileSlider.addEventListener('touchmove', (e) => {
+      mobiledeltaX = e.touches[0].clientX - mobilestartX;
+    });
+
+
+    mobileSlider.addEventListener('touchend', () => {
+      //Swipe Left
+      if (mobiledeltaX < -50) {
+        mobilePreviousSlide();
+
+      }
+      //Swipe Right
+      else if (mobiledeltaX > 50) {
+        mobileNextSlide();
+      }
+      mobilestartX = 0;
+      mobiledeltaX = 0;
+    });
+
+  </script>
+</body>
+
+</html>

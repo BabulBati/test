@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    body {
+      background: lightcyan;
+    }
+
+    .search-bar {
+      display: flex;
+      max-width: 520px;
+      width: 100%;
+      padding: 12px 14px;
+      align-items: center;
+      gap: 10px;
+      border-radius: 24px;
+      border: 1px solid #E5E4E7;
+      background: #FFF;
+      margin: 0 auto 48px;
+      height: 44px;
+      margin-bottom: 48px !important;
+    }
+
+    #searchInput {
+      max-width: 445px;
+      width: 100%;
+      color: var(--text-disabled, #99949E);
+      font-family: Heebo;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      border: none !important;
+      background-color: transparent !important;
+      padding: 0px !important;
+    }
+
+    #availableContainer,
+    #upcomingContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      padding: 0px;
+    }
+
+    .item {
+      border-radius: 16px;
+      background-color: #ffffff;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+    }
+
+
+    .item img {
+      max-width: 72px;
+      max-height: 72px;
+      margin-right: 10px;
+    }
+
+    .item .text-container {
+      margin-left: 10px;
+    }
+
+    .item .category {
+      color: #251A43;
+      font-family: Heebo;
+      font-size: 20px !important;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .item .item-text {
+      margin-top: 8px;
+      color: #564D6D;
+      font-family: Heebo;
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: -0.16px;
+
+    }
+
+    .no-result {
+      color: #251A43;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.16px;
+      display: none;
+    }
+
+    #seeMoreBtn,
+    #seeLessBtn {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 32px !important;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 8px;
+      background: #390179;
+      box-shadow: 2px 6px 30px 0px rgba(52, 6, 104, 0.16);
+      height: 44px;
+    }
+
+    #seeMoreBtn svg {
+      margin-left: 5px;
+    }
+
+    #seeLessBtn svg {
+      margin-left: 5px;
+    }
+
+    .available-container,
+    .upcoming-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .upcoming-container {
+      margin-bottom: 40px;
+    }
+
+    .available-container {
+      margin-bottom: 48px;
+    }
+
+    .available-container h3,
+    .upcoming-container h3 {
+      margin: 0;
+      padding: 0;
+      color: #251A43;
+      font-family: Manrope;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 120%;
+      letter-spacing: -0.24px;
+    }
+
+    .take-survey-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .take-survey {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #EDEDED;
+      padding: 16px 24px;
+      height: auto;
+      border-radius: 8px;
+      flex-direction: row;
+    }
+
+    .take-survey p {
+      font-size: 16px;
+      text-align: left;
+      color: #251A43;
+      font-style: normal;
+      font-weight: 400 !important;
+      line-height: 140%;
+      /* 22.4px */
+      letter-spacing: -0.16px;
+    }
+
+
+    .take-survey-button {
+      padding: 14px 28px;
+      border-radius: 8px;
+      background: #390179;
+      color: #FFF;
+      text-align: center;
+      font-family: Manrope;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      height: auto;
+    }
+
+    .integration_made_easy .tm-grid .grid-item .inner .image img {
+      max-width: 72px;
+      width: 100%;
+      max-height: 72px;
+      height: 100%;
+    }
+
+
+    /* Media queries for responsiveness */
+    @media (max-width: 1199px) {
+
+      #availableContainer,
+      #upcomingContainer {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .integration_made_easy .tm-grid {
+        gap: 24px !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .connect-favourite-krispcall h2.heading {
+        max-width: 321px;
+        font-size: 20px !important;
+        line-height: 130% !important;
+        letter-spacing: -0.2px !important;
+      }
+
+      .take-survey {
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      #availableContainer,
+      #upcomingContainer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media only screen and (max-width:480px) {
+      .integrations-made-easy-heading h1.heading {
+        max-width: 345px;
+        color: #251A43;
+        font-size: 32px !important;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 120% !important;
+        letter-spacing: -0.32px !important;
+      }
+
+      .take-survey {
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .take-survey a {
+        width: 100% !important;
+      }
+
+      .take-survey-button {
+        width: 100% !important;
+      }
+
+      .integration_made_easy .tm-grid .grid-item .inner .image img {
+        max-width: 64px !important;
+        max-height: 64px !important;
+      }
+
+      .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .item img {
+        max-width: 52px;
+        max-height: 52px;
+        margin-right: 0;
+      }
+
+      .item .category {
+        font-size: 18px !important;
+        letter-spacing: -0.18px;
+      }
+
+      .item .item-text {
+        font-size: 15px !important;
+        letter-spacing: -0.15px;
+      }
+
+      .item .text-container {
+        margin-left: 0;
+      }
+
+      .integration_made_easy .tm-grid {
+        gap: 20px !important;
+      }
+
+      .no-result {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width:360px) {
+      .integration_made_easy .tm-grid {
+        gap: 18px !important;
+      }
+    }
+
+    @media (max-width:320px) {
+
+      #availableContainer,
+      #upcomingContainer {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .item {
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      .take-survey {
+        padding: 16px;
+      }
+
+      .take-survey-button {
+        font-size: 14px;
+        padding: 14px;
+      }
+
+      .integration_made_easy .tm-grid {
+        gap: 16px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search-bar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path
+        d="M7.53649 13.7814C10.9854 13.7814 13.7814 10.9854 13.7814 7.53646C13.7814 4.08755 10.9854 1.29163 7.53649 1.29163C4.08758 1.29163 1.29166 4.08755 1.29166 7.53646C1.29166 10.9854 4.08758 13.7814 7.53649 13.7814Z"
+        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11.9684 11.9684L16.7083 16.7083" stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+    <input type="text" id="searchInput" placeholder="Search ">
+  </div>
+
+  <div class="take-survey-container">
+    <div class="take-survey">
+      <p style="margin-bottom:0rem; color:#251A43; font-weight:500;">Have a specific integration in mind? Let us know,
+        and we'll consider it for inclusion.</p>
+      <a href="/request-an-integration/" target="_blank"><button class="take-survey-button">Request an
+          Integration</button></a>
+    </div>
+  </div>
+
+  <div class="available-container">
+    <h3>Available Integration</h3>
+    <div id="availableContainer"></div>
+  </div>
+
+  <div class="upcoming-container">
+    <h3>Upcoming Integrations</h3>
+    <div id="upcomingContainer"></div>
+  </div>
+
+  <div class="no-result" id="noresult">
+    <p>Nothing found</p>
+  </div>
+
+  <div id="togglebuttons">
+    <button id="seeMoreBtn">Show More
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <g clip-path="url(#clip0_135_15747)">
+          <path
+            d="M9.16651 13.4769L9.16651 3.33357L10.8332 3.33357L10.8332 13.4769L15.3032 9.0069L16.4815 10.1852L9.99984 16.6669L3.51817 10.1852L4.69651 9.0069L9.16651 13.4769Z"
+            fill="white" />
+        </g>
+        <defs>
+          <clipPath id="clip0_135_15747">
+            <rect width="20" height="20" fill="white" transform="translate(20) rotate(90)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+
+    <button id="seeLessBtn" style="display: none;">Show Less
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <g clip-path="url(#clip0_935_75670)">
+          <path
+            d="M10.8336 6.5231L10.8336 16.6664L9.16689 16.6664L9.16689 6.5231L4.69689 10.9931L3.51855 9.81477L10.0002 3.3331L16.4819 9.81477L15.3036 10.9931L10.8336 6.5231Z"
+            fill="white" />
+        </g>
+        <defs>
+          <clipPath id="clip0_935_75670">
+            <rect width="20" height="20" fill="white" transform="matrix(0 -1 1 0 0 20)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = [
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/hubspot-crm.png',
+          category: 'HubSpot',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/hubspot-crm/',
+          status: 'Available',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/pipedrive-logo.png',
+          category: 'Pipedrive',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/pipedrive-crm/',
+          status: 'Available',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/12/zapier-black-72x72-1.png',
+          category: 'Zapier',
+          text: 'Data & Reporting',
+          link: 'https://krispcall.com/integration/zapier/',
+          status: 'Available',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/01/Microsoft-Dynamics-logo-new-e1705394071821.png',
+          category: 'Microsoft Dynamics 365',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/microsoft-dynamics-365/',
+          status: 'Available',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/01/pabbly-connect-integration-img-1.png',
+          category: 'Pabbly Connect',
+          text: 'Data & Reporting',
+          link: 'https://krispcall.com/integration/pabbly-connect/',
+          status: 'Available',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/Bitrix24-logo.png',
+          category: 'Bitrix24',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/bitrix24/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/01/monday-integration-img.png',
+          category: 'Monday.com',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/monday/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/02/crisp-integration-logo.png',
+          category: 'Crisp',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/crisp/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/02/outreach-integration-logo-1.png',
+          category: 'Outreach',
+          text: 'Sales Automation',
+          link: 'https://krispcall.com/integration/outreach-crm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/02/Keap-Integration-logo.png',
+          category: 'Keap',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/keap/',
+          status: 'Available',
+          new: 'Yes'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/02/Integrately_logo.png',
+          category: 'Integrately',
+          text: 'Productivity',
+          link: 'https://krispcall.com/integration/integrately/',
+          status: 'Available',
+          new: 'Yes'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/02/Google_Contacts_logo.png',
+          category: 'Google Contacts',
+          text: 'Communication',
+          link: 'https://krispcall.com/integration/google-contacts/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/integration-Microsoft-teams.png',
+          category: 'Microsoft Teams',
+          text: 'Communication',
+          link: 'https://krispcall.com/integration/microsoft-teams/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/10/salesforce-logo.png',
+          category: 'Salesforce',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/salesforce-crm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/capsule.png',
+          category: 'Capsule',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/capsule-crm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/intercom-logo.png',
+          category: 'Intercom',
+          text: 'Help Desk',
+          link: 'https://krispcall.com/integration/intercom/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/noCRM.png',
+          category: 'noCRM.io',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/nocrm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/LeadSquared.png',
+          category: 'LeadSquared',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/leadsquared/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/Nimble-logo.png',
+          category: 'Nimble',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/nimble-crm/',
+          status: 'Available',
+          new: 'Yes'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/Help-Scout-LOGO.png',
+          category: 'Help Scout',
+          text: 'Help Desk',
+          link: 'https://krispcall.com/integration/help-scout/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/Copper.png',
+          category: 'Copper',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/copper-crm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/12/zoho-logo-integration.png',
+          category: 'Zoho',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/zoho-crm/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/freshsales.png',
+          category: 'FreshSales',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/freshsales/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/03/ActiveCampaign.png',
+          category: 'ActiveCampaign',
+          text: 'CRM',
+          link: 'https://krispcall.com/integration/activecampaign/',
+          status: 'Available',
+          new: 'Yes'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2024/01/google-workspace-img.png',
+          category: 'Google Workspace',
+          text: 'Productivity',
+          link: 'https://krispcall.com/integration/google-workspace/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/10/zendesk-logo.png',
+          category: 'Zendesk',
+          text: 'Help Desk',
+          link: 'https://krispcall.com/integration/zendesk/',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/integration-agile.png',
+          category: 'Agile',
+          text: 'CRM',
+          link: '#',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/10/infusionsoft-logo.png',
+          category: 'Infusionsoft',
+          text: 'CRM',
+          link: '#',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/integration-slack.png',
+          category: 'Slack',
+          text: 'Productivity',
+          link: '#',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/Playvox-integration.png',
+          category: 'Playvox',
+          text: 'Workforce Engagement',
+          link: '#',
+          status: 'Upcoming',
+          new: 'No'
+        },
+        {
+          image: 'https://krispcall.com/wp-content/uploads/2023/11/integration-freshdesk.png',
+          category: 'Freshdesk',
+          text: 'Help Desk',
+          link: '#',
+          status: 'Upcoming',
+          new: 'No'
+        },
+      ];
+
+
+      const availableContainer = document.getElementById('availableContainer');
+      const upcomingContainer = document.getElementById('upcomingContainer');
+      const noResult = document.getElementById('noresult');
+      const availableDiv = document.getElementsByClassName('available-container')[0];
+      const upcomingleDiv = document.getElementsByClassName('upcoming-container')[0];
+      const seeMoreBtn = document.getElementById('seeMoreBtn');
+      const seeLessBtn = document.getElementById('seeLessBtn');
+      const toggleButtons = document.getElementById('togglebuttons');
+      const searchInput = document.getElementById('searchInput');
+      let visibleUpcomingItemCount;
+
+      function updateItemCount() {
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        visibleUpcomingItemCount = screenWidth <= 1199 ? 6 : 8;
+        renderUpcomingItems();
+      }
+
+      window.addEventListener('resize', updateItemCount);
+
+      function renderItems(container, items, status) {
+        container.innerHTML = ""; // Clear existing content
+
+        items.forEach(item => {
+          if (item.status === status) {
+            const itemElement = document.createElement('a');
+            itemElement.href = item.link;
+            itemElement.target = '_blank';
+            itemElement.classList.add('item');
+
+            const imageElement = document.createElement('img');
+            imageElement.src = item.image;
+            imageElement.alt = item.text;
+
+            const textContainer = document.createElement('div');
+            textContainer.classList.add('text-container');
+
+            const categoryElement = document.createElement('div');
+            categoryElement.classList.add('category');
+
+            // Set a specific line-height for the category 'Microsoft Dynamics 365'
+            if (item.category === 'Microsoft Dynamics 365') {
+              categoryElement.style.lineHeight = '1.5'; // Adjust the line-height as needed
+            }
+            categoryElement.textContent = item.category;
+
+            const itemTextElement = document.createElement('div');
+            itemTextElement.classList.add('item-text');
+            itemTextElement.style.display='inline-flex';
+            itemTextElement.style.alignItems='center';
+            itemTextElement.textContent = item.text;
+
+            // Display "New" if the 'new' property is set to 'Yes'
+            if (item.new === 'Yes') {
+            const newItemElement = document.createElement('span');
+            newItemElement.classList.add('available-text');
+            newItemElement.textContent = 'New';
+            newItemElement.style.backgroundColor = '#4882f6';
+            newItemElement.style.color = '#fff';
+            newItemElement.style.fontSize = '12px';
+            newItemElement.style.borderRadius = '4px';
+            newItemElement.style.padding = '0 6px';
+            newItemElement.style.marginLeft = '15px';
+            newItemElement.style.verticalAlign = '7px';
+            itemTextElement.appendChild(newItemElement);
+            }
+
+            textContainer.appendChild(categoryElement);
+            textContainer.appendChild(itemTextElement);
+
+            itemElement.appendChild(imageElement);
+            itemElement.appendChild(textContainer);
+
+            container.appendChild(itemElement);
+          }
+        });
+      }
+
+      function renderUpcomingItems() {
+        const upcomingItems = items.filter(item => item.status === 'Upcoming');
+        const visibleUpcomingItems = upcomingItems.slice(0, visibleUpcomingItemCount);
+        renderItems(upcomingContainer, visibleUpcomingItems, 'Upcoming');
+      }
+
+      function filterAndRender(searchTerm) {
+        const filteredItems = items.filter(item =>
+          item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.text.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        const availableItems = filteredItems.filter(item => item.status === 'Available');
+        const upcomingItems = filteredItems.filter(item => item.status === 'Upcoming');
+
+        // Check if there are available items and render them or hide the container
+        if (availableItems.length > 0) {
+          renderItems(availableContainer, availableItems, 'Available');
+          availableDiv.style.display = 'flex';
+        } else {
+          availableDiv.style.display = 'none';
+        }
+
+        // Check if there are upcoming items and render them or hide the container
+        if (upcomingItems.length > 0) {
+          // Render only visible upcoming items based on the current screen width
+          const visibleUpcomingItems = upcomingItems.slice(0, visibleUpcomingItemCount);
+          renderItems(upcomingContainer, visibleUpcomingItems, 'Upcoming');
+          upcomingleDiv.style.display = 'flex';
+          toggleButtons.style.display = 'block';
+        } else {
+          upcomingleDiv.style.display = 'none';
+          toggleButtons.style.display = 'none';
+        }
+
+        if (filteredItems.length === 0) {
+          noResult.style.display = 'block';
+        } else {
+          noResult.style.display = 'none';
+        }
+      }
+
+      // Initial rendering
+      updateItemCount();
+      renderItems(availableContainer, items, 'Available');
+      renderUpcomingItems();
+
+      seeMoreBtn.addEventListener('click', function () {
+        visibleUpcomingItemCount = items.filter(item => item.status === 'Upcoming').length;
+        renderUpcomingItems();
+        seeMoreBtn.style.display = "none";
+        seeLessBtn.style.display = "block";
+        window.removeEventListener('resize', updateItemCount);
+      });
+
+      seeLessBtn.addEventListener('click', function () {
+        updateItemCount();
+        seeMoreBtn.style.display = "block";
+        seeLessBtn.style.display = "none";
+      });
+
+      searchInput.addEventListener('input', function () {
+        const searchTerm = searchInput.value.trim();
+        filterAndRender(searchTerm);
+
+        // Disable See More button when there's an active search term
+        if (searchTerm !== '') {
+          toggleButtons.style.display = 'none';
+        } else {
+          toggleButtons.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

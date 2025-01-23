@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        .slick-track {
+            padding-bottom: 20px;
+        }
+
+        .testimonials-card {
+            padding: 24px;
+            margin: 0 8px;
+            box-shadow: 0px 20px 20px -15px rgba(234, 234, 234, 0.50);
+            background: #F6F9FE;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .testimonials-card p {
+            margin: 0;
+        }
+
+        .testimonials-card .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .testimonials-card .rating-logo {
+            height: 28px;
+            width: 28px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .testimonials-card .rating-stars {
+            height: 17px;
+            width: 107px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .trustpilot-logo {
+            background-image: url(https://easyfiling.us/wp-content/uploads/2024/10/trustpilot-logo-img.png);
+        }
+
+        .g2-logo {
+            background-image: url(https://easyfiling.us/wp-content/uploads/2024/10/g2-logo-img.png);
+        }
+
+        .product_hunt-logo {
+            background-image: url(https://easyfiling.us/wp-content/uploads/2024/10/product-hunt-logo-img.png);
+        }
+
+        .rating-stars {
+            background-image: url(https://easyfiling.us/wp-content/uploads/2024/10/5-stars.png);
+        }
+
+        .testimonials-card .content p {
+            color: #474E5A;
+        }
+
+        .testimonials-card .author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .testimonials-card .author-name p {
+            color: #125FEC;
+        }
+
+        .testimonials-card .author-position {
+            margin-top: 4px;
+        }
+
+        .testimonials-card .author-position p {
+            color: #474E5A;
+        }
+
+        @media (max-width:1199px) {
+            .testimonials-card {
+                padding: 20px;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width:767px) {
+            .testimonials-card {
+                padding: 16px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="testimonial_container">
+        <!-- Slide 1 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Robert-Fox.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Robert Fox</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>HR at IBM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"I was impressed with EasyFiling's affordability and comprehensive services. The team was always
+                        available to answer my questions and guide me through the process. I couldn't be happier with my
+                        decision to use EasyFiling."</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo g2-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Alex-Rivera.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Alex Rivera</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>CEO & Co-founder at Timetracko</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"EasyFiling made starting my US business a breeze! The process was straightforward, and the
+                        customer
+                        support was top-notch. I highly recommend EasyFiling to any non-resident looking to establish a
+                        business in the US."</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo trustpilot-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Ronald-Richards.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Ronald Richards</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>Director at MasterCard</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>“EasyFiling is a highly recommended service for non-residents looking to start a US business,
+                        with a
+                        simple process, competitive pricing, and outstanding customer support. It is a modern,
+                        founder-friendly alternative to other services, providing a streamlined and secure way to
+                        incorporate your business in the US and reap the benefits of operating on US soil.”</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo product_hunt-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Savannah-Nguyen.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Savannah Nguyen</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>Ceo at Gillette</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"As a non-resident, I found EasyFiling to be the most reliable and cost-effective option for
+                        starting
+                        my US business. The team's expertise and support were invaluable in ensuring a smooth process."
+                    </p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo g2-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 1 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Robert-Fox.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Robert Fox</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>HR at IBM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"I was impressed with EasyFiling's affordability and comprehensive services. The team was always
+                        available to answer my questions and guide me through the process. I couldn't be happier with my
+                        decision to use EasyFiling."</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo g2-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Alex-Rivera.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Alex Rivera</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>CEO & Co-founder at Timetracko</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"EasyFiling made starting my US business a breeze! The process was straightforward, and the
+                        customer
+                        support was top-notch. I highly recommend EasyFiling to any non-resident looking to establish a
+                        business in the US."</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo trustpilot-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Ronald-Richards.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Ronald Richards</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>Director at MasterCard</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>“EasyFiling is a highly recommended service for non-residents looking to start a US business,
+                        with a
+                        simple process, competitive pricing, and outstanding customer support. It is a modern,
+                        founder-friendly alternative to other services, providing a streamlined and secure way to
+                        incorporate your business in the US and reap the benefits of operating on US soil.”</p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo product_hunt-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div>
+            <div class="testimonials-card">
+                <div class="author">
+                    <div class="image">
+                        <img src="https://easyfiling.us/wp-content/uploads/2024/05/Savannah-Nguyen.png" alt="">
+                    </div>
+                    <div>
+                        <div class="author-name p-large-m ">
+                            <p>Savannah Nguyen</p>
+                        </div>
+                        <div class="author-position p-small">
+                            <p>Ceo at Gillette</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content p-medium">
+                    <p>"As a non-resident, I found EasyFiling to be the most reliable and cost-effective option for
+                        starting
+                        my US business. The team's expertise and support were invaluable in ensuring a smooth process."
+                    </p>
+                </div>
+                <div class="rating">
+                    <div class="rating-logo g2-logo"></div>
+                    <div class="rating-stars"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 100px; width: 100vw; background: red;"></div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.testimonial_container').slick({
+                slidesToShow: 4,
+                centerMode: true,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                adaptiveHeight: true,
+                centerPadding: '20px',
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            adaptiveHeight: true,
+                            slidesToShow: 3,
+                            centerMode: true,
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            adaptiveHeight: true,
+                            slidesToShow: 2,
+                            centerMode: true,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            adaptiveHeight: true,
+                            centerMode: true,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

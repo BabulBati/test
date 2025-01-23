@@ -1,0 +1,408 @@
+<style>
+    .accordion.active div.flex-heading>.first-accordion-h4 {
+        color: #159946 !important;
+
+    }
+
+    .accordion.active div.flex-heading>.first-accordion-h2 {
+        color: #159946 !important;
+        opacity: 1 !important;
+    }
+
+    .paragraph-feature-list {
+        font-family: Inter !important;
+    }
+
+    .panel {
+        animation: fade 1.4s;
+    }
+
+    .paragraph-feature-list {
+        font-weight: 400 !important;
+        line-height: 150% !important;
+        margin-bottom: 0px !important;
+        color: #474E5A !important;
+    }
+
+    .paragraph-feature-list {
+        font-size: 18px !important;
+        letter-spacing: -0.36px !important;
+    }
+
+    @media (max-width:1024px) and (min-width:768px) {
+
+        .padding-list {
+            padding: 0 16px 16px 92px !important;
+        }
+
+        .paragraph-feature-list {
+            font-size: 16px !important;
+            letter-spacing: -0.32px !important;
+        }
+
+        .image-container-tabmobile {
+            padding: 0 0 16px 0 !important;
+        }
+    }
+
+    @media (max-width:767px) {
+        .first-accordion-h2 {
+            width: 58px !important;
+        }
+
+        .paragraph-feature-list {
+            font-size: 14px !important;
+            letter-spacing: -0.24px;
+        }
+
+        .padding-list {
+            padding: 0 12px 12px 72px !important;
+        }
+    }
+
+    .image-container-tabmobile {
+        padding: 0px 0 12px 0;
+    }
+
+    .main-container {
+        display: flex;
+        direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .accordion {
+        background-color: transparent;
+        color: #444;
+        cursor: pointer;
+        padding: 16px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 20px;
+        transition: 0.4s ease;
+
+
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: transparent;
+    }
+
+    .padding-list {
+        padding: 0 24px 24px 98px;
+    }
+
+    .panel {
+        display: none;
+        background-color: transparent;
+        overflow: hidden;
+        transition: 0.6s ease;
+
+    }
+
+    div.panel>div>ul>li {
+        list-style-type: disc !important;
+    }
+
+    .flex-heading {
+        display: flex;
+        align-items: center !important;
+    }
+
+    .panel.show {
+        display: block;
+    }
+
+    .first-accordion-h2 {
+        /* color: #374253;
+        opacity: 0.12; */
+        /* color: #CED6DC!important; */
+        margin: 0px;
+        width: 80px;
+        padding-right: 24px;
+    }
+
+    .accordion div.flex-heading>.first-accordion-h2 {
+
+        color: #CED6DC !important;
+
+    }
+
+
+    .first-accordion-h4 {
+        color: #24282E;
+        margin: 0;
+    }
+
+    .image-css {
+        width: 620px;
+    }
+
+    .single-accordion {
+        border-bottom: 1px solid #EBEDEE !important;
+    }
+
+    .list-padding {
+        padding-bottom: 8px;
+    }
+
+    @media (max-width:1023px) {
+        .web-image-show {
+            display: none;
+        }
+
+        .image-container {
+            width: 45%;
+            text-align: right;
+        }
+
+        .accordion-container {
+            width: 100%;
+        }
+
+        .image-css-tabmobile {
+            max-width: 100%;
+        }
+
+        .accordion {
+            padding: 12px !important;
+        }
+
+        .image-css-tabmobile {
+            align-items: center;
+        }
+    }
+    @media (max-width:1288px) {
+        .image-container {
+            width: 50%;
+            text-align: right;
+        }
+    }
+    @media (min-width:1024px) {
+        .accordion-container {
+            width: 45% !important;
+        }
+
+        .tabmobile-image-show {
+            display: none !important;
+        }
+    }
+
+    .image-css {
+        width: 620px;
+        /* transition: opacity 0.1s ease-in-out; */
+        animation: fade 1.4s;
+        opacity: 1;
+    }
+
+    .image-container.web-image-show img.hidden {
+        opacity: 0;
+    }
+</style>
+
+    <div class="main-container">
+        <div class="accordion-container">
+            <div class="single-accordion">
+                <button class="accordion active">
+                    <div class="flex-heading">
+                        <h2 class="first-accordion-h2 homepage-heading">01.</h2>
+                        <h4 class="first-accordion-h4 homepage-heading-medium">Number on a click</h4>
+                    </div>
+                </button>
+                <div class="panel show">
+                    <div class="padding-list">
+                        <p class="paragraph-homepage-medium">
+
+                            Dialaxy makes it easy to purchase virtual phone numbers in the U.S. and Canada, helping
+                            businesses enhance their communication strategy with a few clicks. Establish a local
+                            presence or offer toll-free options effortlessly.
+                        </p>
+
+                    </div>
+
+                    <div class="image-container-tabmobile tabmobile-image-show">
+                        <img class="image-css-tabmobile"
+                            src="/wp-content/uploads/2024/08/number_on_a_click-homepage.webp" alt="Section Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-accordion">
+                <button class="accordion">
+                    <div class="flex-heading">
+                        <h2 class="first-accordion-h2 homepage-heading">02.</h2>
+                        <h4 class="first-accordion-h4 homepage-heading-medium">Make and receive business calls</h4>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="padding-list">
+                        <p class="paragraph-homepage-medium">
+
+                            Dialaxy revolutionizes business calls with an intuitive solution for effortless, clear, and
+                            stable communication from anywhere. Manage your business calls stress-free with advanced
+                            features designed for an exceptional calling experience.
+                        </p>
+
+                    </div>
+                    <div class="image-container-tabmobile tabmobile-image-show">
+                        <img class="image-css-tabmobile"
+                            src="/wp-content/uploads/2024/08/make_and_receive_business_calls-homepage.webp"
+                            alt="Section Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-accordion">
+                <button class="accordion">
+                    <div class="flex-heading">
+                        <h2 class="first-accordion-h2 homepage-heading">03.</h2>
+                        <h4 class="first-accordion-h4 homepage-heading-medium">Conversation made easy with SMS and MMS
+                        </h4>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="padding-list">
+                        <p class="paragraph-homepage-medium">
+
+                            Dialaxy allows you to send and receive text messages and multimedia messages effortlessly.
+                        </p>
+                        <ul style="list-style-type: disc!important;">
+                            <li class="list-padding paragraph-feature-list">85% of customers prefer receiving text
+                                messages over a phone call or email.</li>
+                            <li class="paragraph-feature-list">68% of consumers would prefer to use text messaging to
+                                contact a company with questions.</li>
+                            <li class="paragraph-feature-list">53% of clients say they feel more positive toward a brand
+                                that responds to text messages.</li>
+                        </ul>
+                    </div>
+                    <div class="image-container-tabmobile tabmobile-image-show">
+                        <img class="image-css-tabmobile"
+                            src="/wp-content/uploads/2024/08/conversation_made_easy_with_sma_and_mms-new-homepage.webp"
+                            alt="Section Image">
+                    </div>
+                </div>
+            </div>
+            <div class="single-accordion">
+                <button class="accordion">
+                    <div class="flex-heading">
+                        <h2 class="first-accordion-h2 homepage-heading">04.</h2>
+                        <h4 class="first-accordion-h4 homepage-heading-medium">100+ features</h4>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="padding-list">
+                        <p class="paragraph-homepage-medium">
+
+                            Dialaxy offers over 100 features to enhance your business communication, including advanced
+                            call routing, automated attendants, SMS/MMS integration, voicemail-to-email, call recording,
+                            analytics, and call porting.
+                        </p>
+    
+                    </div>
+                    <div class="image-container-tabmobile tabmobile-image-show">
+                        <img class="image-css-tabmobile" src="/wp-content/uploads/2024/08/100_feature-new-homepage.webp"
+                            alt="Section Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-accordion">
+                <button class="accordion">
+                    <div class="flex-heading">
+                        <h2 class="first-accordion-h2 homepage-heading">05.</h2>
+                        <h4 class="first-accordion-h4 homepage-heading-medium">Customizable dashboard/profile</h4>
+                    </div>
+                </button>
+                <div class="panel">
+                    <div class="padding-list">
+                        <p class="paragraph-homepage-medium">
+
+                            Dialaxy's fully customizable dashboard lets you manage communication needs effortlessly. Its
+                            intuitive interface allows you to add or delete users and phone numbers, fitting your
+                            specific business requirements.
+                        </p>
+
+                    </div>
+                    <div class="image-container-tabmobile tabmobile-image-show">
+                        <img class="image-css-tabmobile"
+                            src="/wp-content/uploads/2024/08/customizable_deashboard_profile-homepage.webp"
+                            alt="Section Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-container web-image-show">
+            <img class="image-css" id="accordion-image"
+                src="/wp-content/uploads/2024/08/number_on_a_click-homepage.webp" alt="Section Image">
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+               var panels = document.getElementsByClassName("panel");
+               var img = document.getElementById("accordion-image");
+             
+               var images = [
+                   "/wp-content/uploads/2024/08/number_on_a_click-homepage.webp",
+                   "/wp-content/uploads/2024/08/make_and_receive_business_calls-homepage.webp",
+                   "/wp-content/uploads/2024/08/conversation_made_easy_with_sma_and_mms-new-homepage.webp",
+                   "/wp-content/uploads/2024/08/100_feature-new-homepage.webp",
+                   "/wp-content/uploads/2024/08/customizable_deashboard_profile-homepage.webp"
+               ];
+             
+               var autoNavigate = true;
+               var interval;
+             
+               for (var i = 0; i < acc.length; i++) {
+                   acc[i].addEventListener("click", function () {
+                       // Close all panels
+                       for (var j = 0; j < panels.length; j++) {
+                           panels[j].style.display = "none";
+                           acc[j].classList.remove("active");
+                       }
+                       // Open the clicked panel
+                       this.classList.toggle("active");
+                       var panel = this.nextElementSibling;
+                       if (panel.style.display === "block") {
+                           panel.style.display = "none";
+                       } else {
+                           panel.style.display = "block";
+                       }
+             
+                       // Update the image
+                       var index = Array.prototype.indexOf.call(acc, this);
+                       // img.src = images[index];
+                       img.classList.add("hidden");
+                       setTimeout(function () {
+                       img.src = images[index];
+                       img.classList.remove("hidden"); // Start the fade-in effect
+                   }, 100);
+                   });
+               }
+             
+               // Automatic navigation
+               var currentIndex = 0;
+               function showNextAccordion() {
+                   if (autoNavigate) {
+                       // Open the next panel
+                       acc[currentIndex].classList.add("active");
+                       panels[currentIndex].style.display = "block";
+                       // img.src = images[currentIndex];
+                       img.classList.add("hidden"); // Start the fade-out effect
+                   setTimeout(function () {
+                       img.src = images[currentIndex];
+                       img.classList.remove("hidden"); // Start the fade-in effect
+                   }, 100);
+             
+                       // Update the index for the next panel
+                       currentIndex = (currentIndex + 1) % acc.length;
+                   }
+               }
+             
+               // Set the interval for automatic navigation
+               // interval = setInterval(showNextAccordion, 3000); // Change every 5 seconds
+         </script>

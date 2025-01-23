@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Partner Form</title>
+    <script>
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('solution_partner');
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('process_form.php', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                document.getElementById('form_message').innerText = result.message;
+            } catch (error) {
+                document.getElementById('form_message').innerText = 'An error occurred. Please try again. ' + error;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('solution_partner').addEventListener('submit', handleFormSubmit);
+        });
+    </script>
+</head>
+<body>
+    <form id="solution_partner">
+        <span id="sp_full_name">
+            <label for="sp_first_name">First Name
+                <input type="text" id="sp_first_name" name="sp_first_name" required></label>
+
+            <label for="sp_last_name">Last name
+                <input type="text" id="sp_last_name" name="sp_last_name" required></label>
+        </span>
+
+        <label for="sp_email">Email
+            <input type="email" id="sp_email" name="sp_email" required></label>
+
+        <label for="sp_business_name">Business Name
+            <input type="text" id="sp_business_name" name="sp_business_name" required></label>
+
+        <label for="sp_phone">Enter your Phone Number
+            <input type="tel" id="sp_phone" name="sp_phone" required></label>
+
+        <button type="submit">Become a Partner</button>
+    </form>
+
+    <div id="form_message"></div>
+</body>
+</html>

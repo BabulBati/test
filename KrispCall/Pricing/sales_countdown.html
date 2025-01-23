@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="countdown-banner-krispcallfloatingbar">
+        <a onclick="$crisp.push(['do', 'chat:open']); mixpanel.track('Black Friday Contact Us Clicked');"
+            style="cursor: pointer">
+            <span class="title-krispcallfloatingbar">BLACK FRIDAY DEALS</span>
+        </a>
+        <div style="text-decoration: underline" class="coming-soon-krispcallfloatingbar">
+            <a onclick="$crisp.push(['do', 'chat:open']); mixpanel.track('Black Friday Contact Us Clicked');"
+                style="cursor: pointer">is live</a>!
+        </div>
+        <span class="starts-in-krispcallfloatingbar">Ends in</span>
+        <div class="timer-krispcallfloatingbar">
+            <span class="time-box-krispcallfloatingbar" id="days">00</span>
+            <span class="colon-krispcallfloatingbar">:</span>
+            <span class="time-box-krispcallfloatingbar" id="hours">00</span>
+            <span class="colon-krispcallfloatingbar">:</span>
+            <span class="time-box-krispcallfloatingbar" id="minutes">00</span>
+            <span class="colon-krispcallfloatingbar">:</span>
+            <span class="time-box-krispcallfloatingbar" id="seconds">00</span>
+        </div>
+    </div>
+
+    <script>
+        // Target time: 12:00 AM Singapore Time (SGT) on November 30, 2024
+        // Equivalent UTC time: November 29, 2024, 4:00 PM (16:00 UTC)
+        const singaporeEndTime = new Date(Date.UTC(2024, 10, 29, 16, 0, 0)); // UTC equivalent of 12:00 AM SGT
+
+        // Elements for displaying countdown
+        const daysElement = document.getElementById("days");
+        const hoursElement = document.getElementById("hours");
+        const minutesElement = document.getElementById("minutes");
+        const secondsElement = document.getElementById("seconds");
+
+        function updateCountdown() {
+            const now = new Date().getTime(); // Current time in milliseconds (local time zone)
+            const remainingTime = singaporeEndTime.getTime() - now; // Calculate the remaining time in milliseconds
+
+            if (remainingTime <= 0) {
+                // Countdown is complete
+                clearInterval(interval);
+                daysElement.textContent = "00";
+                hoursElement.textContent = "00";
+                minutesElement.textContent = "00";
+                secondsElement.textContent = "00";
+                document.querySelector(".starts-in-krispcallfloatingbar").textContent = "Ends in";
+                return;
+            } else {
+                const seconds = Math.floor(remainingTime / 1000) % 60;
+                const minutes = Math.floor(remainingTime / 1000 / 60) % 60;
+                const hours = Math.floor(remainingTime / 1000 / 60 / 60) % 24;
+                const days = Math.floor(remainingTime / 1000 / 60 / 60 / 24);
+
+                // Pad values with leading zeros for proper display
+                const formattedDays = days.toString().padStart(2, "0");
+                const formattedHours = hours.toString().padStart(2, "0");
+                const formattedMinutes = minutes.toString().padStart(2, "0");
+                const formattedSeconds = seconds.toString().padStart(2, "0");
+
+                // Update countdown display
+                daysElement.textContent = formattedDays;
+                hoursElement.textContent = formattedHours;
+                minutesElement.textContent = formattedMinutes;
+                secondsElement.textContent = formattedSeconds;
+            }
+        }
+
+        // Start the countdown timer
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+
+</html>

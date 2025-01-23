@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Number Validation Detail</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: white;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        border-radius: 15px;
+        background-color: #6f1bda;
+        padding: 30px;
+        border: none;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .card-title {
+        font-size: 1.75rem;
+        font-weight: bold;
+      }
+
+      .card-body p {
+        margin-bottom: 0.5rem;
+      }
+
+      .badge-pill {
+        font-size: 0.9rem;
+        padding: 0.5em 1em;
+      }
+
+      hr {
+        border-color: #b39ddb;
+      }
+
+      .btn-outline-light {
+        border-color: #ce93d8;
+        color: #ce93d8;
+        border-radius: 20px;
+        padding: 0.5em 1.5em;
+        min-width: 150px;
+      }
+
+      .btn-outline-light:hover {
+        background-color: #ce93d8;
+        color: white;
+      }
+
+      .row-custom {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .col-custom {
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+
+      .flag-icon {
+        font-size: 1.5rem;
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <!--Phone Validator-->
+
+    <section class="py-3 mb-5">
+      <div class="check-number text-center">
+        <div class="check-num">
+          <h2 class="text-54 text-800">
+            Phone Number <span class="text-gradient">Validator</span>
+          </h2>
+          <div class="container-sm text-center px-0">
+            <div class="mb-4 mt-2">
+              <!-- <p>Let’s find out if the phone number number you are looking is currently <br> available on KrispCall or not.</p>  -->
+            </div>
+            <form action="#" class="pt-3" id="submit-number-validator">
+              <div class="d-flex justify-content-between wrapper__input--flag">
+                <div class="col-md col-fixed-width px-0">
+                  <div class="form-group mb-0 d-flex">
+                    <!-- <input type="tel" class="form-control border country-flag" placeholder="Choose a country" id="country-flag" name="country-flag" required> -->
+                    <input
+                      type="tel"
+                      class="form-control border checkNumber"
+                      id="phonevalidator"
+                      placeholder="480 030 084"
+                      name="check-num"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-auto pr-0">
+                  <div class="form-action text-center">
+                    <button
+                      class="btn btn-primary check-btn"
+                      type="submit"
+                      id="phone-validator-btn"
+                    >
+                      Validate<span class="preloader preloader-sm"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="container-sm search-results collapse mt-3"
+            id="validator-results"
+          >
+            <div
+              class="d-flex align-items-center flex-column selected-list"
+              id="validatorselected-list"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    function decryptApiKey(encryptedApiKey, passphrase) {
+      const bytes = CryptoJS.AES.decrypt(encryptedApiKey, passphrase);
+      return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    document
+      .getElementById("submit-number-validator")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const number = document.getElementById("phonevalidator").value;
+        const countryCode = "IN";
+        const encryptedApiKey =
+          "U2FsdGVkX19wIem0kWCGIzbForqug6oFqzwvesjCtjcMKb+0e7cxxYCc6VnWz91LQIkllq5QcwD+Q/i5y5/5Kg==";
+        const passphrase = "okay";
+        const api = decryptApiKey(encryptedApiKey, passphrase);
+        const url = `https://apilayer.net/api/validate?access_key=${api}&number=${number}&country_code=${countryCode}&format=1`;
+        try {
+          const response = await fetch(url, { method: "GET" });
+          const result = await response.json();
+
+          if (result.valid) {
+            document.getElementById("validatorselected-list").innerHTML = `
+            <div class="card text-white">
+              <div class="card-body">
+                <h4 class="card-title text-center mb-4">
+                  Phone number Validation Detail for ${result.number}
+                </h4>
+                <p class="text-center mb-4">
+                  ${result.line_type}, ${result.location}, ${
+              result.country_name
+            }
+                </p>
+                <div class="row row-custom">
+                  <div class="col-custom">
+                    <p><strong>Local Formatted Number</strong></p>
+                    <p>${result.number}</p>
+                  </div>
+                  <div class="col-custom">
+                    <p><strong>Validity</strong></p>
+                    <p
+                      class="badge badge-pill badge-primary"
+                      style="background-color: #7b1fa2"
+                    >
+                      ${result.valid ? "Valid Number" : "Invalid Number"}
+                    </p>
+                  </div>
+                  <div class="col-custom">
+                    <p><strong>Country</strong></p>
+                    <p class="flag-icon">${result.country_name}</p>
+                  </div>
+                </div>
+
+                <div class="row row-custom">
+                  <div class="col-custom">
+                    <p><strong>City</strong></p>
+                    <p>${result.location}</p>
+                  </div>
+                  <div class="col-custom">
+                    <p><strong>Region</strong></p>
+                    <p>${result.location}</p>
+                  </div>
+
+                  <div class="col-custom">
+                    <p><strong>Line Type</strong></p>
+                    <p>${result.line_type}</p>
+                  </div>
+
+                  <div class="col-custom">
+                    <!-- Empty for alignment -->
+                  </div>
+
+                    <hr />
+                    <div class="button-group mt-6">
+                        <button class="btn btn-outline-light">Done</button>
+                        <button class="btn btn-outline-light">Check next number</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            `;
+          } else {
+            document.getElementById("validator-results").innerHTML =
+              "<p>Invalid phone number</p>";
+          }
+          document.getElementById("validator-results").classList.add("show");
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("validator-results").innerHTML =
+            "<p>An error occurred. Please try again.</p>";
+        }
+      });
+  </script>
+</html>

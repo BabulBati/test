@@ -1,0 +1,379 @@
+.container-virtual-search > div {
+  border-radius: 16px;
+  padding: 104px 0;
+}
+.container-virtual-search h2 {
+  margin-bottom: 40px !important;
+}
+.container-virtual-search .block-absolute--right,
+.container-virtual-search .block-absolute--left {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border-radius: 16px;
+  top: 0 !important;
+}
+.container-virtual-search .block-absolute--right img,
+.container-virtual-search .block-absolute--left img {
+  height: unset !important;
+}
+
+#checkNumberPorting {
+  background: #f9f9f9 !important;
+  border: none !important;
+  display: block !important;
+  min-height: unset !important;
+  height: 100% !important;
+  padding: 16px !important;
+  color: #242424 !important;
+  font-family: "Inter" !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 20px !important;
+  letter-spacing: -0.02em !important;
+}
+#checkNumberPorting::-moz-placeholder {
+  color: #242424 !important;
+}
+#checkNumberPorting::placeholder {
+  color: #242424 !important;
+}
+
+.dropdown.bootstrap-select {
+  margin: 0;
+}
+.dropdown.bootstrap-select button {
+  padding: 16px !important;
+  color: #242424 !important;
+  font-family: "Inter" !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 20px !important;
+  letter-spacing: -0.02em !important;
+  height: 52px;
+  margin: 0;
+}
+
+.portnumber-div {
+  max-width: 776px;
+  width: 100%;
+}
+
+#check-porting {
+  padding: 16px 24px !important;
+  height: 52px !important;
+  min-width: unset !important;
+  color: #fff;
+  font-family: "Inter" !important;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  border-radius: 8px !important;
+  background: #8733ff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+#check-porting .preloader-sm {
+  height: 16px;
+  width: 16px;
+  margin: 0 0 0 4px;
+}
+#check-porting .preloader-sm:after {
+  height: 16px;
+  width: 16px;
+}
+
+.portnumber_row {
+  gap: 16px;
+}
+
+.numberport_result.search-results {
+  margin: 0 !important;
+}
+.numberport_result .card {
+  flex-grow: 1;
+  max-width: 100%;
+  margin: 48px 0 0 !important;
+  padding: 32px !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+}
+.numberport_result .card:first-child {
+  border: 1px solid rgba(135, 51, 255, 0.5) !important;
+}
+.numberport_result .card.bg-transparent {
+  flex-grow: 1;
+  width: calc(100% - 200px - 16px);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.numberport_result .card.bg-white {
+  width: 200px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.numberport_result .card.bg-white button {
+  height: 52px !important;
+  border-radius: 8px !important;
+  background: #8733ff !important;
+  padding: 16px 24px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  border: none !important;
+  font-family: "Inter";
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.02em !important;
+}
+.numberport_result .card .card--danger {
+  border: 1px solid #f95933 !important;
+  background: rgba(249, 89, 51, 0.2) !important;
+}
+.numberport_result .card .card--danger p {
+  color: #f95933 !important;
+}
+.numberport_result .card .card--success {
+  border: 1px solid #a635ff !important;
+  background: rgba(166, 53, 255, 0.2) !important;
+}
+.numberport_result .card .card--success p {
+  color: #fff !important;
+}
+.numberport_result .card .card--success,
+.numberport_result .card .card--danger {
+  border-radius: 8px !important;
+  padding: 8px !important;
+}
+.numberport_result .card p {
+  font-family: "Inter" !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 150% !important;
+  letter-spacing: -0.02em;
+}
+.numberport_result .card p strong {
+  font-weight: 400 !important;
+}
+.numberport_result .card h4 {
+  color: #f4f4f4 !important;
+  margin: 0 !important;
+  font-family: "Manrope" !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 130% !important;
+  letter-spacing: -0.02em;
+}
+.numberport_result .card.card-transparent .card--success {
+  color: #34c759 !important;
+  font-family: "Inter" !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 150% !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+  padding: 16px 8px !important;
+}
+.numberport_result .card.card-transparent .card--success strong {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+.numberport_result .card-result {
+  row-gap: 32px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+.numberport_result .card-details,
+.numberport_result .card--success {
+  margin: 28px 0 0 !important;
+}
+.numberport_result .card-details ul {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 24px;
+  margin: 0 !important;
+}
+.numberport_result .card-details ul li {
+  flex-grow: 1;
+  display: flex !important;
+  flex-direction: column;
+  gap: 8px;
+}
+.numberport_result .card-details ul li:not(:last-child) {
+  margin: 0 !important;
+}
+.numberport_result .card-details ul li span {
+  padding: 0 !important;
+  font-family: "Inter" !important;
+  font-size: 16px !important;
+  line-height: 150% !important;
+  letter-spacing: -0.02em !important;
+}
+.numberport_result .card-details ul li span:first-child {
+  color: rgba(244, 244, 244, 0.9) !important;
+  font-weight: 400 !important;
+}
+.numberport_result .card-details ul li span:last-child {
+  color: #f4f4f4 !important;
+  font-weight: 600 !important;
+}
+.numberport_result .success_details ul li:first-child {
+  width: 100%;
+}
+.numberport_result .success_details ul li:not(:first-child) {
+  width: calc(50% - 12px);
+}
+.numberport_result .danger_details ul li {
+  width: calc(50% - 12px);
+}
+
+#portingEmail {
+  height: 52px !important;
+  min-width: unset !important;
+  padding: 16px !important;
+  color: #242424 !important;
+  font-family: "Inter" !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.02em !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  margin: 0 !important;
+  border: none !important;
+}
+#portingEmail::-moz-placeholder {
+  color: #242424 !important;
+}
+#portingEmail::placeholder {
+  color: #242424 !important;
+}
+
+@media (min-width: 992px) {
+  .select_div,
+  .input_div {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .select_div {
+    width: 70%;
+  }
+  .input_div {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .container-virtual-search > div {
+    padding: 56px 24px;
+  }
+  #check-porting {
+    padding: 16px 12px !important;
+    font-size: 14px;
+  }
+  .portnumber_row {
+    gap: 12px;
+  }
+  .numberport_result .card {
+    margin: 32px 0 0 !important;
+  }
+  .numberport_result .card.bg-transparent {
+    width: calc(100% - 160px - 16px);
+  }
+  .numberport_result .card.bg-white {
+    width: 160px;
+  }
+  .numberport_result .card.bg-white button {
+    font-size: 14px !important;
+  }
+  .numberport_result .card p {
+    font-size: 14px !important;
+  }
+  .numberport_result .card h4 {
+    font-size: 24px !important;
+  }
+  .numberport_result .card-result {
+    row-gap: 24px;
+  }
+  .numberport_result .card-details ul li span {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 767px) {
+  .container-virtual-search > div {
+    padding: 48px 16px;
+  }
+  .container-virtual-search h2 {
+    margin-bottom: 32px !important;
+  }
+  #checkNumberPorting {
+    height: 36px !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+  }
+  .dropdown.bootstrap-select button {
+    height: 36px !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+  }
+  #check-porting {
+    padding: 8px 20px !important;
+    height: 36px !important;
+  }
+  #check-porting .preloader-sm {
+    height: 14px;
+    width: 14px;
+    margin: 0 0 0 4px;
+  }
+  #check-porting .preloader-sm:after {
+    height: 14px;
+    width: 14px;
+  }
+  .portnumber_row {
+    flex-direction: column;
+    max-width: 310px;
+    margin: 0 auto;
+  }
+  .numberport_result .card {
+    margin: 24px 0 0 !important;
+    padding: 24px !important;
+  }
+  .numberport_result .card.bg-transparent {
+    width: 100%;
+  }
+  .numberport_result .card.bg-white {
+    width: 100%;
+    margin-top: -12px !important;
+  }
+  .numberport_result .card.bg-white button {
+    height: 36px !important;
+    padding: 8px 20px !important;
+  }
+  .numberport_result .card h4 {
+    font-size: 20px !important;
+  }
+  .numberport_result .card.card-transparent .card--success strong {
+    font-size: 14px !important;
+  }
+  .numberport_result .card-result {
+    row-gap: 24px;
+  }
+  .numberport_result .card-details ul li span {
+    font-size: 14px !important;
+  }
+  .numberport_result .card-details,
+  .numberport_result .card--success {
+    margin: 24px 0 0 !important;
+  }
+  #portingEmail {
+    height: 36px !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+  }
+}/*# sourceMappingURL=number_port.css.map */

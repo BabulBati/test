@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    animation: scroll 10s linear infinite;
+    gap: 24px; /* Set the gap between images to 24px */
+}
+
+.slider img {
+    width: 100px; /* Set the width of each image */
+    height: auto; /* Set the height of each image */
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%); /* Adjust to match the total width of all images (3 images x 100% each) */
+    }
+}

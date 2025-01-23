@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="KrispCall/typography.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .container {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1280px;
+        }
+
+        .image-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Card */
+
+        .image-wrapper {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - (24px * (var(--per-view) - 1))) / var(--per-view));
+            grid-gap: 24px;
+            position: relative;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        .slides {
+            background: #ffffff;
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .contents {
+            cursor: pointer;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .content-top p {
+            color: #1f1f1f;
+        }
+
+        .content-bottom p {
+            color: #333333;
+        }
+
+        /* Cards End */
+        /* NAVIGATION BUTTONS */
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .prev-btn {
+            left: 0px;
+        }
+
+        .next-btn {
+            right: 0px;
+        }
+
+        /* NAVIGATION BUTTONS */
+        /*Pagination*/
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #555;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        /*Pagination end*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container paragraph-small">
+            <div class="image-wrapper" id="carousel">
+                <div class="slides">
+                    <div class="contents">
+                        <div class="content-top">
+                            <p style="font-weight: 500 !important;">Noah Kaminska</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <div class="content-bottom">
+                            <p>Its easy to use. Ability to put notes on each call is amazing. Plus it meets our
+                                expectation with the features. It would be nice to have a video conferencing as well.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slides">
+                    <div class="contents">
+                        <div class="content-top">
+                            <p style="font-weight: 500 !important;">Ceyhun C Canbazoglu</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <div class="content-bottom">
+                            <p>KrispCall is the only service I could find that meets my OTP SMS needs without any
+                                problems. The price is also very affordable. OTP SMS notifications reach me within 2-3
+                                seconds. Simply amazing service. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slides">
+                    <div class="contents">
+                        <div class="content-top">
+                            <p style="font-weight: 500 !important;">Diya Ahuja</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <div class="content-bottom">
+                            <p>The seamless pipedrive integration has saved my and my teams life. Can't thank KrispCall
+                                enough. Very reliable service and helpful staff. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slides">
+                    <div class="contents">
+                        <div class="content-top">
+                            <p style="font-weight: 500 !important;">Gorge</p>
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                        <div class="content-bottom">
+                            <p>Their new Zapier integration has saved a lots of time as we can automate so many things.
+                                Krispcall is Great tool and worth the every penny.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prev-btn" onclick="prevImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M1 9L17 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M8.03223 16.6605L1.45938 10.0877C1.31583 9.94534 1.20183 9.77592 1.12409 9.58913C1.04623 9.40246 1.00618 9.20221 1.00618 8.99995C1.00618 8.79768 1.04623 8.59743 1.12409 8.41076C1.20183 8.22397 1.31583 8.05455 1.45938 7.91219L8.03223 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="next-btn" onclick="nextImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M17 9L1 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M9.96777 16.6605L16.5406 10.0877C16.6842 9.94534 16.7982 9.77592 16.8759 9.58913C16.9538 9.40246 16.9938 9.20221 16.9938 8.99995C16.9938 8.79768 16.9538 8.59743 16.8759 8.41076C16.7982 8.22397 16.6842 8.05455 16.5406 7.91219L9.96777 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const imageItems = document.querySelectorAll('.image-wrapper > *');
+        const paginationContainer = document.getElementById('pagination');
+        const imageLength = imageItems.length;
+        let totalScroll = 0, autoScrollInterval;
+        addEventListener("resize", (event) => {
+            let perView = window.innerWidth >= 992 ? 3 : window.innerWidth >= 767 ? 2 : 1;
+            carousel.style.setProperty('--per-view', perView);
+            for (let i = 0; i < perView; i++) {carousel.insertAdjacentHTML('beforeend', imageItems[i].outerHTML)};
+            nextImage();
+        });
+
+        function scrolling() {
+            totalScroll++;
+            if (totalScroll == imageLength + 1) {
+                totalScroll = 1;
+                carousel.style.transition = '0s';
+                carousel.style.left = '0';
+            }
+            const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
+            carousel.style.left = `-${totalScroll * widthEl}px`;
+            carousel.style.transition = '.3s';
+            highlightCurrentDot();
+        }
+
+        function prevImage() {
+            totalScroll--;
+            const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
+
+            if (totalScroll < 0) {
+                totalScroll = imageLength - 1;
+                carousel.style.transition = '0s';
+                carousel.style.left = `-${imageLength * widthEl}px`;
+                setTimeout(() => {
+                    carousel.style.transition = '.3s';
+                    carousel.style.left = `-${totalScroll * widthEl}px`;
+                }, 0);
+            } else {
+                carousel.style.left = `-${totalScroll * widthEl}px`;
+                carousel.style.transition = '.3s';
+            }
+            highlightCurrentDot();
+        }
+
+        function nextImage() {
+            totalScroll++;
+            const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
+
+            if (totalScroll == imageLength + 1) {
+                carousel.style.transition = '0s';
+                carousel.style.left = '0';
+                setTimeout(() => {
+                    carousel.style.transition = '.3s';
+                    carousel.style.left = `-${totalScroll * widthEl}px`;
+                }, 0);
+                totalScroll = 1;
+            } else {
+                carousel.style.left = `-${totalScroll * widthEl}px`;
+                carousel.style.transition = '.3s';
+            }
+            highlightCurrentDot();
+        }
+
+        function updatePagination() {
+            paginationContainer.innerHTML = '';
+            for (let i = 0; i < imageLength; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.addEventListener('click', () => goToImage(i));
+                paginationContainer.appendChild(dot);
+            }
+            highlightCurrentDot();
+        }
+
+        function highlightCurrentDot() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === totalScroll % imageLength);
+            });
+        }
+
+        function goToImage(index) {
+            totalScroll = index;
+            const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24;
+            carousel.style.left = `-${totalScroll * widthEl}px`;
+            carousel.style.transition = '.3s';
+            highlightCurrentDot();
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(scrolling, 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Start auto-scroll when the page loads
+        startAutoScroll();
+
+        // Pause auto-scroll when the user interacts with the slider
+        carousel.addEventListener('mouseover', stopAutoScroll);
+        carousel.addEventListener('mouseout', startAutoScroll);
+
+        updatePagination();
+    </script>
+
+</body>
+
+</html>

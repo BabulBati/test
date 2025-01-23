@@ -1,0 +1,103 @@
+/* Typography Start */
+h1.semibold,
+h2.semibold {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+}
+h3.medium,
+h4.medium {
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+}
+
+h1.semibold {
+    font-size: 48px !important;
+}
+
+h2.semibold {
+    font-size: 40px !important;
+}
+h3.medium {
+    font-size: 32px !important;
+}
+h4.medium {
+    font-size: 24px !important;
+}
+
+.p-large p,
+.p-medium p,
+.p-small p {
+    font-family: "Work Sans", sans-serif;
+    letter-spacing: -0.02rem !important;
+    line-height: 150% !important;
+    font-family: 400 !important;
+}
+.p-large-m p,
+.p-medium-m p {
+    font-family: "Work Sans", sans-serif;
+    letter-spacing: -0.02rem !important;
+    line-height: 150% !important;
+    font-weight: 500 !important;
+}
+
+.p-large p,
+.p-large-m p {
+    font-size: 18px !important;
+}
+.p-medium p,
+.p-medium-m p {
+    font-size: 16px !important;
+}
+.p-small p {
+    font-size: 14px !important;
+}
+
+@media (max-width: 1024px) {
+    h1.semibold {
+        font-size: 36px !important;
+    }
+    h2.semibold {
+        font-size: 32px !important;
+    }
+    h3.medium {
+        font-size: 24px !important;
+    }
+    h4.medium {
+        font-size: 20px !important;
+    }
+    .p-large p,
+    .p-large-m p {
+        font-size: 16px !important;
+    }
+    .p-medium p,
+    .p-medium-m p {
+        font-size: 14px !important;
+    }
+    .p-small p {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    h1.semibold {
+        font-size: 32px !important;
+    }
+    h2.semibold {
+        font-size: 24px !important;
+    }
+    h3.medium {
+        font-size: 20px !important;
+    }
+    h4.medium {
+        font-size: 18px !important;
+    }
+    .p-large p,
+    .p-large-m p {
+        font-size: 14px !important;
+    }
+    .p-medium p,
+    .p-medium-m p {
+        font-size: 12px !important;
+    }
+}
+/* Typography End */

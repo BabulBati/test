@@ -1,0 +1,675 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+#footer {
+    background: #0d0d0d;
+    padding: 80px 0;
+    ul {
+        list-style: none !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+}
+
+.rotatesvg {
+    transform: rotate(180deg);
+}
+
+/* Get International Numbers */
+.international-numbers-container {
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1e1e1e;
+}
+
+.international-number-text {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 24px;
+    i {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+    .bi-arrow-90deg-up::before {
+        transform: rotate(180deg);
+        font-weight: 600 !important;
+    }
+}
+
+.international-numbers {
+    padding: 8px 0;
+    gap: 32px;
+    a {
+        color: #bf99ea !important;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: "Heebo";
+    }
+}
+
+.countries {
+    gap: 12px;
+    p {
+        color: #fff;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: "Heebo";
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#internationalnumbers_button {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.countries-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 !important;
+    ul {
+        a {
+            color: #a8a8a8;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            font-family: "Inter";
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            &:hover {
+                color: #ffffff;
+            }
+        }
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+    }
+    h5 {
+        color: #a8a8a8;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        font-family: "Inter";
+        margin-bottom: 16px;
+    }
+}
+
+.europe-countries {
+    display: flex;
+    gap: 48px;
+}
+
+/* Footer Menu */
+.menu_footer {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    h5 {
+        color: #fff;
+        font-family: "Manrope";
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+    li {
+        line-height: 100%;
+    }
+    a {
+        color: #a8a8a8;
+        font-family: "Inter";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    .see_all-button a {
+        color: #bf99ea;
+        font-family: "Inter";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+    h6 {
+        color: #fff !important;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0;
+    }
+}
+
+.ul-gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ul-gap-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px !important;
+}
+
+.social-div {
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0 !important;
+    justify-content: flex-start !important;
+}
+
+.logo-social-side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    p {
+        margin: 16px 0 0;
+        padding: 0;
+        color: #a8a8a8;
+        font-family: "Inter";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: -0.02rem;
+    }
+    h5 {
+        color: #fff;
+        font-family: "Manrope";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700 !important;
+        line-height: 28px;
+        margin-bottom: 8px !important;
+    }
+}
+
+.social-links-div {
+    display: inline-flex;
+    gap: 16px;
+}
+
+.app-download-side {
+    display: inline-flex;
+    gap: 16px;
+}
+
+.horizontal-line {
+    background: #323232;
+    height: 1px;
+    width: 100%;
+    margin: 32px 0;
+}
+
+.footer-bottom-div {
+    display: flex;
+    justify-content: space-between;
+    .left-side {
+        display: inline-flex;
+        gap: 16px;
+        a {
+            color: #a8a8a8;
+            font-family: "Roboto";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+    }
+    .right-side {
+        color: #a8a8a8;
+        font-family: "Inter";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        span {
+            color: transparent;
+            text-shadow: 0 0 0 #8733ff;
+        }
+    }
+    a:hover {
+        color: #ffffff;
+    }
+}
+
+/* Footer menu chevron-down */
+.f-accordion-button .bi-chevron-down::before {
+    transform: rotate(180deg);
+}
+
+.f-accordion-button.collapsed .bi-chevron-down::before {
+    transform: rotate(0deg);
+}
+
+/* Contact us */
+.contact-us-div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    h5 {
+        color: #fff;
+        font-family: "Manrope";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+        margin: 0;
+    }
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    a {
+        color: #b480ff !important;
+        font-family: "Inter";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}
+
+.f-accordion-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.f-accordion-button {
+    display: none;
+}
+
+/* New tag */
+.f-new-tag {
+    border-radius: 2px;
+    background: #8733ff;
+    color: #fff;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 4px 6px;
+    margin: 0 0 0 8px;
+    max-width: 38px;
+    max-height: 17px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-tag{
+    display: none;
+}
+
+/* Columns */
+.f-column-1 {
+    max-width: 180px;
+    width: 100%;
+}
+
+.f-column-2,
+.f-column-4,
+.f-column-5,
+.f-column-6 {
+    max-width: 186px;
+    width: 100%;
+}
+
+.f-column-3 {
+    max-width: 194px;
+    width: 100%;
+}
+
+.f-column-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+// Display all menu in desktop view
+@media (min-width: 992px) {
+    .f_menu-item .collapse {
+        display: block;
+    }
+}
+
+@media (max-width: 1440px) {
+    .international-numbers {
+        gap: 24px 0;
+    }
+}
+
+@media (max-width: 1399px) {
+    .international-numbers {
+        gap: 12px;
+    }
+
+    .countries {
+        gap: 8px;
+    }
+
+    #internationalnumbers_button {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .europe-countries {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 991px) {
+    #footer {
+        padding: 64px 0;
+    }
+
+    /* Get International Numbers */
+    .international-numbers-container {
+        padding: 32px 16px;
+        margin-bottom: 64px;
+    }
+
+    .international-numbers {
+        gap: 24px 40px;
+        flex-wrap: wrap;
+    }
+
+    .countries,
+    #internationalnumbers_button {
+        flex: 1 0 calc(50% - 40px);
+    }
+
+    .international-number-text {
+        font-size: 18px;
+        margin-bottom: 32px;
+    }
+
+    .countries-lists {
+        gap: 24px 72px;
+        justify-content: flex-start;
+    }
+
+    .europe-countries {
+        gap: 48px;
+    }
+    // Horizontal Line
+    .horizontal-line {
+        display: none;
+    }
+
+    /* Footer Menu */
+    .menu_footer {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 0 !important;
+        border-top: 1px solid #323232;
+        h5 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: -0.02rem;
+        }
+        .collapse {
+            margin-top: 16px !important;
+        }
+    }
+
+    .f-accordion-button {
+        display: block;
+    }
+
+    .f_menu-item {
+        border-bottom: 1px solid #323232;
+        padding: 24px 8px;
+        .collapsing {
+            margin-top: 16px;
+        }
+    }
+
+    h5.f-accordion-header {
+        margin: 0;
+    }
+
+    .ul-gap-8 {
+        gap: 16px;
+        margin-top: 16px !important;
+    }
+
+    //Columns
+    .f-column-1,
+    .f-column-2,
+    .f-column-3,
+    .f-column-4,
+    .f-column-5,
+    .f-column-6 {
+        max-width: 100%;
+    }
+
+    .f-column-4 {
+        gap: 0 !important;
+    }
+
+    .f-column-1 {
+        order: 6;
+        flex-direction: column-reverse;
+        margin: 0 !important;
+    }
+
+    .f_menu-item.f-column-2{
+    margin-top: 64px;
+    }
+
+    // Social link and Download Buttons
+    .social-div {
+        gap: 0 !important;
+    }
+
+    .contact-us-div {
+        margin-bottom: 64px;
+        gap: 0 !important;
+    }
+
+    .logo-social-side {
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 64px;
+        .logo-div {
+            max-width: 146px;
+            width: 100%;
+            p {
+                margin-top: 12px;
+                font-size: 14px;
+            }
+        }
+        .follow-us-div {
+            max-width: 144px;
+            width: 100%;
+            .social-links-div {
+                margin-top: 14px;
+            }
+        }
+        .mobile-app-div {
+            max-width: 85px;
+            width: 100%;
+            .app-download-side {
+                margin-top: 12px;
+            }
+        }
+        h5{
+            margin: 0 !important;
+        }
+    }
+
+    .contact-links {
+        gap: 16px !important;
+    }
+
+    /* Footer bottom */
+    .footer-bottom-div {
+        margin-top: 32px;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        .left-side {
+            width: 100%;
+            justify-content: space-between;
+            a{
+                font-size: 12px !important;
+            }
+        }
+    }
+    .show-tag{
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    #footer {
+        padding: 48px 0;
+    }
+
+    // Get International Numbers
+    .international-numbers-container {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .international-numbers {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .countries-lists {
+        max-width: 320px;
+        gap: 24px 40px;
+        justify-content: space-between;
+    }
+
+    #europe-list {
+        width: 100%;
+    }
+
+    .europe-countries {
+        gap: 0 40px;
+        justify-content: space-between;
+    }
+
+    .countries,
+    #internationalnumbers_button {
+        flex: 1 0 100%;
+    }
+
+    .international-number-text {
+        font-size: 16px;
+    }
+
+    // Footer menu
+    .menu_footer {
+        margin-top: 0;
+        h5 {
+            font-size: 14px;
+        }
+        a {
+            font-size: 12px;
+        }
+        h6{
+            font-size: 12px;
+        }
+    }
+    .f_menu-item {
+        padding: 16px 8px;
+    }
+    .f_menu-item.f-column-2 {
+        margin-top: 20px;
+    }
+
+    /* Social Links and Downloads */
+    .contact-us-div{
+        margin-bottom: 20px;
+    }
+    .logo-social-side{
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 24px 80px;
+        justify-content: flex-start;
+        .logo-div{
+            max-width: 100%;
+            width: 100%;
+            p{
+               max-width: 146px; 
+               font-size: 12px;
+            }
+        }
+        .social-links-div {
+            margin-top: 12px !important;
+        }
+    }
+
+    /* Footer Bottom */
+  .footer-bottom-div {
+      margin-top: 24px;
+      gap: 24px;
+      align-items: flex-start;
+      .left-side {
+          flex-direction: column;
+          gap: 12px;
+          a {
+              padding: 8px 0;
+          }
+      }
+      .right-side {
+          font-size: 12px;
+      }
+  }
+}
+
+@media (max-width: 325px) {
+    .countries-lists li {
+        width: 100%;
+    }
+  
+    .europe-countries {
+        flex-wrap: wrap;
+        ul {
+            flex: 1 0 100%;
+        }
+    }
+  }
+  

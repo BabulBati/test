@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="voice-type d-flex align-items-center">
+        <div class="custom-dropdown">
+            <div class="c-toggle" id="c-dropdownButton">
+                <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                    alt="" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                    <path
+                        d="M3.3173 4.57566C3.25634 4.63918 3.20798 4.71462 3.17498 4.79766C3.14198 4.8807 3.125 4.96972 3.125 5.05962C3.125 5.14951 3.14198 5.23853 3.17498 5.32157C3.20798 5.40461 3.25634 5.48005 3.3173 5.54357L7.03631 9.42434C7.09719 9.48795 7.16948 9.53841 7.24906 9.57285C7.32864 9.60728 7.41395 9.625 7.5001 9.625C7.58625 9.625 7.67155 9.60728 7.75113 9.57285C7.83071 9.53841 7.90301 9.48795 7.96388 9.42434L11.6829 5.54357C11.7438 5.48002 11.7921 5.40457 11.8251 5.32153C11.858 5.23849 11.875 5.1495 11.875 5.05962C11.875 4.96974 11.858 4.88074 11.8251 4.7977C11.7921 4.71467 11.7438 4.63922 11.6829 4.57566C11.622 4.51211 11.5497 4.4617 11.4701 4.4273C11.3905 4.3929 11.3052 4.3752 11.2191 4.3752C11.133 4.3752 11.0477 4.3929 10.9681 4.4273C10.8885 4.4617 10.8162 4.51211 10.7553 4.57566L7.5001 7.97156L4.24486 4.57566C4.18399 4.51205 4.1117 4.46159 4.03212 4.42715C3.95254 4.39272 3.86723 4.375 3.78108 4.375C3.69493 4.375 3.60963 4.39272 3.53005 4.42715C3.45047 4.46159 3.37817 4.51205 3.3173 4.57566Z"
+                        fill="#333333" fill-opacity="0.5" />
+                </svg>
+            </div>
+
+            <div class="c-menu" id="voiceDropDownMenu" style="display: none;">
+                <!-- Voice Joanna -->
+                <div class="c-drop_item" data-value="Joanna">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                        alt="Sophia" />
+                    <div>
+                        <div class="customtext-m custom-medium">
+                            <p style="color: #242424;">Sophia</p>
+                        </div>
+                        <div class="customtext-s custom-regular">
+                            <p style="color: #4D4950;">Female</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voice Matthew -->
+                <div class="c-drop_item" data-value="Matthew">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-david-img.png"
+                        alt="David" />
+                    <div>
+                        <div class="customtext-m custom-medium">
+                            <p style="color: #242424;">David</p>
+                        </div>
+                        <div class="customtext-s custom-regular">
+                            <p style="color: #4D4950;">Male</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voice Amy -->
+                <div class="c-drop_item" data-value="Amy">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-Grace-img.png"
+                        alt="Grace" />
+                    <div>
+                        <div class="customtext-m custom-medium">
+                            <p style="color: #242424;">Grace</p>
+                        </div>
+                        <div class="customtext-s custom-regular">
+                            <p style="color: #4D4950;">Female</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voice Brian -->
+                <div class="c-drop_item" data-value="Brian">
+                    <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-peter-img.png"
+                        alt="Peter" />
+                    <div>
+                        <div class="customtext-m custom-medium">
+                            <p style="color: #242424;">Peter</p>
+                        </div>
+                        <div class="customtext-s custom-regular">
+                            <p style="color: #4D4950;">Male</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const voiceDropDown = document.getElementById("c-dropdownButton");
+        const voiceDropDownMenu = document.getElementById("voiceDropDownMenu");
+        const voiceDropDownSVG = document.querySelector("#c-dropdownButton svg");
+        const voiceItems = document.querySelectorAll(".c-drop_item");
+
+
+        voiceDropDown.addEventListener("click", () => {
+            voiceDropDownMenu.style.display = voiceDropDownMenu.style.display === "block" ? "none" : "block";
+        })
+
+        voiceItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const selectedValue = item.dataset.value;
+                const imgSrc = item.querySelector("img").src;
+
+                console.log("Selected Voice:", selectedValue);
+                console.log("Image Source:", imgSrc);
+
+                voiceDropDown.querySelector("img").src = imgSrc;
+                voiceDropDownMenu.style.display = "none";
+            });
+        });
+
+    </script>
+</body>
+
+</html>

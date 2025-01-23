@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="typography.css">
+    <style>
+        .whats-new-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .whats-new-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .whats-new-content h3,
+        .whats-new-content p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .whats-new-content h3 {
+            color: #1f1f1f;
+        }
+
+        .whats-new-content p {
+            color: #333333;
+        }
+
+        @media (max-width:767) {
+            .whats-new-container {
+                gap: 16px;
+                margin-bottom: 16px;
+            }
+
+            .whats-new-content {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="whats-new-container foundation-heading paragraph-large">
+        <img src="https://krispcall.com/wp-content/uploads/2024/01/Microsoft-Dynamics-365-Phone-Integration.webp">
+        <div class="whats-new-content">
+            <h3>Microsoft Dynamics 365 Phone Integration</h3>
+            <p>Boost efficiency by smoothly incorporating your cloud-based communication and collaboration platform into
+                Microsoft Dynamics 365.</p>
+        </div>
+    </div>
+</body>
+
+</html>

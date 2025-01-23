@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="typography.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container-feature {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Tabs */
+    .responsive-tabs-container {
+        padding: 0 16px;
+        background-color: #ffffff !important;
+        overflow: hidden;
+        border-radius: 16px;
+        margin-bottom: 40px;
+    }
+
+    .responsive-tabs-container ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .responsive-tabs-container ul {
+        display: flex !important;
+        justify-content: center;
+        padding: 16px 0 !important;
+        margin: 0 !important;
+        gap: 16px;
+        white-space: nowrap;
+        list-style: none;
+        background-color: #ffffff !important;
+        border-radius: 16px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overflow-x: auto;
+    }
+
+    .responsive-tabs-container ul li {
+        flex: 0 0 auto;
+    }
+
+    .responsive-tabs-container ul li a {
+        font-family: 'Heebo', sans-serif;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: 0.2s ease;
+        text-decoration: none;
+        position: relative;
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 16px;
+        height: 50px;
+    }
+
+    .responsive-tabs-container ul li a .fdiv {
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 16px;
+    }
+
+    .responsive-tabs-container ul li a p {
+        color: #0D002E;
+        font-weight: 700 !important;
+    }
+
+    ul.tabs-list .active {
+        border: none !important;
+        background: #FBE089 !important;
+        border-radius: 8px;
+    }
+
+    ul.tabs-list .active::before {
+        content: '';
+        position: absolute;
+        width: 46px;
+        border-bottom: 1px solid #1F1F1F;
+        bottom: -16px;
+    }
+
+    .tabcontent {
+        display: none;
+    }
+
+    /* Tabs End */
+    /* Slick JS */
+    .carousel {
+        width: 100%;
+    }
+
+    .slick-slide {
+        height: auto;
+    }
+
+    .slick-dots li.slick-active button {
+        background: transparent !important;
+    }
+
+    .slick-dots li button {
+        background: transparent !important;
+    }
+
+    /*.slick-dotted.slick-slider{*/
+    /*    margin-bottom: 34px;*/
+    /*}*/
+    /*.slick-dots {*/
+    /*    display: flex;*/
+    /*    gap: 5px;*/
+    /*    list-style: none;*/
+    /*    justify-content: center;*/
+    /*    bottom:-34px;*/
+    /*    height: 8px;*/
+    /*}*/
+
+    .slick-dots li {
+        background: #C4C4C4;
+        opacity: 1;
+        margin: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+    }
+
+    .slick-dots li button:before {
+        color: transparent !important;
+    }
+
+    .slick-dots li.slick-active button:before {
+        opacity: 0;
+    }
+
+    .slick-dots li.slick-active {
+        background: #8251EE;
+        width: 32px;
+    }
+
+    /* Slick JS end */
+    /* Testimonials Contents */
+    .contents {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        margin: 0 12px;
+        /* cursor: pointer; */
+        display: flex !important;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .contents p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .content-top {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .content-top p {
+        color: #1F1F1F;
+    }
+
+    .content-bottom p {
+        color: #333333;
+    }
+
+    /* Testimonials Contents end */
+    /* Star rating */
+    .stars {
+        height: 16px;
+    }
+
+    .checked {
+        color: #ffd400 !important;
+    }
+
+    .fa {
+        font-size: 16px;
+    }
+
+    .fa-star {
+        color: #B7B3C1;
+    }
+
+    /* Star rating end */
+    @media (max-width:1199px) {
+        .responsive-tabs-container ul {
+            justify-content: flex-start !important;
+        }
+        .fa {
+            font-size: 15px;
+        }
+
+        .responsive-tabs-container ul li a .fdiv {
+            gap: 8px;
+        }
+
+        .contents {
+            gap: 16px;
+        }
+
+        .content-top {
+            gap: 4px;
+        }
+    }
+    
+    @media(max-width:991px) {
+        .slick-dotted.slick-slider {
+            margin-bottom: 32px;
+        }
+
+        .slick-dots {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+            justify-content: center;
+            bottom: -32px;
+            height: 8px;
+        }
+    }
+
+    @media (max-width:767px) {
+        .responsive-tabs-container ul {
+            gap: 16px;
+        }
+        .slick-dotted.slick-slider{
+            margin-bottom: 24px;
+        }
+        .slick-dots {
+            bottom:-24px;
+        }
+        .fa {
+            font-size: 14px;
+        }
+    }
+    
+    button.slick-arrow {
+        top: 50% !important;
+        transform: translate(0, -50%) !important;
+        border: none;
+    }
+
+    .slick-next {
+        right: -10px;
+    }
+
+    .slick-prev {
+        left: -10px;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        background: #fff;
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1F1F1F;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        border: 1px solid #eee;
+        font-family: none;
+        line-height: 100%;
+    }
+
+    .slick-prev:before {
+        content: '\1F860';
+    }
+
+    .slick-next:before {
+        content: '\1F860';
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container-feature">
+        <div class="responsive-tabs-container paragraph-large">
+            <ul class="tabs-list">
+                <li class="tabs-icon">
+                    <a onclick="openTab(event, 'l1')" class="tablinks active">
+                        <div class="fdiv">
+                            <img src="https://staging.krispcall.com/wp-content/uploads/2024/01/l1.png" alt="">
+                            <p>4.0</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="tabs-icon">
+                    <a onclick="openTab(event, 'l2')" class="tablinks">
+                        <div class="fdiv">
+                            <img src="https://staging.krispcall.com/wp-content/uploads/2024/01/l2.png" alt="">
+                            <p>4.4</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="tabs-icon">
+                    <a onclick="openTab(event, 'l3')" class="tablinks">
+                        <div class="fdiv">
+                            <img src="https://staging.krispcall.com/wp-content/uploads/2024/01/l3.png" alt="">
+                            <p>4.0</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="tabs-icon">
+                    <a onclick="openTab(event, 'l4')" class="tablinks">
+                        <div class="fdiv">
+                            <img src="https://staging.krispcall.com/wp-content/uploads/2024/01/l4.png" alt="">
+                            <p>4.0</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="tabs-icon">
+                    <a onclick="openTab(event, 'l5')" class="tablinks">
+                        <div class="fdiv">
+                            <img src="https://staging.krispcall.com/wp-content/uploads/2024/01/l5.png" alt="">
+                            <p>4.0</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="l1" class="tabcontent paragraph-small" style="display: block;">
+            <div class="carousel" id="carousel1">
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Noah Kaminska</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Its easy to use. Ability to put notes on each call is amazing. Plus it meets our
+                            expectation with the features. It would be nice to have a video conferencing as
+                            well.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Ceyhun C Canbazoglu</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>KrispCall is the only service I could find that meets my OTP SMS needs without any problems.
+                            The
+                            price is also very affordable. OTP SMS notifications reach me within 2-3 seconds. Simply
+                            amazing
+                            service.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Diya Ahuja</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>The seamless pipedrive integration has saved my and my teams life. Can't thank KrispCall
+                            enough.
+                            Very
+                            reliable service and helpful staff.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Gorge</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Their new Zapier integration has saved a lots of time as we can automate so many things.
+                            Krispcall is
+                            Great tool and worth the every penny.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="l2" class="tabcontent paragraph-small">
+            <div class="carousel" id="carousel2">
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Esabella W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Overall experience is outstanding. The team was a big help during the transition to this new
+                            system &
+                            playes a crucial role in the successful expansion of our business.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Isabella Y.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Krispcall is my top choice, despite some flaws. the team is feedback oriented and constantly
+                            improving features.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Olivia W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>My experience with Krispcall has been positive. It has streamlines my business communication
+                            and
+                            provided reliable second phone number!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Alecia C.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>I highly recommend KrispCall to businesses of any size looking to efficiently manage their
+                            contact
+                            center. It has significantly improved our operations and client interactions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="l3" class="tabcontent paragraph-small">
+            <div class="carousel" id="carousel3">
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Thomas N.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Just when I needed it! It's a great experience to a second phone number to fall on when you
+                            are
+                            abroad and facilitate family connections just like you are a home .
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Kalpesh M.
+                        </p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Very fast and efficent service. Literally took a couple of minutes to apply and activate my
+                            account.
+                            Highly Recommended.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">John N.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Krispcall has been very handy along with increased load. The scalability is very impressive
+                            and my
+                            contact center agents has been easily adapting this system. Plus the customer support is
+                            very very
+                            prompt and friendly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Vuong N.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>I am able to register multiple phone numbers across different countries for testing SMS and
+                            phone
+                            call functionalities in a Public Sector Project, as it involves users from various
+                            countries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="l4" class="tabcontent paragraph-small">
+            <div class="carousel" id="carousel4">
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Isabella Y.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Krispcall is my top choice, despite some flaws. the team is feedback oriented and constantly
+                            improving features.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Esabella W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Overall experience is outstanding. The team was a big help during the transition to this new
+                            system &
+                            playes a crucial role in the successful expansion of our business.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Olivia W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>My experience with Krispcall has been positive. It has streamlines my business communication
+                            and
+                            provided reliable second phone number!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Alecia C.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>I highly recommend KrispCall to businesses of any size looking to efficiently manage their
+                            contact
+                            center. It has significantly improved our operations and client interactions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="l5" class="tabcontent paragraph-small">
+            <div class="carousel" id="carousel5">
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Olivia W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>My experience with Krispcall has been positive. It has streamlines my business communication
+                            and
+                            provided reliable second phone number!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Esabella W.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Overall experience is outstanding. The team was a big help during the transition to this new
+                            system &
+                            playes a crucial role in the successful expansion of our business.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Alecia C.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>I highly recommend KrispCall to businesses of any size looking to efficiently manage their
+                            contact
+                            center. It has significantly improved our operations and client interactions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="content-top">
+                        <p style="font-weight: 500 !important;">Isabella Y.</p>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                    <div class="content-bottom">
+                        <p>Krispcall is my top choice, despite some flaws. the team is feedback oriented and constantly
+                            improving features.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    function openTab(evt, lName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tabs-icon"); // Updated class name
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].querySelector('a').classList.remove("active");
+        }
+        document.getElementById(lName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+
+        // Re-initialize slick carousel when a new tab is opened
+        $('.carousel').slick('unslick');
+        $('.carousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows: false,
+                        dots: true
+                    }
+                }
+            ]
+        });
+    }
+
+    // Initialize Slick Carousel on document ready
+    $(document).ready(function () {
+        $('.carousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        arrows: false,
+                        dots: true
+                    }
+                }
+            ]
+        });
+    });
+</script>
+</body>
+
+</html>

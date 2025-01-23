@@ -1,0 +1,479 @@
+<html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+.no-scroll {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menu.active {
+    display: block;
+}
+
+        .menu.active {
+            display: block;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+        
+        .header-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between;
+        }
+
+        .header {
+            background-color: #F6FEF7;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .rightside {
+            display: inline-flex;
+        }
+
+        .logo {
+            max-width: 100px;
+            height: 24px;
+
+        }
+
+        .try-button {
+            background-color: #68DE6D;
+            text-decoration: none;
+            display: inline-flex;
+            margin-right: 20px;
+            color: var(--primary-on-primary, #083009);
+            font-family: Switzer;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            padding: 4px 8px;
+            gap: 8px;
+        }
+
+        .menu-toggle,
+        .menu-toggle.active {
+            display: block !important;
+            cursor: pointer;
+            font-size: 24px;
+            position: sticky !important;
+            top: 50% !important;
+            right: 15px !important;
+            z-index: 1001 !important;
+            color: #000000;
+        }
+
+        .menu-toggle:before,
+        .menu-toggle.active:before {
+            content: '\2630';
+            
+            /* Hamburger icon (Unicode) */
+        }
+
+        .menu-toggle.active:before {
+            content: '\2715';
+            font-size:20px;
+            /* Cross icon (Unicode) */
+        }
+
+        .menu {
+            display: none;
+            position: sticky;
+            width: 100%;
+            height: 33%;
+            background-color: #F6FEF7;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+            box-sizing: border-box;
+            z-index: 1000;
+            list-style-type: none;
+            /* Remove bullets */
+        }
+
+        .menu li {
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+            color: #083009;
+            margin-bottom: 5px;
+            list-style-type: none;
+            color: var(--primary-on-primary, #083009);
+            font-family: Switzer;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 16px;
+        }
+
+        .menu li a {
+            color: #083009;
+        }
+
+        .menu ul {
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+            margin-bottom: 5px;
+            list-style-type: none;
+            color: var(--primary-on-primary, #083009);
+            font-family: Switzer;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 16px;
+        }
+
+        .demo-button, .signup-button{
+            background-color: #083009;
+            text-decoration: none;            
+            border-radius: 4px;
+            display: flex;
+            padding: var(--input-y-spacing, 12px) 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;          
+            text-align: center;
+            font-family: Switzer;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+        }
+        .demo-button {
+            background-color: #083009;
+            margin-top: 10px;
+            color: #F6FDF7;
+            
+        }
+
+        .demo-button:hover {
+            background-color: #083009;
+            color: #F6FDF7;
+            text-decoration: none;
+        }
+
+        .signup-button {
+            background-color: #F6FEF7;          
+            margin-top: 0px;          
+            border: 1px solid var(--primary-on-primary, #083009);
+            color:#083009;         
+        }
+
+        .signup-button:hover {
+            text-decoration: none;
+
+        }
+
+        .divider-container {
+            background-color: #F6FEF7;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 138px;
+            flex: 1;
+            height: 1px;
+            background-color: #979797;
+        }
+
+        .or-text {
+            color: var(--outline-outline, #979797);
+            font-family: Switzer;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+padding-right: 12px;
+    padding-left: 12px;
+
+
+        }
+
+        /* Media query for mobile view */
+        @media only screen and (max-width: 1023px) {
+            .menu-toggle:before {
+                content: '\2630';
+                /* Hamburger icon (Unicode) */
+            }
+
+            .menu-toggle.active+.menu {
+                display: block;
+            }
+
+            .menu-toggle.active:before {
+                content: '\2715';
+                /* Cross icon (Unicode) */
+                cursor: pointer;
+                font-size: 20px;
+
+
+            }
+        }
+
+        /* Media query for mobile view */
+
+        @media only screen and (max-width: 390px) {
+            .menu {
+                background-color: #F6FEF7;
+                max-width: 500px;
+                height: 36%;
+            }
+        }
+
+        @media only screen and (max-width: 375px) {
+            .divider-container {
+                background-color: #F6FEF7;
+                margin-bottom: 0px;
+                padding-bottom: 10px;
+            }
+        }
+
+        /*halfscreen for tablet*/
+        @media only screen and (min-width: 601px) and (max-width: 1023px) {       
+            .menu {
+                display: none;
+                position: fixed;
+                width: 45%;               
+                max-width: 500px;
+                height: 100%;           
+                background-color: #F6FEF7;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                box-sizing: border-box;
+                z-index: 1000;
+                list-style-type: none;
+                left: 0;
+                top: 0;
+                opacity: 0;
+    transform: translateX(-560px);
+    animation: slideIn 0.45s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu.active {
+    display: block;
+}
+
+
+            .menu ul {
+                margin-left: 15px !important;
+                padding-top: 20px;
+            }
+
+            .demo-button {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .signup-button {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .divider-container {
+                margin-left: 15px;
+                margin-right: 15px;
+                background-color: transparent;
+            }
+
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);/* Semi-transparent black */               
+                z-index: 1000;
+                display: none;/* Hide by default */
+                
+            }
+
+            .tablogo {
+                margin-left: 15px !important;
+                max-width: 100%;
+                height: auto;
+            }
+            .menu-toggle.active:before {
+    content: '\2715';
+    color: #333; 
+    background-color: #fff; 
+            padding: 4px; 
+            border-radius: 4px;
+    
+}
+        }    
+        @media only screen and (max-width: 600px) {
+            .tablogo {
+                display: none !important;
+            }
+            .menu{
+                opacity: 0;
+        transform: translateX(-560px);
+        animation: slideIn 0.45s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .menu.active {
+        display: block;
+    }
+        
+
+
+/*.menu{
+ opacity: 0;
+    transform: translateY(-100%);
+    animation: slideIn 0.45s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.menu.active {
+    display: block;
+    top: 0; 
+}
+*/
+
+.menu.active {
+    display: block;
+}
+
+
+            .overlay {
+                position: fixed;
+                top: 376px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);/* Semi-transparent black */               
+                z-index: 1000;
+                display: none;/* Hide by default */
+                opacity: 0; /* Set initial opacity to 0 for fade-in effect */
+    transition: opacity 0.45s ease-in-out; /* Use opacity for fade-in/fade-out effect */
+    pointer-events: none; /* Disable pointer events when overlay is not active */
+}
+
+.overlay.active {
+    opacity: 1; /* Set opacity to 1 for fade-in effect */
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: auto; /* Enable pointer events when overlay is active */
+}
+
+            }
+        
+    </style>
+</head>
+
+<body>
+    <header class="header-row">
+        <a href="/">
+            <img src="/wp-content/uploads/2023/12/Dialaxy-Logo.svg" alt="Logo" class="logo">
+        </a>
+        <div class="rightside">
+            <a href="https://app.dialaxy.com/register" target="_blank" class="try-button">Try for Free</a>
+            <div class="menu-toggle" onclick="toggleMenu()"></div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <div id="myNav" class="overlay"></div>
+    <div class="menu">
+        <a href="/">
+            <img src="https:/wp-content/uploads/2023/11/Dialaxy-logo.png" alt="Logo" class="tablogo">
+        </a>
+        <ul>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/download">Download</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+        </ul>
+        <!-- Add more menu items as needed -->
+        <a href="https://calendly.com/dialaxy/30min" target="_blank" class="demo-button">Request a Demo</a>
+
+        <div class="divider-container">
+            <div class="divider"></div>
+            <div class="or-text">OR</div>
+            <div class="divider"></div>
+
+        </div>
+        <a href="https://app.dialaxy.com/signin" target="_blank" class="signup-button">Sign In</a>
+    </div>
+</body>
+<script>
+    function toggleMenu() {
+        var menuToggle = document.querySelector('.menu-toggle');
+        var menu = document.querySelector('.menu');
+        var overlay = document.getElementById('myNav');
+    
+        // Toggle the 'active' class on the 'menu-toggle' element
+        menuToggle.classList.toggle('active');
+    
+        // Toggle the 'active' class on the overlay
+        overlay.classList.toggle('active');
+    
+        // Toggle the 'active' class on the menu
+        menu.classList.toggle('active');
+    
+        // Toggle the 'no-scroll' class on the body
+        document.body.classList.toggle('no-scroll');
+    
+        // Check if the body has 'no-scroll' class and prevent scrolling on mobile devices
+        if (document.body.classList.contains('no-scroll')) {
+            document.addEventListener('touchmove', preventScroll, { passive: false });
+        } else {
+            document.removeEventListener('touchmove', preventScroll, { passive: false });
+        }
+    }
+    
+    function preventScroll(event) {
+        // Prevent scrolling on mobile devices when the 'no-scroll' class is present
+        event.preventDefault();
+    }
+    
+    </script>
+    </html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <style>
+       body {
+            font-family: Manrope, sans-serif;
+        }
+        .faq-container {
+            max-width: 1920px;
+            padding: 56px 577px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .faq-item {
+            margin: 10px 0;
+            border: 1px solid #110F0F;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            border-radius: 12px;
+            border: 1px solid var(--primary-300, #E9E9E9);
+            background: #F6F6F6;
+        }
+        .faq-item:hover {
+            background-color: #E5E5E5;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+        }
+        .view-button-container {
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+        }
+        .view-button{
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 8px 20px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--primary-400, #D2D2D2);
+            background: var(--primary-100, #FFF);
+            text-align: center;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px; /* 125% */
+        }
+        .view-button.hide {
+            display: none;
+        }
+        .heading{
+            color: var(--primary-700, #1D1D1F);
+            text-align: center;
+            font-family: Inter;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%; /* 48px */
+            letter-spacing: -0.8px;
+            padding-top: 0px;
+            padding-bottom: -56px;
+        }
+        .toggle-sign{
+            font-weight: 400;
+    float: right;
+    transition: content 0.3s ease-in-out;
+    width:24px;
+    height:24px;
+    font-size:28px;
+    line-height:16px;
+    font-family: inter;
+        }
+        .toggle-sign::after {
+    content: '+';
+    font-weight: 400;
+    float: right;
+    transition: content 0.3s ease-in-out;
+}
+.faq-item.opened .toggle-sign::after {
+    content: '-';
+    font-weight: 400;
+    float: right;
+    transition: content 0.3s ease-in-out;
+    width:24px;
+    height:24px;
+    font-size:28px;
+    line-height:16px;
+    font-family: inter;
+}
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+            .faq-container {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 25px;
+            }
+            .heading{
+                padding-bottom: 0px;
+            }
+        }
+        /* Responsive adjustments for mobile devices */
+        @media (max-width: 480px) {
+            .faq-container {
+                padding: 15px;
+            }
+        }
+    </style>
+    <h1 class="heading">Frequently Asked Question (FAQ)</h1>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3 class="faq-question">Q: What is Lorem Ipsum? <span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: How can I  support?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: What is 1?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: How can I contact support?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: What is 2?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: How can I  3?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: What is 4?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Q: How can I contact 5?<span class="toggle-sign"></span></h3>
+            <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Q: What is 6? <span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: How can I  7?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: What is 8?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: How can 9?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: What is Lorem 10?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: How can I  11?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: What is 12?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+      </div>
+      <div class="faq-item">
+          <h3 class="faq-question">Q: How can 13?<span class="toggle-sign"></span></h3>
+          <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">17 Q: How can 13?<span class="toggle-sign"></span></h3>
+        <div class="faq-answer">A: You can contact our support team through our <a href="#">contact page</a>.</div>
+    </div>
+        <!-- Add more FAQ items here -->
+    </div>
+    <div class="view-button-container">
+      <button class="view-button" id="view-more-button">Show More FAQ</button>
+      <button class="view-button hide" id="view-less-button">Show Less FAQ</button>
+  </div>
+  <script>
+       const faqItems = document.querySelectorAll('.faq-item');
+        const viewMoreButton = document.getElementById('view-more-button');
+        const viewLessButton = document.getElementById('view-less-button');
+        let shownItemCount = 5; // Number of initially shown FAQ items
+        let hiddenItemCount = faqItems.length - shownItemCount;
+        let openedAnswer = null;
+        function toggleFAQ() {
+            const hiddenItems = document.querySelectorAll('.faq-item:not(.shown)');
+            hiddenItems.forEach((item, index) => {
+                if (index < shownItemCount) {
+                    item.style.display = 'block';
+                    item.classList.add('shown');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('shown');
+                }
+            });
+            hiddenItemCount = hiddenItems.length;
+        console.log(hiddenItemCount);
+            if (hiddenItemCount <= shownItemCount) {
+                viewLessButton.style.display = 'block';  // Show "Show Less" button
+                viewMoreButton.style.display = 'none';   // Hide "Show More" button
+            } else {
+                viewLessButton.style.display = 'none';   // Hide "Show Less" button
+                viewMoreButton.style.display = 'block';  // Show "Show More" button
+            }
+        }
+        viewMoreButton.addEventListener('click', () => {
+            toggleFAQ();
+            
+        });
+
+        function toggleAnswer(event) {
+            const answer = event.currentTarget.querySelector('.faq-answer');
+            if (openedAnswer !== answer) {
+                if (openedAnswer) {
+                    openedAnswer.style.display = 'none';
+                }
+                answer.style.display = 'block';
+                openedAnswer = answer;
+            } else {
+                openedAnswer.style.display = 'none';
+                openedAnswer = null;
+            }
+        }
+        faqItems.forEach((item) => {
+            item.addEventListener('click', toggleAnswer);
+        });
+          
+       viewLessButton.addEventListener('click', () => {
+            const shownItems = document.querySelectorAll('.faq-item.shown');
+            shownItems.forEach((item, index) => {
+                if (index >= shownItemCount) {
+                    item.style.display = 'none';
+                    item.classList.remove('shown');
+                    console.log(shownItemCount);
+                }
+            });
+            viewLessButton.style.display = 'none';
+                viewMoreButton.style.display = 'block';
+        });
+        console.log(hiddenItemCount);
+        console.log(shownItemCount);
+      // Initially, show only 4 FAQ items.
+      toggleFAQ();
+      if (hiddenItemCount === 0) {
+          viewLessButton.style.display = 'block';  // Show "Show Less" button
+          viewMoreButton.style.display = 'none';   // Hide "Show More" button
+      } else {
+          viewLessButton.style.display = 'none';   // Hide "Show Less" button
+          viewMoreButton.style.display = 'block';  // Show "Show More" button
+      }
+//for plus minus sign
+function toggleAnswer(event) {
+    const answer = event.currentTarget.querySelector('.faq-answer');
+    const question = event.currentTarget.querySelector('.faq-question');
+    const sign = question.querySelector('.toggle-sign');
+    if (openedAnswer !== answer) {
+        if (openedAnswer) {
+            openedAnswer.style.display = 'none';
+            openedAnswer.parentElement.classList.remove('opened');
+        }
+        answer.style.display = 'block';
+        openedAnswer = answer;
+        event.currentTarget.classList.add('opened');
+    } else {
+        openedAnswer.style.display = 'none';
+        openedAnswer.parentElement.classList.remove('opened');
+        openedAnswer = null;
+    }
+}
+//new
+
+      </script>
+</body>
+</html>

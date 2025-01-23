@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            width: 520px;
+            border-radius: 24px;
+        }
+
+        #availableContainer, #upcomingContainer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 0px;
+        }
+
+        .item {
+            border-radius: 16px;
+            background-color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        .item img {
+            max-width: 100px;
+            margin-right: 10px;
+        }
+
+        .item .text-container {
+            margin-left: 10px;
+        }
+
+        .item .category {
+            color: #251A43;
+            font-family: Heebo;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            /* 100% */
+            letter-spacing: -0.2px;
+        }
+
+        .item .item-text {
+            margin-top: 5px;
+            color: #564D6D;
+            font-family: Heebo;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            /* 125% */
+            letter-spacing: -0.16px;
+
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #seeMoreBtn,
+        #seeLessBtn {
+            display: block;
+            margin: 0 auto;
+            padding: 16px 32px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+            background: var(--primary-default, #390179);
+            box-shadow: 2px 6px 30px 0px rgba(52, 6, 104, 0.16);
+        }
+
+        /* Media queries for responsiveness */
+
+        /* For tablets */
+        @media (min-width: 768px) {
+            #availableContainer, #upcomingContainer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* For desktops */
+        @media (min-width: 1200px) {
+            #availableContainer, #upcomingContainer {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .item {
+            padding: 16px;
+        }
+        .available-container,
+        .upcoming-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .upcoming-container {
+            margin-bottom: 48px;
+        }
+
+        .available-container {
+            margin-bottom: 40px;
+        }
+
+        .available-container h3,
+        .upcoming-container h3 {
+            margin: 0;
+            padding: 0;
+            color: #251A43;
+            font-family: Manrope;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 120%;
+            letter-spacing: -0.24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search items...">
+    </div>
+
+    <div class="available-container">
+        <h3>Available Integration</h3>
+        <div id="availableContainer"></div>
+    </div>
+
+    <div class="upcoming-container">
+        <h3>Upcoming Integrations</h3>
+        <div id="upcomingContainer"></div>
+    </div>
+
+    <button id="seeMoreBtn">See More</button>
+    <button id="seeLessBtn" style="display: none;">See Less</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = [
+                {
+                    image: 'https://cdrwriters3stg.wpengine.com/wp-content/uploads/2023/10/Frame-1000005873.png',
+                    category: 'HubSpot',
+                    text: 'CRM',
+                    link: 'https://example.com/apple',
+                    status: 'Available'
+                },
+                {
+                    image: 'https://cdrwriters3stg.wpengine.com/wp-content/uploads/2023/10/Frame-1000005873-1.png',
+                    category: 'Salesforce',
+                    text: 'CRM',
+                    link: 'https://example.com/apple',
+                    status: 'Available'
+                },
+                {
+                    image: 'https://cdrwriters3stg.wpengine.com/wp-content/uploads/2023/10/Frame-1000005873-2.png',
+                    category: 'Pipedrive',
+                    text: 'Help Desk',
+                    link: 'https://example.com/apple',
+                    status: 'Available'
+                },
+                {
+                    image: 'https://cdrwriters3stg.wpengine.com/wp-content/uploads/2023/10/Frame-1000005873-3.png',
+                    category: 'Zendesk',
+                    text: 'Help Desk',
+                    link: 'https://example.com/apple',
+                    status: 'Available'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Fruit',
+                    text: 'Banana',
+                    link: 'https://example.com/banana',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Vegetable',
+                    text: 'Carrot',
+                    link: 'https://example.com/carrot',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Vegetable',
+                    text: 'Broccoli',
+                    link: 'https://example.com/broccoli',
+                    status: 'Available'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Dessert',
+                    text: 'Cake',
+                    link: 'https://example.com/cake',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Dessert',
+                    text: 'Ice Cream',
+                    link: 'https://example.com/ice-cream',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Chips',
+                    link: 'https://example.com/chips',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Cookies',
+                    link: 'https://example.com/cookies',
+                    status: 'Upcoming'
+                }
+                ,
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Chips',
+                    link: 'https://example.com/chips',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Cookies',
+                    link: 'https://example.com/cookies',
+                    status: 'Upcoming'
+                }
+                ,
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Chips',
+                    link: 'https://example.com/chips',
+                    status: 'Upcoming'
+                },
+                {
+                    image: 'https://via.placeholder.com/100',
+                    category: 'Snack',
+                    text: 'Cookies',
+                    link: 'https://example.com/cookies',
+                    status: 'Upcoming'
+                }
+            ];
+
+
+            const availableContainer = document.getElementById('availableContainer');
+            const upcomingContainer = document.getElementById('upcomingContainer');
+            const seeMoreBtn = document.getElementById('seeMoreBtn');
+            const seeLessBtn = document.getElementById('seeLessBtn');
+            const initialUpcomingItemCount = 4;
+            let visibleUpcomingItemCount = initialUpcomingItemCount;
+
+            function renderItems(container, items, status) {
+                container.innerHTML = ""; // Clear existing content
+
+                items.forEach(item => {
+                    if (item.status === status) {
+                        const itemElement = document.createElement('div');
+                        itemElement.classList.add('item');
+
+                        const imageElement = document.createElement('img');
+                        imageElement.src = item.image;
+                        imageElement.alt = item.text;
+
+                        const textContainer = document.createElement('div');
+                        textContainer.classList.add('text-container');
+
+                        const categoryElement = document.createElement('div');
+                        categoryElement.classList.add('category');
+                        categoryElement.textContent = item.category;
+
+                        const itemTextElement = document.createElement('div');
+                        itemTextElement.classList.add('item-text');
+                        itemTextElement.textContent = item.text;
+
+                        textContainer.appendChild(categoryElement);
+                        textContainer.appendChild(itemTextElement);
+
+                        itemElement.appendChild(imageElement);
+                        itemElement.appendChild(textContainer);
+
+                        container.appendChild(itemElement);
+                    }
+                });
+            }
+
+            function renderUpcomingItems() {
+                const upcomingItems = items.filter(item => item.status === 'Upcoming');
+                const visibleUpcomingItems = upcomingItems.slice(0, visibleUpcomingItemCount);
+                renderItems(upcomingContainer, visibleUpcomingItems, 'Upcoming');
+            }
+
+            // Initial rendering
+            renderItems(availableContainer, items, 'Available');
+            renderUpcomingItems();
+
+            seeMoreBtn.addEventListener('click', function () {
+                visibleUpcomingItemCount += 4;
+                renderUpcomingItems();
+
+                if (visibleUpcomingItemCount >= items.filter(item => item.status === 'Upcoming').length) {
+                    seeMoreBtn.style.display = "none";
+                    seeLessBtn.style.display = "block";
+                }
+            });
+
+            seeLessBtn.addEventListener('click', function () {
+                visibleUpcomingItemCount = initialUpcomingItemCount;
+                renderUpcomingItems();
+                seeMoreBtn.style.display = "block";
+                seeLessBtn.style.display = "none";
+            });
+        });
+           
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<style>
+    .blackbox-button{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    }
+    .blackbox-button button{
+        padding: 10px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        font-style: normal;
+        color: #ffffff;
+    }
+    .blackbox-button-signup{ background-color:#059669 ; border: none;}
+    .blackbox-button-explore{background-color:transparent ; border: 1px solid #ffffff;}
+
+    @media only screen and (max-width: 768px) {
+        .blackbox-button{
+       flex-direction: column;
+      align-items: center;
+    }
+            
+        }
+</style>
+<div class="blackbox-button">
+    <a href="http://" target="_blank" rel="noopener noreferrer">
+        <button class="blackbox-button-signup">Sign up for free</button>
+    </a>
+    <a href="http://" target="_blank" rel="noopener noreferrer">
+        <button class="blackbox-button-explore">Explore Our Plans</button>
+    </a>
+</div>

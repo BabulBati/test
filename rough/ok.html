@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+  <section class="py-3 mb-5">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-gray-800">
+        Carrier <span class="text-gradient">Lookup</span>
+      </h2>
+      <div class="container mx-auto px-4">
+        <div class="mb-4 mt-2">
+          <!-- <p>Let’s find out if the phone number you are looking for is currently <br> available on KrispCall or not.</p> -->
+        </div>
+        <form action="#" class="pt-3" id="carrier-lookup">
+          <div class="flex justify-between items-center">
+            <div class="flex-1 px-0">
+              <div class="flex mb-0">
+                <input type="tel" class="form-control border border-gray-300 rounded px-3 py-2 w-full"
+                  id="carrierlookup" placeholder="480 030 084" name="check-num" required />
+              </div>
+            </div>
+            <div class="pl-0">
+              <div class="text-center">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit" id="carrier-lookup-btn">
+                  Validate<span class="preloader preloader-sm"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="container mx-auto mt-3 hidden" id="carrier-validator-results">
+          <div class="flex flex-col items-center justify-center min-h-screen text-white p-6">
+            <div class="bg-[#6F1BDA] rounded-xl p-8 shadow-lg max-w-2xl w-full" id="carriervalidatorselected-list">
+              <!-- Validation results will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function decryptApiKey(encryptedApiKey, passphrase) {
+      const bytes = CryptoJS.AES.decrypt(encryptedApiKey, passphrase);
+      return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    document
+      .getElementById("carrier-lookup")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const number = document.getElementById("carrierlookup").value;
+        //    const countryCode = document.getElementById('country-code').value;
+        const countryCode = "IN";
+        const encryptedApiKey =
+          "U2FsdGVkX190GQ1hsGHf9YyETfU74rcv08jaHstFzLt/qPRtz/eYCEK5ob4PCj3Qg1KHey+wPDZODREpk+PlsQ==";
+        const passphrase = "okay";
+        const api = decryptApiKey(encryptedApiKey, passphrase);
+        const url = `https://apilayer.net/api/validate?access_key=${api}&number=${number}&country_code=${countryCode}&format=1`;
+        try {
+          const response = await fetch(url, { method: "GET" });
+          const result = await response.json();
+
+          if (result.valid) {
+            document.getElementById(
+              "carriervalidatorselected-list"
+            ).innerHTML = `
+          <h2 class="text-xl font-bold mb-2 text-center">Phone number Validation Detail for ${result.number
+              }</h2>
+      <p class="text-center text-sm mb-8"> ${result.line_type},
+        ${result.location
+              }, ${result.country_name}</p>
+  
+      <div class="grid grid-cols-3 gap-y-6 gap-x-10">
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Local Formatted Number</p>
+          <p class="font-medium text-[1rem] leading-[0.77rem]">${result.number
+              }</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Validity</p>
+          <p class="bg-[#A635FF] text-sm p-2 inline-block">${result.valid ? "Valid Number" : "Invalid Number"
+              }</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Country</p>
+          <p class="flex items-center font-bold gap-1"><span role="img" aria-label="UK flag">🇬🇧</span> ${result.country_name
+              }</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">City</p>
+          <p class="font-medium text-[1rem] leading-[0.77rem]">Bristol</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Region</p>
+          <p class="font-medium text-[1rem] leading-[0.77rem]">${result.location
+              }</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Carrier Name</p>
+          <p class="font-medium text-[1rem] leading-[0.77rem]">${result.carrier
+              }</p>
+        </div>
+        <div class="space-y-2">
+          <p class="text-sm font-medium leading-[0.87rem]">Line Type</p>
+          <p class="font-medium text-[1rem] leading-[0.77rem]">${result.line_type
+              }</p>
+        </div>
+       
+      </div>
+  
+      <div class="flex justify-end mt-8 space-x-4 border-t pt-4">
+        <button class="border px-4 py-2 rounded-lg text-sm">Done</button>
+        <button class="bg-[#8733FF] text-white px-4 py-2 rounded-lg text-sm">Check next number</button>
+      </div>
+          `;
+          } else {
+            document.getElementById(
+              "carriervalidatorselected-list"
+            ).innerHTML = "<p>Invalid phone number</p>";
+          }
+          document
+            .getElementById("carrier-validator-results")
+            .classList.remove("hidden");
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("carriervalidatorselected-list").innerHTML =
+            "<p>An error occurred. Please try again.</p>";
+        }
+      });
+  </script>
+</body>
+
+</html>

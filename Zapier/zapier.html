@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .outer-div {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 1062px;
+            margin: 0 auto !important;
+        }
+
+        .inner-div {
+            border: 1px solid #D1D4DC;
+            border-radius: 16px;
+        }
+
+        .inner-div .top-sec {
+            padding: 24px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            border-bottom: 1px solid #D1D4DC;
+        }
+
+        .top-content h5 {
+            color: #242424;
+            margin: 0 0 4px !important;
+        }
+
+        .inner-div p {
+            color: #4D4950;
+            margin: 0px !important;
+        }
+
+        .inner-div .bottom-sec {
+            padding: 12px 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #FAFAFA;
+            border-bottom-right-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .inner-div .bottom-sec .bottom-left,
+        .inner-div .bottom-sec .bottom-right {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .bottom-category {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            align-items: center;
+            background-color: rgba(135, 51, 255, 0.07);
+            border-radius: 6px;
+            padding: 6px 8px;
+            height: 26px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .bottom-category:hover {
+            background-color: #fff !important;
+        }
+
+        .floating-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #222222;
+            padding: 2px 10px;
+            border-radius: 50rem;
+            color: #fff;
+            white-space: nowrap;
+            line-height: 150%;
+            font-size: 12px;
+            font-family: "Inter" !important;
+        }
+
+        .action-tab-container .floating-text{
+            width: 200px;
+            white-space: unset;
+            padding: 8px; 
+            border-radius: 12px;
+        }
+
+        .bottom-category:hover .floating-text {
+            display: block;
+        }
+
+        .bottom-category p {
+            font-family: "Inter" !important;
+            font-size: 14px;
+            line-height: 20px;
+            color: #8733FF;
+            font-weight: 500;
+        }
+
+        .inner-div .bottom-sec .bottom-right a {
+            padding: 8px;
+            display: flex;
+            gap: 8px !important;
+            color: #8733FF;
+            font-family: "Manrope" !important;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: -0.02em;
+        }
+
+        @media (max-width:1199px) {
+            .inner-div .bottom-sec .bottom-right a {
+                font-size: 14px;
+            }
+        }
+
+        @media(max-width:991px) {
+            .outer-div {
+                gap: 20px !important;
+            }
+
+            .inner-div .top-sec {
+                padding: 16px !important;
+                gap: 16px !important;
+            }
+
+            .inner-div .bottom-sec {
+                padding: 8px 24px !important;
+            }
+
+            .inner-div .bottom-sec .bottom-right a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Triggers -->
+    <div class="outer-div">
+        <!-- first -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/New-contact-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>New contact</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Triggers when a new contact is added in your workspace. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Trigger</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M8.85109 9.35024L7.00391 7.50305V3.80859" stroke="#8733FF" stroke-width="0.875"
+                                stroke-miterlimit="10" stroke-linecap="round" />
+                            <path
+                                d="M6.9987 13.0423C10.0593 13.0423 12.5404 10.5612 12.5404 7.50065C12.5404 4.44008 10.0593 1.95898 6.9987 1.95898C3.93812 1.95898 1.45703 4.44008 1.45703 7.50065C1.45703 10.5612 3.93812 13.0423 6.9987 13.0423Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Instant</p>
+                        <span class="floating-text">This event starts a Zap instantly</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <a href="#">Try it <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18" fill="none">
+                            <path d="M15 9.68921H3" stroke="#8733FF" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" />
+                            <path
+                                d="M9.72571 15.4347L14.6553 10.5051C14.763 10.3983 14.8485 10.2713 14.9068 10.1312C14.9652 9.99116 14.9952 9.84101 14.9952 9.68928C14.9952 9.53756 14.9652 9.38741 14.9068 9.24738C14.8485 9.10728 14.763 8.98023 14.6553 8.87351L9.72571 3.94385"
+                                stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- second -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/New-SMS_MMS-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>New SMS_MMS</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Triggers when a new sms or mms arrives. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Trigger</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M8.85109 9.35024L7.00391 7.50305V3.80859" stroke="#8733FF" stroke-width="0.875"
+                                stroke-miterlimit="10" stroke-linecap="round" />
+                            <path
+                                d="M6.9987 13.0423C10.0593 13.0423 12.5404 10.5612 12.5404 7.50065C12.5404 4.44008 10.0593 1.95898 6.9987 1.95898C3.93812 1.95898 1.45703 4.44008 1.45703 7.50065C1.45703 10.5612 3.93812 13.0423 6.9987 13.0423Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Instant</p>
+                        <span class="floating-text">This event starts a Zap instantly</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <a href="#">Try it <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18" fill="none">
+                            <path d="M15 9.68921H3" stroke="#8733FF" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" />
+                            <path
+                                d="M9.72571 15.4347L14.6553 10.5051C14.763 10.3983 14.8485 10.2713 14.9068 10.1312C14.9652 9.99116 14.9952 9.84101 14.9952 9.68928C14.9952 9.53756 14.9652 9.38741 14.9068 9.24738C14.8485 9.10728 14.763 8.98023 14.6553 8.87351L9.72571 3.94385"
+                                stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- third -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/New-Voicemail-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>New Voicemail</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Triggers when a new voicemail is received. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Trigger</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M8.85109 9.35024L7.00391 7.50305V3.80859" stroke="#8733FF" stroke-width="0.875"
+                                stroke-miterlimit="10" stroke-linecap="round" />
+                            <path
+                                d="M6.9987 13.0423C10.0593 13.0423 12.5404 10.5612 12.5404 7.50065C12.5404 4.44008 10.0593 1.95898 6.9987 1.95898C3.93812 1.95898 1.45703 4.44008 1.45703 7.50065C1.45703 10.5612 3.93812 13.0423 6.9987 13.0423Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Instant</p>
+                        <span class="floating-text">This event starts a Zap instantly</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <a href="#">Try it <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18" fill="none">
+                            <path d="M15 9.68921H3" stroke="#8733FF" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" />
+                            <path
+                                d="M9.72571 15.4347L14.6553 10.5051C14.763 10.3983 14.8485 10.2713 14.9068 10.1312C14.9652 9.99116 14.9952 9.84101 14.9952 9.68928C14.9952 9.53756 14.9652 9.38741 14.9068 9.24738C14.8485 9.10728 14.763 8.98023 14.6553 8.87351L9.72571 3.94385"
+                                stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="height: 80px;"></div>
+
+
+    <!-- Actions -->
+    <div class="outer-div action-tab-container">
+        <!-- first -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/Add-Contact-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>Add Contact</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Add a new contact in your workspace. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Action</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path
+                                d="M7.61663 2.00374L2.98411 8.26919C2.94818 8.31697 2.92534 8.37519 2.91832 8.4369C2.9113 8.49862 2.92039 8.56127 2.94451 8.6175C2.96863 8.67368 3.00677 8.72104 3.05442 8.75394C3.10207 8.78684 3.15724 8.80399 3.21339 8.80324H6.70541L6.17632 12.8999C6.17399 12.9273 6.17959 12.9549 6.19231 12.9786C6.20502 13.0023 6.22416 13.0209 6.24708 13.0318C6.26995 13.0427 6.29532 13.0452 6.31959 13.0391C6.34386 13.0329 6.36573 13.0183 6.38207 12.9976L11.0146 6.73211C11.0505 6.68434 11.0733 6.62612 11.0803 6.5644C11.0874 6.50269 11.0783 6.43998 11.0542 6.3838C11.0301 6.32764 10.9919 6.28029 10.9443 6.24737C10.8966 6.21445 10.8415 6.19734 10.7853 6.19807H7.29329L7.82237 2.10143C7.82471 2.07398 7.81911 2.04642 7.80639 2.02271C7.79367 1.999 7.77454 1.98038 7.75162 1.96952C7.72875 1.95865 7.70337 1.95612 7.67911 1.96226C7.65484 1.96842 7.63297 1.98294 7.61663 2.00374Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Write</p>
+                        <span class="floating-text">Create a new record or update an existing record in your app.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- second -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/Delete-Contacts-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>Delete Contacts</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Delete single or multiple contacts in your workspace. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Action</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path
+                                d="M7.61663 2.00374L2.98411 8.26919C2.94818 8.31697 2.92534 8.37519 2.91832 8.4369C2.9113 8.49862 2.92039 8.56127 2.94451 8.6175C2.96863 8.67368 3.00677 8.72104 3.05442 8.75394C3.10207 8.78684 3.15724 8.80399 3.21339 8.80324H6.70541L6.17632 12.8999C6.17399 12.9273 6.17959 12.9549 6.19231 12.9786C6.20502 13.0023 6.22416 13.0209 6.24708 13.0318C6.26995 13.0427 6.29532 13.0452 6.31959 13.0391C6.34386 13.0329 6.36573 13.0183 6.38207 12.9976L11.0146 6.73211C11.0505 6.68434 11.0733 6.62612 11.0803 6.5644C11.0874 6.50269 11.0783 6.43998 11.0542 6.3838C11.0301 6.32764 10.9919 6.28029 10.9443 6.24737C10.8966 6.21445 10.8415 6.19734 10.7853 6.19807H7.29329L7.82237 2.10143C7.82471 2.07398 7.81911 2.04642 7.80639 2.02271C7.79367 1.999 7.77454 1.98038 7.75162 1.96952C7.72875 1.95865 7.70337 1.95612 7.67911 1.96226C7.65484 1.96842 7.63297 1.98294 7.61663 2.00374Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Write</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- third -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/Send-MMS-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>Send MMS</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Allows you to send a multimedia text message. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Action</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path
+                                d="M7.61663 2.00374L2.98411 8.26919C2.94818 8.31697 2.92534 8.37519 2.91832 8.4369C2.9113 8.49862 2.92039 8.56127 2.94451 8.6175C2.96863 8.67368 3.00677 8.72104 3.05442 8.75394C3.10207 8.78684 3.15724 8.80399 3.21339 8.80324H6.70541L6.17632 12.8999C6.17399 12.9273 6.17959 12.9549 6.19231 12.9786C6.20502 13.0023 6.22416 13.0209 6.24708 13.0318C6.26995 13.0427 6.29532 13.0452 6.31959 13.0391C6.34386 13.0329 6.36573 13.0183 6.38207 12.9976L11.0146 6.73211C11.0505 6.68434 11.0733 6.62612 11.0803 6.5644C11.0874 6.50269 11.0783 6.43998 11.0542 6.3838C11.0301 6.32764 10.9919 6.28029 10.9443 6.24737C10.8966 6.21445 10.8415 6.19734 10.7853 6.19807H7.29329L7.82237 2.10143C7.82471 2.07398 7.81911 2.04642 7.80639 2.02271C7.79367 1.999 7.77454 1.98038 7.75162 1.96952C7.72875 1.95865 7.70337 1.95612 7.67911 1.96226C7.65484 1.96842 7.63297 1.98294 7.61663 2.00374Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Write</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- fourth -->
+        <div class="inner-div">
+            <div class="top-sec">
+                <img src="/wp-content/uploads/2024/09/Send-SMS-icon-img.png" alt="">
+                <div class="top-content customtypo-heading">
+                    <h5>Send SMS</h5>
+                    <div class="cutomtext-m custom-regular">
+                        <p>Allows you to send a text message. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-sec">
+                <div class="bottom-left">
+                    <div class="customtext-m custom-medium">
+                        <p>Action</p>
+                    </div>
+                    <div class="bottom-category">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path
+                                d="M7.61663 2.00374L2.98411 8.26919C2.94818 8.31697 2.92534 8.37519 2.91832 8.4369C2.9113 8.49862 2.92039 8.56127 2.94451 8.6175C2.96863 8.67368 3.00677 8.72104 3.05442 8.75394C3.10207 8.78684 3.15724 8.80399 3.21339 8.80324H6.70541L6.17632 12.8999C6.17399 12.9273 6.17959 12.9549 6.19231 12.9786C6.20502 13.0023 6.22416 13.0209 6.24708 13.0318C6.26995 13.0427 6.29532 13.0452 6.31959 13.0391C6.34386 13.0329 6.36573 13.0183 6.38207 12.9976L11.0146 6.73211C11.0505 6.68434 11.0733 6.62612 11.0803 6.5644C11.0874 6.50269 11.0783 6.43998 11.0542 6.3838C11.0301 6.32764 10.9919 6.28029 10.9443 6.24737C10.8966 6.21445 10.8415 6.19734 10.7853 6.19807H7.29329L7.82237 2.10143C7.82471 2.07398 7.81911 2.04642 7.80639 2.02271C7.79367 1.999 7.77454 1.98038 7.75162 1.96952C7.72875 1.95865 7.70337 1.95612 7.67911 1.96226C7.65484 1.96842 7.63297 1.98294 7.61663 2.00374Z"
+                                stroke="#8733FF" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Write</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

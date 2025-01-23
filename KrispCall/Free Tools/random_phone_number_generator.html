@@ -1,0 +1,137 @@
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const numGenerate = document.querySelector("#phoneGenerate");
+
+        var intNumGenerate = window.intlTelInput(numGenerate, {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/utils.js",
+            initialCountry: 'us',
+            separateDialCode: true,
+        });
+
+        // Function to update the dial code and country name
+        function updateDialCodeAndCountryName() {
+            const countryData = intNumGenerate.getSelectedCountryData();
+            const dialCodeElement = document.querySelector('.iti__selected-dial-code');
+            if (dialCodeElement) {
+                dialCodeElement.textContent = `+${countryData.dialCode} (${countryData.name})`;
+            }
+        }
+
+        updateDialCodeAndCountryName();
+
+        numGenerate.addEventListener('countrychange', updateDialCodeAndCountryName);
+
+
+        document.getElementById("generate-number").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const cntryData = intNumGenerate.getSelectedCountryData();
+            const countryFlag = cntryData.iso2;
+            const country = countryFlag.toUpperCase();
+            const source = "KrispCall";
+            const tool = "random_number_generator";
+
+            const url = `https://freetools.marktivities.guru/phone/number-generator/?country=${encodeURIComponent(country)}&source=${source}&tool=${tool}`;
+
+            console.log("url", url);
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+
+                    // Start creating the HTML for the phone number results
+                    let resultHTML = `
+                        <div class="phone-number-result">
+                            <div class="result-body">
+                                <div class="phone-number-details d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="text-white phone-number-text" style="padding:8px;">Phone Numbers</div>
+                                        <div class="text-white action-text" style="padding:8px 24px;">Action</div>
+                                    </div>
+                    `;
+
+                    // Iterate over the phone numbers and add each to the HTML
+                    result.forEach((item, index) => {
+                        resultHTML += `
+                            <div class="col-custom d-flex justify-content-between align-items-center">
+                                <p class="text-white" id="number${index + 1}">${item[`number${index + 1}`]}</p>
+                                <button class="copy-btn" data-target="#number${index + 1}">Copy</button>
+                            </div>
+                        `;
+                    });
+
+                    // Close the HTML tags
+                    resultHTML += `
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Insert the generated HTML into the page
+                    document.getElementById("generate-list").innerHTML = resultHTML;
+
+                    // Add event listeners to copy buttons
+                    copyNumber();
+                } else {
+                    document.getElementById("generate-list").innerHTML =
+                        `<p class="error_message-div">Invalid phone number</p>`;
+                }
+                document.getElementById("generate-results").classList.add("show");
+
+
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("generate-list").innerHTML =
+                    `<p class="error_message-div">An error occurred. Please try again.</p>`;
+            }
+            updatePadding();
+            hideNoteTag();
+        });
+
+        function copyNumber() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const numberText = document.querySelector(targetId).textContent;
+
+                    // Copy the text to clipboard
+                    navigator.clipboard.writeText(numberText).then(() => {
+                        alert('Number copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Could not copy text: ', err);
+                    });
+                });
+            });
+        }
+
+        function hideNoteTag() {
+            const noteTag = document.querySelector(".note-tag");
+            if (noteTag) {
+                noteTag.style.display = "none";
+            }
+        }
+
+        function updatePadding() {
+            const searchnumResult = document.querySelector(".search-num-results");
+            const freetoolsheroConter = document.querySelector(".free-tools-hero-container");
+            if (window.innerWidth >= 992) {
+                if (searchnumResult.classList.contains("show")) {
+                    freetoolsheroConter.style.padding = "88px 0 ";
+                } else {
+                    freetoolsheroConter.style.padding = "";
+                }
+            } else {
+                freetoolsheroConter.style.padding = "";
+            }
+        }
+        window.addEventListener('resize', updatePadding);
+
+
+    });
+</script>

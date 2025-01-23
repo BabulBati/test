@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Country code plugin css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css">
+
+    <!--Country code library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: gray;
+
+        }
+
+        .text-container {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        #search-form {
+            margin: 80px 0 0;
+
+        }
+
+        .test-row {
+            padding: 12px 24px 12px 0;
+            display: flex;
+            gap: 48px;
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        #phone {
+            width: 350px;
+        }
+
+        .number-row {
+            display: inline-flex;
+            gap: 12px;
+        }
+
+        .price-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .iti__flag-container {
+            width: 100%;
+            padding: 0 !important;
+        }
+
+        .iti__country-list {
+            width: 100%;
+        }
+
+        .iti__selected-flag {
+            background: #fff !important;
+
+        }
+
+        input[type=tel]:focus-visible,
+        input[type=tel] {
+            border: none !important;
+            outline: none !important;
+            padding: 1px !important;
+        }
+
+        .iti__arrow {
+            position: absolute;
+            right: 0;
+            margin: 0 10px 0 0;
+        }
+
+        /* .iti__arrow--up */
+    </style>
+</head>
+
+<body>
+    <div class="text-container">
+        <form id="search-form">
+            <input type="tel" id="phone">
+            <input type="submit" value="Search">
+        </form>
+
+        <div id="number-container">
+        </div>
+    </div>
+
+    <script>
+        const input = document.querySelector("#phone");
+        const form = document.querySelector('form');
+        const numberContainer = document.getElementById('number-container');
+
+        // Initialize intlTelInput with specific countries and separate dial code
+        const iti = window.intlTelInput(input, {
+            onlyCountries: ["ar", "au", "at", "ba", "bb", "be", "bj", "br", "bg", "ca",
+                "cl", "co", "cz", "de", "dk", "dz", "ec", "ee", "fi", "fr",
+                "gb", "gh", "gd", "gr", "hk", "hr", "hu", "is", "id", "ie",
+                "il", "jm", "ke", "ky", "lt", "mo", "ml", "mu", "mx", "my",
+                "na", "nl", "nz", "pa", "pe", "ph", "pl", "pt", "pr", "ro",
+                "sg", "si", "sk", "sv", "za", "se", "ch", "th", "tn", "tt",
+                "us", "ug", "vz"],
+            separateDialCode: true,
+        });
+
+        // Function to update the selected dial code
+        function updateSelectedDialCode() {
+            const countryData = iti.getSelectedCountryData();
+            document.querySelector(".iti__selected-dial-code").textContent = `+${countryData.dialCode} (${countryData.name})`;
+        }
+
+        // Initial update of selected dial code
+        updateSelectedDialCode();
+
+        // Update dial code on country change
+        input.addEventListener("countrychange", updateSelectedDialCode);
+
+        // Handle form submission
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const selectedCountry = iti.getSelectedCountryData().iso2.toUpperCase();
+
+
+            try {
+                const response = await fetch('https://uat.safefamilyapp.com/get-numbers', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ country: selectedCountry, limit: 6 }),
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                const data = await response.json();
+
+                if (data.length === 0) {
+                    numberContainer.innerHTML = '<div class="no-data">No data available</div>';
+                } else {
+                    numberContainer.innerHTML = data.map(({ type, dialing_number, price, capabilities }) => `
+            <div class="test-row">
+              <div class="number-row">
+                <span>${dialing_number}</span>
+                <span>${type}</span>
+              </div>
+              <div class="price-row">
+                <span>$${price} + Subscription fee</span>
+                <span>${Object.keys(capabilities).filter(key => capabilities[key]).join(', ')}</span>
+              </div>
+            </div>`).join('');
+                }
+            } catch (error) {
+                console.error('Error fetching numbers:', error);
+            }
+        });
+
+
+        let newData = {
+            country: "uk",
+            destination: "us"
+        };
+
+        fetch('https://uat.safefamilyapp.com/get-prices', {
+    method: 'POST', // or 'PUT'
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newData),
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => {
+    console.log('Success:', data);
+    // Handle the data received, e.g., update the UI
+})
+.catch(error => {
+    if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+        console.error('Network error or CORS issue:', error);
+    } else {
+        console.error('Error:', error);
+    }
+});
+    </script>
+
+
+</body>
+
+</html>

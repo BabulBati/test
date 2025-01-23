@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrinking Card Effect</title>
+    <style>
+        .cards-content {
+            position: relative;
+        }
+
+        .card {
+            background: transparent;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            padding: 80px 0 169px;
+            
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+        }
+
+        .business-card {
+            padding: 80px 108px 132px 110px;
+            border-radius: 24px;
+        } 
+
+        .entegra-sources {
+            background-color: #064723;
+            z-index: 1;
+            position: relative;
+        }
+
+        .codavatar-tech {
+            background: #470609;
+            z-index: 2;
+            position: relative;
+        }
+
+        .mayahold-asset {
+            background: #FFD300;
+            z-index: 3;
+            position: relative;
+        }
+
+        .our-business {
+            border-radius: 24px;
+            background: rgba(17, 17, 17, 0.20);
+            display: inline-flex;
+            padding: 8px 16px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 96px;
+        }
+
+        .our-business span {
+            color: #F5F5F5;
+            font-family: "Plus Jakarta Sans";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .business-title {
+            margin-bottom: 192px;
+        }
+
+        .business-title h2 {
+            color: #FFF;
+            font-family: "Plus Jakarta Sans";
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            line-height: 120%;
+        }
+
+        .pvt-ltd {
+            color: #FFF;
+            font-family: "Plus Jakarta Sans";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+
+        .business-description {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .description-text {
+            max-width: 626px;
+        }
+
+        .description-text p {
+            color: rgba(255, 255, 255, 0.70);
+            font-family: 'Inter';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+        }
+
+        .learn-more-button a {
+            display: inline-flex;
+            padding: 8px 16px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 24px;
+            border: 1px solid #F5F5F5;
+            color: #FFF;
+            font-family: "Plus Jakarta Sans";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards-content">
+        <div class="card" id="card1">
+            <div class="entegra-sources business-card">
+                <div class="our-business">
+                    <span>Our Businesses</span>
+                </div>
+
+                <div class="business-title">
+                    <h2>ENTEGRA SOURCES</h2>
+                    <span class="pvt-ltd">PRIVATE LIMITED</span>
+                </div>
+
+                <div class="business-description">
+                    <div class="description-text">
+                        <p>We are a Business Process Outsourcing (BPO) company for conducting engineering design-based
+                            projects in various domains. The activity framework of the company is concerned more with
+                            the preparation of engineering documentation after successive modeling procedures followed
+                            for them.</p>
+                    </div>
+                    <div class="learn-more-button">
+                        <a href="">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card " id="card2">
+
+            <div class="codavatar-tech business-card">
+                <div class="our-business">
+                    <span>Our Businesses</span>
+                </div>
+
+                <div class="business-title">
+                    <h2>Codavatar Tech</h2>
+                    <span class="pvt-ltd">PRIVATE LIMITED</span>
+                </div>
+
+                <div class="business-description">
+                    <div class="description-text">
+                        <p>We are a Business Process Outsourcing (BPO) company for conducting engineering design-based
+                            projects in various domains. The activity framework of the company is concerned more with
+                            the preparation of engineering documentation after successive modeling procedures followed
+                            for them.</p>
+                    </div>
+                    <div class="learn-more-button">
+                        <a href="">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card" id="card3">
+            <div class="mayahold-asset business-card">
+                <div class="our-business">
+                    <span>Our Businesses</span>
+                </div>
+
+                <div class="business-title">
+                    <h2>Mayahold Asset</h2>
+                    <span class="pvt-ltd">PRIVATE LIMITED</span>
+                </div>
+
+                <div class="business-description">
+                    <div class="description-text">
+                        <p>We are a Business Process Outsourcing (BPO) company for conducting engineering design-based
+                            projects in various domains. The activity framework of the company is concerned more with
+                            the preparation of engineering documentation after successive modeling procedures followed
+                            for them.</p>
+                    </div>
+                    <div class="learn-more-button">
+                        <a href="">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            const cards = document.querySelectorAll('.card');
+            const windowHeight = window.innerHeight;
+            const minScale = 0.7;
+
+            cards.forEach((card, index) => {
+                const nextCard = cards[index + 1];
+                const rect = card.getBoundingClientRect();
+
+                if (nextCard) {
+                    const nextRect = nextCard.getBoundingClientRect();
+
+                    if (nextRect.top <= windowHeight) {
+                        let scale = 1 - (0.5 * (windowHeight - nextRect.top) / windowHeight);
+                        scale = Math.max(scale, minScale);
+                        const blur = 10 * (windowHeight - nextRect.top) / windowHeight;
+
+                        card.style.transform = `scale(${scale})`;
+                        card.style.filter = `blur(${blur}px)`;
+                        card.classList.add("sticky");
+                    } else {
+                        card.style.transform = `scale(1)`;
+                        card.style.filter = `blur(0px)`;
+                        card.classList.remove("sticky");
+                        card.style.background = 'transparent';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

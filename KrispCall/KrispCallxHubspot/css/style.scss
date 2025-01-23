@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #f9f9f9;
+    padding: 80px 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.integration-blog {
+    gap: 24px;
+    p,
+    h5,
+    h6 {
+        margin: 0;
+    }
+}
+
+.blog-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #fff;
+    width: calc(100% / 3);
+}
+
+.blog-image {
+    // max-width: 411px;
+    // width: 100%;
+    // aspect-ratio: 1.78/1;
+    img {
+        max-width: 100%;
+    }
+}
+
+.blog-dtls {
+    padding: 32px;
+    gap: 12px;
+    h5 {
+        color: #242424;
+        font-family: "Manrope";
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+    }
+}
+
+.blog-meta {
+    gap: 12px;
+    h6 {
+        color: #1a63f4;
+        text-align: center;
+        font-family: "Manrope";
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+    }
+    p {
+        color: #4d4950;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+    }
+}
+
+.blog-date {
+    display: block;
+    background: url("https://krispcall.com/wp-content/uploads/2024/04/solar_calendar-linear.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+}
+@media (max-width: 1199px) {
+    .blog-dtls {
+        h5 {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .blog-meta {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 991px) {
+    .integration-blog {
+        flex-direction: column;
+    }
+    .blog-card {
+        width: 100%;
+    }
+    .blog-dtls {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .integration-blog {
+        gap: 20px;
+    }
+    .blog-dtls {
+        padding: 24px;
+    }
+}

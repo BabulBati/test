@@ -1,0 +1,101 @@
+<script>
+    const input = document.querySelector("#carrierlookup");
+    const itticarrier = window.intlTelInput(input, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+
+    });
+
+    document.getElementById("carrier-lookup").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const number = document.getElementById("carrierlookup").value;
+        const countryData = itticarrier.getSelectedCountryData();
+        const countryFlag = countryData.iso2;
+        const country = countryFlag.toUpperCase();
+        const source = "KrispCall";
+        const tool = "phone_carrier_lookup";
+
+        const url = `https://freetools.marktivities.guru/phone/carrier-lookup/?number=${encodeURIComponent(number)}&country=${encodeURIComponent(country)}&source=${source}&tool=${tool}`;
+
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                document.getElementById("input-number-list").innerHTML = `
+                <div class="phone-number-result">
+                    <div class="result-body">
+                        <div class="phone-number-details">
+        
+                            <div class="col-custom-1">
+                            <div class="text-F4F4F4E5">Local Formatted Number</div>
+                            <p class="text-F4F4F4">${result.local_format}</p>
+                        </div>
+        
+                            <div class="col-custom-2">
+                            <div class="text-F4F4F4E5">Line Type</div>
+                            <p class="text-F4F4F4">${result.line_type}</p>
+                        </div>
+        
+                            <div class="col-custom-3">
+                                <div class="text-F4F4F4E5">Country</div>
+                                <div class="d-flex align-items-center text-F4F4F4">
+                                   <p class="iti__flag iti__${countryFlag}" style="margin: 0 4px 0 0;"></p>
+                                ${result.country_name}
+                                </div>
+                            </div>
+        
+                            <div class="col-custom-1">
+                                <div class="text-F4F4F4E5">Region</div>
+                            <p class="text-F4F4F4">${result.location}</p>
+                            </div>
+        
+                            <div class="col-custom-2">
+                                <div class="text-F4F4F4E5">Carrier Name</div>
+                            <p class="text-F4F4F4">${result.carrier}</p>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+                `;
+            } else {
+                document.getElementById("input-number-list").innerHTML =
+                    `<p class="error_message-div">Invalid phone number</p>`;
+            }
+            document.getElementById("phone-number-results").classList.add("show");
+        } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("input-number-list").innerHTML =
+                `<p class="error_message-div">An error occurred. Please try again.</p>`;
+        }
+        updatePadding();
+        hideNoteTag();
+    });
+
+    function hideNoteTag() {
+        const noteTag = document.querySelector(".note-tag");
+        if (noteTag) {
+            noteTag.style.display = "none";
+        }
+    }
+
+    function updatePadding() {
+        const searchnumResult = document.querySelector(".search-num-results");
+        const freetoolsheroConter = document.querySelector(".free-tools-hero-container");
+        if (window.innerWidth >= 992) {
+            if (searchnumResult.classList.contains("show")) {
+                freetoolsheroConter.style.padding = "88px 0";
+            } else {
+                freetoolsheroConter.style.padding = "";
+            }
+        } else {
+            freetoolsheroConter.style.padding = "";
+        }
+    }
+    window.addEventListener('resize', updatePadding);
+</script>

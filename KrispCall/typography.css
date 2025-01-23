@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* font-family: 'Manrope', sans-serif;
+font-family: 'Heebo', sans-serif; */
+
+.foundation-heading h1,
+.foundation-heading h2,
+.foundation-heading h3,
+.foundation-heading h4 {
+    font-family: "Manrope", sans-serif;
+}
+
+.paragraph-large p,
+.paragraph-small p,
+.paragraph-small li,
+span.foundation-span {
+    font-family: "Heebo", sans-serif;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*-----  Foundation Start  -----*/
+.foundation-heading h1,
+.foundation-heading h2,
+.foundation-heading h3,
+.foundation-heading h4 {
+    line-height: 130% !important;
+}
+
+.foundation-heading h1 {
+    font-size: 40px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.8px !important;
+}
+
+.foundation-heading h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.64px !important;
+}
+
+.foundation-heading h3 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.24px !important;
+}
+
+.foundation-heading h4 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.2px !important;
+}
+
+.paragraph-large p,
+.paragraph-small p,
+.paragraph-small li,
+span.foundation-span,
+.small {
+    font-weight: 400 !important;
+}
+
+.paragraph-large p {
+    font-size: 20px !important;
+    line-height: 150% !important;
+}
+
+.paragraph-small p,
+.paragraph-small li {
+    font-size: 16px !important;
+    line-height: 150% !important;
+}
+
+span.foundation-span {
+    font-size: 14px;
+    line-height: 140%;
+}
+
+.small {
+    font-family: "Heebo", sans-serif;
+    font-size: 12px;
+    line-height: 130%;
+}
+
+/*----- Tablet View -----*/
+@media (max-width: 1199px) and (min-width: 768px) {
+    .foundation-heading h1 {
+        font-size: 32px !important;
+        letter-spacing: -0.64px !important;
+    }
+
+    .foundation-heading h2 {
+        font-size: 28px !important;
+        letter-spacing: -0.56px !important;
+    }
+
+    .foundation-heading h3 {
+        font-size: 20px !important;
+        letter-spacing: -0.2px !important;
+    }
+
+    .foundation-heading h4 {
+        font-size: 18px !important;
+        letter-spacing: -0.18px !important;
+    }
+
+    .paragraph-large p {
+        font-size: 18px !important;
+    }
+}
+
+/*----- Mobile View -----*/
+@media (max-width: 767px) {
+    .foundation-heading h1 {
+        font-size: 32px !important;
+        letter-spacing: -0.56px !important;
+    }
+
+    .foundation-heading h2 {
+        font-size: 24px !important;
+        letter-spacing: -0.48px !important;
+    }
+
+    .foundation-heading h3 {
+        font-size: 18px !important;
+        letter-spacing: -0.18px !important;
+    }
+
+    .foundation-heading h4 {
+        font-size: 16px !important;
+        letter-spacing: -0.16px !important;
+    }
+
+    .paragraph-large p {
+        font-size: 16px !important;
+    }
+
+    .paragraph-small p,
+    .paragraph-small li {
+        font-size: 14px !important;
+    }
+
+    span.foundation-span {
+        font-size: 12px;
+    }
+
+    .small {
+        font-size: 10px;
+    }
+}
+
+/*-----  Foundation End  -----*/
+
+/* v2 */
+
+/* typography */
+.typography-heading h1,
+.typography-heading h2,
+.typography-heading h3,
+.typography-heading h4,
+.powering_businesses h2 {
+    font-weight: 700 ;
+    letter-spacing: -0.02em;
+    line-height: 130% !important;
+}
+
+.h2-regular h2 {
+    font-weight: 400 ;
+    letter-spacing: -0.02em;
+    line-height: 130% !important;
+}
+
+.typography-heading h1 {
+    font-size: 48px !important;
+}
+
+.typography-heading h2,
+.h2-regular h2,
+.powering_businesses h2 {
+    font-size: 40px !important;
+}
+
+.typography-heading h3 {
+    font-size: 24px !important;
+}
+
+.typography-heading h4 {
+    font-size: 18px !important;
+}
+
+.p-medium p,
+.p-small p {
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    font-weight: 400 ;
+    font-family: "Inter", sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
+
+.p-large p {
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    font-weight: 500 ;
+    font-family: "Inter", sans-serif !important;
+    font-size: 24px !important;
+    margin: 0;
+    padding: 0;
+}
+
+.p-medium p {
+    font-size: 16px !important;
+}
+
+.p-small p {
+    font-size: 14px !important;
+}
+
+@media (max-width: 1024px) {
+    .typography-heading h1 {
+        font-size: 36px !important;
+    }
+
+    .typography-heading h2,
+    .h2-regular h2 {
+        font-size: 32px !important;
+    }
+
+    .powering_businesses h2 {
+        font-size: 24px !important;
+    }
+
+    .typography-heading h3 {
+        font-size: 20px !important;
+    }
+
+    .typography-heading h4 {
+        font-size: 14px !important;
+    }
+
+    .p-large p {
+        font-size: 20px !important;
+    }
+
+    .p-medium p {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .typography-heading h1 {
+        font-size: 32px !important;
+    }
+
+    .typography-heading h2,
+    .h2-regular h2 {
+        font-size: 28px !important;
+    }
+
+    .powering_businesses h2 {
+        font-size: 14px !important;
+    }
+
+    .typography-heading h3 {
+        font-size: 16px !important;
+    }
+
+    .p-large p {
+        font-size: 16px !important;
+    }
+}
+.typo_regular{
+    font-weight: 400 !important;
+}
+/* typography end */

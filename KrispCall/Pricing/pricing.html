@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="css/typo.css">
+    <link rel="stylesheet" href="css/pricing_style.css">
+</head>
+
+<body>
+    <!-- Pop up note section -->
+    <div class="note-pop-up-div" id="note_pop_up_div">
+        <div class="container">
+            <div class="note-div">
+                <div class="note-top d-flex align-items-center">
+                    <div class="note-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path
+                                d="M26.2297 28.8742C26.1597 28.8792 25.0897 29.0192 23.5297 29.2242C19.0747 29.8092 10.6647 30.9192 10.4447 30.9192C10.0812 30.9182 9.73033 30.7854 9.45725 30.5454C9.18417 30.3055 9.0074 29.9746 8.95973 29.6142L6.18473 8.29417C6.13663 7.89962 6.2454 7.50196 6.4876 7.18681C6.72981 6.87166 7.08609 6.66422 7.47973 6.60917L26.8147 4.09417C27.2082 4.04442 27.6055 4.15202 27.9201 4.39359C28.2347 4.63516 28.4412 4.99115 28.4947 5.38417L30.4997 20.7692L30.7847 22.9592C30.9639 24.3474 30.5848 25.7499 29.7308 26.8589C28.8768 27.9679 27.6176 28.6927 26.2297 28.8742Z"
+                                fill="#FFD740" />
+                            <path
+                                d="M26.2291 28.8748C26.1591 28.8798 25.0891 29.0198 23.5291 29.2248C23.7504 28.2858 23.8628 27.3245 23.8641 26.3598C23.2891 23.7398 24.7691 21.3848 27.7141 21.3798C28.0741 21.3298 29.4841 21.0448 30.4991 20.7698L30.7841 22.9598C30.9632 24.348 30.5842 25.7505 29.7301 26.8595C28.8761 27.9685 27.617 28.6933 26.2291 28.8748Z"
+                                fill="#F9C112" />
+                            <path
+                                d="M20.8523 4.89609L17.8473 7.90144C17.3829 8.35309 18.1018 9.07509 18.5544 8.60849L21.5594 5.60309C21.7546 5.40779 21.0476 4.70074 20.8523 4.89609Z"
+                                fill="#37474F" />
+                            <path
+                                d="M25.4203 3.24686C25.4207 3.08813 25.3896 2.9309 25.3289 2.78427C25.2681 2.63763 25.1789 2.50451 25.0663 2.39261L24.0647 1.39086C23.8346 1.17109 23.5286 1.04846 23.2104 1.04846C22.8921 1.04846 22.5861 1.17109 22.356 1.39086L21.4153 2.33156C20.9948 2.28592 20.5695 2.34152 20.1748 2.49374C19.7802 2.64595 19.4277 2.89036 19.1467 3.20656C19.0565 3.30102 19.0068 3.42705 19.0083 3.55767C19.0098 3.6883 19.0624 3.81315 19.1548 3.90551L22.5517 7.30251C22.6464 7.39607 22.7742 7.44832 22.9073 7.44781C23.0404 7.44731 23.1678 7.39409 23.2617 7.29981C23.5556 7.01535 23.7821 6.66867 23.9244 6.28523C24.0668 5.90179 24.1214 5.49133 24.0843 5.08401L25.0664 4.10156C25.179 3.98958 25.2683 3.85638 25.329 3.70967C25.3897 3.56295 25.4208 3.40565 25.4203 3.24686Z"
+                                fill="#E53935" />
+                            <path
+                                d="M9.9978 14.8488C9.87289 14.8454 9.75377 14.7954 9.66381 14.7087C9.57385 14.622 9.51954 14.5048 9.51153 14.3801C9.50352 14.2554 9.5424 14.1322 9.62053 14.0346C9.69866 13.9371 9.81041 13.8723 9.93385 13.853L26.2956 11.7219C26.3608 11.7134 26.4269 11.7178 26.4903 11.7348C26.5537 11.7519 26.6132 11.7813 26.6652 11.8213C26.7173 11.8614 26.7609 11.9113 26.7937 11.9682C26.8265 12.0251 26.8477 12.0879 26.8562 12.153C26.8647 12.2181 26.8603 12.2843 26.8432 12.3477C26.8261 12.4111 26.7967 12.4705 26.7567 12.5226C26.7167 12.5746 26.6668 12.6183 26.6099 12.6511C26.553 12.6838 26.4902 12.7051 26.425 12.7136L10.0632 14.8447C10.0415 14.8475 10.0197 14.8489 9.9978 14.8488Z"
+                                fill="#FFA000" />
+                            <path
+                                d="M12.0249 11.0556C11.9 11.0521 11.781 11.0021 11.691 10.9153C11.6011 10.8286 11.5468 10.7114 11.5389 10.5867C11.5309 10.462 11.5698 10.3389 11.6479 10.2414C11.7261 10.1439 11.8378 10.0791 11.9612 10.0597L23.365 8.57473C23.4965 8.55764 23.6294 8.59348 23.7345 8.67439C23.8396 8.75529 23.9082 8.87462 23.9253 9.00613C23.9424 9.13764 23.9066 9.27055 23.8257 9.37563C23.7448 9.4807 23.6254 9.54934 23.4939 9.56643L12.0903 11.0514C12.0686 11.0543 12.0468 11.0557 12.0249 11.0556Z"
+                                fill="#FFA000" />
+                            <path
+                                d="M10.4502 18.3201C10.3253 18.3167 10.2062 18.2667 10.1162 18.18C10.0262 18.0932 9.97193 17.976 9.96392 17.8513C9.95591 17.7266 9.99479 17.6035 10.0729 17.5059C10.1511 17.4084 10.2628 17.3436 10.3862 17.3242L26.748 15.1933C26.8132 15.1848 26.8793 15.1892 26.9427 15.2063C27.0061 15.2233 27.0656 15.2527 27.1176 15.2928C27.1697 15.3328 27.2133 15.3827 27.2461 15.4396C27.2789 15.4965 27.3001 15.5593 27.3086 15.6244C27.3171 15.6896 27.3127 15.7557 27.2956 15.8191C27.2785 15.8825 27.2491 15.942 27.2091 15.994C27.1691 16.0461 27.1192 16.0897 27.0623 16.1225C27.0054 16.1553 26.9426 16.1765 26.8774 16.185L10.5155 18.3159C10.4938 18.3188 10.472 18.3201 10.4502 18.3201Z"
+                                fill="#FFA000" />
+                            <path
+                                d="M10.9026 21.7902C10.7777 21.7868 10.6586 21.7368 10.5686 21.6501C10.4786 21.5634 10.4243 21.4462 10.4163 21.3215C10.4083 21.1968 10.4472 21.0736 10.5253 20.9761C10.6034 20.8785 10.7152 20.8137 10.8386 20.7944L27.2002 18.6633C27.3317 18.6461 27.4646 18.6819 27.5698 18.7627C27.6749 18.8436 27.7436 18.9629 27.7607 19.0944C27.7779 19.2259 27.7421 19.3589 27.6613 19.464C27.5804 19.5691 27.4611 19.6378 27.3296 19.655L10.968 21.7861C10.9463 21.7889 10.9245 21.7903 10.9026 21.7902Z"
+                                fill="#FFA000" />
+                            <path
+                                d="M11.3535 25.2619C11.2287 25.2584 11.1096 25.2084 11.0196 25.1216C10.9297 25.0349 10.8755 24.9177 10.8675 24.793C10.8595 24.6683 10.8984 24.5451 10.9765 24.4477C11.0547 24.3502 11.1664 24.2854 11.2898 24.266L16.2481 23.6203C16.3796 23.6032 16.5125 23.639 16.6176 23.7199C16.7227 23.8008 16.7913 23.9202 16.8084 24.0517C16.8255 24.1832 16.7896 24.3161 16.7087 24.4212C16.6278 24.5262 16.5085 24.5949 16.377 24.612C16.2879 24.6191 11.4348 25.264 11.3535 25.2619Z"
+                                fill="#FFA000" />
+                        </svg>
+                    </div>
+                    <div class="note-title flex-grow-1">Note</div>
+                    <div class="note-close-btn" id="note_close_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M15.2499 4.75828C15.1728 4.68102 15.0813 4.61973 14.9805 4.57792C14.8797 4.5361 14.7716 4.51457 14.6624 4.51457C14.5533 4.51457 14.4452 4.5361 14.3444 4.57792C14.2436 4.61973 14.152 4.68102 14.0749 4.75828L9.99994 8.82494L5.92494 4.74994C5.84779 4.67279 5.7562 4.61159 5.6554 4.56984C5.55459 4.52808 5.44655 4.50659 5.33744 4.50659C5.22833 4.50659 5.12029 4.52808 5.01949 4.56984C4.91869 4.61159 4.82709 4.67279 4.74994 4.74994C4.67279 4.82709 4.61159 4.91869 4.56984 5.01949C4.52808 5.12029 4.50659 5.22833 4.50659 5.33744C4.50659 5.44655 4.52808 5.55459 4.56984 5.6554C4.61159 5.7562 4.67279 5.84779 4.74994 5.92494L8.82494 9.99994L4.74994 14.0749C4.67279 14.1521 4.61159 14.2437 4.56984 14.3445C4.52808 14.4453 4.50659 14.5533 4.50659 14.6624C4.50659 14.7716 4.52808 14.8796 4.56984 14.9804C4.61159 15.0812 4.67279 15.1728 4.74994 15.2499C4.82709 15.3271 4.91869 15.3883 5.01949 15.43C5.12029 15.4718 5.22833 15.4933 5.33744 15.4933C5.44655 15.4933 5.55459 15.4718 5.6554 15.43C5.7562 15.3883 5.84779 15.3271 5.92494 15.2499L9.99994 11.1749L14.0749 15.2499C14.1521 15.3271 14.2437 15.3883 14.3445 15.43C14.4453 15.4718 14.5533 15.4933 14.6624 15.4933C14.7716 15.4933 14.8796 15.4718 14.9804 15.43C15.0812 15.3883 15.1728 15.3271 15.2499 15.2499C15.3271 15.1728 15.3883 15.0812 15.43 14.9804C15.4718 14.8796 15.4933 14.7716 15.4933 14.6624C15.4933 14.5533 15.4718 14.4453 15.43 14.3445C15.3883 14.2437 15.3271 14.1521 15.2499 14.0749L11.1749 9.99994L15.2499 5.92494C15.5666 5.60828 15.5666 5.07494 15.2499 4.75828Z"
+                                fill="#333333" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="note-text customtext-s custom-regular">
+                    <p style="color: #4D4950;">For every user, one local/mobile from UK or one local number from either
+                        USA or Canada is available for free. Other countries require number purchase fees along with
+                        carrier specific-document verification. <span style="font-weight: 600;">Disclaimer:</span> The
+                        Call and SMS functionalities will be limited without the <span style="font-weight: 600;">KYC
+                            verification</span>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing section -->
+    <section class="container pricing_card-section">
+        <!-- Price rate Toggle -->
+        <div class="toggle-btn-div">
+            <div class="rate-toggle-btns">
+                <button id="monthlyBtn" onclick="togglePrice('monthly')" class="active">
+                    Monthly
+                </button>
+                <button id="annuallyBtn" onclick="togglePrice('annually')">
+                    Annually
+                </button>
+            </div>
+            <span class="save_tag">Save 20%</span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-card-div">
+            <div class="pricing-div">
+                <!-- Essential -->
+                <div class="pricing-card">
+                    <div class="d-flex flex-column">
+                        <div class="price-title ">
+                            <h6>Essential</h6>
+                        </div>
+                        <div class="price-rate">
+                            <h3 id="essential-card-rate">$ 15</h3>
+                        </div>
+                        <div class="price-details">
+                            <p>Per user per month</p>
+                            <p>Calling & SMS charges applicable</p>
+                        </div>
+                    </div>
+                    <div class="price-recommendation">
+                        <p>Recommended for Small Businesses, Startups & Freelancers</p>
+                    </div>
+                    <a href="https://app.krispcall.com/register" target="_blank" class="price-choose-btn">
+                        <button>Choose</button>
+                    </a>
+                </div>
+                <!-- Standard -->
+                <div class="pricing-card">
+                    <div class="d-flex flex-column">
+                        <div class="price-title d-flex justify-content-between">
+                            <h6>Standard</h6>
+                            <span class="price-popular-tag d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18"
+                                    fill="none">
+                                    <path
+                                        d="M5.03125 15.75H13.2813L15.5313 7.875L11.7813 9.75L9.15625 4.5L6.53125 9.75L2.78125 7.875L5.03125 15.75Z"
+                                        stroke="#E07408" stroke-width="1.2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.78125 7.875C3.40257 7.875 3.90625 7.37132 3.90625 6.75C3.90625 6.12868 3.40257 5.625 2.78125 5.625C2.15993 5.625 1.65625 6.12868 1.65625 6.75C1.65625 7.37132 2.15993 7.875 2.78125 7.875Z"
+                                        stroke="#E07408" stroke-width="1.2" />
+                                    <path
+                                        d="M9.15625 4.5C9.77757 4.5 10.2812 3.99632 10.2812 3.375C10.2812 2.75368 9.77757 2.25 9.15625 2.25C8.53493 2.25 8.03125 2.75368 8.03125 3.375C8.03125 3.99632 8.53493 4.5 9.15625 4.5Z"
+                                        stroke="#E07408" stroke-width="1.2" />
+                                    <path
+                                        d="M15.5312 7.875C16.1526 7.875 16.6562 7.37132 16.6562 6.75C16.6562 6.12868 16.1526 5.625 15.5312 5.625C14.9099 5.625 14.4062 6.12868 14.4062 6.75C14.4062 7.37132 14.9099 7.875 15.5312 7.875Z"
+                                        stroke="#E07408" stroke-width="1.2" />
+                                </svg>
+                                Popular
+                            </span>
+                        </div>
+                        <div class="price-rate">
+                            <h3 id="standard-card-rate">$ 40</h3>
+                        </div>
+                        <div class="price-details">
+                            <p>Per user per month</p>
+                            <p>Calling & SMS charges applicable</p>
+                        </div>
+                    </div>
+                    <div class="price-recommendation">
+                        <p>Recommended for Mid-size Businesses & Call Centers</p>
+                    </div>
+                    <a href="https://app.krispcall.com/register" target="_blank" class="price-choose-btn">
+                        <button>Choose</button>
+                    </a>
+                </div>
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="d-flex flex-column">
+                        <div class="price-title ">
+                            <h6>Enterprise</h6>
+                        </div>
+                        <div class="price-rate">
+                            <h3>Custom</h3>
+                        </div>
+                        <div class="price-details">
+                            <p>Pricing</p>
+                            <p>Calling & SMS charges applicable</p>
+                        </div>
+                    </div>
+                    <div class="price-recommendation">
+                        <p>Custom solution for teams with varying needs. <span style="color:#8733FF;">Upgrading to
+                                Enterprise plan</span></p>
+                    </div>
+                    <div onclick="$crisp.push(['do', 'chat:open']);" class="price-contact-sales-btn">
+                        <button>Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="container pricing_comparison-section">
+        <!-- Toggle Comparison Table -->
+        <div class="justify-content-center table-compare-div d-flex d-lg-none">
+            <div class="customtext-m custom-semibold table-toggle-btn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#price_comparison-table" aria-expanded="false" aria-controls="price_comparison-table">
+                <p>View full festures list </p> <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
+                    viewBox="0 0 21 21" fill="none">
+                    <path d="M5.5 8L10.5 13L15.5 8" stroke="#4D4950" stroke-width="1.66667" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div class="comparison-div collapse show" id="price_comparison-table">
+            <div class="customtypo-heading">
+                <div class="comparison-table-title">
+                    <h3>Check out our Full Comparison</h3>
+                </div>
+
+                <div class="table-btn-div d-flex d-lg-none">
+                    <div id="essential_btn" onclick="essentialBtn()">Essential</div>
+                    <div id="standard_btn" onclick="standardBtn()">Standard</div>
+                    <div id="enterprise_btn" onclick="enterpriseBtn()">Enterprise</div>
+                </div>
+                <div class="comparison-table">
+                    <div class="test_startsticky">
+                        <div class="comparison-table-head d-flex container">
+                            <div class="row-column-1 th-col-1"></div>
+                            <div class="row-column-2 th-col-2">
+                                <div class="customtext-xl custom-semibold">
+                                    <p>Essential</p>
+                                </div>
+                                <div class="customtext-m custom-regular" style="margin: 4px 0 8px;">
+                                    <p><span style="font-weight: 600;" id="essential-table-rate">$15</span> per month
+                                    </p>
+                                </div>
+                                <a href="https://app.krispcall.com/register" target="_blank" class="price-choose-btn">
+                                    <button>Choose</button>
+                                </a>
+                            </div>
+                            <div class="row-column-3 th-col-3">
+                                <div class="customtext-xl custom-semibold">
+                                    <p class="d-inline-flex align-items-center">Standard <span
+                                            class="table-populat-tag">Popular</span></p>
+                                </div>
+                                <div class="customtext-m custom-regular" style="margin: 4px 0 8px;">
+                                    <p><span style="font-weight: 600;" id="standard-table-rate">$40</span> per month</p>
+                                </div>
+                                <a href="https://app.krispcall.com/register" target="_blank" class="price-choose-btn">
+                                    <button>Choose</button>
+                                </a>
+                            </div>
+                            <div class="row-column-4 th-col-4">
+                                <div class="customtext-xl custom-semibold">
+                                    <p>Enterprise</p>
+                                </div>
+                                <div class="customtext-m custom-medium" style="margin: 4px 0 8px;">
+                                    <p>Custom</p>
+                                </div>
+                                <div onclick="$crisp.push(['do', 'chat:open']);" class="price-contact-sales-btn">
+                                    <button>Contact Sales</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-table-body">
+                        <!-- Features -->
+                        <div class="comparison-body-row customtext-xl custom-semibold">
+                            <p>Features</p>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Users Limit</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>5</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>Unlimited</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>Unlimited</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Bundle Calling and SMS rate</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>Pay per Minute Calling</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>Pay per Minute Calling</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>Pay per Minute Calling</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium c-position-relative">
+                                <p class="text-and-tag">Messaging (US & Canada)
+                                    <span class="us_canada-side-tag tags hover-to-see c-position-static">
+                                        10DLC Registration Required
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text ten_dlc tooltip-278">You must register your
+                                                business with The
+                                                Campaign Registry (TCR) to ensure your messages are successfully
+                                                delivered to AT&T, T-Mobile, and Verizon carriers in the US.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>Pay per Segment</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>Pay per Segment</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>Pay per Segment</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M9.78662 13.6667L13.2594 10.1938C13.3354 10.1185 13.3956 10.029 13.4366 9.93033C13.4778 9.83173 13.4989 9.72587 13.4989 9.619C13.4989 9.51213 13.4778 9.40633 13.4366 9.30773C13.3956 9.20907 13.3354 9.11953 13.2594 9.04426L9.78662 5.57141"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.50098 2.33337V7.19051C2.50098 7.83464 2.75684 8.45231 3.21229 8.90777C3.66774 9.36324 4.28546 9.61911 4.92955 9.61911H13.4943"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Brand registration fee</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>$4 one-time</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>$4 one-time</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>$4 one-time</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M9.78662 13.6667L13.2594 10.1938C13.3354 10.1185 13.3956 10.029 13.4366 9.93033C13.4778 9.83173 13.4989 9.72587 13.4989 9.619C13.4989 9.51213 13.4778 9.40633 13.4366 9.30773C13.3956 9.20907 13.3354 9.11953 13.2594 9.04426L9.78662 5.57141"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.50098 2.33337V7.19051C2.50098 7.83464 2.75684 8.45231 3.21229 8.90777C3.66774 9.36324 4.28546 9.61911 4.92955 9.61911H13.4943"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Campaign vetting fee</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>$15 one-time</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>$15 one-time</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>$15 one-time</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium c-position-relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M9.78662 13.6667L13.2594 10.1938C13.3354 10.1185 13.3956 10.029 13.4366 9.93033C13.4778 9.83173 13.4989 9.72587 13.4989 9.619C13.4989 9.51213 13.4778 9.40633 13.4366 9.30773C13.3956 9.20907 13.3354 9.11953 13.2594 9.04426L9.78662 5.57141"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.50098 2.33337V7.19051C2.50098 7.83464 2.75684 8.45231 3.21229 8.90777C3.66774 9.36324 4.28546 9.61911 4.92955 9.61911H13.4943"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Low Volume Standard campaign fee <span class="hover-to-see c-position-static">*
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-278">Low Volume Standard is created for
+                                                businesses
+                                                in the US, Canada, or internationally that require sending fewer than
+                                                6,000 SMS segments and MMS per day to US phone numbers (2,000 for
+                                                T-Mobile numbers). Businesses can use multiple numbers in their
+                                                campaigns while enjoying higher throughput and lower filtering costs.
+                                                <br><br>
+                                                *You only need to select one campaign type that fits your needs - no
+                                                monthly fees are required.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>$1.50/month</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>$1.50/month</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>$1.50/month</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium c-position-relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path
+                                        d="M9.78662 13.6667L13.2594 10.1938C13.3354 10.1185 13.3956 10.029 13.4366 9.93033C13.4778 9.83173 13.4989 9.72587 13.4989 9.619C13.4989 9.51213 13.4778 9.40633 13.4366 9.30773C13.3956 9.20907 13.3354 9.11953 13.2594 9.04426L9.78662 5.57141"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.50098 2.33337V7.19051C2.50098 7.83464 2.75684 8.45231 3.21229 8.90777C3.66774 9.36324 4.28546 9.61911 4.92955 9.61911H13.4943"
+                                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Sole Prop campaign fee <span class="hover-to-see c-position-static">*
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-278">To qualify for Sole Prop, you must
+                                                have a valid address in the US or Canada and send less than 3,000 SMS
+                                                and MMS segments per day to the United States (1,000 for T-Mobile
+                                                numbers). A single number (for messaging) is allowed for this campaign.
+                                                <br><br>
+                                                *You only need to choose one type of campaign; both monthly fees are not
+                                                required.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>$2/month</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>$2/month</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>$2/month</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium c-position-relative">
+                                <p>Global Phone Numbers
+                                    <span class="hover-to-see c-position-static">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-278">For every user, one local/mobile from
+                                                UK or one local number from either USA or Canada is available for free.
+                                                Other countries require number purchase fees along with carrier
+                                                specific-document verification.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>International Calling & Messaging</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p><a href="/rate/" target="_blank">See Rates <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5"
+                                                stroke="#007AFF" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></a></p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p><a href="/rate/" target="_blank">See Rates <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5"
+                                                stroke="#007AFF" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></a></p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p><a href="/rate/" target="_blank">See Rates <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M11 1.5H14.5V5M13.75 2.25L10 6M8.5 2.5H4C3.60218 2.5 3.22064 2.65804 2.93934 2.93934C2.65804 3.22064 2.5 3.60218 2.5 4V12C2.5 12.3978 2.65804 12.7794 2.93934 13.0607C3.22064 13.342 3.60218 13.5 4 13.5H12C12.3978 13.5 12.7794 13.342 13.0607 13.0607C13.342 12.7794 13.5 12.3978 13.5 12V7.5"
+                                                stroke="#007AFF" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></a></p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Number Porting</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Pin Contact</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Pin Message</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Starred Message</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Recording Playback Fast Forward</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Filters</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>SMS Filter</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call History</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Click To Call Button/Widget
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Voicemail</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Voicemail Filter</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Bulk Contact Import</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Light weight CRM</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Web App/Web Dialer</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Desktop Apps (Windows/Mac/ Linux)
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Android/iOS Apps</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Browser Extension</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Answer Calls In Browser</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Greeting Voice Messages</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call On Hold Music</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Starred Message</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Pause/Resume Call Recording</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Notes in Callbox</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Notes in Dialer</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Tag in Dialer</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Tag in Callbox</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>DND For Phone Numbers</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>DND For Caller</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>New Lead Alerts</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Private Chat with Members</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Text Messages (SMS)</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>SMS Forwarding</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Multimedia Messages (MMS)</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Internal Reply Threads</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Dashboard</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Create Workspace</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Analytics</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Bulk SMS</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Reports
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>Basic</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>Advance</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>Advance</p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Recordings And Storage</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>Unlimited
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-right">
+                                            <span class="tooltip-text tooltip-227">Fair Usage Policy is applicable on
+                                                all Unlimited Plans.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <p>Unlimited
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-right">
+                                            <span class="tooltip-text tooltip-227">Fair Usage Policy is applicable on
+                                                all Unlimited Plans.</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Noise Cancellatio
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+
+
+                        <!-- Call Handling -->
+                        <div class="comparison-body-row customtext-xl custom-semibold">
+                            <p>Call Handling</p>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Number Sharing</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call To Cellphones/Landlines</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Blocking</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Listening</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Whispering</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Barging</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Forwarding</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Call Transfer</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Call Queuing
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Phone Trees (IVR)</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Multi-level IVR</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Custom Caller ID (Number Masking)</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Power Dialer</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+
+                        <!-- Call Center -->
+                        <div class="comparison-body-row customtext-xl custom-semibold">
+                            <p>Call Center</p>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Multiple Agents</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Agent Groups</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Ring Strategy
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+
+                        <!-- Integrations -->
+                        <div class="comparison-body-row customtext-xl custom-semibold">
+                            <p>Integrations</p>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>HubSpot</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Pipedrive</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Zapier</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Microsoft Dynamics 365</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Pabbly Connect</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>ActiveCampaign</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Keap</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Nimble CRM</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Integrately</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>FreshSales</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Bitrix24</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Copper CRM</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Outreach</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Leadsquared</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Capsule</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Close CRM</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Crisp</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Intercom</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Front</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Make</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>noCRM.io</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Firmao</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Activepieces</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Zoho</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Kommo</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Microsoft Teams</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Help Scout</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Gong</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Nutshell</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>OnePageCRM</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Salesflare</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Gorgias</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    Ontraport
+                                    <span class="beta-tags tags">Beta</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>monday.com
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Google Contact
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Salesforce
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Google Workspace
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Zendesk
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Slack
+                                    <span class="hover-to-see">
+                                        <span class="i-icon-purpal-bkg"></span>
+                                        <span class="tooltip-div tooltip-left">
+                                            <span class="tooltip-text tooltip-coming_soon">Coming Soon</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+
+
+                        <!-- Others -->
+                        <div class="comparison-body-row customtext-xl custom-semibold">
+                            <p>Others</p>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p class="text-and-tag">
+                                    API and Webhook access
+                                    <span class="coming_soon-tags tags">Coming Soon</span>
+                                </p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Developer Support</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                        <div class="comparison-body-row test_endsticky">
+                            <div class="row-column-1 tb-col-1 customtext-m custom-medium">
+                                <p>Dedicated Account Manager</p>
+                            </div>
+                            <div class="row-column-2 tb-col-2 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-3 tb-col-3 customtext-m custom-regular">
+                                <p>-</p>
+                            </div>
+                            <div class="row-column-4 tb-col-4 customtext-m custom-regular">
+                                <span class="check_icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="height: 1200px; background-color: gray;"></div>
+</body>
+
+
+<script>
+    // Price rateToggle
+    function togglePrice(selectedBtn) {
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const annuallyBtn = document.getElementById('annuallyBtn');
+        const cardEssentialRate = document.getElementById('essential-card-rate');
+        const cardStandardRate = document.getElementById('standard-card-rate');
+        const tableEssentialRate = document.getElementById('essential-table-rate');
+        const tableStandardRate = document.getElementById('standard-table-rate');
+
+        if (selectedBtn === 'monthly') {
+            monthlyBtn.classList.add('active');
+            annuallyBtn.classList.remove('active');
+            cardEssentialRate.innerHTML = '$ 15';
+            tableEssentialRate.innerHTML = '$15';
+            cardStandardRate.innerHTML = '$ 40';
+            tableStandardRate.innerHTML = '$40';
+        } else if (selectedBtn === 'annually') {
+            annuallyBtn.classList.add('active');
+            monthlyBtn.classList.remove('active');
+            cardEssentialRate.innerHTML = '$ 12';
+            tableEssentialRate.innerHTML = '$12';
+            cardStandardRate.innerHTML = '$ 32';
+            tableStandardRate.innerHTML = '$32';
+        }
+    }
+
+    // Script for pop up note
+    function closeNote() {
+        const closeBtn = document.getElementById('note_close_btn');
+        const notePopUpDiv = document.getElementById('note_pop_up_div');
+
+        closeBtn.addEventListener('click', () => {
+            notePopUpDiv.style.display = 'none';
+        });
+    }
+
+    closeNote();
+
+    // Script for table in responsive view
+    function toggleColumns(visibleColumns, activeButtonId) {
+        // Hide all columns
+        document.querySelectorAll('.row-column-2, .row-column-3, .row-column-4').forEach(el => el.style.display = 'none');
+        // Show specified columns
+        visibleColumns.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => el.style.display = '');
+        });
+        // Reset button styles
+        document.querySelectorAll('#essential_btn, #standard_btn, #enterprise_btn').forEach(btn => btn.style.borderBottom = '');
+        // Highlight active button
+        if (activeButtonId) {
+            document.getElementById(activeButtonId).style.borderBottom = "2px solid #8733FF";
+        }
+    }
+
+    function applyColumnVisibility() {
+        if (window.matchMedia("(max-width: 991px)").matches) {
+            // Expose toggle functions globally for small screens
+            window.essentialBtn = () => toggleColumns(['.row-column-1', '.row-column-2'], 'essential_btn');
+            window.standardBtn = () => toggleColumns(['.row-column-1', '.row-column-3'], 'standard_btn');
+            window.enterpriseBtn = () => toggleColumns(['.row-column-1', '.row-column-4'], 'enterprise_btn');
+
+            // Default to "essential" view
+            window.essentialBtn();
+        } else {
+            // Show all columns on larger screens
+            document.querySelectorAll('.row-column-1, .row-column-2, .row-column-3, .row-column-4').forEach(el => el.style.display = '');
+        }
+    }
+
+    // Apply on load and on resize
+    window.addEventListener('load', applyColumnVisibility);
+    window.addEventListener('resize', applyColumnVisibility);
+
+    // Script to load multiple svg iocn in different position
+    function dynamicaSVG() {
+        const svgContent = `
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M10.0002 1.45825C8.31082 1.45825 6.65934 1.95921 5.25467 2.89778C3.85 3.83635 2.75521 5.17039 2.10871 6.73117C1.46221 8.29195 1.29304 10.0094 1.62262 11.6663C1.9522 13.3233 2.76575 14.8453 3.96031 16.0398C5.15489 17.2343 6.67687 18.0478 8.33377 18.3774C9.99069 18.707 11.7082 18.5379 13.2689 17.8914C14.8297 17.2449 16.1638 16.1501 17.1023 14.7454C18.0409 13.3408 18.5419 11.6893 18.5419 9.99992C18.5397 7.7352 17.639 5.56389 16.0376 3.96249C14.4362 2.36109 12.2649 1.46046 10.0002 1.45825ZM14.2252 8.40825L9.75019 12.8833C9.59827 13.0432 9.41344 13.1683 9.20852 13.2499C8.79402 13.4163 8.33135 13.4163 7.91687 13.2499C7.71387 13.1647 7.52975 13.0401 7.37518 12.8833L5.15854 10.6666C5.08043 10.5891 5.0184 10.4969 4.9761 10.3954C4.93379 10.2938 4.912 10.1849 4.912 10.0749C4.912 9.96492 4.93379 9.856 4.9761 9.75442C5.0184 9.65292 5.08043 9.56075 5.15854 9.48325C5.31467 9.32809 5.52585 9.24092 5.746 9.24092C5.96615 9.24092 6.17738 9.32809 6.33351 9.48325L8.55852 11.7083L13.0419 7.23324C13.1193 7.15514 13.2115 7.09314 13.313 7.05084C13.4146 7.00854 13.5235 6.98675 13.6335 6.98675C13.7435 6.98675 13.8524 7.00854 13.954 7.05084C14.0555 7.09314 14.1477 7.15514 14.2252 7.23324C14.3729 7.38823 14.4554 7.59413 14.4554 7.80825C14.4554 8.02237 14.3729 8.22827 14.2252 8.38325V8.40825Z" fill="#079455"/>
+</svg>`;
+        const iPurpleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M9.99992 18.3334C5.39159 18.3334 1.66659 14.5992 1.66659 10C1.66659 5.39921 5.39159 1.66671 9.99992 1.66671C14.5999 1.66671 18.3333 5.39921 18.3333 10C18.3333 14.5992 14.5999 18.3334 9.99992 18.3334ZM9.99992 7.55754C10.1922 7.55754 10.3766 7.48116 10.5126 7.34519C10.6485 7.20923 10.7249 7.02482 10.7249 6.83254C10.7249 6.43254 10.3999 6.09921 9.99159 6.09921C9.59159 6.09921 9.26659 6.43254 9.26659 6.83254C9.26659 7.23254 9.59159 7.55754 9.99992 7.55754ZM9.99992 13.8917C10.3999 13.8917 10.7333 13.5575 10.7333 13.1584L10.7333 9.47504C10.7333 9.07421 10.3999 8.75004 9.99992 8.75004C9.80764 8.75004 9.62323 8.82642 9.48727 8.96239C9.3513 9.09835 9.27492 9.28276 9.27492 9.47504L9.27492 13.1584C9.27491 13.3514 9.35102 13.5367 9.48675 13.674C9.62248 13.8113 9.80687 13.8895 9.99992 13.8917Z" fill="#8733FF"/>
+</svg>`
+
+        const checkIcon = document.querySelectorAll('.check_icon');
+        const iIcon = document.querySelectorAll('.i-icon-purpal-bkg');
+
+        checkIcon.forEach((span) => {
+            span.innerHTML = svgContent;
+        });
+        iIcon.forEach((span) => {
+            span.innerHTML = iPurpleIcon;
+        });
+    }
+    dynamicaSVG();
+</script>
+
+<script>
+    $(document).ready(function () {
+        var $stickyElement = $('.test_startsticky'); // The element you want to make sticky
+        var stickyOffset = $stickyElement.offset().top; // Get initial position of the sticky element
+        var $noStickySection = $('.test_endsticky'); // The section where the sticky element should stop being fixed
+        var noStickyOffset = $noStickySection.offset().top; // Get the position of the "no-sticky" section
+        var noStickyHeight = $noStickySection.outerHeight(); // Get the height of the "no-sticky" section
+
+        // Listen to the scroll event
+        $(window).on('scroll', function () {
+            var scrollPosition = $(window).scrollTop(); // Get the current scroll position
+
+            // If the scroll position is greater than or equal to the initial position, make it fixed
+            if (scrollPosition >= stickyOffset && scrollPosition < noStickyOffset - $stickyElement.outerHeight()) {
+                $stickyElement.addClass('fixed'); // Add the 'fixed' class to make it sticky
+            } else {
+                $stickyElement.removeClass('fixed'); // Remove the 'fixed' class when scrolling back up
+            }
+
+            // If the scroll position reaches the bottom of the "no-sticky" section, remove the 'fixed' class
+            if (scrollPosition > noStickyOffset - $stickyElement.outerHeight()) {
+                $stickyElement.removeClass('fixed'); // Remove the 'fixed' class when reaching "no-sticky"
+            }
+        });
+    });
+</script>
+
+</html>

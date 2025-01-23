@@ -1,0 +1,398 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    body {
+        background: #f5f5f5;
+    }
+
+    .new-testimonial-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .new-testimonial-container {
+        max-width: 1080px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        padding: 24px 24px 24px 56px;
+        border-radius: 24px;
+        display: flex;
+        height: auto;
+    }
+
+    .new-testimonial-text {
+        margin: 0 30px;
+        flex: 1;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .new-testimonial-author {
+        color: #888;
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        height: auto;
+        margin-left: -30px;
+        bottom: 0;
+    }
+
+    .testimonial-nav-buttons {
+        border: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        border-radius: 24px;
+        background-color: #ffffff;
+        color: #603493 !important;
+        border: 1px solid #603493;
+    }
+
+    .new-testimonial-quotation {
+        padding-top: 10px;
+        width: 6%;
+    }
+
+    .new-testimonial-rquotation {
+        max-width: 30px;
+    }
+
+    .new-testimonial-rquotation img {
+        padding-top: 24px;
+        display: none;
+        width: 100%;
+    }
+
+    .new-testimonial-content {
+        padding-top: 28px;
+        margin-left: -30px;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .new-testimonial-image {
+        width: 35%;
+    }
+
+    .newtestimonial-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .new-testimonial-content-text {
+        color: #564D6D;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .new-testimonial-auth-details {
+        margin-left: 16px;
+    }
+
+    .auther-name {
+        color: #251A43;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+    }
+
+    .auther-position {
+        color: #6E6681;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .new-testimonial-rimage {
+        display: none;
+    }
+
+    .new-testimonial-rnav {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .page-link {
+        background-color: #D9D9D9 !important;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+
+    .page-link.active {
+        background-color: #390179 !important;
+    }
+
+    .testimonial-nav-buttons.active {
+        background-color: #603493 !important;
+        color: #ffffff !important;
+        border: none;
+    }
+
+    .testimonial-nav-buttons.disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    @media only screen and (max-width: 1399px) {
+        .new-testimonial-container {
+            max-width: 1010px;
+        }
+
+        .new-testimonial-content-text {
+            font-size: 15px;
+            line-height: 22px;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .new-testimonial-row {
+            margin-top: 90px;
+            flex-direction: column;
+            margin-bottom: 20px;
+            
+        }
+
+        .new-testimonial-rnav {
+            display: block;
+        }
+
+        .new-testimonial-container {
+            width: 100%;
+            padding: 20px;
+            border-radius: 24px;
+            flex-direction: column-reverse;
+        }
+
+        .testimonial-prev-button {
+            display: none;
+        }
+
+        .testimonial-next-button {
+            display: none;
+        }
+
+        .new-testimonial-rquotation img {
+            display: block;
+            margin-top: 32px;
+            padding-top: 0;
+        }
+
+        .new-testimonial-quotation {
+            display: none;
+            padding-top: 0;
+        }
+
+        .new-testimonial-image {
+            display: none;
+        }
+
+        .new-testimonial-rimage {
+            display: block;
+            height: 90px;
+            background-color: #f5f5f5;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .new-testimonial-content {
+            padding-top: 0;
+            margin-left: 0;
+        }
+
+        .new-testimonial-author {
+            margin-left: 0;
+            margin-top: 16px;
+        }
+
+        .new-testimonial-content-text {
+            padding: 0;
+            margin: 8px 0;
+            color: #141414;
+        }
+
+        .new-testimonial-text {
+            margin: 0;
+        }
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .new-testimonial-content-text {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        .new-testimonial-content-text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+</style>
+
+
+<div class="new-testimonial-row">
+    <button class="testimonial-nav-buttons testimonial-prev-button" id="testimonial-prev-button">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="new-testimonial-container">
+        <div class="new-testimonial-quotation">
+            <img src="https://krispcall.com/wp-content/uploads/2023/09/unnamed-file.png">
+        </div>
+        <div class="new-testimonial-text">
+            <div class="new-testimonial-rquotation">
+                <img src="https://krispcall.com/wp-content/uploads/2023/09/unnamed-file.png">
+            </div>
+            <div class="new-testimonial-content">
+                <p class="new-testimonial-content-text" id="new-testimonial-content-text"></p>
+            </div>
+            <div class="new-testimonial-author" id="new-testimonial-author">
+                <div class="new-testimonial-auth-img">
+                    <img src="" id="auther-img">
+                </div>
+                <div class="new-testimonial-auth-details">
+                    <p class="auther-name" id="auther-name" style="margin:0px; padding:0px;"></p>
+                    <p class="auther-position" id="auther-position" style="margin:0px; padding:0px;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="new-testimonial-image">
+            <img src="" id="newtestimonial-image" class="newtestimonial-image">
+        </div>
+        <div class="new-testimonial-rimage">
+            <img src="" id="rnewtestimonial-image">
+        </div>
+    </div>
+
+    <button class="testimonial-nav-buttons testimonial-next-button" id="testimonial-next-button">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
+<div class="new-testimonial-rnav" id="new-testimonial-rnav">
+</div>
+
+<script>
+    const newtestimonials = [
+        {
+            text: "I highly recommend KrispCall for virtual phone services. Over the past 3 months of using their platform, I've been continually impressed by their user-friendly system and smooth functionality. But the real differentiator is KrispCall s outstanding customer support. Their team is extremely responsive, and helpful whenever I have questions or need assistance. They go above and beyond to ensure I get the most out of their services. KrispCall's combination of an excellent virtual phone platform and stellar support truly sets them apart. I'm happy to recommend them to any business looking for reliable, high-quality virtual phone numbers and service. They have been a fantastic partner for Workforce Extensions and I look forward to continuing to work with them.",
+            authorimg: "https://krispcall.com/wp-content/uploads/2023/07/neil-mendoza.png",
+            authorname: "Neil Mendoza",
+            authorposition: "HR Executive, Workforce Extensions",
+            image: "https://krispcall.com/wp-content/uploads/2023/09/workforce-300x300.png",
+            rimage: "https://krispcall.com/wp-content/uploads/2023/09/workforce-2.png"
+        },
+        {
+            text: "KrispCall allowed our business and our customer base to grow since we need a contact number. Its smooth and easy subscription and user interface were our reasons to choose KrispCall. Most importantly, the customer service works at its best to help us with any troubleshoots we have.",
+            authorimg: "https://krispcall.com/wp-content/uploads/2023/08/Berivan-Birkan-1.png",
+            authorname: "Berivan Birkan",
+            authorposition: "Founder, TerraMavi",
+            image: "https://krispcall.com/wp-content/uploads/2023/10/TerraMavi.png",
+            rimage: "https://krispcall.com/wp-content/uploads/2023/10/responsive-TerraMavi.png"
+        },
+        // Add more newtestimonials here with unique images
+    ];
+
+    let currentIndex = 0;
+    const newtestimonialsPerPage = 1;
+    const totalPages = Math.ceil(newtestimonials.length / newtestimonialsPerPage);
+
+    function updatenewtestimonial() {
+
+        const newtestimonialText = document.getElementById("new-testimonial-content-text");
+        const newtestimonialAuthorimg = document.getElementById("auther-img");
+        const newtestimonialAuthorname = document.getElementById("auther-name");
+        const newtestimonialAuthorposition = document.getElementById("auther-position");
+        const newtestimonialImage = document.getElementById("newtestimonial-image");
+        const rnewtestimonialImage = document.getElementById("rnewtestimonial-image");
+
+        newtestimonialText.textContent = `${newtestimonials[currentIndex].text}`;
+        newtestimonialAuthorimg.src = newtestimonials[currentIndex].authorimg;
+        newtestimonialAuthorname.textContent = ` ${newtestimonials[currentIndex].authorname}`;
+        newtestimonialAuthorposition.textContent = ` ${newtestimonials[currentIndex].authorposition}`;
+        newtestimonialImage.src = newtestimonials[currentIndex].image;
+        rnewtestimonialImage.src = newtestimonials[currentIndex].rimage;
+
+        document.getElementById("testimonial-prev-button").disabled = currentIndex === 0;
+
+        document.getElementById("testimonial-next-button").disabled = currentIndex === newtestimonials.length - 1;
+
+        if (currentIndex === 0) {
+            document.getElementById("testimonial-prev-button").classList.remove("active");
+            document.getElementById("testimonial-next-button").classList.add("active");
+        } else if (currentIndex === newtestimonials.length - 1) {
+            document.getElementById("testimonial-prev-button").classList.add("active");
+            document.getElementById("testimonial-next-button").classList.remove("active");
+        } else {
+            document.getElementById("testimonial-prev-button").classList.add("active");
+            document.getElementById("testimonial-next-button").classList.add("active");
+        }
+    }
+
+    function showNextnewtestimonial() {
+        currentIndex = (currentIndex + 1) % newtestimonials.length;
+        updatenewtestimonial();
+        updatePagination();
+    }
+
+    function showPreviousnewtestimonial() {
+        currentIndex = (currentIndex - 1 + newtestimonials.length) % newtestimonials.length;
+        updatenewtestimonial();
+        updatePagination();
+    }
+
+    function updatePagination() {
+        const pagination = document.getElementById("new-testimonial-rnav");
+        pagination.innerHTML = '';
+
+        for (let i = 0; i < totalPages; i++) {
+            const pageLink = document.createElement("button");
+            pageLink.textContent = '';
+            pageLink.classList.add("page-link");
+            if (i === Math.ceil(currentIndex / newtestimonialsPerPage)) {
+                pageLink.classList.add("active");
+            }
+            pageLink.addEventListener("click", () => {
+                currentIndex = i * newtestimonialsPerPage;
+                updatenewtestimonial();
+                updatePagination();
+            });
+            pagination.appendChild(pageLink);
+        }
+    }
+
+    const nextButton = document.getElementById("testimonial-next-button");
+    nextButton.addEventListener("click", showNextnewtestimonial);
+
+    const prevButton = document.getElementById("testimonial-prev-button");
+    prevButton.addEventListener("click", showPreviousnewtestimonial);
+
+    function autoChangenewtestimonial() {
+        setInterval(showNextnewtestimonial, 10000); // 5000 milliseconds = 5 seconds
+    }
+
+    updatenewtestimonial();
+    updatePagination();
+    autoChangenewtestimonial();
+</script>

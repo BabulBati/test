@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Div Slider with Pagination</title>
+    <style>
+        /* knowledge hub start*/
+        .knowledge-hub-slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .knowledge-hub-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .knowledge-hub-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .knowledge-hub-slide img{
+            width: 100%;
+            margin: 0 0 16px 0;
+            padding: 0;
+            border-radius: 16px;
+        }
+
+        .knowledge-hub-slide h4 {
+            color: var(--primary-on-primary, #083009);
+            font-family: Switzer;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            padding: 0;
+            margin: 0 0 4px 0;
+        }
+
+        .knowledge-hub-slide p {
+            color: var(--primary-on-primary, #083009);
+            font-family: Switzer;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .knowledge-hub-pagination {
+            display: flex;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .knowledge-hub-pagination button {
+            margin: 0 4px;
+            width: 24px;
+            height: 6px;
+            cursor: pointer;
+            background-color: #dddddd;
+            border: none;
+        }
+
+        .knowledge-hub-pagination button.knowledge-hub-active {
+            background-color: #083009;
+        }
+        /* end */
+    </style>
+</head>
+
+<body>
+
+    <div class="knowledge-hub-slider-container">
+        <div class="knowledge-hub-slider">
+            <div class="knowledge-hub-slide">
+                <img src="/wp-content/uploads/2023/11/Rectangle-27-2.png">
+                <h4>Everything You Need To Know About 765 Area Code</h4>
+                <p>Lucas Stones, Sep 6</p>
+            </div>
+            <div class="knowledge-hub-slide">
+                <img src="/wp-content/uploads/2023/11/Rectangle-27-2.png">
+                <h4>Everything You Need To Know About 765 Area Code</h4>
+                <p>Lucas Stones, Sep 6</p>
+            </div>
+            <div class="knowledge-hub-slide">
+                <img src="/wp-content/uploads/2023/11/Rectangle-27-2.png">
+                <h4>Everything You Need To Know About 765 Area Code</h4>
+                <p>Lucas Stones, Sep 6</p>
+            </div>
+        </div>
+    </div>
+    <div class="knowledge-hub-pagination">
+        <button class="knowledge-hub-dot"></button>
+        <button class="knowledge-hub-dot"></button>
+        <button class="knowledge-hub-dot"></button>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var currentIndex = 0;
+            var items = $('.knowledge-hub-slide');
+            var totalItems = items.length;
+
+            $('.knowledge-hub-pagination button').eq(currentIndex).addClass('knowledge-hub-active');
+
+            $('.knowledge-hub-pagination button').on('click', function () {
+                currentIndex = $(this).index();
+                updateSlider();
+                updatePagination();
+            });
+
+            function updateSlider() {
+                var translateValue = -currentIndex * 100 + '%';
+                $('.knowledge-hub-slider').css('transform', 'translateX(' + translateValue + ')');
+            }
+
+            function updatePagination() {
+                $('.knowledge-hub-pagination button').removeClass('knowledge-hub-active');
+                $('.knowledge-hub-pagination button').eq(currentIndex).addClass('knowledge-hub-active');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

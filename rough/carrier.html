@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Carrier</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: white;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      border-radius: 15px;
+      background-color: #6f1bda;
+      padding: 30px;
+      border: none;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .card-body p {
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-pill {
+      font-size: 0.9rem;
+      padding: 0.5em 1em;
+    }
+
+    hr {
+      border-color: #b39ddb;
+    }
+
+    .btn-outline-light {
+      border-color: #ce93d8;
+      color: #ce93d8;
+      border-radius: 20px;
+      padding: 0.5em 1.5em;
+      min-width: 150px;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #ce93d8;
+      color: white;
+    }
+
+    .row-custom {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .col-custom {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    .flag-icon {
+      font-size: 1.5rem;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <section class="py-3 mb-5">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold text-gray-800">
+        Carrier <span class="text-gradient">Lookup</span>
+      </h2>
+      <div class="container mx-auto px-4">
+        <div class="mb-4 mt-2">
+          <!-- <p>Let’s find out if the phone number you are looking for is currently <br> available on KrispCall or not.</p> -->
+        </div>
+        <form action="#" class="pt-3" id="carrier-lookup">
+          <div class="flex justify-between items-center">
+            <div class="flex-1 px-0">
+              <div class="flex mb-0">
+                <input type="tel" class="form-control border border-gray-300 rounded px-3 py-2 w-full"
+                  id="carrierlookup" placeholder="Enter your phone number" name="check-num" required />
+              </div>
+            </div>
+            <div class="pl-0">
+              <div class="text-center">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit" id="carrier-lookup-btn">
+                  Validate<span class="preloader preloader-sm"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="container mx-auto mt-3 hidden" id="carrier-validator-results">
+          <div class="flex flex-col items-center justify-center min-h-screen text-white p-6">
+            <div class="bg-[#6F1BDA] rounded-xl p-8  max-w-2xl w-full" id="carriervalidatorselected-list">
+              <!-- Validation results will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mt-5" id="carriervalidatorselected-list"></div>
+
+  <script>
+    function decryptApiKey(encryptedApiKey, passphrase) {
+      const bytes = CryptoJS.AES.decrypt(encryptedApiKey, passphrase);
+      return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    document
+      .getElementById("carrier-lookup")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const number = document.getElementById("carrierlookup").value;
+        const countryCode = "IN";
+        const encryptedApiKey =
+          "U2FsdGVkX19wIem0kWCGIzbForqug6oFqzwvesjCtjcMKb+0e7cxxYCc6VnWz91LQIkllq5QcwD+Q/i5y5/5Kg==";
+        const passphrase = "okay";
+        const api = decryptApiKey(encryptedApiKey, passphrase);
+        const url = `https://apilayer.net/api/validate?access_key=${api}&number=${number}&country_code=${countryCode}&format=1`;
+        try {
+          const response = await fetch(url, { method: "GET" });
+          const result = await response.json();
+
+          if (result.valid) {
+            document.getElementById(
+              "carriervalidatorselected-list"
+            ).innerHTML = `
+              <div class="card text-white">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">
+            Phone Carrier Lookup Detail for ${result.number}
+          </h4>
+          <p class="text-center mb-4">
+            ${result.line_type}, ${result.location}, ${result.country_name}
+          </p>
+          <div class="row row-custom">
+            <div class="col-custom">
+              <div class="element">
+                <p><strong>Local Formatted Number</strong></p>
+                <p>${result.number}</p>
+              </div>
+              <div class="element">
+                <p><strong>Line Type</strong></p>
+                <p>${result.line_type}</p>
+              </div>
+            </div>
+            <div class="col-custom">
+              <div class="element">
+                <p><strong>Country</strong></p>
+                <p class="flag-icon">${result.country_name}</p>
+              </div>
+              
+              <div class="element">
+                <p><strong>Region</strong></p>
+                <p>${result.location}</p>
+              </div>
+            </div>
+            <div class="col-custom">
+              
+              <div class="element">
+                <p><strong>Carrier Name</strong></p>
+                <p>${result.carrier}</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="button-group">
+            <button class="btn btn-outline-light">Done</button>
+            <button class="btn btn-outline-light">Check next number</button>
+          </div>
+        </div>
+      </div>
+          `;
+          } else {
+            document.getElementById(
+              "carriervalidatorselected-list"
+            ).innerHTML = "<p>Invalid phone number</p>";
+          }
+          document
+            .getElementById("carrier-validator-results")
+            .classList.remove("d-none");
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("carriervalidatorselected-list").innerHTML =
+            "<p>An error occurred. Please try again.</p>";
+        }
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="typography.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .container {
+            padding: 80px 0;
+            margin: 0 auto;
+            max-width: 1280px;
+        }
+
+        .featurepage-container {
+            position: relative;
+        }
+
+        .featurepage-slider-container {
+            overflow: hidden;
+
+        }
+
+        /* Card */
+
+        .featurepage-slider-wrapper {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% - (24px * (var(--per-view) - 1))) / var(--per-view));
+            grid-gap: 24px;
+            position: relative;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        .slides {
+            background: #ffffff;
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .contents {
+            cursor: pointer;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .content-top p {
+            color: #1f1f1f;
+        }
+
+        .content-bottom p {
+            color: #333333;
+        }
+
+        /* Cards End */
+        /* NAVIGATION BUTTONS */
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .prev-btn {
+            left: -20px;
+        }
+
+        .next-btn {
+            right: -20px;
+        }
+
+        /* NAVIGATION BUTTONS */
+        /*Pagination*/
+        .pagination {
+            display: none;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #C4C4C4;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            border-radius: 8px;
+            width: 32px;
+            background-color: #8251EE;
+        }
+
+        /*Pagination end*/
+        /* Star rating */
+        .checked {
+            color: #ffd400 !important;
+        }
+
+        .fa-star {
+            color: #B7B3C1;
+        }
+
+        /* Star rating end */
+
+
+
+        @media screen and (max-width:991px) {
+
+            .prev-btn,
+            .next-btn {
+                display: none;
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: center;
+                margin-top: 16px;
+                gap: 5px;
+            }
+        }
+
+        @media screen and (mx-width:767px) {}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="featurepage-container carousel1">
+            <div class="featurepage-slider-container paragraph-small">
+                <div class="featurepage-slider-wrapper" id="featurepage-slides1">
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Noah Kaminska</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>Its easy to use. Ability to put notes on each call is amazing. Plus it meets our
+                                    expectation with the features. It would be nice to have a video conferencing as
+                                    well.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Ceyhun C Canbazoglu</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>KrispCall is the only service I could find that meets my OTP SMS needs without any
+                                    problems. The price is also very affordable. OTP SMS notifications reach me within
+                                    2-3
+                                    seconds. Simply amazing service. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Diya Ahuja</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>The seamless pipedrive integration has saved my and my teams life. Can't thank
+                                    KrispCall
+                                    enough. Very reliable service and helpful staff. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Gorge</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>Their new Zapier integration has saved a lots of time as we can automate so many
+                                    things.
+                                    Krispcall is Great tool and worth the every penny.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="prev-btn" onclick="prevImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M1 9L17 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M8.03223 16.6605L1.45938 10.0877C1.31583 9.94534 1.20183 9.77592 1.12409 9.58913C1.04623 9.40246 1.00618 9.20221 1.00618 8.99995C1.00618 8.79768 1.04623 8.59743 1.12409 8.41076C1.20183 8.22397 1.31583 8.05455 1.45938 7.91219L8.03223 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="next-btn" onclick="nextImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M17 9L1 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M9.96777 16.6605L16.5406 10.0877C16.6842 9.94534 16.7982 9.77592 16.8759 9.58913C16.9538 9.40246 16.9938 9.20221 16.9938 8.99995C16.9938 8.79768 16.9538 8.59743 16.8759 8.41076C16.7982 8.22397 16.6842 8.05455 16.5406 7.91219L9.96777 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="pagination" id="carousel1-pagination"></div>
+        </div>
+        <div class="featurepage-container carousel2">
+            <div class="featurepage-slider-container paragraph-small">
+                <div class="featurepage-slider-wrapper" id="featurepage-slides2">
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Noah Kaminska</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>Its easy to use. Ability to put notes on each call is amazing. Plus it meets our
+                                    expectation with the features. It would be nice to have a video conferencing as
+                                    well.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Ceyhun C Canbazoglu</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>KrispCall is the only service I could find that meets my OTP SMS needs without any
+                                    problems. The price is also very affordable. OTP SMS notifications reach me within
+                                    2-3
+                                    seconds. Simply amazing service. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Diya Ahuja</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>The seamless pipedrive integration has saved my and my teams life. Can't thank
+                                    KrispCall
+                                    enough. Very reliable service and helpful staff. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="contents">
+                            <div class="content-top">
+                                <p style="font-weight: 500 !important;">Gorge</p>
+                                <div class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </div>
+                            <div class="content-bottom">
+                                <p>Their new Zapier integration has saved a lots of time as we can automate so many
+                                    things.
+                                    Krispcall is Great tool and worth the every penny.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="prev-btn" onclick="prevImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M1 9L17 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M8.03223 16.6605L1.45938 10.0877C1.31583 9.94534 1.20183 9.77592 1.12409 9.58913C1.04623 9.40246 1.00618 9.20221 1.00618 8.99995C1.00618 8.79768 1.04623 8.59743 1.12409 8.41076C1.20183 8.22397 1.31583 8.05455 1.45938 7.91219L8.03223 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="next-btn" onclick="nextImage()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    viewBox="0 0 18 18" fill="none">
+                    <path d="M17 9L1 9" stroke="#1F1F1F" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M9.96777 16.6605L16.5406 10.0877C16.6842 9.94534 16.7982 9.77592 16.8759 9.58913C16.9538 9.40246 16.9938 9.20221 16.9938 8.99995C16.9938 8.79768 16.9538 8.59743 16.8759 8.41076C16.7982 8.22397 16.6842 8.05455 16.5406 7.91219L9.96777 1.33936"
+                        stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="pagination" id="carousel2-pagination"></div>
+        </div>
+    </div>
+
+    <script>
+
+        function initializeCarousel(carouselId) {
+            const featurepageSlides = document.querySelector(`.${carouselId} .featurepage-slider-wrapper`);
+            const featurepageItems = document.querySelectorAll(`.${carouselId} .slides`);
+            const paginationContainer = document.getElementById(`${carouselId}-pagination`);
+            const itemsLength = featurepageItems.length;
+            let totalScroll = 0, autoScrollInterval;
+
+            function viewNumber() {
+                let perView = window.innerWidth >= 992 ? 3 : window.innerWidth >= 767 ? 2 : 1;
+                featurepageSlides.style.setProperty('--per-view', perView);
+                for (let i = 0; i < perView; i++) { featurepageSlides.insertAdjacentHTML('beforeend', featurepageItems[i].outerHTML) };
+            };
+
+            function scrolling() {
+                totalScroll++;
+                if (totalScroll == itemsLength + 1) {
+                    totalScroll = 1;
+                    featurepageSlides.style.transition = '0s';
+                    featurepageSlides.style.left = '0';
+                }
+                const widthEl = featurepageItems[0].offsetWidth + 24;
+                featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                featurepageSlides.style.transition = '.3s';
+                highlightCurrentDot();
+            }
+
+            function updatePagination(carouselId) {
+                paginationContainer.innerHTML = '';
+                for (let i = 0; i < itemsLength; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    dot.addEventListener('click', () => goToImage(i));
+                    paginationContainer.appendChild(dot);
+                }
+                highlightCurrentDot();
+            }
+
+            function highlightCurrentDot() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === totalScroll % itemsLength);
+                });
+            }
+
+            function goToImage(index) {
+                totalScroll = index;
+                const widthEl = featurepageItems[0].offsetWidth + 24;
+                featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                featurepageSlides.style.transition = '.3s';
+                highlightCurrentDot();
+            }
+
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(scrolling, 3000);
+            }
+
+            function stopAutoScroll() {
+                clearInterval(autoScrollInterval);
+            }
+
+            featurepageSlides.addEventListener('mouseover', stopAutoScroll);
+            featurepageSlides.addEventListener('mouseout', startAutoScroll);
+
+            let startX;
+            let deltaX;
+            let isDragging = false;
+
+            featurepageSlides.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                isDragging = true;
+            });
+
+            featurepageSlides.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    deltaX = e.clientX - startX;
+                }
+            });
+
+            featurepageSlides.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    handleDragEnd();
+                }
+            });
+
+            featurepageSlides.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    handleDragEnd();
+                }
+            });
+
+            featurepageSlides.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            featurepageSlides.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                deltaX = e.touches[0].clientX - startX;
+            });
+
+            featurepageSlides.addEventListener('touchend', () => {
+                handleDragEnd();
+            });
+
+            function handleDragEnd() {
+                const widthEl = featurepageItems[0].offsetWidth + 24;
+                const maxScroll = itemsLength - 1;
+
+                if (deltaX < -50) {
+                    totalScroll++;
+                } else if (deltaX > 50) {
+                    totalScroll--;
+                }
+
+                if (totalScroll > maxScroll) {
+                    totalScroll = 0;
+                } else if (totalScroll < 0) {
+                    totalScroll = maxScroll;
+                }
+
+                featurepageSlides.style.transition = '.3s';
+                featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+
+                highlightCurrentDot();
+                deltaX = 0;
+            }
+
+            function prevImage() {
+                totalScroll--;
+                const widthEl = featurepageItems[0].offsetWidth + 24;
+
+                if (totalScroll < 0) {
+                    totalScroll = itemsLength - 1;
+                    featurepageSlides.style.transition = '0s';
+                    featurepageSlides.style.left = `-${itemsLength * widthEl}px`;
+                    setTimeout(() => {
+                        featurepageSlides.style.transition = '.3s';
+                        featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                    }, 0);
+                } else {
+                    featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                    featurepageSlides.style.transition = '.3s';
+                }
+                highlightCurrentDot();
+            }
+
+            function nextImage() {
+                totalScroll++;
+                const widthEl = featurepageItems[0].offsetWidth + 24;
+
+                if (totalScroll == itemsLength + 1) {
+                    featurepageSlides.style.transition = '0s';
+                    featurepageSlides.style.left = '0';
+                    setTimeout(() => {
+                        featurepageSlides.style.transition = '.3s';
+                        featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                    }, 0);
+                    totalScroll = 1;
+                } else {
+                    featurepageSlides.style.left = `-${totalScroll * widthEl}px`;
+                    featurepageSlides.style.transition = '.3s';
+                }
+                highlightCurrentDot();
+            }
+            document.querySelector(`.${carouselId} .prev-btn`).addEventListener('click', prevImage);
+            document.querySelector(`.${carouselId} .next-btn`).addEventListener('click', nextImage);
+            viewNumber();
+            updatePagination();
+            startAutoScroll();
+        }
+
+        initializeCarousel('carousel1');
+        initializeCarousel('carousel2');
+
+        addEventListener("resize", (event) => {
+            initializeCarousel('carousel1');
+            initializeCarousel('carousel2');
+        });
+    </script>
+</body>
+</html>
