@@ -1,4 +1,18 @@
 <style>
+    .card-table table.table-radius {
+        min-width: 0px !important;
+    }
+
+    .search-num .form-row>[class*=col-]:not(:first-child) {
+        padding: 0 !important;
+    }
+
+    .search-num--table table.table-radius>tbody>tr>td:last-child {
+        float: unset !important;
+        display: flex;
+        justify-content: flex-end;
+    }
+
     .container-virtual-search:not(.container-virtual-search .container-virtual-search)>div {
         border-radius: 16px;
         border: 1px solid rgba(209, 212, 220, 0.50);
@@ -6,30 +20,62 @@
     }
 
     table td,
-    th {
+    table th {
         color: #4D4950 !important;
     }
 
+    table tbody tr:hover,
     table tr td {
         background: transparent !important;
     }
 
-    table tbody tr:hover {
+
+    table tbody tr:hover td {
         background: #F6F7F9 !important;
     }
 
-    .icon.btn-type {
-        color: #fff !important;
+    table.table-radius>tbody>tr>td:first-child {
+        border-radius: 8px 0px 0px 8px;
     }
 
-    tbody .border-none td.icon.btn-abilities {
+    table.table-radius>tbody>tr>td:last-child {
+        border-radius: 0px 8px 8px 0px;
+    }
+
+    .selected-list .btn-type {
+        color: #fff !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+    }
+
+    .selected-list .btn-abilities.btn-outline-primary-lt {
         color: #4D4950 !important;
         border-radius: 4px !important;
         border: 1px solid #D1D4DC !important;
+        font-weight: 600 !important;
     }
 
-    .card-table p {
+    .card-table {
+        margin: 0 !important;
+    }
+
+    .selected-list p {
         color: #4D4950 !important;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.02px;
+    }
+
+
+    table.table-radius tbody tr td {
+        font-weight: 600 !important;
+    }
+
+    .selected-list .price {
+        color: #4D4950 !important;
+        font-weight: 600 !important;
     }
 
     .maps-div {
@@ -43,11 +89,11 @@
     .maps-div>img {
         position: absolute;
         top: 0;
-        height: 100%;
+        height: 30.875rem;
     }
 
     .left-map {
-        left: -18.7%;
+        left: -15rem;
         aspect-ratio: 401/382;
     }
 
@@ -55,7 +101,106 @@
         right: 0;
         aspect-ratio: 272/382;
     }
+
+    #search-number>div {
+        gap: 16px;
+    }
+
+    .search-form {
+        padding: 56px 0;
+    }
+
+    .search-form h2 {
+        margin: 0 0 24px;
+    }
+
+    .search-form h2+p {
+        margin: 0 0 40px;
+    }
+
+    @media (max-width:1022px) {
+        .maps-div>img {
+            height: 18.75rem;
+        }
+
+        .left-map {
+            left: -8rem;
+        }
+    }
+
+    @media (max-width:992px) {
+        .maps-div>img {
+            height: 230px;
+        }
+
+        .search-form {
+            padding: 56px 32px;
+        }
+
+        .search-form h2 {
+            margin: 0 0 20px;
+        }
+
+        .search-form h2+p {
+            margin: 0 0 32px;
+        }
+
+        .selected-list p {
+            font-size: 14px !important;
+        }
+
+        .selected-list .btn-type {
+            font-size: 12px !important;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    @media (max-width:767px) {
+        .maps-div>img {
+            height: 160px;
+        }
+
+        .left-map {
+            left: -8.5rem;
+        }
+
+        .right-map {
+            right: -4rem;
+        }
+
+        .search-form {
+            padding: 32px 16px;
+        }
+
+        .search-form h2 {
+            margin: 0 0 16px;
+        }
+
+        .search-form h2+p {
+            margin: 0 0 24px;
+        }
+
+        .search-num--table .card-list:hover {
+            background: #F6F7F9 !important;
+        }
+
+        .card-list--details .number {
+            color: #4D4950 !important;
+            font-weight: 600 !important;
+        }
+
+        .selected-list .btn-type {
+            padding: 4px !important;
+            height: 17px;
+        }
+
+    }
 </style>
+<!--SEARCH NUMBER-->
+
+
 <div class="container-virtual-search position-relative">
     <div class="maps-div position-absolute">
         <img src="/wp-content/themes/mitech/src/assets/images/world-map.png" alt="" class="left-map">
@@ -64,23 +209,25 @@
     <div class="search-form search-form--table item-center two-col py-5 min-h-494">
         <div class="center-item block-relative">
             <div class="align-items-center d-flex pl-0 max-527">
-                <div class="text-center">
+                <div class="text-center customtypo-heading customtext-l">
                     <h2 style="color: #242424;">Get a Virtual Number</h2>
-                    <p style="color: #4D4950;">Get local, mobile, and toll-free virtual phone numbers from
-                        100+ countries and expand
-                        your business worldwide.</p>
+                    <p style="color: #4D4950; font-weight: 400;">
+                        Get local, mobile, and toll-free virtual phone numbers from 100+ countries and
+                        expand your
+                        business worldwide.
+                    </p>
                 </div>
             </div>
-            <div class="p-0 mt-5">
+            <div class="p-0 m-0">
                 <div class="search-num search-num--table" id="search-num">
                     <form action="#" id="search-number" class="max-527">
-                        <div class="form-row justify-content-center m-0">
+                        <div class="form-row justify-content-center m-0 p-0">
                             <div class="col-md col-fixed-width p-0">
                                 <div class="form-group form-ccwrapper text-left mb-0">
                                     <input type="text" class="form-control" id="phoneNum" name="phone-num" required>
                                 </div>
                             </div>
-                            <div class="col-auto ml-2 ml-md-0 pr-0">
+                            <div class="col-auto m-0 p-0">
                                 <div class="form-action text-center">
                                     <button class="btn btn-primary-lt" id="search-open">Search<span
                                             class="preloader preloader-sm"></span></button>
