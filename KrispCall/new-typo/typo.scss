@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&display=swap");
+
 /* typography */
 /* Headings */
 .customtypo-heading {
@@ -10,7 +12,7 @@
         font-weight: 700;
         letter-spacing: -0.02em;
         line-height: 130% !important;
-        font-family: "Manrope";
+        font-family: "Manrope", sans-serif;
     }
 
     h1 {
@@ -54,16 +56,16 @@
     &-m,
     &-s {
         p {
-            font-family: "Inter" !important;
+            font-family: "Inter", sans-serif !important;
             letter-spacing: -0.02em;
         }
-        &.custom-regular p{
+        &.custom-regular p {
             font-weight: 400;
         }
-        &.custom-medium p{
+        &.custom-medium p {
             font-weight: 500;
         }
-        &.custom-semibold p{
+        &.custom-semibold p {
             font-weight: 600;
         }
     }
