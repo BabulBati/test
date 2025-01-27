@@ -27,7 +27,7 @@ h6 {
   background-size: cover !important;
   height: 494px;
   top: 0;
-  z-index: 0;
+  z-index: -1;
 }
 .footer_white_cta:after {
   background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/world-map-2.png) no-repeat;

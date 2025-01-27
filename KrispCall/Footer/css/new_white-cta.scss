@@ -27,7 +27,7 @@ h6 {
         background-size: cover !important;
         height: 494px;
         top: 0;
-        z-index: 0;
+        z-index: -1;
     }
 
     &:after {
