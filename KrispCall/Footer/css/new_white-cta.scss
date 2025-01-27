@@ -27,17 +27,18 @@ h6 {
         background-size: cover !important;
         height: 494px;
         top: 0;
+        z-index: 0;
     }
 
     &:after {
         background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/world-map-2.png) no-repeat;
-        left: calc(100% + 20px);
+        left: calc(100% + 15px);
         aspect-ratio: 272/382;
     }
 
     &:before {
         background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/world-map.png) no-repeat;
-        right: calc(100% + 20px);
+        right: calc(100% + 15px);
         aspect-ratio: 401/382;
     }
 
@@ -61,7 +62,9 @@ h6 {
 }
 .white_cta-right {
     flex-basis: 50%;
+    max-width: 575px;
     flex-grow: 1;
+    text-align: left;
 }
 
 .white_cta-content {
@@ -126,6 +129,7 @@ h6 {
 .white_cta-left {
     flex-basis: 50%;
     flex-grow: 1;
+    max-width: 640px;
     img {
         max-width: 100%;
         height: auto;
@@ -159,6 +163,13 @@ h6 {
         & > div {
             gap: 40px;
         }
+    }
+    .white_cta-right,
+    .white_cta-left {
+        flex-basis: unset;
+        max-width: unset;
+        text-align: center;
+        width: 100%;
     }
 }
 @media (max-width: 767px) {
