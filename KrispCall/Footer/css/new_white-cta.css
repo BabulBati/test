@@ -46,65 +46,63 @@ h6 {
 .footer_white_cta > div {
   padding: 0;
 }
+.footer_white_cta .white_cta-get_started-tag {
+  border-radius: 6px;
+  background: rgba(135, 51, 255, 0.07);
+  padding: 6px 12px;
+}
+.footer_white_cta p {
+  gap: 6px;
+  color: #8733ff !important;
+}
 
 .white_cta-right {
   flex-basis: 50%;
   flex-grow: 1;
 }
 
-.get_started-tag {
-  border-radius: 6px;
-  background: rgba(135, 51, 255, 0.07);
-  padding: 6px 12px;
-}
-
-p {
-  gap: 6px;
-  color: #8733ff !important;
-}
-
-.content-div {
+.white_cta-content {
   gap: 24px;
   margin: 16px 0 56px;
 }
-.content-div h2 {
+.white_cta-content h2 {
   color: #242424 !important;
 }
-.content-div p {
+.white_cta-content p {
   color: #4d4950 !important;
 }
-.content-div > div {
+.white_cta-content > div {
   gap: 12px;
 }
-.content-div > div p {
+.white_cta-content > div p {
   color: #4d4950;
   font-weight: 400;
   line-height: 20px !important;
 }
-.content-div > div img {
+.white_cta-content > div img {
   max-width: 100%;
   height: auto;
 }
 
-.button-group {
+.white_cta-button-group {
   max-width: 407px;
   gap: 13px;
 }
-.button-group a {
+.white_cta-button-group a {
   text-decoration: none;
   width: 100%;
 }
-.button-group a.footer-cta-demo-btn button {
+.white_cta-button-group a.white_cta-demo-btn button {
   border: 1px solid #d1d4dc !important;
   background: #fff;
   color: #242424;
 }
-.button-group a.footer-cta-get_started-btn button {
+.white_cta-button-group a.white_cta-get_started-btn button {
   background: #8733ff;
   border: 1px solid #8733ff !important;
   color: #fff;
 }
-.button-group button {
+.white_cta-button-group button {
   font-family: "Inter", sans-serif;
   height: 52px;
   gap: 8px;
@@ -127,7 +125,7 @@ p {
 }
 
 @media (max-width: 1024px) {
-  .content-div {
+  .white_cta-content {
     gap: 20px;
     margin: 16px 0 40px;
   }
@@ -135,6 +133,17 @@ p {
 @media (max-width: 991px) {
   .footer_white_cta {
     padding: 64px 0;
+  }
+  .footer_white_cta:after, .footer_white_cta:before {
+    height: 212px;
+  }
+  .footer_white_cta:after {
+    right: -2.3em;
+    left: unset;
+  }
+  .footer_white_cta:before {
+    left: -6.5em;
+    right: unset;
   }
   .footer_white_cta > div {
     gap: 40px;
@@ -151,20 +160,20 @@ p {
   .footer_white_cta > div {
     gap: 32px;
   }
-  .content-div {
+  .white_cta-content {
     gap: 16px;
     margin: 12px 0 32px;
   }
-  .content-div > div {
+  .white_cta-content > div {
     flex-wrap: wrap;
   }
-  .button-group {
+  .white_cta-button-group {
     flex-wrap: wrap;
   }
-  .button-group a {
+  .white_cta-button-group a {
     flex: 1 1 180px;
   }
-  .button-group a button svg {
+  .white_cta-button-group a button svg {
     flex-shrink: 0;
   }
 }/*# sourceMappingURL=new_white-cta.css.map */
