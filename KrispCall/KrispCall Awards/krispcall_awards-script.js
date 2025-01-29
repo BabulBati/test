@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let areAwardsVisible = false;
 
     const updateGridItems = () => {
-        const visibleCount = window.innerWidth < 768 ? 4 : window.innerWidth < 992 ? 8 : 16;
+        const visibleCount = window.innerWidth < 768 ? 4 : window.innerWidth < 992 ? 8 : awardList.length;
         awardButton.style.display = window.innerWidth >= 992 ? "none" : "flex";
 
-        awardList.forEach((item, index) => 
+        awardList.forEach((item, index) =>
             item.classList.toggle('deactive_items', !(index < visibleCount || areAwardsVisible))
         );
 
