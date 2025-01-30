@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Powered App</title>
+  <style>
+    h1 {
+      color: #242424;
+    }
+
+    .typewrite {
+      color: #8733ff;
+      display: inline-block; /* Make the container shrink to fit the text */
+      position: relative; /* Needed for the cursor */
+    }
+
+    .typed-cursor {
+      font-weight: 400 !important;
+      animation: blink 0.75s step-end infinite;
+      position: absolute; /* To align the cursor directly after the text */
+      right: 0;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1; /* Visible */
+      }
+      50% {
+        opacity: 0; /* Invisible */
+      }
+      100% {
+        opacity: 1; /* Visible again */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-center">
+    <span style="color: #8733ff;">AI powered </span>modern phone app for your<br>
+    <span><span class="typewrite"></span><span class="typed-cursor">|</span></span>
+  </h1>
+
+  <script>
+    const words = [
+      "CRM Platform",
+      "Customer Engagement Tool",
+      "Sales Automation Solution",
+      "Customer Support Software",
+      "Helpdesk System",
+      "Marketing Automation Suite",
+      "Business Communication Hub",
+      "Contact Center Software",
+      "Customer Experience Platform",
+      "Lead Management System"
+    ];
+
+    const period = 2000; // Pause time after each word
+
+    function typeWriter(element, words, period) {
+      let index = 0;
+      let text = "";
+      let isDeleting = false;
+      let lastFrameTime = 0;
+      let cursor = element.nextElementSibling; // Get the cursor element next to the typewrite span
+
+      function updateText(timestamp) {
+        if (timestamp - lastFrameTime < (isDeleting ? 50 : 100)) {
+          requestAnimationFrame(updateText);
+          return;
+        }
+        lastFrameTime = timestamp;
+
+        let word = words[index];
+        text = isDeleting ? word.substring(0, text.length - 1) : word.substring(0, text.length + 1);
+        element.textContent = text; // Update text directly, more efficient than innerHTML
+
+        if (!isDeleting && text === word) {
+          setTimeout(() => { isDeleting = true; requestAnimationFrame(updateText); }, period);
+          return;
+        } else if (isDeleting && text === "") {
+          isDeleting = false;
+          index = (index + 1) % words.length;
+        }
+
+        requestAnimationFrame(updateText);
+      }
+
+      requestAnimationFrame(updateText);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let element = document.querySelector(".typewrite");
+      if (element) {
+        typeWriter(element, words, period);
+      }
+    });
+  </script>
+</body>
+</html>
