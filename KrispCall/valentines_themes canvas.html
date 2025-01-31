@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Balloon Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* To ensure the canvas takes full screen */
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="balloonCanvas"></canvas>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('balloonCanvas');
+            const ctx = canvas.getContext('2d');
+            const imageUrl = 'https://staging.krispcall.com/wp-content/uploads/2025/01/beautiful-pink-heart-shape-13.png';
+            const balloonImages = [];
+            let numOfBalloons = 10;
+            const gravity = 0.05; // Balloon's rise speed
+
+            // Resize canvas to match the viewport size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Preload the balloon image
+            const balloonImage = new Image();
+            balloonImage.src = imageUrl;
+
+            balloonImage.onload = () => {
+                // Store the balloons' properties after image is loaded
+                for (let i = 0; i < numOfBalloons; i++) {
+                    balloonImages.push(createBalloon());
+                }
+
+                // Start the animation loop
+                requestAnimationFrame(animate);
+            };
+
+            // Balloon constructor
+            function createBalloon() {
+                const balloon = {
+                    x: Math.random() * canvas.width,
+                    y: canvas.height + Math.random() * 100, // Start below the viewport
+                    width: Math.random() * 100 + 50, // Random width for variety
+                    height: balloonImage.height * (Math.random() * 0.5 + 0.5), // Random height scale
+                    speed: Math.random() * 2 + 1, // Random speed of rise
+                    rotation: (Math.random() - 0.5) * 10, // Random rotation
+                    rotationSpeed: (Math.random() - 0.5) * 0.1, // Random rotation speed
+                };
+                return balloon;
+            }
+
+            // Animation loop
+            function animate() {
+                // Clear the canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Update and draw each balloon
+                balloonImages.forEach(balloon => {
+                    // Update position and rotation
+                    balloon.y -= balloon.speed;
+                    balloon.rotation += balloon.rotationSpeed;
+
+                    // If balloon moves off screen, reset its position
+                    if (balloon.y + balloon.height < 0) {
+                        balloon.y = canvas.height + 100; // Reset below screen
+                        balloon.x = Math.random() * canvas.width; // Random horizontal position
+                    }
+
+                    // Draw the balloon
+                    ctx.save();
+                    ctx.translate(balloon.x, balloon.y);
+                    ctx.rotate(balloon.rotation * Math.PI / 180); // Convert rotation to radians
+                    ctx.drawImage(balloonImage, -balloon.width / 2, -balloon.height, balloon.width, balloon.height);
+                    ctx.restore();
+                });
+
+                // Request the next frame
+                requestAnimationFrame(animate);
+            }
+
+            // Resize canvas on window resize
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
+</body>
+
+</html>

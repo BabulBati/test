@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Animation</title>
+    <style>
+        #image-container {
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+            z-index: 10;
+        }
+
+        .balloon_image {
+            position: absolute;
+            bottom: -100px;
+            animation: moveUp linear forwards;
+        }
+
+        @keyframes moveUp {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-120vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageContainer = document.getElementById('image-container');
+            const imageUrl = 'https://staging.krispcall.com/wp-content/uploads/2025/01/beautiful-pink-heart-shape-13.png';
+            const viewportWidth = window.innerWidth;
+
+            const minImages = (viewportWidth >= 992) ? 8 : 6;
+            const maxImages = (viewportWidth >= 992) ? 10 : 8;
+
+            const img = new Image();
+            img.src = imageUrl;
+
+            img.onload = () => {
+                const originalWidth = img.width * (viewportWidth < 768 ? 0.6 : viewportWidth < 1024 ? 0.7 : 1);
+                const originalHeight = img.height * (viewportWidth < 768 ? 0.6 : viewportWidth < 1024 ? 0.7 : 1);
+
+                const maxWidth = Math.min(originalWidth, viewportWidth * 0.9);
+                const minWidth = maxWidth * 0.7;
+
+                const numOfImages = Math.floor(Math.random() * (maxImages - minImages + 1)) + minImages;
+
+                const sections = numOfImages;
+                const sectionWidth = viewportWidth / sections;
+
+                // Lazy loading function for images
+                function createImage(i) {
+                    const imageElement = document.createElement('img');
+                    imageElement.src = imageUrl;
+                    imageElement.classList.add('balloon_image');
+
+                    const randomWidth = Math.random() * (maxWidth - minWidth) + minWidth;
+                    const randomHeight = (randomWidth / originalWidth) * originalHeight;
+
+                    const sectionStart = i * sectionWidth;
+                    const sectionEnd = (i + 1) * sectionWidth - randomWidth;
+
+                    imageElement.style.width = `${randomWidth}px`;
+                    imageElement.style.height = `${randomHeight}px`;
+                    imageElement.style.left = `${Math.random() * (sectionEnd - sectionStart) + sectionStart}px`;
+                    imageElement.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg)`;
+
+                    const animationDuration = 5;
+                    imageElement.style.animation = `moveUp ${animationDuration}s linear forwards`;
+
+                    imageContainer.appendChild(imageElement);
+
+                    // Remove image after animation ends to prevent memory issues
+                    imageElement.addEventListener('animationend', () => {
+                        imageElement.remove();
+                    });
+                }
+
+                // Create and add images at random intervals
+                for (let i = 0; i < numOfImages; i++) {
+                    setTimeout(() => createImage(i), Math.random() * 2500);
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>
