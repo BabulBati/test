@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-search-bar-v3 {
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            border-radius: 8px;
+            background: #F4F4F4;
+            padding: 16px;
+            gap: 16px;
+        }
+
+        #searchInput {
+            background: #F4F4F4 !important;
+            border: none !important;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 400;
+            line-height: 20px !important;
+            letter-spacing: -0.02em;
+            height: auto !important;
+            color: #4D4950 !important;
+            width: 100% !important;
+            padding: 0 !important;
+            min-height: 0 !important;
+            border-radius: 0 !important;
+        }
+
+        input#searchInput::placeholder {
+            color: #A8A8A8 !important;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            line-height: 20px !important;
+            letter-spacing: -0.02em;
+        }
+
+        #appContainer {
+            display: grid;
+            gap: 16px;
+        }
+
+        .item {
+            border-radius: 16px;
+            background-color: #ffffff;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            border: 1px solid #E0E0E0;
+            max-height: 90px;
+        }
+
+        .item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .item img {
+            max-width: 56px;
+            max-height: 56px;
+            margin-right: 16px;
+        }
+
+        .item .category {
+            color: #251A43;
+            font-family: "Manrope", sans-serif;
+            font-size: 20px !important;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+
+        .item .item-text {
+            color: #564D6D;
+            font-family: "Inter", sans-serif;
+            font-size: 16px !important;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: -0.02em;
+        }
+
+        @media (max-width:1440px) {
+            .item {
+                padding: 14px 16px;
+            }
+        }
+
+        @media(max-width:1024px) {
+            .item {
+                padding: 8px 12px;
+            }
+
+            .item img {
+                max-width: 40px;
+                max-height: 40px;
+                margin-right: 8px;
+            }
+
+            .item .category {
+                font-size: 16px !important;
+            }
+
+            .item .item-text {
+                font-size: 14px !important;
+            }
+        }
+
+        @media(max-width:767px) {
+            #appContainer {
+                gap: 12px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="custom-search-bar-v3">
+        <input type="text" id="searchInput" placeholder="Example (HubSpot, Pipedrive)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+                d="M8.98563 15.69C10.3117 15.6918 11.6085 15.3004 12.712 14.5654C13.8154 13.8303 14.676 12.7847 15.1846 11.5608C15.6933 10.3369 15.8274 8.98966 15.5697 7.68958C15.3121 6.38951 14.6744 5.19503 13.7374 4.25725C12.8003 3.31949 11.606 2.68058 10.3055 2.42137C9.00504 2.16216 7.65682 2.2943 6.43151 2.80108C5.20619 3.30784 4.15881 4.16647 3.42189 5.26831C2.68498 6.37015 2.29163 7.66569 2.29163 8.991C2.29163 10.7662 2.99659 12.4687 4.2517 13.7247C5.5068 14.9808 7.20942 15.6877 8.98563 15.69Z"
+                stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.7402 13.7422L17.7083 17.708" stroke="#8733FF" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </div>
+    <div id="appContainer"></div>
+    <div class="no-result" id="noresult" style="display: none;"> Nothing found </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = [
+                { image: "/wp-content/uploads/2023/11/hubspot-crm.png", category: "HubSpot", text: "CRM", link: "/integration/hubspot-crm/", },
+                { image: "/wp-content/uploads/2023/11/pipedrive-logo.png", category: "Pipedrive", text: "CRM", link: "/integration/pipedrive-crm/", },
+                { image: "/wp-content/uploads/2024/01/Microsoft-Dynamics-logo-new-e1705394071821.png", category: "MS Dynamics 365", text: "CRM", link: "/integration/microsoft-dynamics-365/", },
+                { image: "/wp-content/uploads/2024/03/ActiveCampaign.png", category: "ActiveCampaign", text: "CRM", link: "/integration/activecampaign/", },
+                { image: "/wp-content/uploads/2023/11/Bitrix24-logo.png", category: "Bitrix24", text: "CRM", link: "/integration/bitrix24/", },
+                { image: "/wp-content/uploads/2024/03/capsule.png", category: "Capsule", text: "CRM", link: "/integration/capsule-crm/", },
+                { image: "/wp-content/uploads/2024/04/Close-CRM-Logo.webp", category: "CloseCRM", text: "CRM", link: "/integration/close-crm/", },
+                { image: "/wp-content/uploads/2024/03/Copper.png", category: "Copper", text: "CRM", link: "/integration/copper-crm/", },
+                { image: "/wp-content/uploads/2024/04/Engagebay-LOGO.png", category: "Engagebay", text: "CRM", link: "/integration/engagebay/", },
+                { image: "/wp-content/uploads/2024/06/firmao_icon.png.png", category: "Firmao", text: "CRM", link: "/integration/firmao/", },
+                { image: "/wp-content/uploads/2024/03/freshsales.png", category: "FreshSales", text: "CRM", link: "/integration/freshsales/", },
+                { image: "/wp-content/uploads/2024/04/Gong-LOGO.png", category: "Gong", text: "CRM", link: "/integration/gong/", },
+                { image: "/wp-content/uploads/2024/09/highlevel-logo-img.png", category: "HighLevel", text: "CRM", link: "/integration/highlevel/", },
+                { image: "/wp-content/uploads/2024/04/Insightly-LOGO.png", category: "Insightly", text: "CRM", link: "/integration/insightly/", },
+                { image: "/wp-content/uploads/2024/03/intercom-logo.png", category: "Intercom", text: "CRM", link: "/integration/intercom/", },
+                { image: "/wp-content/uploads/2024/02/Keap-Integration-logo.png", category: "Keap", text: "CRM", link: "/integration/keap/", },
+                { image: "/wp-content/uploads/2024/07/Klaviyo-logo.png", category: "Klaviyo", text: "CRM", link: "/integration/klaviyo/", },
+                { image: "/wp-content/uploads/2024/04/Kommo-logo.webp", category: "Kommo", text: "CRM", link: "/integration/kommo-crm/", },
+                { image: "/wp-content/uploads/2024/03/LeadSquared.png", category: "LeadSquared", text: "CRM", link: "/integration/leadsquared/", },
+                { image: "/wp-content/uploads/2024/01/monday-integration-img.png", category: "monday.com", text: "CRM", link: "/integration/monday/", },
+                { image: "/wp-content/uploads/2024/03/Nimble-logo.png", category: "Nimble", text: "CRM", link: "/integration/nimble-crm/", },
+                { image: "/wp-content/uploads/2024/03/noCRM.png", category: "noCRM.io", text: "CRM", link: "/integration/nocrm/", },
+                { image: "/wp-content/uploads/2024/08/nutshell-logo-img.png", category: "Nutshell", text: "CRM", link: "/integration/nutshell/", },
+                { image: "/wp-content/uploads/2024/04/OnePage-CRM-Integration-logo.webp", category: "OnePageCRM", text: "CRM", link: "/integration/onepagecrm/", },
+                { image: "/wp-content/uploads/2024/06/ontraport-logo.png", category: "Ontraport", text: "CRM", link: "/integration/ontraport/", },
+                { image: "/wp-content/uploads/2024/02/outreach-integration-logo-1.png", category: "Outreach", text: "CRM", link: "/integration/outreach-crm/", },
+                { image: "/wp-content/uploads/2024/04/Pipeline-logo.png", category: "Pipeline", text: "CRM", link: "/integration/pipeline-crm/", },
+                { image: "/wp-content/uploads/2024/06/LOGO-Salesflare.png", category: "Salesflare", text: "CRM", link: "/integration/salesflare/", },
+                { image: "/wp-content/uploads/2024/04/Salesloft-LOGO.png", category: "Salesloft", text: "CRM", link: "/integration/salesloft/", },
+                { image: "/wp-content/uploads/2024/04/Salesmate-Integration-logo.webp", category: "Salesmate", text: "CRM", link: "/integration/salesmate/", },
+                { image: "/wp-content/uploads/2024/05/Teamleader-logo-img.png", category: "TeamLeader", text: "CRM", link: "/integration/teamleader/", },
+                { image: "/wp-content/uploads/2024/06/Zoho_CRM-logo-img.png", category: "Zoho CRM", text: "CRM", link: "/integration/zoho-crm/", },
+            ];
+            const displayApps = document.getElementById("appContainer");
+            const noResult = document.getElementById("noresult");
+            const searchInput = document.getElementById("searchInput");
+
+            // **Efficient DOM update using DocumentFragment**
+            function renderItems(container, items) {
+                const fragment = document.createDocumentFragment();
+                container.innerHTML = ""; // Clear only once
+
+                items.slice(0, 3).forEach(item => {
+                    const itemElement = document.createElement("a");
+                    itemElement.href = item.link;
+                    itemElement.target = "_blank";
+                    itemElement.classList.add("item");
+
+                    const imageElement = document.createElement("img");
+                    imageElement.src = item.image;
+                    imageElement.alt = item.text;
+                    imageElement.loading = "lazy";
+                    imageElement.width = 56;
+                    imageElement.height = 56;
+
+                    const textContainer = document.createElement("div");
+                    textContainer.classList.add("text-container");
+
+                    const categoryElement = document.createElement("div");
+                    categoryElement.classList.add("category");
+                    categoryElement.textContent = item.category;
+
+                    const itemTextElement = document.createElement("div");
+                    itemTextElement.classList.add("item-text");
+                    itemTextElement.style.display = "inline-flex";
+                    itemTextElement.style.alignItems = "center";
+                    itemTextElement.textContent = item.text;
+
+                    textContainer.append(categoryElement, itemTextElement);
+                    itemElement.append(imageElement, textContainer);
+                    fragment.appendChild(itemElement);
+                });
+
+                container.appendChild(fragment);
+            }
+
+            // **Debounce Function (Reduces excessive function calls)**
+            function debounce(func, delay = 300) {
+                let timeout;
+                return (...args) => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func(...args), delay);
+                };
+            }
+
+            function filterAndRender(searchTerm) {
+                requestAnimationFrame(() => {
+                    const filteredItems = items.filter(item => item.category.toLowerCase().includes(searchTerm.toLowerCase()));
+                    renderItems(displayApps, filteredItems);
+                    noResult.style.display = filteredItems.length === 0 ? "block" : "none";
+                });
+            }
+
+            // **Attach Event Listener with Debounce**
+            searchInput.addEventListener("input", debounce(() => {
+                filterAndRender(searchInput.value.trim());
+            }));
+
+            // **Initial Rendering**
+            renderItems(displayApps, items);
+        });
+    </script>
+</body>
+
+</html>
