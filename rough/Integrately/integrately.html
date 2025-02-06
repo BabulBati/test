@@ -14,6 +14,11 @@
             width: 100%;
         }
 
+        .prebuilt-connections-contentbox {
+            width: 100%;
+            gap: 4px;
+        }
+
         .prebuilt-connections-contentbox h5 {
             color: #242424;
             margin: 0 !important;
@@ -27,37 +32,10 @@
         .prebuilt-connections-list {
             padding: 24px;
             background: #FFF;
-            display: flex;
-            align-items: center !important;
             gap: 20px;
-            justify-content: space-between;
             border-radius: 16px;
             border: 1px solid #D1D4DC;
         }
-
-        .prebuilt-connections-imagebox {
-            width: 100px;
-            height: 48px;
-            flex-shrink: 0;
-        }
-
-        .prebuilt-connections-imagebox>div {
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #D1D4DC;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 24px 24px;
-        }
-
-        .prebuilt-connections-imagebox .krispcall {
-            background-image: url('https://krispcall.com/wp-content/uploads/2024/09/favicon-logo-krispcall.png');
-        }
-
-        .prebuilt-connections-imagebox .google_sheets {
-            background-image: url('https://krispcall.com/wp-content/uploads/2023/12/google-sheet.png');
-        }
-
 
         .prebuilt-connections-buttonbox a {
             text-decoration: none !important;
@@ -67,10 +45,7 @@
             flex-shrink: 0;
             border-radius: 8px;
             background: #8733ff;
-            display: flex;
             padding: 12px 24px;
-            justify-content: center;
-            align-items: center;
             border: none;
             color: #fff !important;
             font-family: "Inter" !important;
@@ -81,13 +56,7 @@
             height: 44px !important;
         }
 
-        .prebuilt-connections-contentbox {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
-        }
+
 
         @media (max-width:1199px) {
             .prebuilt-connections-list {
@@ -102,7 +71,7 @@
                 gap: 16px;
             }
 
-            .prebuilt-connections-imagebox,
+
             .prebuilt-connections-buttonbox {
                 flex-grow: 1;
             }
@@ -124,13 +93,12 @@
 <body>
     <div class="container">
         <div class="prebuilt-connections-container">
-            <div class="prebuilt-connections-list">
+            <div class="prebuilt-connections-list d-flex align-items-center justify-content-between">
                 <div class="prebuilt-connections-imagebox">
-                    <div class="krispcall"></div>
-                    <div class="google_sheets"></div>
-                    <!-- <img src="https://krispcall.com/wp-content/uploads/2024/10/krispcall-noCRM-logo-img.png" alt=""> -->
+                    <img src="https://krispcall.com/wp-content/uploads/2024/09/google-sheet-krispcall-logo-img.png"
+                        alt="">
                 </div>
-                <div class="prebuilt-connections-contentbox">
+                <div class="prebuilt-connections-contentbox d-flex flex-column align-items-start">
                     <div class="customtypo-heading">
                         <h5>Create Leads in noCRM.io when new contacts are added in KrispCall</h5>
                     </div>
@@ -141,7 +109,7 @@
                 </div>
                 <div class="prebuilt-connections-buttonbox">
                     <a href="https://zapier.com/webintent/create-zap?template=1630072" target="_blank">
-                        <button>Activate</button>
+                        <button class="d-flex align-items-center justify-content-center">Activate</button>
                     </a>
                 </div>
             </div>
