@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color_palette-conatiner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .color_palette-conatiner>div[class^="color-"] {
+            display: flex;
+            flex-direction: column;
+            padding: 0 24px 24px;
+            height: 382px;
+            border-radius: 16px;
+            align-items: start;
+            justify-content: end;
+            gap: 8px;
+            position: relative;
+        }
+
+        .color_palette-conatiner p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dark-text .color-name p {
+            color: #242424;
+        }
+
+        .color-hex-code {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .dark-text .color-hex-code p {
+            color: #4D4950;
+        }
+
+        .light-text p {
+            color: #ffffff;
+        }
+
+        .color-F4B7FF {
+            background-color: #F4B7FF;
+        }
+
+        .color-EA66FF {
+            background-color: #EA66FF;
+        }
+
+        .color-8548FF {
+            background-color: #8548FF;
+        }
+
+        .color-8D34F0 {
+            background-color: #8D34F0;
+        }
+
+        .color-FFFFFF {
+            background-color: #FFFFFF;
+        }
+
+        .color-EFEFEF {
+            background-color: #EFEFEF;
+        }
+
+        .copy-color_code {
+            cursor: pointer;
+            display: inline-flex;
+        }
+
+        .toast {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color_palette-conatiner">
+        <div class="color-F4B7FF dark-text">
+            <div class="color-name">
+                <p>Light Pinkish Purple</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #F4B7FF</p>
+                <div class="copy-color_code" data-hex="#F4B7FF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <title>Click to copy HEX code #F4B7FF</title>
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-EA66FF light-text">
+            <div class="color-name">
+                <p>Vibrant Magenta</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #EA66FF</p>
+                <div class="copy-color_code" data-hex="#EA66FF">
+                    <div class="tooltip-container">
+                        <div class="tooltip-div">
+                            <div class="tooltip-text">
+                                Copy
+                            </div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-8548FF light-text">
+            <div class="color-name">
+                <p>Bright Violet</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #8548FF</p>
+                <div class="copy-color_code" data-hex="#8548FF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-8D34F0 light-text">
+            <div class="color-name">
+                <p>Deep Purple</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #8D34F0</p>
+                <div class="copy-color_code" data-hex="#8D34F0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-FFFFFF dark-text">
+            <div class="color-name">
+                <p>White</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #FFFFFF</p>
+                <div class="copy-color_code" data-hex="#FFFFFF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-EFEFEF dark-text">
+            <div class="color-name">
+                <p>Light Gray</p>
+            </div>
+            <div class="color-hex-code">
+                <p>HEX: #EFEFEF</p>
+                <div class="copy-color_code" data-hex="#EFEFEF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path
+                            d="M13.7451 5.46436H7.71236C6.91496 5.46436 6.26855 6.11511 6.26855 6.91786V14.4839C6.26855 15.2866 6.91496 15.9374 7.71236 15.9374H13.7451C14.5424 15.9374 15.1888 15.2866 15.1888 14.4839V6.91786C15.1888 6.11511 14.5424 5.46436 13.7451 5.46436Z"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.7313 5.46447V3.516C11.7313 3.13051 11.5792 2.7608 11.3084 2.48822C11.0376 2.21564 10.6704 2.0625 10.2875 2.0625H4.25482C3.8719 2.0625 3.50467 2.21564 3.23391 2.48822C2.96315 2.7608 2.81104 3.13051 2.81104 3.516V11.0821C2.81104 11.4676 2.96315 11.8373 3.23391 12.1098C3.50467 12.3824 3.8719 12.5356 4.25482 12.5356H6.26832"
+                            stroke="#4D4950" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const copyIcons = document.querySelectorAll(".copy-color_code");
+
+            copyIcons.forEach(icon => {
+                icon.addEventListener("click", function () {
+                    if (this.classList.contains('clicked')) return;
+
+                    const hexCode = this.getAttribute("data-hex");
+                    const colorDiv = this.closest('.color_palette-conatiner>div[class^="color-"]');
+
+                    if (!colorDiv) return;
+
+                    this.classList.add('clicked');
+
+                    navigator.clipboard.writeText(hexCode).then(() => {
+                        showToast(colorDiv, 'Copied!');
+                    }).catch(console.error);
+
+                    setTimeout(() => this.classList.remove('clicked'), 3000);
+                });
+            });
+
+            // Function to show the toast inside the color div
+            function showToast(colorDiv, message) {
+                if (colorDiv.querySelector('.toast')) return;
+
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = message;
+                colorDiv.appendChild(toast);
+
+                setTimeout(() => toast.remove(), 3000);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

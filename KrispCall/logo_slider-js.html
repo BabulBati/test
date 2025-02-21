@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        .logo-container {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-slider {
+            display: flex;
+            gap: 64px;
+            white-space: nowrap;
+            position: relative;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .logo-slider img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo-container">
+        <div class="logo-slider"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logoSlider = document.querySelector(".logo-slider");
+
+            // Array of logo image URLs
+            const logos = [
+                "https://krispcall.com/wp-content/uploads/2024/04/watalook-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/ai-squared-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/FRAMERRS-INSURANCE-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/Retail-Insight-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/STADIAX-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/neural-love-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/grey-Surfshark-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/VALET-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/INCORPUK-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/Snap-Send-Solve-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/ellicium-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/easil-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/grey-TRAVELBASE-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/grey-Quartile-logo.png",
+                "https://krispcall.com/wp-content/uploads/2024/04/grey-ZEBEDEE-logo.png",
+            ];
+
+            // Function to create logo elements dynamically
+            function createLogos() {
+                logoSlider.innerHTML = ""; // Clear existing content
+
+                // Append original logos
+                logos.forEach(logo => {
+                    let img = document.createElement("img");
+                    img.src = logo;
+                    img.alt = "Logo";
+                    logoSlider.appendChild(img);
+                });
+
+                // Duplicate for seamless scrolling
+                logos.forEach(logo => {
+                    let img = document.createElement("img");
+                    img.src = logo;
+                    img.alt = "Logo";
+                    logoSlider.appendChild(img);
+                });
+            }
+
+            createLogos(); // Call function to load logos
+
+            let scrollSpeed = 0.5; // Speed of scrolling
+            let position = 0;
+
+            function scrollLogos() {
+                position -= scrollSpeed; // Move logos to the left
+                if (position <= -logoSlider.firstElementChild.clientWidth - 64) {
+                    // Move the first logo to the end when it goes out of view
+                    logoSlider.appendChild(logoSlider.firstElementChild);
+                    position = 0; // Reset position for smooth transition
+                }
+                logoSlider.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(scrollLogos); // Smooth animation loop
+            }
+
+            scrollLogos(); // Start the animation
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .div-848 {
+            max-width: 848px;
+            margin: 0 auto;
+        }
+
+        .number-table {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table_head {
+            display: flex;
+            font-weight: bold;
+        }
+
+        .table_row {
+            display: flex;
+            margin-bottom: 16px;
+        }
+
+        .table_col {
+            padding: 8px;
+            display: flex;
+        }
+
+        .table_col:not(:first-child) {
+            padding: 8px 24px;
+        }
+
+        .table_col-1 {
+            max-width: 330px;
+            width: 100%;
+        }
+
+        .table_col-2 {
+            width: 114px;
+        }
+
+        .table_col-3 {
+            max-width: 193px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .table_col-4 {
+            max-width: 122px;
+            width: 100%;
+        }
+
+        .table_col-5 {
+            max-width: 89px;
+            width: 100%;
+        }
+
+        .buy-btn {
+            padding: 6px 12px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .buy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .ability {
+            gap: 4px 8px;
+        }
+
+        .ability>span {
+            margin-bottom: 4px;
+            display: flex;
+            padding: 4px 12px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            border: 1px solid #D1D4DC;
+
+            color: #4D4950;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .number-type-ability{
+            width: 75%;
+        }
+        .price-buy{
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="div-848">
+        <div class="number-table">
+            <!-- Table Header -->
+            <div class="table_head">
+                <div class="d-flex number-type-ability">
+                    <div class="table_col table_col-1">Phone Numbers</div>
+                    <div class="table_col table_col-2">Type</div>
+                    <div class="table_col table_col-3">Ability</div>
+                </div>
+                <div class="d-flex price-buy">
+                    <div class="table_col table_col-4">Price</div>
+                    <div class="table_col table_col-5">Buy</div>
+                </div>
+            </div>
+
+            <!-- Table Row -->
+            <div class="table_row flex-wrap">
+                <div class="d-flex number-type-ability">
+                    <div class="table_col table_col-1"><span>+44 7441350389</span></div>
+                    <div class="table_col table_col-2"><span>Mobile</span></div>
+                    <div class="table_col table_col-3">
+                        <div class="ability d-flex">
+                            <span>Call</span>
+                            <span>SMS</span>
+                        <span>MMS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex price-buy">
+                    <div class="table_col table_col-4"><span>$ 2.00</span></div>
+                    <div class="table_col table_col-5">
+                        <a href="https://app.krispcall.com/register" class="buy-btn">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
