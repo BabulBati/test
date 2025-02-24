@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/integrate_style.css">
+
+    <title>Instantly integrate KrispCall with 100+ CRMs</title>
+</head>
+
+<body>
+
+    <div class="container" style="background-color: gray;">
+        <div class="text-center">
+            <div class="integrations_search-bar d-inline-flex align-items-center position-relative">
+                <input type="text" id="integrations_search-input"
+                    placeholder="Search for the tool you want to connect...">
+                <button id="search_btn" class="d-inline-flex align-items-center justify-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M8.98563 15.69C10.3117 15.6918 11.6085 15.3004 12.712 14.5654C13.8154 13.8303 14.676 12.7847 15.1846 11.5608C15.6933 10.3369 15.8274 8.98966 15.5697 7.68958C15.3121 6.38951 14.6744 5.19503 13.7374 4.25725C12.8003 3.31949 11.606 2.68058 10.3055 2.42137C9.00504 2.16216 7.65682 2.2943 6.43151 2.80108C5.20619 3.30784 4.15881 4.16647 3.42189 5.26831C2.68498 6.37015 2.29163 7.66569 2.29163 8.991C2.29163 10.7662 2.99659 12.4687 4.2517 13.7247C5.5068 14.9808 7.20942 15.6877 8.98563 15.69Z"
+                            stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M13.7402 13.7422L17.7083 17.708" stroke="#8733FF" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div id="suggestions-container" class="suggestions-dropdown"></div>
+            </div>
+
+        </div>
+        <div id="search-results"></div>
+    </div>
+    <div class="fluid-container logo-slide" style="background-color: aliceblue;">
+        <div class="left-to-right">
+            <div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 1</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 2</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 3</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 4</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 5</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 6</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 7</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 8</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 1</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 2</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 3</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 4</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 5</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 6</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 7</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-to-left">
+
+            <div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 1</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 2</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 3</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 4</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 5</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 6</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 7</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 8</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 1</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 2</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 3</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 4</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 5</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 6</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 7</p>
+                    </div>
+                </div>
+                <!-- HubSpot -->
+                <div class="item">
+                    <div class="item-logo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item-name">
+                        <p>Hubspot 8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = [
+                { image: "/wp-content/uploads/2023/11/hubspot-crm.png", category: "HubSpot", text: "CRM", link: "/integration/hubspot-crm/" },
+                { image: "/wp-content/uploads/2023/11/pipedrive-logo.png", category: "Pipedrive", text: "CRM", link: "/integration/pipedrive-crm/" },
+                { image: "/wp-content/uploads/2024/01/Microsoft-Dynamics-logo-new-e1705394071821.png", category: "MS Dynamics 365", text: "CRM", link: "/integration/microsoft-dynamics-365/" },
+                { image: "/wp-content/uploads/2024/03/ActiveCampaign.png", category: "ActiveCampaign", text: "CRM", link: "/integration/activecampaign/" },
+                { image: "/wp-content/uploads/2023/11/Bitrix24-logo.png", category: "Bitrix24", text: "CRM", link: "/integration/bitrix24/" },
+                { image: "/wp-content/uploads/2024/03/capsule.png", category: "Capsule", text: "CRM", link: "/integration/capsule-crm/" },
+                { image: "/wp-content/uploads/2024/04/Close-CRM-Logo.webp", category: "CloseCRM", text: "CRM", link: "/integration/close-crm/" },
+                { image: "/wp-content/uploads/2024/03/Copper.png", category: "Copper", text: "CRM", link: "/integration/copper-crm/" },
+                { image: "/wp-content/uploads/2024/04/Engagebay-LOGO.png", category: "Engagebay", text: "CRM", link: "/integration/engagebay/" },
+                { image: "/wp-content/uploads/2024/06/firmao_icon.png.png", category: "Firmao", text: "CRM", link: "/integration/firmao/" },
+                { image: "/wp-content/uploads/2024/03/freshsales.png", category: "FreshSales", text: "CRM", link: "/integration/freshsales/" },
+                { image: "/wp-content/uploads/2024/04/Gong-LOGO.png", category: "Gong", text: "CRM", link: "/integration/gong/" },
+                { image: "/wp-content/uploads/2024/09/highlevel-logo-img.png", category: "HighLevel", text: "CRM", link: "/integration/highlevel/" },
+                { image: "/wp-content/uploads/2024/04/Insightly-LOGO.png", category: "Insightly", text: "CRM", link: "/integration/insightly/" },
+                { image: "/wp-content/uploads/2024/03/intercom-logo.png", category: "Intercom", text: "CRM", link: "/integration/intercom/" },
+                { image: "/wp-content/uploads/2024/02/Keap-Integration-logo.png", category: "Keap", text: "CRM", link: "/integration/keap/" },
+                { image: "/wp-content/uploads/2024/07/Klaviyo-logo.png", category: "Klaviyo", text: "CRM", link: "/integration/klaviyo/" },
+                { image: "/wp-content/uploads/2024/04/Kommo-logo.webp", category: "Kommo", text: "CRM", link: "/integration/kommo-crm/" },
+                { image: "/wp-content/uploads/2024/03/LeadSquared.png", category: "LeadSquared", text: "CRM", link: "/integration/leadsquared/" },
+                { image: "/wp-content/uploads/2024/01/monday-integration-img.png", category: "monday.com", text: "CRM", link: "/integration/monday/" },
+                { image: "/wp-content/uploads/2024/03/Nimble-logo.png", category: "Nimble", text: "CRM", link: "/integration/nimble-crm/" },
+                { image: "/wp-content/uploads/2024/03/noCRM.png", category: "noCRM.io", text: "CRM", link: "/integration/nocrm/" },
+                { image: "/wp-content/uploads/2024/08/nutshell-logo-img.png", category: "Nutshell", text: "CRM", link: "/integration/nutshell/" },
+                { image: "/wp-content/uploads/2024/04/OnePage-CRM-Integration-logo.webp", category: "OnePageCRM", text: "CRM", link: "/integration/onepagecrm/" },
+                { image: "/wp-content/uploads/2024/06/ontraport-logo.png", category: "Ontraport", text: "CRM", link: "/integration/ontraport/" },
+                { image: "/wp-content/uploads/2024/02/outreach-integration-logo-1.png", category: "Outreach", text: "CRM", link: "/integration/outreach-crm/" },
+                { image: "/wp-content/uploads/2024/04/Pipeline-logo.png", category: "Pipeline", text: "CRM", link: "/integration/pipeline-crm/" },
+                { image: "/wp-content/uploads/2024/06/LOGO-Salesflare.png", category: "Salesflare", text: "CRM", link: "/integration/salesflare/" },
+                { image: "/wp-content/uploads/2024/04/Salesloft-LOGO.png", category: "Salesloft", text: "CRM", link: "/integration/salesloft/" },
+                { image: "/wp-content/uploads/2024/04/Salesmate-Integration-logo.webp", category: "Salesmate", text: "CRM", link: "/integration/salesmate/" },
+                { image: "/wp-content/uploads/2024/05/Teamleader-logo-img.png", category: "TeamLeader", text: "CRM", link: "/integration/teamleader/" },
+                { image: "/wp-content/uploads/2024/06/Zoho_CRM-logo-img.png", category: "Zoho CRM", text: "CRM", link: "/integration/zoho-crm/" },
+            ];
+
+            const searchInput = document.getElementById("integrations_search-input");
+            const searchButton = document.getElementById("search_btn");
+            const resultsContainer = document.getElementById("search-results");
+            const suggestionsContainer = document.getElementById("suggestions-container");
+
+            // Function to sanitize input
+            function sanitizeInput(input) {
+                return input.replace(/[^a-zA-Z0-9\s]/g, "").trim().substring(0, 50);
+            }
+
+            // Debounce function
+            function debounce(func, delay) {
+                let timer;
+                return function (...args) {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => func.apply(this, args), delay);
+                };
+            }
+
+            // Function to search and display results
+            function handleSearch() {
+                const sanitizedValue = sanitizeInput(searchInput.value);
+                searchInput.value = sanitizedValue;
+                suggestionsContainer.style.display = "none"; // Hide suggestions when searching
+
+                if (sanitizedValue.length === 0) {
+                    resultsContainer.innerHTML = "<p>No results found. Try another search.</p>";
+                    suggestionsContainer.innerHTML = ''; // Clear suggestions
+                    return;
+                }
+
+                const filteredItems = items.filter(item =>
+                    item.category.toLowerCase().includes(sanitizedValue.toLowerCase()) ||
+                    item.text.toLowerCase().includes(sanitizedValue.toLowerCase())
+                );
+
+                // Show search results
+                if (filteredItems.length === 0) {
+                    resultsContainer.innerHTML = "<p>No matches found.</p>";
+                } else {
+                    resultsContainer.innerHTML = filteredItems.slice(0, 5).map(item => `
+                        <div class="search-result">
+                            <a href="${item.link}">
+                                <img src="${item.image}" alt="${item.category}" width="50" loading="lazy">
+                                <span>${item.category} - ${item.text}</span>
+                            </a>
+                        </div>
+                    `).join(""); // Limit results to 5
+
+                    // Display suggestions in dropdown
+                    suggestionsContainer.style.display = "block";
+                    suggestionsContainer.innerHTML = filteredItems.slice(0, 5).map(item => `
+                        <div class="suggestion-item" onclick="selectSuggestion('${item.text}')">
+                            <img src="${item.image}" alt="${item.category}" width="30" loading="lazy">
+                            <span>${item.category} - ${item.text}</span>
+                        </div>
+                    `).join(""); // Limit suggestions to 5
+                }
+            }
+
+            // Sanitize input on typing (use debounced version)
+            const debouncedSearch = debounce(handleSearch, 300); // 300ms debounce time
+            searchInput.addEventListener("input", function (event) {
+                event.target.value = sanitizeInput(event.target.value);
+                debouncedSearch(); // Call debounced search function
+            });
+
+            // Trigger search when Enter key is pressed
+            searchInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    handleSearch();
+                }
+            });
+
+            // Trigger search when button is clicked
+            if (searchButton) {
+                searchButton.addEventListener("click", handleSearch);
+            }
+
+            // Function to handle suggestion click
+            window.selectSuggestion = function (text) {
+                searchInput.value = text;
+                suggestionsContainer.innerHTML = ''; // Clear suggestions after selecting
+                handleSearch(); // Trigger search after selection
+            };
+        });
+    </script>
+
+</body>
+
+</html>

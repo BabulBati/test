@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 80px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* -------------------- */
+.v4_footer_cta-section {
+    padding: 64px 24px;
+    border-top: 1px dashed transparent;
+    /* border-top: 1px dashed #efe6fc; */
+    border-image: repeating-linear-gradient(to right, #efe6fc 0px, #efe6fc 10px, transparent 10px, transparent 20px) 1;
+}
+
+.v4_footer_cta-container {
+    margin: 0 auto;
+    max-width: 1872px;
+    padding: 94px 0;
+    border-radius: 32px;
+    background: linear-gradient(94deg, #f2e9fe 0%, #fbf1d8 90.05%);
+}
+
+.v4_footer_cta * {
+    margin: 0;
+    padding: 0;
+}
+
+/* CTA heading */
+.v4_footer_cta-title h2 {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+}
+
+/* CTA sub-heading */
+.v4_footer_cta-subtitle {
+    margin: 20px auto 24px;
+    max-width: 618px;
+}
+
+.v4_footer_cta-subtitle p {
+    color: #444;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+}
+
+/* CTA Integrations and Reviews */
+.v4_footer_cta-integrations-reviews {
+    gap: 0 24px;
+}
+
+.v4_footer_cta-integrations-reviews .text p {
+    color: #444;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+}
+
+.v4_footer_cta-integrations,
+.v4_footer_cta-reviews {
+    gap: 0 12px;
+}
+
+.v4_footer_cta-integrations .image {
+    width: 144px;
+    height: 32px;
+    flex-shrink: 0;
+}
+.v4_footer_cta-integrations .image img {
+    max-width: 100%;
+    aspect-ratio: 127/32;
+}
+
+.v4_footer_cta-reviews .g2_logo {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+.v4_footer_cta-reviews .g2_logo svg {
+    width: 100%;
+    height: 100%;
+}
+.v4_footer_cta-reviews .text svg {
+    margin: 0 6px 0 8px;
+    flex-shrink: 0;
+}
+
+/* CTA Buttons */
+.v4_footer_cta-buttons {
+    margin: 56px 0 0;
+    gap: 12px;
+}
+
+.v4_footer_cta-buttons > a > button {
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-family: "Inter", sans-serif !important;
+    height: 52px !important;
+    gap: 0 8px;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.v4_footer_cta-buttons > a.demo_btn button {
+    border: 1px solid #d1d4dc;
+    background: #fff;
+    color: #242424;
+}
+
+.v4_footer_cta-buttons > a.started_btn button {
+    border: none;
+    background: linear-gradient(to right, #8733ff 0%, #d262eb 38.5%, #8733ff 100%);
+    color: #ffffff;
+}
+
+/* ------- */
+.v4_footer_cta-bg {
+    pointer-events: none;
+}
+.v4_footer_cta-bg img {
+    max-width: 100%;
+    height: auto;
+}
+.top_right,
+.top_left {
+    top: 0;
+}
+.top_right {
+    right: 0;
+}
+.top_left {
+    left: 0;
+}
+.bottom_right,
+.bottom_left {
+    bottom: 8px;
+}
+.bottom_right {
+    right: -150px;
+}
+.bottom_left {
+    left: -154px;
+}
+
+@media (max-width: 991px) {
+    .v4_footer_cta-container {
+        padding: 80px 35px;
+    }
+
+    /* CTA heading */
+    .v4_footer_cta-title h2 {
+        font-size: 32px;
+    }
+
+    /* CTA sub-heading */
+    .v4_footer_cta-subtitle {
+        margin: 20px auto;
+    }
+
+    /* CTA Integrations and Reviews */
+    .v4_footer_cta-integrations-reviews .text p {
+        font-weight: 500;
+    }
+
+    /* CTA Buttons */
+    .v4_footer_cta-buttons {
+        margin: 48px 0 0;
+    }
+
+    /* ------ */
+    .top_right {
+        width: 441px;
+    }
+    .top_left {
+        width: 442px;
+    }
+    .bottom_right {
+        right: 0;
+    }
+    .bottom_left {
+        left: 0;
+    }
+    .bottom_right,
+    .bottom_left {
+        width: 229px;
+    }
+}
+
+@media (max-width: 767px) {
+    .v4_footer_cta-section {
+        padding: 48px 12px;
+    }
+    .v4_footer_cta-container {
+        padding: 56px 8px;
+    }
+
+    /* CTA heading */
+    .v4_footer_cta-title h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    /* CTA sub-heading */
+    .v4_footer_cta-subtitle {
+        margin: 16px auto;
+    }
+
+    .v4_footer_cta-subtitle p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    /* CTA Integrations and Reviews */
+    .v4_footer_cta-integrations-reviews {
+        gap: 8px 12px;
+    }
+
+    .v4_footer_cta-integrations-reviews .text p {
+        font-size: 12px;
+    }
+
+    .v4_footer_cta-integrations,
+    .v4_footer_cta-reviews {
+        gap: 0 8px;
+    }
+
+    .v4_footer_cta-integrations .image {
+        width: 87px;
+        height: 20px;
+    }
+    .v4_footer_cta-reviews .g2_logo {
+        width: 20px;
+        height: 20px;
+    }
+    /* CTA Buttons */
+    .v4_footer_cta-buttons {
+        margin: 40px 0 0;
+    }
+
+    .v4_footer_cta-buttons > a > button {
+        padding: 14px 20px;
+        height: 48px !important;
+        width: 100%;
+    }
+    .v4_footer_cta-buttons > a.demo_btn {
+        flex-basis: 170px;
+        text-align: right;
+    }
+    .v4_footer_cta-buttons > a.started_btn {
+        flex-basis: 126px;
+    }
+}
