@@ -5,274 +5,541 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        :root {
-            --color-text: #fff;
-            --color-bg: #000;
-            --gap: 16px;
-            --duration: 60s;
-            --scroll-start: 0;
-            --scroll-end: calc(-100% - var(--gap));
+        section {
+            overflow: hidden;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        .marquee {
+        .test {
+            width: 1860px;
+            margin: auto;
             display: flex;
-            /* overflow: hidden; */
-            user-select: none;
-            gap: var(--gap);
-        }
-
-        .marquee_group {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: var(--gap);
-            min-width: 100%;
-            animation: scroll-x var(--duration) linear infinite;
-        }
-
-        .marquee-reverse .marquee_group {
-            animation-direction: reverse;
-            /* animation-delay: -3s; */
-        }
-
-        @keyframes scroll-x {
-            from {
-                transform: translateX(var(--scroll-start));
-            }
-
-            to {
-                transform: translateX(var(--scroll-end));
-            }
-        }
-
-        .item {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
+            white-space: nowrap;
+            --items-spacing: 16px;
+            --animationSpeed: 50s;
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%)
+            }
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%)
+            }
+        }
+
+        .test>div {
+            animation: scroll-right var(--animationSpeed) linear infinite;
+            display: flex;
+            white-space: nowrap;
+        }
+
+        .test:hover>div,
+        .test.right:hover>div{
+            animation-play-state: paused;
+        }
+
+        .test.right>div {
+            animation: scroll-left var(--animationSpeed) linear infinite;
+            margin-top: var(--items-spacing)
+        }
+
+        .test_item * {
+            margin: 0;
+        }
+
+        .test_item {
+            display: inline-flex;
+            gap: 12px;
             padding: 20px;
-            gap: 8px;
             border-radius: 16px;
             border: 1px solid rgba(0, 0, 0, 0.10);
             background: rgba(255, 255, 255, 0.30);
             box-shadow: 0px 12px 20px -12px rgba(57, 0, 138, 0.08), 0px 20px 40px 0px rgba(57, 0, 138, 0.04);
+            margin: 0 calc(var(--items-spacing)/2);
         }
 
-        .item-logo {
-            width: 32px;
-            aspect-ratio: 1;
+        .test_item-logo {
+            width: 20px;
+            height: 20px;
             background-color: red;
-            border-radius: 4px;
         }
 
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: var(--gap);
-            margin: auto;
-            max-width: 100vw;
+        .test_item-logo img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 
 <body>
-    <article class="wrapper">
-        <div class="marquee">
-            <div class="marquee_group">
-
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Hubspot</div>
+    <section>
+        <div class="test">
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Pipedrive</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Zapier</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">MS Teams</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Zoho CRM</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">MS Dynamics 365</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Crisp</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">ActiveCampaign</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Crisp</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">monday.com</div>
-                </div>
-
             </div>
-            <div aria-hidden="true" class="marquee_group">
-
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Hubspot</div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Pipedrive</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Zapier</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">MS Teams</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Zoho CRM</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">MS Dynamics 365</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Crisp</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">ActiveCampaign</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Crisp</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">monday.com</div>
+            </div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="marquee marquee-reverse">
-            <div class="marquee_group">
-
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Salesmate</div>
+        <div class="test right">
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">LeadSquared</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Front</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Make</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Klaviyo</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Copper</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Bitrix24</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Close CRM</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Gong</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Intercom</div>
-                </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Capsule</div>
-                </div>
-
             </div>
-            <div aria-hidden="true" class="marquee_group">
-
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Salesmate</div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">LeadSquared</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Front</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Make</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Klaviyo</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Copper</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Bitrix24</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Close CRM</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Gong</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Intercom</div>
+            </div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="item-logo"></div>
-                    <div class="item-name">Capsule</div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
                 </div>
-
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Hubspot</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Pipedrive</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zapier</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Teams</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Zoho CRM</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>MS Dynamics 365</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>Crisp</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>ActiveCampaign</h4>
+                    </div>
+                </div>
+                <div class="test_item">
+                    <div class="test_item-logo"><img src="" alt=""></div>
+                    <div class="test_item-name">
+                        <h4>monday.com</h4>
+                    </div>
+                </div>
             </div>
         </div>
-    </article>
-
+    </section>
 </body>
 
 </html>

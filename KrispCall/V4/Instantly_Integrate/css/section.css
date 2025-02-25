@@ -1,0 +1,48 @@
+/* Slider */
+.slider_container {
+}
+
+/* Statics Integrations list */
+.statics-integrations-list {
+    margin: 40px 0 0;
+}
+.statics-integrations-list > div {
+    gap: 24px;
+}
+
+.statics-integrations-list .logo_div {
+    text-decoration: none;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    width: 56px;
+    height: 56px;
+    padding: 12px;
+    transition: all 0.5s ease;
+}
+.statics-integrations-list .logo_div:hover {
+    box-shadow:
+        0px 12px 20px -12px rgba(57, 0, 138, 0.08),
+        0px 20px 40px 0px rgba(57, 0, 138, 0.04);
+    backdrop-filter: blur(25px);
+}
+
+/* Button */
+.browse_integrations-btn {
+    margin: 56px 0 0;
+}
+
+.browse_integrations-btn button {
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 4px solid rgba(236, 223, 255, 0.04);
+    background: linear-gradient(to right, #8733ff 0%, #d262eb 38.5%, #8733ff 100%);
+    gap: 8px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    height: 52px !important;
+}
