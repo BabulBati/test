@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRM Slides</title>
 
     <style>
         section {
@@ -48,7 +48,7 @@
         }
 
         .test:hover>div,
-        .test.right:hover>div{
+        .test.right:hover>div {
             animation-play-state: paused;
         }
 
@@ -540,6 +540,32 @@
             </div>
         </div>
     </section>
+    <!-- <script src="../Integrations_items.js"></script> -->
+    <script>
+        fetch('https://krispcall.com/integration/')  // URL to your HTML file
+            .then(response => response.text())  // Fetch the HTML file as text
+            .then(data => {
+                // Create a new div element to temporarily hold the fetched HTML
+                const div = document.createElement('div');
+                div.innerHTML = data;
+
+                // Extract the script content that defines `items`
+                const scriptContent = div.querySelector('script');
+
+                // Check if there is a script tag and execute it
+                if (scriptContent) {
+                    // Create a new <script> element to execute the content of the fetched script
+                    const script = document.createElement('script');
+                    script.innerHTML = scriptContent.innerHTML;
+                    document.body.appendChild(script);  // Append the script to execute it
+
+                    // Now you can access the `items` object
+                    console.log(items);  // `items` should be available here
+                }
+            })
+            .catch(error => console.error('Error loading Integrations_items.html:', error));
+    </script>
+
 </body>
 
 </html>

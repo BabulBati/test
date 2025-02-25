@@ -25,10 +25,11 @@
 <body>
 
     <div class="container">
-        <div class="text-center">
-            <div class="integrations_search-bar d-inline-flex align-items-center position-relative">
+        <div class="d-flex justify-content-center">
+            <label class="integrations_search-bar d-inline-flex align-items-center position-relative"
+                for="integrations_search-input">
                 <input type="text" id="integrations_search-input"
-                    placeholder="Search for the tool you want to connect...">
+                    placeholder="Search for the tool you want to connect..." autocomplete="off">
                 <button id="search_btn" class="d-inline-flex align-items-center justify-content-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
@@ -39,51 +40,68 @@
                     </svg>
                 </button>
                 <div id="suggestions-container" class="suggestions-dropdown"></div>
-            </div>
-
+            </label>
         </div>
-        <div id="search-results"></div>
     </div>
     <script>
+        const items = [
+            { image: "/wp-content/uploads/2024/12/integration_newpage_HubSpot_logo.svg", text: "HubSpot", link: "/integration/hubspot-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Pipedrive_logo.svg", text: "Pipedrive", link: "/integration/pipedrive-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Zapier_logo.svg", text: "Zapier", link: "/integration/zapier/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_MSTeams_logo.svg", text: "MSTeams", link: "/integration/microsoft-teams/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_ZohoCRM_logo.svg", text: "ZohoCRM", link: "/integration/zoho-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_ActiveCampaign_logo.svg", text: "ActiveCampaign", link: "/integration/activecampaign/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Crisp_logo.svg", text: "Crisp", link: "/integration/crisp/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_MSDynamics365_logo.svg", text: "MicrosoftDynamics365", link: "/integration/microsoft-dynamics-365/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_monday_logo.svg", text: "monday.com", link: "/integration/monday/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Capsule_logo.svg", text: "Capsule", link: "/integration/capsule-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Front_logo.svg", text: "Front", link: "/integration/front/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_noCRM_logo.svg", text: "noCRM.io", link: "/integration/nocrm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Nimble_logo.svg", text: "Nimble", link: "/integration/nimble-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Bitrix24_logo.svg", text: "Bitrix24", link: "/integration/bitrix24/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Intercom_logo.svg", text: "Intercom", link: "/integration/intercom/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Helpscout_logo.svg", text: "Help Scout", link: "/integration/help-scout/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Freshsales_logo.svg", text: "FreshSales", link: "/integration/freshsales/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Apptivo_logo.svg", text: "Apptivo", link: "/integration/apptivo/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Engagebay_logo.svg", text: "Engagebay", link: "/integration/engagebay/", },
+            { image: "/wp-content/uploads/2024/06/firmao_icon.png.png", text: "Firmao", link: "/integration/firmao/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Gong_logo.svg", text: "Gong", link: "/integration/gong/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_HighLevel_logo.svg", text: "HighLevel", link: "/integration/highlevel/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Insightly_logo.svg", text: "Insightly", link: "/integration/insightly/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Klaviyo_logo.svg", text: "Klaviyo", link: "/integration/klaviyo/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Kommo_logo.svg", text: "Kommo", link: "/integration/kommo-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Nutshell_logo.svg", text: "Nutshell", link: "/integration/nutshell/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_OnePageCRM_logo.svg", text: "OnePageCRM", link: "/integration/onepagecrm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Pipedream_logo.svg", text: "Pipedream", link: "/integration/pipedream/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Pipeline_logo.svg", text: "Pipeline", link: "/integration/pipeline-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Salesflare_logo.svg", text: "Salesflare", link: "/integration/salesflare/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Salesloft_logo.svg", text: "Salesloft", link: "/integration/salesloft/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_TeamLeader_logo.svg", text: "TeamLeader", link: "/integration/teamleader/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Pabbly_logo.svg", text: "PabblyConnect", link: "/integration/pabbly-connect/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Keap_logo.svg", text: "Keap", link: "/integration/keap/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Integrately_logo.svg", text: "Integrately", link: "/integration/integrately/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Copper_logo1.svg", text: "Copper", link: "/integration/copper-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Outreach_logo.svg", text: "Outreach", link: "/integration/outreach-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_LeadSquared_logo.svg", text: "LeadSquared", link: "/integration/leadsquared/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_CloseCRM_logo.svg", text: "CloseCRM", link: "/integration/close-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Activepieces_logo.svg", text: "Activepieces", link: "/integration/activepieces/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Make_logo.svg", text: "Make", link: "/integration/make/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Gorgias_logo.svg", text: "Gorgias", link: "/integration/gorgias/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Ontraport_logo.svg", text: "Ontraport", link: "/integration/ontraport/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Google_Contacts_logo.svg", text: "GoogleContacts", link: "/integration/google-contacts/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Google_Workspace_logo.svg", text: "GoogleWorkspace", link: "/integration/google-workspace/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Podio_logo.svg", text: "Podio", link: "/integration/podio/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Salesforce_logo.svg", text: "Salesforce", link: "/integration/salesforce-crm/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Salesmate_logo.svg", text: "Salesmate", link: "/integration/salesmate/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Slack_logo.svg", text: "Slack", link: "/integration/slack/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Zendesk_logo.svg", text: "Zendesk", link: "/integration/zendesk/", },
+            { image: "/wp-content/uploads/2024/12/integration_newpage_Pipeliner_logo.svg", text: "Pipeliner", link: "/integration/pipeliner/", },
+        ];
         document.addEventListener("DOMContentLoaded", function () {
-            const items = [
-                { image: "/wp-content/uploads/2023/11/hubspot-crm.png", category: "HubSpot", text: "CRM", link: "/integration/hubspot-crm/" },
-                { image: "/wp-content/uploads/2023/11/pipedrive-logo.png", category: "Pipedrive", text: "CRM", link: "/integration/pipedrive-crm/" },
-                { image: "/wp-content/uploads/2024/01/Microsoft-Dynamics-logo-new-e1705394071821.png", category: "MS Dynamics 365", text: "CRM", link: "/integration/microsoft-dynamics-365/" },
-                { image: "/wp-content/uploads/2024/03/ActiveCampaign.png", category: "ActiveCampaign", text: "CRM", link: "/integration/activecampaign/" },
-                { image: "/wp-content/uploads/2023/11/Bitrix24-logo.png", category: "Bitrix24", text: "CRM", link: "/integration/bitrix24/" },
-                { image: "/wp-content/uploads/2024/03/capsule.png", category: "Capsule", text: "CRM", link: "/integration/capsule-crm/" },
-                { image: "/wp-content/uploads/2024/04/Close-CRM-Logo.webp", category: "CloseCRM", text: "CRM", link: "/integration/close-crm/" },
-                { image: "/wp-content/uploads/2024/03/Copper.png", category: "Copper", text: "CRM", link: "/integration/copper-crm/" },
-                { image: "/wp-content/uploads/2024/04/Engagebay-LOGO.png", category: "Engagebay", text: "CRM", link: "/integration/engagebay/" },
-                { image: "/wp-content/uploads/2024/06/firmao_icon.png.png", category: "Firmao", text: "CRM", link: "/integration/firmao/" },
-                { image: "/wp-content/uploads/2024/03/freshsales.png", category: "FreshSales", text: "CRM", link: "/integration/freshsales/" },
-                { image: "/wp-content/uploads/2024/04/Gong-LOGO.png", category: "Gong", text: "CRM", link: "/integration/gong/" },
-                { image: "/wp-content/uploads/2024/09/highlevel-logo-img.png", category: "HighLevel", text: "CRM", link: "/integration/highlevel/" },
-                { image: "/wp-content/uploads/2024/04/Insightly-LOGO.png", category: "Insightly", text: "CRM", link: "/integration/insightly/" },
-                { image: "/wp-content/uploads/2024/03/intercom-logo.png", category: "Intercom", text: "CRM", link: "/integration/intercom/" },
-                { image: "/wp-content/uploads/2024/02/Keap-Integration-logo.png", category: "Keap", text: "CRM", link: "/integration/keap/" },
-                { image: "/wp-content/uploads/2024/07/Klaviyo-logo.png", category: "Klaviyo", text: "CRM", link: "/integration/klaviyo/" },
-                { image: "/wp-content/uploads/2024/04/Kommo-logo.webp", category: "Kommo", text: "CRM", link: "/integration/kommo-crm/" },
-                { image: "/wp-content/uploads/2024/03/LeadSquared.png", category: "LeadSquared", text: "CRM", link: "/integration/leadsquared/" },
-                { image: "/wp-content/uploads/2024/01/monday-integration-img.png", category: "monday.com", text: "CRM", link: "/integration/monday/" },
-                { image: "/wp-content/uploads/2024/03/Nimble-logo.png", category: "Nimble", text: "CRM", link: "/integration/nimble-crm/" },
-                { image: "/wp-content/uploads/2024/03/noCRM.png", category: "noCRM.io", text: "CRM", link: "/integration/nocrm/" },
-                { image: "/wp-content/uploads/2024/08/nutshell-logo-img.png", category: "Nutshell", text: "CRM", link: "/integration/nutshell/" },
-                { image: "/wp-content/uploads/2024/04/OnePage-CRM-Integration-logo.webp", category: "OnePageCRM", text: "CRM", link: "/integration/onepagecrm/" },
-                { image: "/wp-content/uploads/2024/06/ontraport-logo.png", category: "Ontraport", text: "CRM", link: "/integration/ontraport/" },
-                { image: "/wp-content/uploads/2024/02/outreach-integration-logo-1.png", category: "Outreach", text: "CRM", link: "/integration/outreach-crm/" },
-                { image: "/wp-content/uploads/2024/04/Pipeline-logo.png", category: "Pipeline", text: "CRM", link: "/integration/pipeline-crm/" },
-                { image: "/wp-content/uploads/2024/06/LOGO-Salesflare.png", category: "Salesflare", text: "CRM", link: "/integration/salesflare/" },
-                { image: "/wp-content/uploads/2024/04/Salesloft-LOGO.png", category: "Salesloft", text: "CRM", link: "/integration/salesloft/" },
-                { image: "/wp-content/uploads/2024/04/Salesmate-Integration-logo.webp", category: "Salesmate", text: "CRM", link: "/integration/salesmate/" },
-                { image: "/wp-content/uploads/2024/05/Teamleader-logo-img.png", category: "TeamLeader", text: "CRM", link: "/integration/teamleader/" },
-                { image: "/wp-content/uploads/2024/06/Zoho_CRM-logo-img.png", category: "Zoho CRM", text: "CRM", link: "/integration/zoho-crm/" },
-            ];
+
 
             const searchInput = document.getElementById("integrations_search-input");
             const searchButton = document.getElementById("search_btn");
-            const resultsContainer = document.getElementById("search-results");
             const suggestionsContainer = document.getElementById("suggestions-container");
 
             // Function to sanitize input
@@ -107,35 +125,24 @@
                 suggestionsContainer.style.display = "none"; // Hide suggestions when searching
 
                 if (sanitizedValue.length === 0) {
-                    resultsContainer.innerHTML = "<p>No results found. Try another search.</p>";
-                    suggestionsContainer.innerHTML = ''; // Clear suggestions
                     return;
                 }
 
                 const filteredItems = items.filter(item =>
-                    item.category.toLowerCase().includes(sanitizedValue.toLowerCase()) ||
                     item.text.toLowerCase().includes(sanitizedValue.toLowerCase())
                 );
 
                 // Show search results
                 if (filteredItems.length === 0) {
-                    resultsContainer.innerHTML = "<p>No matches found.</p>";
+                    suggestionsContainer.innerHTML = "<p>No matches found.</p>";
+                    suggestionsContainer.style.display = "block";
                 } else {
-                    resultsContainer.innerHTML = filteredItems.slice(0, 5).map(item => `
-                        <div class="search-result">
-                            <a href="${item.link}">
-                                <img src="${item.image}" alt="${item.category}" width="50" loading="lazy">
-                                <span>${item.category} - ${item.text}</span>
-                            </a>
-                        </div>
-                    `).join(""); // Limit results to 5
-
                     // Display suggestions in dropdown
                     suggestionsContainer.style.display = "block";
-                    suggestionsContainer.innerHTML = filteredItems.slice(0, 5).map(item => `
-                        <div class="suggestion-item" onclick="selectSuggestion('${item.text}')">
-                            <img src="${item.image}" alt="${item.category}" width="30" loading="lazy">
-                            <span>${item.category} - ${item.text}</span>
+                    suggestionsContainer.innerHTML = filteredItems.slice(0, 4).map(item => `
+                        <div class="suggestion-item" onclick="selectSuggestion('${item.link}')">
+                            <!-- <img src="${item.image}" alt="${item.text}" width="32" height="32" loading="lazy">-->
+                            <span>${item.text}</span>
                         </div>
                     `).join(""); // Limit suggestions to 5
                 }
@@ -162,12 +169,13 @@
             }
 
             // Function to handle suggestion click
-            window.selectSuggestion = function (text) {
-                searchInput.value = text;
-                suggestionsContainer.innerHTML = ''; // Clear suggestions after selecting
-                handleSearch(); // Trigger search after selection
+            window.selectSuggestion = function (link) {
+                // Open the link in a new tab
+                window.open(link, "_blank");
             };
+            console.log(items.length);
         });
+
     </script>
 
 </body>
