@@ -22,72 +22,1371 @@
 </head>
 
 <body>
-
-    <section>
-        <div class="container search-integrations">
-
-        </div>
-
-        <div class="slider_container">
-
-        </div>
-
-        <div class="statics-integrations-list">
+    <!-- Search bar -->
+    <div class="search-integrations">
+        <div class="container">
             <div class="d-flex justify-content-center">
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-                <a class="logo_div" href="#">
-                    <img src="" alt="">
-                </a>
-
+                <label class="integrations_search-bar d-inline-flex align-items-center position-relative"
+                    for="integrations_search-input">
+                    <input type="text" id="integrations_search-input"
+                        placeholder="Search for the tool you want to connect..." autocomplete="off">
+                    <span id="search_icon" class="d-inline-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M8.98563 15.69C10.3117 15.6918 11.6085 15.3004 12.712 14.5654C13.8154 13.8303 14.676 12.7847 15.1846 11.5608C15.6933 10.3369 15.8274 8.98966 15.5697 7.68958C15.3121 6.38951 14.6744 5.19503 13.7374 4.25725C12.8003 3.31949 11.606 2.68058 10.3055 2.42137C9.00504 2.16216 7.65682 2.2943 6.43151 2.80108C5.20619 3.30784 4.15881 4.16647 3.42189 5.26831C2.68498 6.37015 2.29163 7.66569 2.29163 8.991C2.29163 10.7662 2.99659 12.4687 4.2517 13.7247C5.5068 14.9808 7.20942 15.6877 8.98563 15.69Z"
+                                stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M13.7402 13.7422L17.7083 17.708" stroke="#8733FF" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <div id="suggestions-container" class="suggestions-dropdown"></div>
+                </label>
             </div>
         </div>
+    </div>
 
-        <div class="d-flex justify-content-center">
-            <a href="" class="browse_integrations-btn">
+    <!-- CRM Integrations -->
+    <div class="container-fluid p-0">
+        <div class="width_1861">
+            <!-- CRM marquee -->
+            <div class="crm_integrations_marquee">
+                <div class="crm_marquee left">
+                    <div>
+                        <a href="https://krispcall.com/integration/hubspot-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/hubspot.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Hubspot</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedrive-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedrive.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedrive</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zapier</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/microsoft-teams/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msteams.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Teams</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zoho-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zohocrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zoho CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/activecampaign/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/activecampaign.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>ActiveCampaign</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/crisp/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/crispchat.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Crisp</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/microsoft-dynamics-365/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msdynamics.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Dynamics 365</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/monday/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/monday.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>monday.com</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/capsule-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/capsule.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Capsule</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/front/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/front.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Front</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nocrm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nocrm.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>noCRM.io</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nimble-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nimble.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nimble</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/bitrix24/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/bitrix24.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Bitrix24</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/intercom/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/intercom.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Intercom</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/help-scout/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/helpscout.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Help Scout</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesflare/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesflare.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesflare</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeline-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeline.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeline</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/outreach-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outreach.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Outreach</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/ontraport/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/ontraport.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Ontraport</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nutshell/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nutshell.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nutshell</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/klaviyo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/klaviyo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Klaviyo</p>
+                            </div>
+                        </a>
+
+
+                    </div>
+                    <div>
+                        <a href="https://krispcall.com/integration/hubspot-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/hubspot.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Hubspot</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedrive-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedrive.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedrive</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zapier</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/microsoft-teams/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msteams.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Teams</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zoho-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zohocrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zoho CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/activecampaign/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/activecampaign.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>ActiveCampaign</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/crisp/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/crispchat.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Crisp</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/microsoft-dynamics-365/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msdynamics.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Dynamics 365</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/monday/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/monday.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>monday.com</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/capsule-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/capsule.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Capsule</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/front/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/front.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Front</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nocrm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nocrm.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>noCRM.io</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nimble-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nimble.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nimble</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/bitrix24/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/bitrix24.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Bitrix24</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/intercom/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/intercom.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Intercom</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/help-scout/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/helpscout.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Help Scout</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesflare/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesflare.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesflare</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeline-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeline.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeline</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/outreach-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outreach.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Outreach</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/ontraport/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/ontraport.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Ontraport</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nutshell/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nutshell.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nutshell</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/klaviyo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/klaviyo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Klaviyo</p>
+                            </div>
+                        </a>
+
+
+                    </div>
+                    <div>
+                        <a href="https://krispcall.com/integration/hubspot-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/hubspot.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Hubspot</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedrive-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedrive.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedrive</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zapier</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/microsoft-teams/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msteams.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Teams</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zoho-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zohocrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zoho CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/activecampaign/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/activecampaign.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>ActiveCampaign</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/crisp/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/crispchat.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Crisp</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/microsoft-dynamics-365/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/msdynamics.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>MS Dynamics 365</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/monday/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/monday.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>monday.com</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/capsule-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/capsule.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Capsule</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/front/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/front.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Front</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nocrm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nocrm.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>noCRM.io</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nimble-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nimble.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nimble</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/bitrix24/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/bitrix24.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Bitrix24</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/intercom/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/intercom.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Intercom</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/help-scout/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/helpscout.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Help Scout</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesflare/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesflare.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesflare</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeline-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeline.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeline</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/outreach-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outreach.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Outreach</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/ontraport/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/ontraport.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Ontraport</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/nutshell/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nutshell.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Nutshell</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/klaviyo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/klaviyo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Klaviyo</p>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="crm_marquee right">
+                    <div>
+                        <a href="https://krispcall.com/integration/gorgias/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gorgias.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Gorgias</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/freshsales/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/freshsales.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>FreshSales</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/firmao/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/firmao.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Firmao</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/apptivo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/apptivo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Apptivo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/close-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/close.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Close CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/kommo-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/kommo.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Kommo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/leadsquared/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/leadsquared.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>LeadSquared</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/teamleader/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/teamleader.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>TeamLeader</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/keap/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/keap.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Keap</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/engagebay/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/engagebay.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Engagebay</p>
+                            </div>
+                        </a>
+                        <!-- <a href="https://krispcall.com/integration/salesforce-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesforce.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesforce</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/onepagecrm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/onepagecrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>OnePageCRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesmate/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesmate.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesmate</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesloft/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesloft.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesloft</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeliner/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeliner.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeliner</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zendesk/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zendesk.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zendesk</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/sellsy.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Sellsy</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/copper-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/copper.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Copper</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/integrately/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/integrately.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Integrately</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/make/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/make.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Make</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pabbly-connect/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pably.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pabbly</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pepperCloud.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>pepperCloud</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/highlevel/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gohighlevel.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Highlevel</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedream/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedream.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedream</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/calendly.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>calendly</p>
+                            </div>
+                        </a> -->
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outplay.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>outplay</p>
+                            </div>
+                        </a> -->
+
+                    </div>
+                    <div>
+                        <a href="https://krispcall.com/integration/gorgias/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gorgias.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Gorgias</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/freshsales/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/freshsales.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>FreshSales</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/firmao/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/firmao.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Firmao</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/apptivo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/apptivo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Apptivo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/close-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/close.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Close CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/kommo-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/kommo.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Kommo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/leadsquared/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/leadsquared.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>LeadSquared</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/teamleader/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/teamleader.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>TeamLeader</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/keap/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/keap.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Keap</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/engagebay/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/engagebay.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Engagebay</p>
+                            </div>
+                        </a>
+                        <!-- <a href="https://krispcall.com/integration/salesforce-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesforce.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesforce</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/onepagecrm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/onepagecrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>OnePageCRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesmate/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesmate.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesmate</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesloft/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesloft.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesloft</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeliner/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeliner.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeliner</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zendesk/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zendesk.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zendesk</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/sellsy.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Sellsy</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/copper-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/copper.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Copper</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/integrately/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/integrately.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Integrately</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/make/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/make.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Make</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pabbly-connect/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pably.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pabbly</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pepperCloud.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>pepperCloud</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/highlevel/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gohighlevel.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Highlevel</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedream/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedream.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedream</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/calendly.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>calendly</p>
+                            </div>
+                        </a> -->
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outplay.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>outplay</p>
+                            </div>
+                        </a> -->
+
+                    </div>
+                    <div>
+                        <a href="https://krispcall.com/integration/gorgias/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gorgias.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Gorgias</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/freshsales/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/freshsales.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>FreshSales</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/firmao/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/firmao.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Firmao</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/apptivo/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/apptivo.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Apptivo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/close-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/close.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Close CRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/kommo-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/kommo.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Kommo</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/leadsquared/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/leadsquared.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>LeadSquared</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/teamleader/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/teamleader.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>TeamLeader</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/keap/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/keap.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Keap</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/engagebay/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/engagebay.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Engagebay</p>
+                            </div>
+                        </a>
+                        <!-- <a href="https://krispcall.com/integration/salesforce-crm/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesforce.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesforce</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/onepagecrm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/onepagecrm.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>OnePageCRM</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesmate/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesmate.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesmate</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/salesloft/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesloft.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Salesloft</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipeliner/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipeliner.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipeliner</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/zendesk/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/zendesk.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Zendesk</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/sellsy.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Sellsy</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/copper-crm/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/copper.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Copper</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/integrately/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/integrately.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Integrately</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/make/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/make.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Make</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pabbly-connect/" target="_blank"
+                            class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pably.svg"
+                                    alt="">
+                            </div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pabbly</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pepperCloud.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>pepperCloud</p>
+                            </div>
+                        </a> -->
+                        <a href="https://krispcall.com/integration/highlevel/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gohighlevel.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Highlevel</p>
+                            </div>
+                        </a>
+                        <a href="https://krispcall.com/integration/pipedream/" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img
+                                    src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/pipedream.svg"
+                                    alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>Pipedream</p>
+                            </div>
+                        </a>
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/calendly.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>calendly</p>
+                            </div>
+                        </a> -->
+                        <!-- <a href="#" target="_blank" class="crm_marquee_item">
+                            <div class="crm_marquee_item-logo"><img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/outplay.svg" alt=""></div>
+                            <div class="crm_marquee_item-name">
+                                <p>outplay</p>
+                            </div>
+                        </a> -->
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Static CRM list -->
+            <div class="container">
+                <div class="statics-crm-list">
+                    <div class="d-flex justify-content-center">
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nimble.svg"
+                                    width="32" height="32" loading="lazy" alt="Nimble">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-mob" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/apptivo.svg"
+                                    width="32" height="32" loading="lazy" alt="Apptivo">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-mob" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/nutshell.svg"
+                                    width="32" height="32" loading="lazy" alt="Nutshell">
+                            </div>
+                        </a>
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/onepagecrm.svg"
+                                    width="32" height="32" loading="lazy" alt="OnePageCRM">
+                            </div>
+                        </a>
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/ontraport.svg"
+                                    width="32" height="32" loading="lazy" alt="Ontraport">
+                            </div>
+                        </a>
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/engagebay.svg"
+                                    width="32" height="32" loading="lazy" alt="Engagebay">
+                            </div>
+                        </a>
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/salesloft.svg"
+                                    width="32" height="32" loading="lazy" alt="Salesloft">
+                            </div>
+                        </a>
+                        <a class="logo_div" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/make.svg"
+                                    width="32" height="32" loading="lazy" alt="Make">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/firmao.svg"
+                                    width="32" height="32" loading="lazy" alt="Firmao">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/freshsales.svg"
+                                    width="32" height="32" loading="lazy" alt="Freshsales">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/gohighlevel.svg"
+                                    width="32" height="32" loading="lazy" alt="HighLevel">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="" width="32" height="32" loading="lazy" alt="Insightly">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/keap.svg"
+                                    width="32" height="32" loading="lazy" alt="Keap">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/kommo.svg"
+                                    width="32" height="32" loading="lazy" alt="Kommo">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/teamleader.svg"
+                                    width="32" height="32" loading="lazy" alt="TeamLeader">
+                            </div>
+                        </a>
+                        <a class="logo_div hide-tab" href="#">
+                            <div>
+                                <img src="https://krispcallcrm-logo.sgp1.cdn.digitaloceanspaces.com/2025-01-22/helpscout.svg"
+                                    width="32" height="32" loading="lazy" alt="Help Scout">
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Browse Integrations Button -->
+    <div class="container">
+        <div class="d-flex justify-content-center btn-div">
+            <a href="/integration/" target="_blank" class="browse_integrations-btn">
                 <button class="d-inline-flex align-items-center">
                     Browse over 100+ integrations
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -100,7 +1399,176 @@
                 </button>
             </a>
         </div>
-    </section>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = [
+                { image: "/wp-content/uploads/2024/12/integration_newpage_HubSpot_logo.svg", text: "HubSpot", link: "/integration/hubspot-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Pipedrive_logo.svg", text: "Pipedrive", link: "/integration/pipedrive-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Zapier_logo.svg", text: "Zapier", link: "/integration/zapier/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_MSTeams_logo.svg", text: "MSTeams", link: "/integration/microsoft-teams/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_ZohoCRM_logo.svg", text: "ZohoCRM", link: "/integration/zoho-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_ActiveCampaign_logo.svg", text: "ActiveCampaign", link: "/integration/activecampaign/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Crisp_logo.svg", text: "Crisp", link: "/integration/crisp/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_MSDynamics365_logo.svg", text: "MicrosoftDynamics365", link: "/integration/microsoft-dynamics-365/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_monday_logo.svg", text: "monday.com", link: "/integration/monday/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Capsule_logo.svg", text: "Capsule", link: "/integration/capsule-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Front_logo.svg", text: "Front", link: "/integration/front/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_noCRM_logo.svg", text: "noCRM.io", link: "/integration/nocrm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Nimble_logo.svg", text: "Nimble", link: "/integration/nimble-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Bitrix24_logo.svg", text: "Bitrix24", link: "/integration/bitrix24/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Intercom_logo.svg", text: "Intercom", link: "/integration/intercom/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Helpscout_logo.svg", text: "Help Scout", link: "/integration/help-scout/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Freshsales_logo.svg", text: "FreshSales", link: "/integration/freshsales/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Apptivo_logo.svg", text: "Apptivo", link: "/integration/apptivo/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Engagebay_logo.svg", text: "Engagebay", link: "/integration/engagebay/", },
+                { image: "/wp-content/uploads/2024/06/firmao_icon.png.png", text: "Firmao", link: "/integration/firmao/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Gong_logo.svg", text: "Gong", link: "/integration/gong/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_HighLevel_logo.svg", text: "HighLevel", link: "/integration/highlevel/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Insightly_logo.svg", text: "Insightly", link: "/integration/insightly/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Klaviyo_logo.svg", text: "Klaviyo", link: "/integration/klaviyo/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Kommo_logo.svg", text: "Kommo", link: "/integration/kommo-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Nutshell_logo.svg", text: "Nutshell", link: "/integration/nutshell/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_OnePageCRM_logo.svg", text: "OnePageCRM", link: "/integration/onepagecrm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Pipedream_logo.svg", text: "Pipedream", link: "/integration/pipedream/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Pipeline_logo.svg", text: "Pipeline", link: "/integration/pipeline-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Salesflare_logo.svg", text: "Salesflare", link: "/integration/salesflare/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Salesloft_logo.svg", text: "Salesloft", link: "/integration/salesloft/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_TeamLeader_logo.svg", text: "TeamLeader", link: "/integration/teamleader/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Pabbly_logo.svg", text: "PabblyConnect", link: "/integration/pabbly-connect/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Keap_logo.svg", text: "Keap", link: "/integration/keap/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Integrately_logo.svg", text: "Integrately", link: "/integration/integrately/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Copper_logo1.svg", text: "Copper", link: "/integration/copper-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Outreach_logo.svg", text: "Outreach", link: "/integration/outreach-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_LeadSquared_logo.svg", text: "LeadSquared", link: "/integration/leadsquared/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_CloseCRM_logo.svg", text: "CloseCRM", link: "/integration/close-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Activepieces_logo.svg", text: "Activepieces", link: "/integration/activepieces/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Make_logo.svg", text: "Make", link: "/integration/make/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Gorgias_logo.svg", text: "Gorgias", link: "/integration/gorgias/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Ontraport_logo.svg", text: "Ontraport", link: "/integration/ontraport/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Google_Contacts_logo.svg", text: "GoogleContacts", link: "/integration/google-contacts/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Google_Workspace_logo.svg", text: "GoogleWorkspace", link: "/integration/google-workspace/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Podio_logo.svg", text: "Podio", link: "/integration/podio/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Salesforce_logo.svg", text: "Salesforce", link: "/integration/salesforce-crm/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Salesmate_logo.svg", text: "Salesmate", link: "/integration/salesmate/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Slack_logo.svg", text: "Slack", link: "/integration/slack/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Zendesk_logo.svg", text: "Zendesk", link: "/integration/zendesk/", },
+                { image: "/wp-content/uploads/2024/12/integration_newpage_Pipeliner_logo.svg", text: "Pipeliner", link: "/integration/pipeliner/", },
+            ];
+
+            const searchInput = document.getElementById("integrations_search-input");
+            const searchButton = document.getElementById("search_btn");
+            const suggestionsContainer = document.getElementById("suggestions-container");
+
+            // Function to sanitize input
+            function sanitizeInput(input) {
+                return input.replace(/[^a-zA-Z0-9\s]/g, "").trim().substring(0, 50);
+            }
+
+            // Debounce function
+            function debounce(func, delay) {
+                let timer;
+                return function (...args) {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => func.apply(this, args), delay);
+                };
+            }
+
+            // Function to search and display results
+            function handleSearch() {
+                const sanitizedValue = sanitizeInput(searchInput.value);
+                searchInput.value = sanitizedValue;
+                suggestionsContainer.style.display = "none"; // Hide suggestions when searching
+
+                if (sanitizedValue.length === 0) {
+                    return;
+                }
+
+                const filteredItems = items.filter(item =>
+                    item.text.toLowerCase().includes(sanitizedValue.toLowerCase())
+                );
+
+                // Show search results
+                if (filteredItems.length === 0) {
+                    suggestionsContainer.innerHTML = "<p>No matches found.</p>";
+                    suggestionsContainer.style.display = "block";
+                } else {
+                    // Display suggestions in dropdown
+                    suggestionsContainer.style.display = "block";
+                    suggestionsContainer.innerHTML = filteredItems.slice(0, 4).map(item => `
+                        <div class="suggestion-item" onclick="selectSuggestion('${item.link}')">
+                            <!-- <img src="${item.image}" alt="${item.text}" width="32" height="32" loading="lazy">-->
+                            <span>${item.text}</span>
+                        </div>
+                    `).join(""); // Limit suggestions to 5
+                }
+            }
+
+            // Sanitize input on typing (use debounced version)
+            const debouncedSearch = debounce(handleSearch, 300); // 300ms debounce time
+            searchInput.addEventListener("input", function (event) {
+                event.target.value = sanitizeInput(event.target.value);
+                debouncedSearch(); // Call debounced search function
+            });
+
+            // Trigger search when Enter key is pressed
+            searchInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    handleSearch();
+                }
+            });
+
+            // Trigger search when button is clicked
+            if (searchButton) {
+                searchButton.addEventListener("click", handleSearch);
+            }
+
+            // Function to handle suggestion click
+            window.selectSuggestion = function (link) {
+                // Open the link in a new tab
+                window.open(link, "_blank");
+            };
+
+            document.querySelectorAll('.crm_marquee.right > div, .crm_marquee.left > div').forEach(div => {
+                const computedStyle = getComputedStyle(div.closest('.crm_marquee'));
+                const baseSpeed = parseFloat(computedStyle.getPropertyValue('--animationSpeed')) || 50;
+                const width = div.offsetWidth;
+                const duration = width / baseSpeed;
+                div.style.setProperty('--duration', `${duration}s`);
+                console.log(duration);
+            });
+
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".logo_div").forEach(logoDiv => {
+                const img = logoDiv.querySelector("img");
+
+                if (img && img.alt) {
+                    const tooltip = document.createElement("div");
+                    tooltip.classList.add("tooltip");
+                    tooltip.textContent = img.alt;
+
+                    logoDiv.style.position = "relative";
+                    logoDiv.appendChild(tooltip);
+
+                    logoDiv.addEventListener("mouseenter", () => {
+                        tooltip.style.opacity = "1";
+                        tooltip.style.display="inline-block";
+                    });
+
+                    logoDiv.addEventListener("mouseleave", () => {
+                        tooltip.style.opacity = "0";
+                        tooltip.style.display="none";
+                    });
+                }
+            });
+        });
+    </script>
 
 
 </body>
