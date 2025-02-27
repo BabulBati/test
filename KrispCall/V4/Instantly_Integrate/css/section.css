@@ -29,7 +29,7 @@ body {
     font-size: 16px !important;
     line-height: 20px;
     letter-spacing: -0.01em;
-    color: #444 !important;
+    color: #242424 !important;
     background-color: transparent !important;
     padding: 0 !important;
     height: 100% !important;
@@ -68,17 +68,7 @@ body {
     padding: 12px;
     cursor: pointer;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
     transition: all 0.2s ease;
-}
-
-.suggestion-item:hover {
-    background: #f7f7f7;
-}
-
-.suggestion-item span {
     color: #242424;
     font-size: 18px;
     font-weight: 500;
@@ -86,9 +76,12 @@ body {
     letter-spacing: -0.01em;
 }
 
+.suggestion-item:hover {
+    background: #f7f7f7;
+}
+
 /* CRM Integrations */
 .width_1861 {
-    /* max-width: 1861px; */
     margin: 0 auto;
     overflow: hidden;
     padding: 48px 0 56px;
@@ -129,18 +122,18 @@ body {
 
 .crm_marquee > div {
     display: flex;
-    white-space: nowrap;
-    will-change: transform;
 }
 
 .crm_marquee.right > div {
     /* animation: scroll-right var(--animationSpeed) linear infinite; */
     animation: scroll-right var(--duration, var(--animationSpeed)) linear infinite;
+    will-change: transform;
 }
 
 .crm_marquee.left > div {
     /* animation: scroll-left var(--animationSpeed) linear infinite; */
     animation: scroll-left var(--duration, var(--animationSpeed)) linear infinite;
+    will-change: transform;
 }
 
 .crm_marquee_item * {
@@ -173,11 +166,11 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
-
 .crm_marquee_item-logo img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .crm_marquee_item-name p {
@@ -219,11 +212,11 @@ body {
 .statics-crm-list .logo_div > div {
     width: 32px;
     height: 32px;
+    flex-shrink: 0;
 }
-
-.statics-crm-list .logo_div > div img {
+.statics-crm-list .logo_div img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /* Button */
@@ -295,7 +288,7 @@ body {
 
 @media (max-width: 991px) {
     /* Search Results Drop Down */
-    .suggestion-item span {
+    .suggestion-item {
         font-size: 16px;
     }
 
@@ -326,7 +319,7 @@ body {
         padding: 8px;
     }
 
-    .suggestion-item span {
+    .suggestion-item {
         font-size: 14px;
     }
     /* CRM Integrations */

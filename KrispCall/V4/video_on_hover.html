@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hover Autoplay</title>
+    <style>
+        /* Style for the video container */
+        .video-container {
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Make the video take the full size of the container */
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Video container div -->
+    <div class="video-container">
+        <video id="my-video" muted>
+            <source
+                src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+    // Cache all video containers
+    const videoContainers = document.querySelectorAll('.video-container');
+
+    videoContainers.forEach((container) => {
+        const video = container.querySelector('video'); // Find the video inside each container
+
+        // When mouse enters the container, autoplay the video
+        container.addEventListener('mouseenter', () => {
+            video.play();
+        });
+
+        // When mouse leaves the container, pause and reset the video
+        container.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0; // Reset the video to the beginning
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
