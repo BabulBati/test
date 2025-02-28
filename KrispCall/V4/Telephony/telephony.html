@@ -20,60 +20,150 @@
 </head>
 
 <body>
-    <div class="telephony-container">
-        <!-- Unified Callbox -->
-        <a href="" class="telephony-item color-F5EDFF">
-            <div class="telephony-item-content">
-                <div class="telephony-heading">
-                    <h3>Unified Callbox</h3>
+    <div class="container-fluid" id="telephony_container">
+        <div class="telephony-container">
+            <!-- Unified Callbox -->
+            <a href="" class="telephony-item color-F5EDFF">
+                <div class="telephony-item-content">
+                    <div class="telephony-heading">
+                        <h3>Unified Callbox</h3>
+                    </div>
+                    <div class="telephony-text">
+                        <p>CRM conversations made easy, stay in the loop with unified call box.</p>
+                    </div>
                 </div>
-                <div class="telephony-text">
-                    <p>CRM conversations made easy, stay in the loop with unified call box.</p>
+                <div class="telephony-gif">
+                    <video muted>
+                        <source
+                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
+            </a>
 
-            </div>
-        </a>
-
-        <!-- Phone Tree IVR -->
-        <a href="" class="telephony-item color-EDF1FF">
-            <div class="telephony-item-content">
-                <div class="telephony-heading">
-                    <h3>Phone Tree IVR</h3>
+            <!-- Phone Tree IVR -->
+            <a href="" class="telephony-item color-EDF1FF">
+                <div class="telephony-item-content">
+                    <div class="telephony-heading">
+                        <h3>Phone Tree IVR</h3>
+                    </div>
+                    <div class="telephony-text">
+                        <p>Optimize call routing with an automated phone tree from KrispCall.</p>
+                    </div>
                 </div>
-                <div class="telephony-text">
-                    <p>Optimize call routing with an automated phone tree from KrispCall.</p>
+                <div class="telephony-gif">
+                    <video muted>
+                        <source
+                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
+            </a>
 
-            </div>
-        </a>
-
-        <!-- Call Monitoring -->
-        <a href="" class="telephony-item color-FFEDF7">
-            <div class="telephony-item-content">
-                <div class="telephony-heading">
-                    <h3>Call Monitoring</h3>
+            <!-- Call Monitoring -->
+            <a href="" class="telephony-item color-FFEDF7">
+                <div class="telephony-item-content">
+                    <div class="telephony-heading">
+                        <h3>Call Monitoring</h3>
+                    </div>
+                    <div class="telephony-text">
+                        <p>Boost CRM performance with KrispCall's live call monitoring.</p>
+                    </div>
                 </div>
-                <div class="telephony-text">
-                    <p>Boost CRM performance with KrispCall's live call monitoring.</p>
+                <div class="telephony-gif">
+                    <video muted>
+                        <source
+                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
+            </a>
 
-            </div>
-        </a>
-
-        <!-- Call Queuing -->
-        <a href="" class="telephony-item color-EDFFF9">
-            <div class="telephony-item-content">
-                <div class="telephony-heading">
-                    <h3>Call Queuing</h3>
+            <!-- Call Queuing -->
+            <a href="" class="telephony-item color-EDFFF9">
+                <div class="telephony-item-content">
+                    <div class="telephony-heading">
+                        <h3>Call Queuing</h3>
+                    </div>
+                    <div class="telephony-text">
+                        <p>Record phone calls to document the details shared in past conversations and deliver
+                            exactly
+                            what
+                            clients want.</p>
+                    </div>
                 </div>
-                <div class="telephony-text">
-                    <p>Record phone calls to document the details shared in past conversations and deliver exactly what
-                        clients want.</p>
+                <div class="telephony-gif">
+                    <video muted>
+                        <source
+                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-
-            </div>
-        </a>
+            </a>
+        </div>
+        <div class="explore_all_features-btn d-flex justify-content-center">
+            <a href="https://krispcall.com/feature/" target="_blank">
+                <button class="d-inline-flex align-items-center">
+                    Explore all features
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                        <path d="M17.1667 10H3.83337" stroke="#242424" stroke-width="1.25" stroke-miterlimit="10"
+                            stroke-linecap="round" />
+                        <path
+                            d="M11.3065 16.3839L16.7839 10.9065C16.9035 10.7879 16.9985 10.6467 17.0633 10.491C17.1282 10.3354 17.1615 10.1686 17.1615 10C17.1615 9.83144 17.1282 9.66461 17.0633 9.50903C16.9985 9.35336 16.9035 9.21219 16.7839 9.09361L11.3065 3.61621"
+                            stroke="#242424" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </a>
+        </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const telephonyContainer = document.getElementById('telephony_container');
+            if (!telephonyContainer) return;
+
+            function toggleContainer() {
+                telephonyContainer.classList.toggle('container', window.innerWidth <= 991);
+                telephonyContainer.classList.toggle('container-fluid', window.innerWidth > 991);
+            }
+
+            toggleContainer(); // Run once on load
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                if (!resizeTimer) {
+                    requestAnimationFrame(() => {
+                        toggleContainer();
+                        resizeTimer = null; // Reset
+                    });
+                }
+                resizeTimer = true;
+            });
+
+
+            const telephonyItem = document.querySelectorAll('.telephony-item');
+
+            telephonyItem.forEach((container) => {
+                const video = container.querySelector('video'); // Find the video inside each container
+
+                // When mouse enters the container, autoplay the video
+                container.addEventListener('mouseenter', () => {
+                    video.loop = true;
+                    video.play();
+                });
+
+                // When mouse leaves the container, pause and reset the video
+                container.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0; // Reset the video to the beginning
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

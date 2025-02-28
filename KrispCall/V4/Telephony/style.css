@@ -1,15 +1,155 @@
-.telephony-container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 80px 0;
+}
+
+/* --------------- */
+#telephony_container {
+    padding: 0;
+}
+#telephony_container.container-fluid {
+    padding: 0 24px;
+}
+.telephony-container {
     max-width: 1872px;
     margin: 0 auto;
     gap: 24px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.telephony-item *{
+
+.telephony-item * {
     margin: 0;
 }
+.telephony-item {
+    display: flex;
+    padding: 98px 0 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 924px;
+    width: 100%;
+    border-radius: 16px;
+    text-decoration: none;
+    overflow: hidden;
+}
+.telephony-item-content {
+    max-width: 555px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
 
-.color-EDFFF9{background: #EDFFF9;}
-.color-FFEDF7{background: #FFEDF7;}
-.color-EDF1FF{background: #EDF1FF;}
-.color-F5EDFF{background: #F5EDFF;}
+.telephony-heading h3 {
+    font-family: "Lora", serif;
+    color: #242424;
+    font-style: italic;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    line-height: 32px;
+}
+.telephony-text p {
+    font-family: "Inter", sans-serif;
+    color: #444;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+}
+.telephony-gif video {
+    max-width: 100%;
+}
+
+.color-EDFFF9 {
+    background: #edfff9;
+}
+.color-FFEDF7 {
+    background: #ffedf7;
+}
+.color-EDF1FF {
+    background: #edf1ff;
+}
+.color-F5EDFF {
+    background: #f5edff;
+}
+
+.explore_all_features-btn {
+    margin: 56px 0 0;
+}
+.explore_all_features-btn button {
+    padding: 16px 24px !important;
+    border-radius: 12px !important;
+    border: 1px solid #d1d4dc;
+    gap: 8px;
+    background: transparent !important;
+    height: 52px !important;
+    color: #242424;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 991px) {
+    #telephony_container {
+        padding: 0 15px;
+    }
+    .telephony-container {
+        grid-template-columns: 1fr;
+    }
+    .telephony-item {
+        padding: 72px 0 0;
+    }
+    .telephony-item-content {
+        max-width: 508px;
+        gap: 24px;
+    }
+
+    .telephony-heading h3 {
+        font-size: 32px;
+    }
+    .telephony-text p {
+        font-size: 18px;
+    }
+    .explore_all_features-btn {
+        margin: 48px 0 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #telephony_container {
+        padding: 0 20px;
+    }
+    .telephony-container {
+        grid-template-columns: 1fr;
+    }
+    .telephony-item {
+        padding: 48px 20px 0;
+    }
+    .telephony-item-content {
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .telephony-heading h3 {
+        font-size: 24px;
+    }
+    .telephony-text p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .explore_all_features-btn {
+        margin: 32px 0 0;
+    }
+    .explore_all_features-btn button {
+        padding: 14px 20px !important;
+        height: 48px !important;
+    }
+}

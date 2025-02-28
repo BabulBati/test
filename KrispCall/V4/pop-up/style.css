@@ -1,0 +1,116 @@
+body {
+    padding: 80px 0;
+}
+/* ----------------------- */
+#fixed-book_demo {
+    width: 100%;
+    bottom: 20px;
+    z-index: 1;
+    background: transparent;
+}
+.book_demo-div * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.book_demo-div {
+    border-radius: 120px;
+    border: 1px solid #8733ff;
+    padding: 14px 24px;
+    gap: 20px;
+    box-shadow: 0px 0px 1px 6px rgba(135, 51, 255, 0.16);
+    background: #fff;
+}
+
+.book_demo-div > div:not(#close_pop_up) {
+    gap: inherit;
+}
+
+.book_demo-div .image {
+    aspect-ratio: 98.4/36;
+    height: 36px;
+}
+.book_demo-div .image img {
+    max-width: 100%;
+    height: auto;
+}
+.book_demo-div p {
+    color: #242424;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+}
+
+.book_demo-btn button {
+    padding: 12px 16px !important;
+    gap: 8px;
+    border-radius: 12px;
+    background: linear-gradient(to right, #8733ff 0%, #d262eb 38.5%, #8733ff 100%) !important;
+    border: none;
+    color: #fff;
+    font-family: "Inter", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    height: 44px !important;
+    flex-shrink: 0;
+}
+#close_pop_up {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .book_demo-div {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .book_demo-div .image {
+        height: 32px;
+    }
+
+    .book_demo-div p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .book_demo-btn button {
+        padding: 8px 12px !important;
+        border-radius: 8px;
+        font-size: 12px !important;
+        line-height: 16px;
+        height: 32px !important;
+    }
+    .book_demo-btn button svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .book_demo-div {
+        padding: 8px 12px 12px;
+        gap: 0;
+        flex-direction: column-reverse;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(5.5px);
+    }
+    .book_demo-div > div:not(#close_pop_up) {
+        gap: 10px;
+        flex-direction: column;
+    }
+    .book_demo-div p {
+        text-align: center;
+    }
+    #close_pop_up {
+        padding: 3px;
+        justify-content: end;
+        width: 100%;
+    }
+}
