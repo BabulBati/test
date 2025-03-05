@@ -23,7 +23,7 @@
     <div class="container-fluid" id="telephony_container">
         <div class="telephony-container">
             <!-- Unified Callbox -->
-            <a href="" class="telephony-item color-F5EDFF">
+            <a href="https://krispcall.com/feature/unified-callbox/" target="_blank" class="telephony-item color-F5EDFF">
                 <div class="telephony-item-content">
                     <div class="telephony-heading">
                         <h3>Unified Callbox</h3>
@@ -32,18 +32,13 @@
                         <p>CRM conversations made easy, stay in the loop with unified call box.</p>
                     </div>
                 </div>
-                <div class="telephony-gif">
-                    <video muted>
-                        <source
-                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="telephony-image">
+                    <img src="https://krispcall.com/wp-content/uploads/2025/03/Unified-Callbox-v4HomePage.webp" loading="lazy" width="530" height="440" alt="">
                 </div>
             </a>
 
             <!-- Phone Tree IVR -->
-            <a href="" class="telephony-item color-EDF1FF">
+            <a href="https://krispcall.com/feature/phone-tree/" target="_blank" class="telephony-item color-EDF1FF">
                 <div class="telephony-item-content">
                     <div class="telephony-heading">
                         <h3>Phone Tree IVR</h3>
@@ -52,18 +47,13 @@
                         <p>Optimize call routing with an automated phone tree from KrispCall.</p>
                     </div>
                 </div>
-                <div class="telephony-gif">
-                    <video muted>
-                        <source
-                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="telephony-image">
+                    <img src="https://krispcall.com/wp-content/uploads/2025/03/Phone-Tree-IVR-v4HomePage.webp" loading="lazy" width="578" height="479" alt="">
                 </div>
             </a>
 
             <!-- Call Monitoring -->
-            <a href="" class="telephony-item color-FFEDF7">
+            <a href="https://krispcall.com/live-call-monitoring/" target="_blank" class="telephony-item color-FFEDF7">
                 <div class="telephony-item-content">
                     <div class="telephony-heading">
                         <h3>Call Monitoring</h3>
@@ -72,18 +62,13 @@
                         <p>Boost CRM performance with KrispCall's live call monitoring.</p>
                     </div>
                 </div>
-                <div class="telephony-gif">
-                    <video muted>
-                        <source
-                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="telephony-image">
+                    <img src="https://krispcall.com/wp-content/uploads/2025/03/Call_Monitoringv3HomePage.webp" width="594" height="492" loading="lazy" alt="">
                 </div>
             </a>
 
             <!-- Call Queuing -->
-            <a href="" class="telephony-item color-EDFFF9">
+            <a href="https://krispcall.com/feature/call-queuing/" target="_blank" class="telephony-item color-EDFFF9">
                 <div class="telephony-item-content">
                     <div class="telephony-heading">
                         <h3>Call Queuing</h3>
@@ -95,13 +80,8 @@
                             clients want.</p>
                     </div>
                 </div>
-                <div class="telephony-gif">
-                    <video muted>
-                        <source
-                            src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250128_151558/krispcall-homepage-gif.mp4"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="telephony-image">
+                    <img src="https://krispcall.com/wp-content/uploads/2025/03/Call-Queuing-v4HomePage.webp" width="628" height="445" loading="lazy" alt="">
                 </div>
             </a>
         </div>
@@ -125,44 +105,26 @@
             const telephonyContainer = document.getElementById('telephony_container');
             if (!telephonyContainer) return;
 
+            // Function to toggle the container classes based on window width
             function toggleContainer() {
-                telephonyContainer.classList.toggle('container', window.innerWidth <= 991);
-                telephonyContainer.classList.toggle('container-fluid', window.innerWidth > 991);
+                const isSmallScreen = window.innerWidth <= 991;
+                telephonyContainer.classList.toggle('container', isSmallScreen);
+                telephonyContainer.classList.toggle('container-fluid', !isSmallScreen);
             }
 
-            toggleContainer(); // Run once on load
+            toggleContainer();
 
-            let resizeTimer;
+            let resizeTimer = null; // Initialize resizeTimer with null
+            // Using requestAnimationFrame to debounce the resize event
             window.addEventListener('resize', () => {
                 if (!resizeTimer) {
-                    requestAnimationFrame(() => {
+                    resizeTimer = requestAnimationFrame(() => {
                         toggleContainer();
-                        resizeTimer = null; // Reset
+                        resizeTimer = null; // Reset after animation frame
                     });
                 }
-                resizeTimer = true;
-            });
-
-
-            const telephonyItem = document.querySelectorAll('.telephony-item');
-
-            telephonyItem.forEach((container) => {
-                const video = container.querySelector('video'); // Find the video inside each container
-
-                // When mouse enters the container, autoplay the video
-                container.addEventListener('mouseenter', () => {
-                    video.loop = true;
-                    video.play();
-                });
-
-                // When mouse leaves the container, pause and reset the video
-                container.addEventListener('mouseleave', () => {
-                    video.pause();
-                    video.currentTime = 0; // Reset the video to the beginning
-                });
             });
         });
-
     </script>
 </body>
 

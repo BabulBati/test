@@ -8,12 +8,6 @@ body {
 }
 
 /* --------------- */
-#telephony_container {
-    padding: 0;
-}
-#telephony_container.container-fluid {
-    padding: 0 24px;
-}
 .telephony-container {
     max-width: 1872px;
     margin: 0 auto;
@@ -37,6 +31,7 @@ body {
     border-radius: 16px;
     text-decoration: none;
     overflow: hidden;
+    position: relative;
 }
 .telephony-item-content {
     max-width: 555px;
@@ -62,8 +57,13 @@ body {
     line-height: 32px;
     letter-spacing: -0.02em;
 }
-.telephony-gif video {
+.telephony-image {
+    width: 100%;
+    text-align: center;
+}
+.telephony-image img {
     max-width: 100%;
+    height: auto;
 }
 
 .color-EDFFF9 {
@@ -97,6 +97,21 @@ body {
     letter-spacing: -0.01em;
 }
 
+@media (max-width: 1199px) {
+    .telephony-item-content {
+        gap: 24px;
+    }
+    .telephony-item {
+        padding: 72px 20px 0;
+    }
+    .telephony-heading h3 {
+        font-size: 32px;
+    }
+    .telephony-text p {
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 991px) {
     #telephony_container {
         padding: 0 15px;
@@ -104,22 +119,36 @@ body {
     .telephony-container {
         grid-template-columns: 1fr;
     }
-    .telephony-item {
-        padding: 72px 0 0;
-    }
+
     .telephony-item-content {
         max-width: 508px;
         gap: 24px;
     }
-
-    .telephony-heading h3 {
-        font-size: 32px;
-    }
-    .telephony-text p {
-        font-size: 18px;
-    }
     .explore_all_features-btn {
         margin: 48px 0 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .telephony-item::before {
+        content: url("https://krispcall.com/wp-content/uploads/2025/03/Frame-1000009183.svg");
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        opacity: 0; /* Initially hidden */
+        transform: scale(0.8);
+        transition: all 0.18s ease-in-out;
+    }
+
+    .telephony-item:hover::before {
+        opacity: 1; /* Fade in */
+        transform: scale(1);
+    }
+    .telephony-item {
+        transition: box-shadow 0.18s ease-in-out;
+    }
+    .telephony-item:hover {
+        box-shadow: 0px 24px 40px -16px rgba(0, 0, 0, 0.16);
     }
 }
 

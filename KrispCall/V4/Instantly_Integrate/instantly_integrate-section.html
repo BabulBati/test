@@ -1412,13 +1412,13 @@
             }
 
             // Debounce function
-            function debounce(func, delay) {
-                let timer;
+            const debounce = (fn, delay) => {
+                let timeout;
                 return function (...args) {
-                    clearTimeout(timer);
-                    timer = setTimeout(() => func.apply(this, args), delay);
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => fn(...args), delay);
                 };
-            }
+            };
 
             // Function to handle search and display results efficiently
             function handleSearch() {
@@ -1478,22 +1478,25 @@
                 }
             }
 
+            // 
+            const updateMarqueeSpeed = (marquee, direction) => {
+                const div = marquee.querySelector('div');
+                if (!div) return;
+                const speed = 50;
+                const width = div.offsetWidth;
 
-            // Optimized animation duration calculation for marquees
-            window.onload = () => {
-                setTimeout(() => {
-                    document.querySelectorAll('.crm_marquee.right > div, .crm_marquee.left > div').forEach(div => {
-                        const marquee = div.closest('.crm_marquee');
-                        const speed = parseFloat(getComputedStyle(marquee).getPropertyValue('--animationSpeed')) || 50;
-                        const width = div.offsetWidth;
-
-                        if (!div.dataset.cachedWidth || div.dataset.cachedWidth !== width.toString()) {
-                            div.dataset.cachedWidth = width;
-                            div.style.setProperty('--duration', `${width / speed}s`);
-                        }
-                    });
-                }, 100); // Delay to allow proper rendering
+                // Set different duration variables for right and left marquees
+                marquee.style.setProperty(`--duration`, `${width / speed}s`);
             };
+
+            document.querySelectorAll('.crm_marquee.right, .crm_marquee.left').forEach(marquee => {
+                const direction = marquee.classList.contains('right') ? 'right' : 'left';
+                updateMarqueeSpeed(marquee, direction);
+
+                // Observe size changes for dynamic updates
+                const resizeObserver = new ResizeObserver(() => updateMarqueeSpeed(marquee, direction));
+                resizeObserver.observe(marquee);
+            });
 
             // Tooltips
             const logoDivs = document.querySelectorAll(".logo_div");

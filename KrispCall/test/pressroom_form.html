@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form>div:not(:last-child) {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        form>div:last-child {
+            margin-top: 40px;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #D1D4DC;
+            background: #FFF;
+            box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+            color: #242424;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: #A8A8A8;
+        }
+
+        form>div>label {
+            color: #242424;
+            text-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05), 0px 0px 0px #F4EBFF;
+            font-family: "Inter", sans-serif !important;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: 1px solid #B480FF ;
+            box-shadow: 0px 1px 2px 0px rgba(10, 13, 18, 0.05), 0px 0px 0px 4px #F4EBFF;
+        }
+
+
+        .pr-inpur_name {}
+
+        .pr-input_email {}
+
+        .pr_textarea {}
+
+        .pr-subbmit_btn {}
+
+        .pr-subbmit_btn button {
+            border-radius: 8px;
+            background: #7622ED;
+            display: inline-flex;
+            padding: 12px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            color: #FFF;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: -0.01em;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="pr-inpur_name">
+            <label for="pr-fullname">Full name*</label>
+            <input type="text" name="pr-fullname" id="pr-fullname" required placeholder="Anna Hamilton">
+        </div>
+        <div class="pr-input_email">
+            <label for="pr-email">Email address*</label>
+            <input type="email" name="pr-email" id="pr-email" required placeholder="name@mail.com">
+        </div>
+        <div class="pr_textarea">
+            <label for="pr-questions">Your Question*</label>
+            <textarea name="pr-questions" id="pr-questions" cols="30" rows="10" required
+                placeholder="What would you like to ask KrispCall’s team?"></textarea>
+        </div>
+        <div class="pr-subbmit_btn">
+            <button type="submit">
+                Submit Request
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 12H4" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                        stroke-linecap="round" />
+                    <path
+                        d="M12.9688 19.661L19.5415 13.0882C19.6851 12.9458 19.7992 12.7764 19.8769 12.5896C19.9548 12.4029 19.9948 12.2027 19.9948 12.0004C19.9948 11.7981 19.9548 11.5979 19.8769 11.4112C19.7992 11.2244 19.6851 11.055 19.5415 10.9127L12.9688 4.33984"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>
