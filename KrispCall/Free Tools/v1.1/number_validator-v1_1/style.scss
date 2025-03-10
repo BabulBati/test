@@ -1,0 +1,797 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // padding: 80px 0;
+    background: #fafafa;
+    font-family: "Inter", sans-serif;
+}
+
+// -------------------------
+
+.free_tools-section {
+    position: relative;
+    height: 100vh;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: clamp(190px, 22.9%, 436px);
+        // height: 436px;
+        aspect-ratio: 1;
+        z-index: 0;
+        // background: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250307_111817/Free_tools_bg_vector.svg);
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+    &::before {
+        top: 0;
+        right: 0;
+        background: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_062854/top_right_free_tools_bg.webp);
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+        background: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_062854/bottom_left_free_tools_bg.webp);
+    }
+    >div{
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// Tool Badge ---------------------------------------------------------------------------------
+.tool-badge {
+    .tool_name-icon {
+        gap: 0 6px;
+    }
+    .tool-icon {
+        width: 40px;
+        aspect-ratio: 1/1;
+    }
+    .tool-name {
+        background: linear-gradient(180deg, #b68af4 -17.59%, #8733ff 117.59%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Manrope", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+    }
+    .tool-powerBy {
+        color: #242424;
+        font-size: 14px !important;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+        padding: 3px 6px;
+    }
+}
+// --------------------------------------------------------------------------------------------
+
+// Tool Heading -------------------------------------------------------------------------------
+.tool_heading-container {
+    margin: 0 0 40px;
+    * {
+        margin: 0;
+    }
+    h1 {
+        color: #242424;
+        margin: 0 0 16px;
+    }
+    p {
+        color: #4d4950;
+        font-weight: 400;
+    }
+}
+// --------------------------------------------------------------------------------------------
+
+.v1_1-free_tools {
+    max-width: 847px;
+    margin: 0 auto;
+    gap: 32px 0;
+    * {
+        margin: 0;
+    }
+    & > div:first-child {
+        gap: inherit;
+    }
+}
+
+.tool-container {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow:
+        0px 280px 78px 0px rgba(0, 0, 0, 0),
+        0px 179px 72px 0px rgba(0, 0, 0, 0),
+        0px 101px 61px 0px rgba(0, 0, 0, 0.01),
+        0px 45px 45px 0px rgba(0, 0, 0, 0.02),
+        0px 11px 25px 0px rgba(0, 0, 0, 0.02);
+    display: flex;
+    padding: 24px 24px 80px 24px;
+    flex-direction: column;
+    gap: 80px;
+}
+
+// Form
+.free_tools-form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    --inputs_padding-top_bottom: 12px;
+    --inputs_padding-left_right: var(--inputs_padding-top_bottom);
+    --inputs_gaps: 12px;
+}
+
+#countryselector {
+    width: 278px;
+    border-radius: 0;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    outline: none !important;
+}
+.iti {
+    width: 100%;
+    height: 100%;
+    &__country-container {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    &__selected-country {
+        width: 100%;
+        padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right);
+        padding-right: calc(var(--inputs_padding-left_right) + 14px);
+        gap: var(--inputs_gaps);
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #d1d4dc !important;
+        height: 44px;
+    }
+    &__selected-dial-code {
+        margin: 0 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        color: #0d0d0d;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+    }
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        right: var(--inputs_padding-left_right);
+        border: 0;
+        background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/caret-down.png) center
+            no-repeat;
+        height: 14px;
+        width: 14px;
+        margin: 0;
+    }
+    &__selected-country-primary {
+        padding: 0;
+    }
+    &__arrow.iti__arrow--up {
+        transform: rotate(180deg);
+        transform-origin: center center;
+        top: unset;
+    }
+}
+
+#countryselector,
+.numberSearch {
+    height: 44px !important;
+}
+
+.numberSearch {
+    display: flex;
+    padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right) !important;
+    align-items: center;
+    gap: var(--inputs_gaps);
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid #d1d4dc;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+#numberSearch {
+    border: none !important;
+    outline: none !important;
+    width: 100%;
+    color: #0d0d0d;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    background-color: transparent !important;
+    height: 100% !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+
+    &::placeholder {
+        color: #a8a8a8 !important;
+    }
+
+    &::-moz-placeholder {
+        color: #a8a8a8 !important;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #a8a8a8 !important;
+    }
+}
+
+.free_tools-submit {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: #e0e0e0;
+    border: none !important;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    width: inherit;
+    height: 44px !important;
+}
+
+// Initaial Display Content
+.initialContent {
+    img {
+        margin-bottom: 16px;
+    }
+    p {
+        color: #4d4950;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        line-height: 20px;
+        letter-spacing: -0.01em;
+    }
+}
+
+// Checking Number
+.checking_number {
+    > div:first-child > p {
+        color: #4d4950;
+        margin: 0 0 8px;
+    }
+    > div:nth-child(2) {
+        border-radius: 12px;
+        border: 1px solid rgba(209, 212, 220, 0.5);
+        display: flex;
+        padding-bottom: 37px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 31px;
+    }
+}
+
+// When Searching
+.progress-bar {
+    border-left: 72px solid #10bc3b;
+    background: #f2f2f2;
+    height: 6px;
+    width: 100%;
+}
+
+.dummy_layout {
+    width: 100%;
+    > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 9px 0;
+    }
+    .row {
+        flex-wrap: nowrap !important;
+        justify-content: space-between;
+        padding: 12px;
+        gap: 0 24px;
+    }
+    span {
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.08);
+        height: 16px;
+        flex-shrink: 1;
+        animation: testAnimation 1.9s linear infinite;
+        &:first-child {
+            max-width: 204px;
+        }
+        &:last-child {
+            max-width: 95px;
+        }
+    }
+}
+
+@keyframes testAnimation {
+    0% {
+        background: rgba(0, 0, 0, 0.18);
+    }
+    50% {
+        background: rgba(0, 0, 0, 0.08);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.18);
+    }
+}
+
+// Final Result
+.finalResult {
+    > div:first-child {
+        margin: 0 0 8px;
+        p {
+            color: #4d4950 !important;
+        }
+        span {
+            color: #8733ff;
+            font-weight: 600;
+        }
+    }
+}
+
+.resultData {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgba(209, 212, 220, 0.5);
+    border-radius: 16px;
+    p {
+        color: #4d4950;
+    }
+    > div {
+        width: calc(100% / 2);
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 12px;
+        height: 57px;
+        align-items: center;
+
+        &:not(:nth-child(even)) {
+            border-right: 1px solid rgba(209, 212, 220, 0.5);
+        }
+        &:not(:nth-child(n + 5)) {
+            border-bottom: 1px solid rgba(209, 212, 220, 0.5);
+        }
+    }
+}
+
+.result-validity > span {
+    border-radius: 4px;
+    background: rgba(135, 51, 255, 0.07);
+    display: inline-flex;
+    height: 25px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    color: #8733ff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: -0.02em;
+}
+
+/* Get Real Country Numbers */
+/* Number Lists */
+.get_countryNumber {
+    border-radius: 16px;
+    border: 1px solid rgba(209, 212, 220, 0.3);
+    background: #fff;
+    .numberLists {
+        display: flex;
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        .heading {
+            color: #242424;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: -0.02em;
+        }
+    }
+}
+
+.numbers_lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row_gap) var(--col_gap);
+    --row_gap: 24px;
+    --col_gap: 16px;
+}
+
+.gen_num {
+    border-radius: 8px;
+    border: 1px solid #d1d4dc;
+    background: #fff;
+    gap: 8px;
+    padding: 12px 16px;
+    justify-content: center;
+    flex-basis: calc((100% - (var(--col_gap) * 2)) / 3);
+    min-width: 178px;
+    flex-grow: 1;
+    cursor: pointer;
+    .number {
+        color: #1a181b;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+    }
+}
+
+//  After a number is clicked -----------------------------------------------------------------
+.selectedNumber {
+    padding: 40px 32px;
+}
+
+#back-numberLists {
+    color: #4d4950;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    gap: 0 4px;
+    cursor: pointer;
+    svg {
+        height: 18px;
+        width: 18px;
+    }
+}
+
+.selectedNumber-container {
+    > .heading {
+        color: #242424;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        max-width: 461px;
+        margin: 16px auto;
+    }
+    p {
+        color: #4d4950;
+        max-width: 514px;
+        text-align: center;
+    }
+    .btn-div {
+        margin: 32px 0 0;
+    }
+}
+
+.getStarted-btn {
+    border-radius: 8px;
+    background: #8733ff;
+    display: flex;
+    height: 44px;
+    font-family: "Inter", sans-serif;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+//---------------------------------------------------------------------------------------------
+
+// Request Access -----------------------------------------------------------------------------
+.request-bulk-free_tool {
+    border-radius: 12px;
+    border: 1px solid rgba(209, 212, 220, 0.6);
+    background: #fff;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    > div {
+        gap: 16px;
+        .title {
+            color: #242424;
+            font-family: "Inter", sans-serif !important;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: -0.02em;
+        }
+        > p {
+            color: #4d4950;
+        }
+    }
+}
+
+.bulk-requestAccess {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid #8733ff;
+    text-decoration: none;
+    color: #8733ff !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    height: 44px;
+}
+
+// --------------------------------------------------------------------------------------------
+
+@media (max-width: 991px) {
+    // Tool Badge -----------------------------------------------------------------------------
+    .tool-badge {
+        .tool_name-icon {
+            gap: 0 4px;
+        }
+    }
+    // ----------------------------------------------------------------------------------------
+
+    // Tool Heading -------------------------------------------------------------------------------
+    .tool_heading-container {
+        margin: 32px 0;
+        h1 {
+            margin: 0 0 20px;
+        }
+        p {
+            max-width: 490px;
+            margin: 0 auto;
+        }
+    }
+    // --------------------------------------------------------------------------------------------
+
+    .checking_number > div:nth-child(2) {
+        gap: 0;
+        padding: 0;
+    }
+
+    .dummy_layout {
+        padding: 10.5px 16px;
+        .right-div {
+            display: none;
+        }
+        span {
+            &:first-child {
+                max-width: 281px;
+            }
+            &:last-child {
+                max-width: 131px;
+            }
+        }
+    }
+
+    .resultData {
+        > div {
+            width: 100%;
+            border-right: 0 !important;
+            &:not(.result-line_type) {
+                border-bottom: 1px solid rgba(209, 212, 220, 0.5);
+            }
+        }
+    }
+
+    .result-local {
+        order: 1;
+    }
+
+    .result-country {
+        order: 3;
+    }
+
+    .result-validity {
+        order: 2;
+    }
+
+    .result-region {
+        order: 5;
+    }
+
+    .result-city {
+        order: 4;
+    }
+
+    .result-line_type {
+        order: 6;
+    }
+
+    .get_countryNumber {
+        .numberLists {
+            padding: 20px;
+            gap: 24px;
+            .heading {
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .numbers_lists {
+        --row_gap: 20px;
+    }
+
+    .gen_num {
+        .number {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .selectedNumber {
+        padding: 32px 20px;
+    }
+
+    .selectedNumber-container {
+        > .heading {
+            font-size: 20px;
+            line-height: 130%;
+            max-width: 100%;
+            margin: 12px 0 8px;
+        }
+        .btn-div {
+            margin: 24px 0 0;
+        }
+    }
+
+    // Request Access -------------------------------------------------------------------------
+    .request-bulk-free_tool {
+        padding: 20px;
+        gap: 20px;
+        > div {
+            gap: 8px;
+            .title {
+                font-size: 20px;
+                line-height: 130%;
+            }
+        }
+    }
+    //-----------------------------------------------------------------------------------------
+}
+
+@media (max-width: 767px) {
+    .free_tools-section {
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+
+    // Tool Badge -----------------------------------------------------------------------------
+    .tool-badge {
+        .tool-icon {
+            width: 32px;
+        }
+        .tool-name {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+    // ----------------------------------------------------------------------------------------
+
+    // Tool Heading -------------------------------------------------------------------------------
+    .tool_heading-container {
+        margin: 24px 0;
+        h1 {
+            margin: 0 0 16px;
+        }
+    }
+    // --------------------------------------------------------------------------------------------
+
+    .free_tools-form {
+        flex-wrap: wrap;
+        gap: 12px 8px;
+        --inputs_gaps: 8px;
+    }
+
+    #countryselector {
+        width: 100%;
+    }
+
+    .countrySelector,
+    .numberSearch {
+        flex-grow: 1;
+        flex-basis: 150px;
+    }
+
+    .checkNumBtn {
+        width: 100%;
+    }
+
+    .initialContent {
+        img {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 14px !important;
+        }
+    }
+
+    .dummy_layout {
+        padding: 10.5px 8px;
+        span {
+            &:first-child {
+                max-width: 179px;
+            }
+            &:last-child {
+                max-width: 117px;
+            }
+        }
+    }
+
+    .finalResult {
+        > div:first-child {
+            margin: 0 0 8px;
+            flex-direction: column;
+            gap: 20px 0;
+            p {
+                text-align: center;
+                width: 100%;
+
+                &:nth-child(1) {
+                    order: 2;
+                }
+                &:nth-child(2) {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    .get_countryNumber {
+        .numberLists {
+            padding: 16px;
+            gap: 20px;
+            .heading {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .numbers_lists {
+        --row_gap: 12px;
+        --col_gap: 8px;
+    }
+
+    .selectedNumber {
+        padding: 24px 16px;
+    }
+
+    .selectedNumber-container {
+        > .heading {
+            font-size: 18px;
+        }
+        .btn-div {
+            margin: 20px 0 0;
+        }
+    }
+
+    // Request Access -------------------------------------------------------------------------
+    .request-bulk-free_tool {
+        flex-direction: column;
+        padding: 16px;
+        align-items: unset;
+        gap: 12px;
+    }
+    //-----------------------------------------------------------------------------------------
+}
