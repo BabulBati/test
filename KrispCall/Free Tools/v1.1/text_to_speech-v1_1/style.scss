@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // padding: 80px 0;
+    background: #fafafa;
+    font-family: "Inter", sans-serif;
+}
+
+// -------------------------
+
+.free_tools-section {
+    position: relative;
+    // height: 100vh;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: clamp(190px, 22.9%, 436px);
+        aspect-ratio: 1;
+        z-index: 0;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+    }
+    &::before {
+        top: 0;
+        right: 0;
+        background: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_062854/top_right_free_tools_bg.webp);
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+        background: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_062854/bottom_left_free_tools_bg.webp);
+    }
+    > div {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// Tool Badge ---------------------------------------------------------------------------------
+.tool-badge {
+    .tool_name-icon {
+        gap: 0 6px;
+    }
+    .tool-icon {
+        width: 40px;
+        aspect-ratio: 1/1;
+    }
+    .tool-name {
+        background: linear-gradient(180deg, #b68af4 -17.59%, #8733ff 117.59%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Manrope", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+    }
+    .tool-powerBy {
+        color: #242424;
+        font-size: 14px !important;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+        padding: 3px 6px;
+    }
+}
+// --------------------------------------------------------------------------------------------
+
+// Tool Heading -------------------------------------------------------------------------------
+.tool_heading-container {
+    margin: 0 0 40px;
+    * {
+        margin: 0;
+    }
+    h1 {
+        color: #242424;
+        margin: 0 0 16px;
+    }
+    p {
+        color: #4d4950;
+        font-weight: 400;
+    }
+}
+// --------------------------------------------------------------------------------------------
+
+.v1_1-free_tools {
+    max-width: 847px;
+    margin: 0 auto;
+    gap: 32px 0;
+    * {
+        margin: 0;
+    }
+    & > div:first-child {
+        gap: inherit;
+    }
+}
+
+.tool-container {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow:
+        0px 280px 78px 0px rgba(0, 0, 0, 0),
+        0px 179px 72px 0px rgba(0, 0, 0, 0),
+        0px 101px 61px 0px rgba(0, 0, 0, 0.01),
+        0px 45px 45px 0px rgba(0, 0, 0, 0.02),
+        0px 11px 25px 0px rgba(0, 0, 0, 0.02);
+    padding: 24px;
+}
+/* --------------------------------------------------------------------------------------------- */
+
+// TetxArea -----------------------------------------------------------------------------
+.textarea_div {
+    border-radius: 12px;
+    border: 1px solid rgba(209, 212, 220, 0.5);
+    background: #fff;
+    padding: 20px 20px 16px 20px;
+    height: 282px;
+}
+
+#text_here {
+    resize: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    flex: 1;
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    color: #242424;
+    font-family: "Inter", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    &::placeholder {
+        color: #a8a8a8;
+    }
+    &::-moz-placeholder {
+        color: #a8a8a8;
+    }
+}
+
+#charCount {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    color: #a8a8a8;
+}
+
+// Voice Menus -----------------------------------------------------------------------------
+.voice_menu {
+    margin-top: 24px;
+    gap: 0 16px;
+    position: relative;
+}
+
+.voice-toggle {
+    gap: 0 8px;
+    cursor: pointer;
+    user-select: none;
+    img {
+        width: 32px;
+        height: 32px;
+    }
+    svg {
+        transition: transform 0.1s ease;
+        &.rotated {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.voice-options {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+    width: 220px;
+    position: absolute;
+    z-index: 10;
+    bottom: calc(100% + 14px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    &.show {
+        display: block;
+    }
+}
+
+.optionsItems {
+    display: flex;
+    width: 100%;
+    padding: 8px 12px;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+        background-color: #f9f9f9;
+    }
+}
+
+// Play/Pause Button -----------------------------------------------------------------------------
+#playpause_btn {
+    cursor: pointer;
+}
+
+.loaderDiv {
+    width: 32px;
+    aspect-ratio: 1;
+}
+
+.loadingDiv {
+    background: #a8a8a8;
+    border-radius: 50em;
+    width: 27.33px;
+    aspect-ratio: 1;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% - 8px);
+        aspect-ratio: 1;
+        border: 2px solid #fff;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        animation: loadingAnimation 1s linear infinite;
+    }
+}
+
+@keyframes loadingAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// Download Button -----------------------------------------------------------------------------
+#downloadButton {
+    background: #8733ff !important;
+    color: #ffffff;
+    cursor: pointer;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.01em !important;
+    font-weight: 600 !important;
+    height: 44px !important;
+    gap: 0 8px;
+    &[disabled] {
+        background: #e0e0e0 !important;
+        color: #a8a8a8 !important;
+        cursor: not-allowed;
+        svg path {
+            stroke: #a8a8a8;
+        }
+    }
+    svg path {
+        stroke: #ffffff;
+    }
+}
+
+// Request Access -----------------------------------------------------------------------------
+.request-bulk-free_tool {
+    border-radius: 12px;
+    border: 1px solid rgba(209, 212, 220, 0.6);
+    background: #fff;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    > div {
+        gap: 16px;
+        .title {
+            color: #242424;
+            font-family: "Inter", sans-serif !important;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: -0.02em;
+        }
+        > p {
+            color: #4d4950;
+        }
+    }
+}
+
+.bulk-requestAccess {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid #8733ff;
+    text-decoration: none;
+    color: #8733ff !important;
+    font-family: "Manrope", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    height: 44px;
+}
+
+@media (max-width: 991px) {
+    .tool-badge {
+        .tool_name-icon {
+            gap: 0 4px;
+        }
+    }
+
+    .tool_heading-container {
+        margin: 32px 0;
+        h1 {
+            margin: 0 0 20px;
+        }
+        p {
+            max-width: 490px;
+            margin: 0 auto;
+        }
+    }
+
+    .request-bulk-free_tool {
+        padding: 20px;
+        gap: 20px;
+        > div {
+            gap: 8px;
+            .title {
+                font-size: 20px;
+                line-height: 130%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .free_tools-section {
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+
+    .tool-badge {
+        .tool-icon {
+            width: 32px;
+        }
+        .tool-name {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    .tool_heading-container {
+        margin: 24px 0;
+        h1 {
+            margin: 0 0 16px;
+        }
+    }
+
+    .request-bulk-free_tool {
+        flex-direction: column;
+        padding: 16px;
+        align-items: unset;
+        gap: 12px;
+    }
+}

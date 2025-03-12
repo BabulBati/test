@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Text to Voice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../typo.css">
+</head>
+
+<body>
+    <div class="container-fluid free_tools-section">
+        <!-- Tool Badge -->
+        <div class="d-flex justify-content-center justify-content-lg-start tool_badge-container">
+            <div class="d-inline-flex flex-column align-items-lg-end tool-badge align-items-center">
+                <div class="d-inline-flex align-items-center tool_name-icon">
+                    <div class="d-inline-flex tool-icon align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="27" viewBox="0 0 38 27" fill="none">
+                            <path
+                                d="M19.2402 9.18115C18.7458 7.96371 18.0112 6.85838 17.0802 5.93115C16.1471 5.00472 15.0435 4.26783 13.8302 3.76116C12.0024 3.00412 9.99116 2.8062 8.05086 3.19247C6.11064 3.57874 4.32858 4.53182 2.93013 5.93115C1.9951 6.85711 1.25696 7.9626 0.760118 9.18115C0.258858 10.3924 0.000617626 11.6903 0.000107626 13.0011C-0.00597237 14.2945 0.245608 15.5761 0.740128 16.7711L0.240128 20.4212C0.173158 20.733 0.183718 21.0566 0.270888 21.3634C0.358068 21.6703 0.519188 21.951 0.740128 22.1811C0.960258 22.4079 1.23097 22.5792 1.53011 22.6811C1.82661 22.7785 2.14231 22.8025 2.45012 22.7511L6.10012 22.2111C7.32589 22.7368 8.64636 23.0057 9.98016 23.0011C11.6239 23.0009 13.2422 22.5954 14.692 21.8207C16.1417 21.0459 17.378 19.9257 18.2916 18.5593C19.2052 17.1928 19.7679 15.6222 19.9299 13.9864C20.0918 12.3507 19.8481 10.7002 19.2202 9.18115H19.2402ZM5.72011 14.6112C5.40168 14.6112 5.0904 14.5167 4.82564 14.3398C4.56088 14.1629 4.35454 13.9115 4.23268 13.6173C4.11083 13.3231 4.07895 12.9994 4.14107 12.6871C4.20319 12.3747 4.35652 12.0879 4.58168 11.8627C4.80685 11.6376 5.09371 11.4842 5.40602 11.4221C5.71833 11.36 6.04204 11.3918 6.33623 11.5137C6.63042 11.6355 6.88189 11.8419 7.0588 12.1067C7.2357 12.3714 7.33013 12.6827 7.33013 13.0011C7.33013 13.2126 7.28848 13.4219 7.20757 13.6173C7.12666 13.8126 7.00807 13.9901 6.85857 14.1396C6.70907 14.2891 6.53156 14.4077 6.33623 14.4886C6.1409 14.5695 5.93154 14.6112 5.72011 14.6112ZM10.0001 14.6112C9.68166 14.6112 9.37036 14.5167 9.10566 14.3398C8.84086 14.1629 8.63456 13.9115 8.51266 13.6173C8.39086 13.3231 8.35896 12.9994 8.42106 12.6871C8.48316 12.3747 8.63656 12.0879 8.86166 11.8627C9.08686 11.6376 9.37376 11.4842 9.68606 11.4221C9.99836 11.36 10.3221 11.3918 10.6163 11.5137C10.9105 11.6355 11.1619 11.8419 11.3388 12.1067C11.5157 12.3714 11.6102 12.6827 11.6102 13.0011C11.6102 13.4281 11.4405 13.8377 11.1386 14.1396C10.8367 14.4415 10.4271 14.6112 10.0001 14.6112ZM14.2801 14.6112C13.9617 14.6112 13.6505 14.5167 13.3857 14.3398C13.1209 14.1629 12.9146 13.9115 12.7927 13.6173C12.6709 13.3231 12.639 12.9994 12.7011 12.6871C12.7632 12.3747 12.9166 12.0879 13.1417 11.8627C13.3669 11.6376 13.6538 11.4842 13.9661 11.4221C14.2784 11.36 14.6021 11.3918 14.8963 11.5137C15.1905 11.6355 15.4419 11.8419 15.6188 12.1067C15.7957 12.3714 15.8902 12.6827 15.8902 13.0011C15.8902 13.4281 15.7205 13.8377 15.4186 14.1396C15.1167 14.4415 14.7071 14.6112 14.2801 14.6112Z"
+                                fill="#FF3EAB" />
+                            <g style="mix-blend-mode:multiply">
+                                <circle cx="24.5" cy="13.5" r="13.5" fill="url(#paint0_linear_1803_61510)" />
+                            </g>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M28.2637 13.3249V9.27126C28.1591 8.49813 27.7777 7.78916 27.1902 7.27581C26.6027 6.76246 25.8489 6.47955 25.0688 6.47955C24.2886 6.47955 23.5349 6.76246 22.9474 7.27581C22.36 7.78916 21.9786 8.49813 21.874 9.27126V13.3249C21.9786 14.098 22.36 14.807 22.9474 15.3203C23.5349 15.8337 24.2886 16.1166 25.0688 16.1166C25.8489 16.1166 26.6027 15.8337 27.1902 15.3203C27.7777 14.807 28.1591 14.098 28.2637 13.3249ZM25.6151 19.9404V18.1211H25.5859C26.9177 17.989 28.1527 17.3659 29.0501 16.373C29.9475 15.38 30.443 14.0885 30.4401 12.7502C30.4401 12.6054 30.3826 12.4667 30.2802 12.3643C30.1779 12.2619 30.039 12.2044 29.8943 12.2044C29.7495 12.2044 29.6107 12.2619 29.5083 12.3643C29.406 12.4667 29.3485 12.6054 29.3485 12.7502C29.3485 13.8928 28.8946 14.9887 28.0866 15.7967C27.2786 16.6046 26.1828 17.0586 25.0401 17.0586C23.8975 17.0586 22.8016 16.6046 21.9936 15.7967C21.1857 14.9887 20.7318 13.8928 20.7318 12.7502C20.7318 12.6054 20.6743 12.4667 20.5719 12.3643C20.4696 12.2619 20.3307 12.2044 20.186 12.2044C20.0412 12.2044 19.9024 12.2619 19.8 12.3643C19.6977 12.4667 19.6401 12.6054 19.6401 12.7502C19.6372 14.0885 20.1328 15.38 21.0302 16.373C21.9275 17.3659 23.1625 17.989 24.4943 18.1211V19.9404H22.4202C22.2754 19.9404 22.1366 19.998 22.0342 20.1003C21.9319 20.2027 21.8744 20.3415 21.8744 20.4863C21.8744 20.6311 21.9319 20.7699 22.0342 20.8723C22.1366 20.9746 22.2754 21.0321 22.4202 21.0321H27.7183C27.863 21.0321 28.0019 20.9746 28.1042 20.8723C28.2066 20.7699 28.2641 20.6311 28.2641 20.4863C28.2641 20.3415 28.2066 20.2027 28.1042 20.1003C28.0019 19.998 27.863 19.9404 27.7183 19.9404H25.6151Z"
+                                fill="white" />
+                            <defs>
+                                <linearGradient id="paint0_linear_1803_61510" x1="24.5152" y1="-4.75" x2="24.5152"
+                                    y2="31.75" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#B68AF4" />
+                                    <stop offset="1" stop-color="#8733FF" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="tool-name">Text to Voice</span>
+                </div>
+                <span class="tool-powerBy">By KrispCall</span>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Tool Heading -->
+            <div class="text-center tool_heading-container">
+                <div class="customtypo-heading">
+                    <h1>Text to Voice Generator</h1>
+                </div>
+                <div class="customtext-l">
+                    <p>Transform any written content (text) into a high-quality, realistic sound that’s ready to
+                        download, share, or use instantly.</p>
+                </div>
+            </div>
+
+            <!-- Tool functions -->
+            <div class="v1_1-free_tools d-flex flex-column">
+                <div class="tool-container">
+
+                    <!-- No. of attempts remain -->
+                    <div class="customtext-s d-flex justify-content-end">
+                        <p>3 <span style="font-weight: 600; color: #8733FF;">free attempts</span> remaining.</p>
+                    </div>
+
+                    <!-- Text area -->
+                    <div class="textarea_div d-flex flex-column">
+                        <textarea id="text_here"
+                            placeholder="Type or paste something and instantly convert into speech..."></textarea>
+                        <div class="customtext-s custom-regular d-flex justify-content-end">
+                            <p id="charCount">0/300</p>
+                        </div>
+                    </div>
+
+                    <!-- Voice menus -->
+                    <div class="voice_menu d-flex align-items-center">
+
+                        <!-- Voice selector -->
+                        <div class="voiceType d-inline-flex align-items-center">
+                            <!-- Selected Voice -->
+                            <div class="voice-toggle d-inline-flex align-items-center" id="voice-dropdown">
+                                <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                                    alt="" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                    fill="none">
+                                    <path
+                                        d="M2.8173 4.57566C2.75634 4.63918 2.70798 4.71462 2.67498 4.79766C2.64198 4.8807 2.625 4.96972 2.625 5.05962C2.625 5.14951 2.64198 5.23853 2.67498 5.32157C2.70798 5.40461 2.75634 5.48005 2.8173 5.54357L6.53631 9.42434C6.59719 9.48795 6.66948 9.53841 6.74906 9.57285C6.82864 9.60728 6.91395 9.625 7.0001 9.625C7.08625 9.625 7.17155 9.60728 7.25113 9.57285C7.33071 9.53841 7.40301 9.48795 7.46388 9.42434L11.1829 5.54357C11.2438 5.48002 11.2921 5.40457 11.3251 5.32153C11.358 5.23849 11.375 5.1495 11.375 5.05962C11.375 4.96974 11.358 4.88074 11.3251 4.7977C11.2921 4.71467 11.2438 4.63922 11.1829 4.57566C11.122 4.51211 11.0497 4.4617 10.9701 4.4273C10.8905 4.3929 10.8052 4.3752 10.7191 4.3752C10.633 4.3752 10.5477 4.3929 10.4681 4.4273C10.3885 4.4617 10.3162 4.51211 10.2553 4.57566L7.0001 7.97156L3.74486 4.57566C3.68399 4.51205 3.6117 4.46159 3.53212 4.42715C3.45254 4.39272 3.36723 4.375 3.28108 4.375C3.19493 4.375 3.10963 4.39272 3.03005 4.42715C2.95047 4.46159 2.87817 4.51205 2.8173 4.57566Z"
+                                        fill="#333333" fill-opacity="0.5" />
+                                </svg>
+                            </div>
+
+                            <!-- Voice Options -->
+                            <ul class="voice-options" id="voice-options">
+                                <!-- Voice Joanna -->
+                                <li class="optionsItems" data-value="Joanna">
+                                    <span class="voiceAvatar">
+                                        <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
+                                            alt="" width="40" height="40">
+                                    </span>
+                                    <div>
+                                        <div class="voiceName customtext-m custom-medium">
+                                            <p style="color: #242424;">Sophia</p>
+                                        </div>
+                                        <div class="voiceGender customtext-s custom-regular">
+                                            <p style="color: #4D4950;">Female</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Voice Matthew -->
+                                <li class="optionsItems" data-value="Matthew">
+                                    <span class="voiceAvatar">
+                                        <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-david-img.png"
+                                            alt="" width="40" height="40">
+                                    </span>
+                                    <div>
+                                        <div class="voiceName customtext-m custom-medium">
+                                            <p style="color: #242424;">David</p>
+                                        </div>
+                                        <div class="voiceGender customtext-s custom-regular">
+                                            <p style="color: #4D4950;">Male</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Voice Amy -->
+                                <li class="optionsItems" data-value="Amy">
+                                    <span class="voiceAvatar">
+                                        <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-Grace-img.png"
+                                            alt="" width="40" height="40">
+                                    </span>
+                                    <div>
+                                        <div class="voiceName customtext-m custom-medium">
+                                            <p style="color: #242424;">Grace</p>
+                                        </div>
+                                        <div class="voiceGender customtext-s custom-regular">
+                                            <p style="color: #4D4950;">Female</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Voice Brian -->
+                                <li class="optionsItems" data-value="Brian">
+                                    <span class="voiceAvatar">
+                                        <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-male-peter-img.png"
+                                            alt="" width="40" height="40">
+                                    </span>
+                                    <div>
+                                        <div class="voiceName customtext-m custom-medium">
+                                            <p style="color: #242424;">Peter</p>
+                                        </div>
+                                        <div class="voiceGender customtext-s custom-regular">
+                                            <p style="color: #4D4950;">Male</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Voice play/pause -->
+                        <div id="playpause_btn" class="d-inline-flex align-items-center">
+                            <!-- Play icon -->
+                            <span class="play">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path
+                                        d="M16.0002 2.33337C13.2971 2.33337 10.6549 3.13488 8.40739 4.6366C6.15991 6.13831 4.40821 8.27276 3.37381 10.77C2.33941 13.2673 2.06877 16.0152 2.59611 18.6663C3.12343 21.3174 4.42505 23.7524 6.33637 25.6638C8.24769 27.5751 10.6829 28.8767 13.3339 29.404C15.985 29.9314 18.733 29.6608 21.2302 28.6264C23.7275 27.592 25.8619 25.8403 27.3635 23.5928C28.8652 21.3454 29.6668 18.7031 29.6668 16C29.6632 12.3765 28.2223 8.90236 25.66 6.34013C23.0979 3.77789 19.6238 2.33691 16.0002 2.33337ZM21.7335 16.4267C21.61 16.6874 21.4274 16.9156 21.2002 17.0934L14.8535 22.0267C14.5862 22.2406 14.2614 22.3704 13.9202 22.4H13.7335C13.4563 22.3971 13.1833 22.3334 12.9335 22.2134C12.6246 22.0578 12.3624 21.8231 12.1735 21.5334C11.9988 21.2387 11.9067 20.9026 11.9068 20.56V11.4C11.9039 11.0715 11.9915 10.7486 12.1601 10.4667C12.3309 10.1798 12.581 9.94828 12.8802 9.80005C13.1637 9.63919 13.4882 9.56501 13.8135 9.58671C14.1458 9.59575 14.4691 9.69733 14.7468 9.88004L21.0935 14.12C21.3374 14.2778 21.5388 14.493 21.6802 14.7467C21.8232 14.9991 21.9011 15.2832 21.9068 15.5734C21.9166 15.8675 21.8572 16.1598 21.7335 16.4267Z"
+                                        fill="#8733FF" />
+                                </svg>
+                            </span>
+                            <!-- pause Icon -->
+                            <span class="pause">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path
+                                        d="M6.17182 25.4941C4.86668 24.2335 3.82565 22.7257 3.10948 21.0585C2.39331 19.3913 2.01634 17.5982 2.00058 15.7837C1.98481 13.9693 2.33056 12.1699 3.01765 10.4905C3.70473 8.81115 4.7194 7.28543 6.00245 6.00239C7.28549 4.71934 8.81121 3.70467 10.4906 3.01759C12.17 2.3305 13.9694 1.98475 15.7838 2.00052C17.5982 2.01628 19.3914 2.39325 21.0585 3.10942C22.7257 3.82559 24.2336 4.86662 25.4941 6.17176C27.9833 8.74901 29.3607 12.2008 29.3295 15.7837C29.2984 19.3667 27.8613 22.794 25.3277 25.3276C22.7941 27.8612 19.3667 29.2983 15.7838 29.3295C12.2009 29.3606 8.74907 27.9833 6.17182 25.4941ZM12.4167 10.3669C12.0394 10.3669 11.7335 10.6728 11.7335 11.0502V20.6157C11.7335 20.993 12.0394 21.2989 12.4167 21.2989H13.7832C14.1606 21.2989 14.4665 20.993 14.4665 20.6157V11.0502C14.4665 10.6728 14.1606 10.3669 13.7832 10.3669H12.4167ZM17.8827 10.3669C17.5054 10.3669 17.1995 10.6728 17.1995 11.0502V20.6157C17.1995 20.993 17.5054 21.2989 17.8827 21.2989H19.2492C19.6266 21.2989 19.9325 20.993 19.9325 20.6157V11.0502C19.9325 10.6728 19.6266 10.3669 19.2492 10.3669H17.8827Z"
+                                        fill="#8733FF" />
+                                </svg>
+                            </span>
+                            <!-- loading spiner -->
+                            <span class="loaderDiv d-inline-flex align-items-center justify-content-center">
+                                <span class="loadingDiv d-inline-flex align-items-center justify-content-center"></span>
+                            </span>
+                        </div>
+
+                        <!-- Download Button -->
+                        <div class="downloadBtn-div">
+                            <button id="downloadButton" class="d-inline-flex align-items-center justify-content-center"
+                                disabled>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path d="M10 12.6981V2.67725" stroke="#A8A8A8" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" />
+                                    <path
+                                        d="M6.14453 9.16162L9.44945 12.4665C9.59561 12.6113 9.79303 12.6925 9.9987 12.6925C10.2044 12.6925 10.4018 12.6113 10.5479 12.4665L13.8529 9.16162"
+                                        stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.29297 11.5415V15.3957C2.29297 15.9068 2.496 16.3969 2.8574 16.7583C3.21879 17.1197 3.70896 17.3228 4.22005 17.3228H15.7825C16.2936 17.3228 16.7838 17.1197 17.1452 16.7583C17.5066 16.3969 17.7096 15.9068 17.7096 15.3957V11.5415"
+                                        stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                            <button id="downloadButton" class="d-inline-flex align-items-center justify-content-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                    fill="none">
+                                    <path d="M10 12.6981V2.67725" stroke="#A8A8A8" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" />
+                                    <path
+                                        d="M6.14453 9.16162L9.44945 12.4665C9.59561 12.6113 9.79303 12.6925 9.9987 12.6925C10.2044 12.6925 10.4018 12.6113 10.5479 12.4665L13.8529 9.16162"
+                                        stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M2.29297 11.5415V15.3957C2.29297 15.9068 2.496 16.3969 2.8574 16.7583C3.21879 17.1197 3.70896 17.3228 4.22005 17.3228H15.7825C16.2936 17.3228 16.7838 17.1197 17.1452 16.7583C17.5066 16.3969 17.7096 15.9068 17.7096 15.3957V11.5415"
+                                        stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Request Access -->
+                <div class="request-bulk-free_tool d-flex">
+                    <div class="customtext-m flex-grow-1 d-flex flex-column">
+                        <div class="title">Need Bulk Text To Voice Generator?</div>
+                        <p>We offer bulk APIs for Text-to-Voice generators. Get in touch with us.</p>
+                    </div>
+                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                        class="bulk-requestAccess d-inline-flex align-items-center flex-shrink-0 justify-content-center">
+                        Request Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const textArea = document.getElementById("text_here");
+        const charCount = document.getElementById("charCount");
+        let previousText = ""; // Stores last valid text
+
+        textArea.addEventListener("input", () => {
+            if (textArea.value.length > 300) {
+                textArea.value = previousText; // Prevent overflow
+            } else {
+                previousText = textArea.value;
+                charCount.innerText = `${textArea.value.length}/300`;
+            }
+        });
+
+        // Voice Menu
+        const voiceDropdown = document.getElementById("voice-dropdown");
+        const voiceOptions = document.getElementById("voice-options");
+        const selectedVoice = voiceDropdown.querySelector("img");
+        const dropdownSVG = voiceDropdown.querySelector("svg");
+
+        // Store the voice value once selected
+        let voiceValue;
+
+        // Toggle Dropdown
+        voiceDropdown.addEventListener("click", (event) => {
+            event.stopPropagation(); // Prevent immediate closing
+            voiceOptions.classList.toggle("show");
+            dropdownSVG.classList.toggle("rotated");
+        });
+
+        // Handle Selection using Event Delegation
+        voiceOptions.addEventListener("click", (event) => {
+            const item = event.target.closest(".optionsItems");
+            if (item) {
+                selectedVoice.src = item.querySelector(".voiceAvatar img").src;
+                voiceValue = item.getAttribute("data-value");
+                console.log(voiceValue);
+
+                voiceOptions.classList.remove("show");
+                dropdownSVG.classList.remove("rotated");
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener("click", ({ target }) => {
+            if (!voiceDropdown.contains(target)) {
+                voiceOptions.classList.remove("show");
+                dropdownSVG.classList.remove("rotated");
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

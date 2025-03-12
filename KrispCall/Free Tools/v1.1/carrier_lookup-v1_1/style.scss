@@ -144,11 +144,11 @@ body {
 .iti {
     width: 100%;
     height: 100%;
-    &__country-container {
+    &__flag-container {
         width: 100% !important;
         padding: 0 !important;
     }
-    &__selected-country {
+    &__selected-flag {
         width: 100%;
         padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right);
         padding-right: calc(var(--inputs_padding-left_right) + 14px);
@@ -184,7 +184,7 @@ body {
         width: 14px;
         margin: 0;
     }
-    &__selected-country-primary {
+    &__selected-flag-primary {
         padding: 0;
     }
     &__arrow.iti__arrow--up {
@@ -265,6 +265,7 @@ body {
 .initialContent {
     img {
         margin-bottom: 16px;
+        max-width: 100%;
     }
     p {
         color: #4d4950;
@@ -384,7 +385,7 @@ body {
         padding: 16px 12px;
         height: 57px;
         align-items: center;
-        border-bottom:1px solid rgba(209, 212, 220, 0.5);
+        border-bottom: 1px solid rgba(209, 212, 220, 0.5);
 
         &:not(:nth-child(even)) {
             border-right: 1px solid rgba(209, 212, 220, 0.5);
@@ -394,28 +395,18 @@ body {
         }
         p {
             color: #4d4950;
+            white-space: nowrap;
+            
+            &:first-child {
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
         }
     }
 }
 
-.result-validity > span {
-    border-radius: 4px;
-    background: rgba(135, 51, 255, 0.07);
-    display: inline-flex;
-    height: 25px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    color: #8733ff;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 14px;
-    letter-spacing: -0.02em;
-}
-
-/* Get Real Country Numbers */
-/* Number Lists */
+// Get Real Country Numbers 
+// Number Lists
 .get_countryNumber {
     border-radius: 16px;
     border: 1px solid rgba(209, 212, 220, 0.3);
@@ -611,34 +602,26 @@ body {
         > div {
             width: 100%;
             border-right: 0 !important;
-            &:not(:last-child) {
+            border-bottom: 0;
+            &:not(.order_5) {
                 border-bottom: 1px solid rgba(209, 212, 220, 0.5);
             }
         }
-    }
-
-    .result-local {
-        order: 1;
-    }
-
-    .result-country {
-        order: 3;
-    }
-
-    .result-validity {
-        order: 2;
-    }
-
-    .result-region {
-        order: 5;
-    }
-
-    .result-city {
-        order: 4;
-    }
-
-    .result-line_type {
-        order: 6;
+        .order_1 {
+            order: 1;
+        }
+        .order_2 {
+            order: 2;
+        }
+        .order_3 {
+            order: 3;
+        }
+        .order_4 {
+            order: 4;
+        }
+        .order_5 {
+            order: 5;
+        }
     }
 
     .get_countryNumber {
