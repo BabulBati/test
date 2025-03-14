@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Text to Voice Generator</title>
+    <title>Voicemail Greeting Generator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../typo.css">
 </head>
@@ -84,13 +84,14 @@
                             <div class="voice_menu d-flex align-items-center">
 
                                 <!-- Voice selector -->
-                                <div class="voiceType d-inline-flex align-items-center">
+                                <div
+                                    class="voiceType d-inline-flex align-items-center position-relative custom-dropdown">
                                     <!-- Selected Voice -->
                                     <div class="voice-toggle d-inline-flex align-items-center" id="voice-dropdown">
                                         <img src="https://krispcall.com/wp-content/uploads/2024/11/text-to-speech-voive-female-sophia-img.png"
                                             alt="" />
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            viewBox="0 0 14 14" fill="none">
+                                            viewBox="0 0 14 14" fill="none" class="toggle_chevron">
                                             <path
                                                 d="M2.8173 4.57566C2.75634 4.63918 2.70798 4.71462 2.67498 4.79766C2.64198 4.8807 2.625 4.96972 2.625 5.05962C2.625 5.14951 2.64198 5.23853 2.67498 5.32157C2.70798 5.40461 2.75634 5.48005 2.8173 5.54357L6.53631 9.42434C6.59719 9.48795 6.66948 9.53841 6.74906 9.57285C6.82864 9.60728 6.91395 9.625 7.0001 9.625C7.08625 9.625 7.17155 9.60728 7.25113 9.57285C7.33071 9.53841 7.40301 9.48795 7.46388 9.42434L11.1829 5.54357C11.2438 5.48002 11.2921 5.40457 11.3251 5.32153C11.358 5.23849 11.375 5.1495 11.375 5.05962C11.375 4.96974 11.358 4.88074 11.3251 4.7977C11.2921 4.71467 11.2438 4.63922 11.1829 4.57566C11.122 4.51211 11.0497 4.4617 10.9701 4.4273C10.8905 4.3929 10.8052 4.3752 10.7191 4.3752C10.633 4.3752 10.5477 4.3929 10.4681 4.4273C10.3885 4.4617 10.3162 4.51211 10.2553 4.57566L7.0001 7.97156L3.74486 4.57566C3.68399 4.51205 3.6117 4.46159 3.53212 4.42715C3.45254 4.39272 3.36723 4.375 3.28108 4.375C3.19493 4.375 3.10963 4.39272 3.03005 4.42715C2.95047 4.46159 2.87817 4.51205 2.8173 4.57566Z"
                                                 fill="#333333" fill-opacity="0.5" />
@@ -162,7 +163,57 @@
                                     </ul>
                                 </div>
 
-                                <!-- play / wave  -->
+                                <!-- Music selector -->
+                                <div class="musicType position-relative custom-dropdown">
+                                    <!-- Selected Music -->
+                                    <div class="music-toggle d-inline-flex align-items-center" id="music-dropdown">
+                                        <div class="d-inline-flex align-items-center">
+                                            <span
+                                                class="music-icon d-inline-flex justify-content-center align-items-center flex-shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    viewBox="0 0 14 14" fill="none">
+                                                    <path
+                                                        d="M12.4079 2.85361V9.41863C12.407 9.90943 12.2394 10.3854 11.9327 10.7686C11.6259 11.1518 11.1981 11.4195 10.7194 11.5278C10.2406 11.6361 9.73931 11.5787 9.29747 11.3648C8.85564 11.151 8.49949 10.7935 8.28737 10.3509C8.07526 9.9083 8.01968 9.40671 8.12986 8.92837C8.23998 8.45008 8.50924 8.0233 8.89361 7.71801C9.27792 7.41267 9.75453 7.24692 10.2454 7.2479C10.7362 7.24882 11.2122 7.41641 11.5954 7.72321V5.55652L5.92414 6.58571V9.99821C5.92414 10.4267 5.79709 10.8456 5.55901 11.2019C5.32094 11.5582 4.98254 11.8359 4.58663 11.9999C4.19073 12.1639 3.75508 12.2068 3.33479 12.1232C2.91449 12.0396 2.52843 11.8333 2.22542 11.5303C1.9224 11.2273 1.71606 10.8412 1.63246 10.4209C1.54886 10.0006 1.59175 9.56493 1.75574 9.16903C1.91973 8.77312 2.19744 8.43475 2.55374 8.19668C2.91005 7.95862 3.32896 7.83155 3.75748 7.83155C4.25496 7.83252 4.73695 8.00466 5.1225 8.31905V4.30527C5.11649 3.93078 5.24311 3.56623 5.47998 3.27611C5.72265 2.99271 6.05544 2.80145 6.42247 2.73445L11.2433 1.85152C11.4615 1.81144 11.6868 1.8457 11.8832 1.94881C12.0796 2.05192 12.2357 2.21792 12.3266 2.42027C12.387 2.55644 12.4149 2.70482 12.4079 2.85361Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </span>
+                                            <div class="customtext-s custom-regular musicSelected">
+                                                <p>Select background music</p>
+                                            </div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="toggle_chevron" width="14"
+                                            height="14" viewBox="0 0 14 14" fill="none" class="flex-shrink-0">
+                                            <path
+                                                d="M2.8173 4.57566C2.75634 4.63918 2.70798 4.71462 2.67498 4.79766C2.64198 4.8807 2.625 4.96972 2.625 5.05962C2.625 5.14951 2.64198 5.23853 2.67498 5.32157C2.70798 5.40461 2.75634 5.48005 2.8173 5.54357L6.53631 9.42434C6.59719 9.48795 6.66948 9.53841 6.74906 9.57285C6.82864 9.60728 6.91395 9.625 7.0001 9.625C7.08625 9.625 7.17155 9.60728 7.25113 9.57285C7.33071 9.53841 7.40301 9.48795 7.46388 9.42434L11.1829 5.54357C11.2438 5.48002 11.2921 5.40457 11.3251 5.32153C11.358 5.23849 11.375 5.1495 11.375 5.05962C11.375 4.96974 11.358 4.88074 11.3251 4.7977C11.2921 4.71467 11.2438 4.63922 11.1829 4.57566C11.122 4.51211 11.0497 4.4617 10.9701 4.4273C10.8905 4.3929 10.8052 4.3752 10.7191 4.3752C10.633 4.3752 10.5477 4.3929 10.4681 4.4273C10.3885 4.4617 10.3162 4.51211 10.2553 4.57566L7.0001 7.97156L3.74486 4.57566C3.68399 4.51205 3.6117 4.46159 3.53212 4.42715C3.45254 4.39272 3.36723 4.375 3.28108 4.375C3.19493 4.375 3.10963 4.39272 3.03005 4.42715C2.95047 4.46159 2.87817 4.51205 2.8173 4.57566Z"
+                                                fill="#333333" fill-opacity="0.5" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Music Options -->
+                                    <ul class="music-options customtext-s custom-regular" id="music-options">
+                                        <li>Select background music</li>
+                                        <li data-value="">
+                                            <p>No Background Music</p>
+                                        </li>
+                                        <li data-value="Country.mp3">
+                                            <p>Country</p>
+                                        </li>
+                                        <li data-value="dreamer.mp3">
+                                            <p>Dreamer</p>
+                                        </li>
+                                        <li data-value="Fresh.mp3">
+                                            <p>Fresh</p>
+                                        </li>
+                                        <li data-value="Waterfall.mp3">
+                                            <p>Waterfall</p>
+                                        </li>
+                                        <li data-value="Strings and Piano.mp3">
+                                            <p>Instrumental</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Voice Control play / wave  -->
                                 <div class="d-inline-flex align-items-center flex-grow-1 voiceControl">
                                     <!-- Voice play/pause -->
                                     <div id="playpause_btn" class="d-inline-flex align-items-center">
@@ -239,16 +290,13 @@
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
 
                 <!-- Request Access -->
                 <div class="request-bulk-free_tool d-flex">
                     <div class="customtext-m flex-grow-1 d-flex flex-column">
-                        <div class="title">Need Bulk Text To Voice Generator?</div>
-                        <p>We offer bulk APIs for Text-to-Voice generators. Get in touch with us.</p>
+                        <div class="title">Need Bulk Voicemail Greeting Generator?</div>
+                        <p>We offer bulk APIs for Voicemail Greeting generators. Get in touch with us.</p>
                     </div>
                     <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
                         class="bulk-requestAccess d-inline-flex align-items-center flex-shrink-0 justify-content-center">
@@ -260,7 +308,9 @@
     </div>
 
 
+
     <script>
+
         const textArea = document.getElementById("text_here");
         const charCount = document.getElementById("charCount");
         let previousText = ""; // Stores last valid text
@@ -274,45 +324,83 @@
             }
         });
 
+        // Initialize voice and music values as const since they won't be reassigned
+        let voiceValue = "", musicValue = "";
+
         // Voice Menu
         const voiceDropdown = document.getElementById("voice-dropdown");
         const voiceOptions = document.getElementById("voice-options");
-        const selectedVoice = voiceDropdown.querySelector("img");
-        const dropdownSVG = voiceDropdown.querySelector("svg");
+        const selectedVoice = voiceDropdown?.querySelector("img");
+        const voiceChevron = voiceDropdown?.querySelector(".toggle_chevron");
 
-        // Store the voice value once selected
-        let voiceValue;
+        // Music Menu
+        const musicDropdown = document.getElementById("music-dropdown");
+        const musicOptions = document.getElementById("music-options");
+        const selectedmusic = musicDropdown?.querySelector("p");
+        const musicChevron = musicDropdown?.querySelector(".toggle_chevron");
 
-        // Toggle Dropdown
-        voiceDropdown.addEventListener("click", (event) => {
-            event.stopPropagation(); // Prevent immediate closing
-            voiceOptions.classList.toggle("show");
-            dropdownSVG.classList.toggle("rotated");
-        });
+        // Toggle Dropdown (Voice)
+        if (voiceDropdown && voiceOptions && voiceChevron) {
+            voiceDropdown.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent immediate closing
+                voiceOptions.classList.toggle("show");
+                voiceChevron.classList.toggle("rotated");
+                musicOptions.classList.remove("show");
+                musicChevron.classList.remove("rotated");
+            });
 
-        // Handle Selection using Event Delegation
-        voiceOptions.addEventListener("click", (event) => {
-            const item = event.target.closest(".optionsItems");
-            if (item) {
-                selectedVoice.src = item.querySelector(".voiceAvatar img").src;
-                voiceValue = item.getAttribute("data-value");
-                console.log(voiceValue);
+            // Handle Selection using Event Delegation (Voice)
+            voiceOptions.addEventListener("click", (event) => {
+                const item = event.target.closest(".optionsItems");
+                if (item) {
+                    event.stopPropagation();
+                    selectedVoice.src = item.querySelector(".voiceAvatar img").src;
+                    voiceValue = item.getAttribute("data-value");
+                    console.log(voiceValue);
+                    voiceOptions.classList.remove("show");
+                    voiceChevron.classList.remove("rotated");
+                }
+            });
+        }
 
+        // Toggle Dropdown (Music)
+        if (musicDropdown && musicOptions && musicChevron) {
+            musicDropdown.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent immediate closing
+                musicOptions.classList.toggle("show");
+                musicChevron.classList.toggle("rotated");
                 voiceOptions.classList.remove("show");
-                dropdownSVG.classList.remove("rotated");
-            }
-        });
+                voiceChevron.classList.remove("rotated");
+            });
 
-        // Close when clicking outside
+            // Handle Selection using Event Delegation (Music)
+            musicOptions.addEventListener("click", (event) => {
+                const item = event.target.closest("li");
+                if (item) {
+                    event.stopPropagation();
+                    selectedmusic.textContent = item.querySelector("p").textContent;
+                    musicValue = item.getAttribute("data-value");
+                    console.log(musicValue);
+                    musicOptions.classList.remove("show");
+                    musicChevron.classList.remove("rotated");
+                }
+            });
+        }
+
+        // Close both dropdowns when clicking outside of them
         document.addEventListener("click", ({ target }) => {
-            if (!voiceDropdown.contains(target)) {
+            if (voiceDropdown && musicDropdown &&
+                !voiceDropdown.contains(target) &&
+                !musicDropdown.contains(target)) {
                 voiceOptions.classList.remove("show");
-                dropdownSVG.classList.remove("rotated");
+                voiceChevron.classList.remove("rotated");
+                musicOptions.classList.remove("show");
+                musicChevron.classList.remove("rotated");
             }
         });
+
+
     </script>
-
-
 </body>
 
 </html>

@@ -173,6 +173,11 @@ body {
   transform-origin: center center;
   top: unset;
 }
+.iti__country-list {
+  width: 100%;
+  border-radius: 8px;
+  overflow-x: hidden !important;
+}
 
 #countryselector,
 #numberSearch {
@@ -334,21 +339,6 @@ body {
   border: 1px solid rgba(209, 212, 220, 0.5);
   border-radius: 16px;
 }
-.resultData span {
-  color: #fff;
-  font-family: "Manrope", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  border-radius: 8px;
-  background: #8733ff;
-  display: inline-flex;
-  padding: 8px 24px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
 .resultData > div {
   width: 50%;
   display: flex;
@@ -366,11 +356,14 @@ body {
 }
 .resultData > div p {
   color: #4d4950;
-  white-space: nowrap;
 }
 .resultData > div p:first-child {
+  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.resultData > div p:last-child {
+  text-align: right;
 }
 
 .get_countryNumber {

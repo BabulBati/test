@@ -192,6 +192,11 @@ body {
         transform-origin: center center;
         top: unset;
     }
+    &__country-list {
+        width: 100%;
+        border-radius: 8px;
+        overflow-x: hidden !important;
+    }
 }
 
 #countryselector,
@@ -363,21 +368,6 @@ body {
     flex-wrap: wrap;
     border: 1px solid rgba(209, 212, 220, 0.5);
     border-radius: 16px;
-    span {
-        color: #fff;
-        font-family: "Manrope", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 24px;
-        letter-spacing: -0.01em;
-        border-radius: 8px;
-        background: #8733ff;
-        display: inline-flex;
-        padding: 8px 24px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
     > div {
         width: calc(100% / 2);
         display: flex;
@@ -395,17 +385,19 @@ body {
         }
         p {
             color: #4d4950;
-            white-space: nowrap;
-            
             &:first-child {
+                white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+            }
+            &:last-child {
+                text-align: right;
             }
         }
     }
 }
 
-// Get Real Country Numbers 
+// Get Real Country Numbers
 // Number Lists
 .get_countryNumber {
     border-radius: 16px;

@@ -36,6 +36,9 @@ body {
   z-index: 1;
 }
 
+.tool-badge {
+  padding: 0 0 0 40px;
+}
 .tool-badge .tool_name-icon {
   gap: 0 6px;
 }
@@ -146,10 +149,16 @@ body {
   color: #a8a8a8;
 }
 
+.toggle_chevron {
+  transition: transform 0.1s ease;
+}
+.toggle_chevron.rotated {
+  transform: rotate(-180deg);
+}
+
 .voice_menu {
   margin-top: 24px;
   gap: 0 16px;
-  position: relative;
 }
 
 .voice-toggle {
@@ -162,12 +171,6 @@ body {
 .voice-toggle img {
   width: 32px;
   height: 32px;
-}
-.voice-toggle svg {
-  transition: transform 0.1s ease;
-}
-.voice-toggle svg.rotated {
-  transform: rotate(-180deg);
 }
 
 .voice-options {
@@ -200,8 +203,73 @@ body {
   background-color: #f9f9f9;
 }
 
+.musicType {
+  width: 248px;
+}
+
+.music-toggle {
+  border-radius: 8px;
+  border: 1px solid rgba(209, 212, 220, 0.5);
+  background: #fff;
+  width: 100%;
+  height: 44px;
+  padding: 12px;
+  gap: 0 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.music-toggle > div {
+  gap: 0 8px;
+}
+
+.music-icon {
+  border-radius: 50rem;
+  height: 26px;
+  width: 26px;
+  background: linear-gradient(180deg, #b68af4 -17.59%, #8733ff 117.59%);
+  box-shadow: 0px 3.25px 6.5px 0px rgba(124, 32, 255, 0.08), 0px 1.625px 3.25px 0px rgba(124, 32, 255, 0.24);
+}
+
+.music-options {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  border-radius: 8px;
+  background: #fff !important;
+  width: 220px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  display: none;
+}
+.music-options.show {
+  display: block;
+}
+.music-options li {
+  color: #4d4950;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.music-options li[data-value]:hover {
+  background: #f9f9f9;
+}
+.music-options li:not([data-value]) {
+  color: #7d7d7d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  cursor: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .voiceControl {
-  gap: inherit;
+  gap: 0 8px;
 }
 
 #playpause_btn {
@@ -360,6 +428,9 @@ body {
   .v1_1-free_tools {
     gap: 24px 0;
   }
+  .tool-badge {
+    padding: 0;
+  }
   .tool-badge .tool_name-icon {
     gap: 0 4px;
   }
@@ -384,6 +455,23 @@ body {
   }
   .voice_menu {
     margin-top: 20px;
+    gap: 0 8px;
+  }
+  .musicType {
+    width: auto;
+  }
+  .music-toggle {
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    gap: 0 8px;
+    height: unset;
+  }
+  .music-toggle > div {
+    gap: 0;
+  }
+  .music-toggle .musicSelected {
+    display: none;
   }
   .request-bulk-free_tool {
     padding: 20px;
@@ -421,9 +509,6 @@ body {
     padding: 16px;
     height: 308px;
   }
-  .voice_menu {
-    gap: 0 12px;
-  }
   .voice-toggle {
     gap: 0 4px;
   }
@@ -438,6 +523,9 @@ body {
   .voiceAvatar img {
     max-width: 100%;
     height: auto;
+  }
+  .music-toggle {
+    gap: 0 4px;
   }
   #playpause_btn > span {
     width: 28px;
