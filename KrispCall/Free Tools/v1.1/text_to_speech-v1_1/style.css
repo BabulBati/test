@@ -36,6 +36,9 @@ body {
   z-index: 1;
 }
 
+.tool-badge {
+  padding-left: 60px;
+}
 .tool-badge .tool_name-icon {
   gap: 0 6px;
 }
@@ -359,6 +362,9 @@ body {
 @media (max-width: 991px) {
   .v1_1-free_tools {
     gap: 24px 0;
+  }
+  .tool-badge {
+    padding-left: 0;
   }
   .tool-badge .tool_name-icon {
     gap: 0 4px;

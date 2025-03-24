@@ -9,8 +9,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Css to remove header and footer */
+#header,
+footer {
+  display: none !important;
+}
+
+.hentry {
+  padding: 0 !important;
+}
+
+/*------------*/
 .free_tools-section {
   position: relative;
+  background: #fafafa;
 }
 .free_tools-section::before, .free_tools-section::after {
   content: "";
@@ -36,6 +48,22 @@ body {
   z-index: 1;
 }
 
+.tool_badge-container .close_tool > a {
+  gap: 0 6px;
+  color: #4d4950;
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tool_badge-container .close-icon svg {
+  height: 100%;
+  width: 100%;
+}
+
 .tool-badge .tool_name-icon {
   gap: 0 6px;
 }
@@ -45,8 +73,8 @@ body {
 }
 .tool-badge .tool-name {
   background: linear-gradient(180deg, #b68af4 -17.59%, #8733ff 117.59%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Manrope", sans-serif;
   font-size: 20px;
@@ -55,16 +83,16 @@ body {
   letter-spacing: -0.02em;
 }
 .tool-badge .tool-powerBy {
+  margin-top: -4px;
   color: #242424;
   font-size: 14px !important;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: -0.02em;
-  padding: 3px 6px;
 }
 
 .tool_heading-container {
-  margin: 0 0 40px;
+  margin: 48px 0 40px;
 }
 .tool_heading-container * {
   margin: 0;
@@ -95,8 +123,12 @@ body {
   background: #fff;
   box-shadow: 0px 280px 78px 0px rgba(0, 0, 0, 0), 0px 179px 72px 0px rgba(0, 0, 0, 0), 0px 101px 61px 0px rgba(0, 0, 0, 0.01), 0px 45px 45px 0px rgba(0, 0, 0, 0.02), 0px 11px 25px 0px rgba(0, 0, 0, 0.02);
   display: flex;
-  padding: 24px 24px 80px 24px;
+  padding: 24px;
+  gap: 24px;
   flex-direction: column;
+}
+.tool-container.beforeSearch {
+  padding: 24px 24px 80px 24px;
   gap: 80px;
 }
 
@@ -156,8 +188,6 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
   right: var(--inputs_padding-left_right);
   border: 0;
   background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/caret-down.png) center no-repeat;
@@ -176,7 +206,7 @@ body {
 .iti__country-list {
   width: 100%;
   border-radius: 8px;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
 }
 
 #countryselector,
@@ -189,16 +219,25 @@ body {
   width: 100%;
   position: relative;
 }
-.numberSearch::before {
-  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+.numberSearch::before, .numberSearch::after {
   position: absolute;
   top: 50%;
-  left: var(--inputs_padding-left_right);
-  height: 20px;
-  width: 20px;
   z-index: 1;
   transform: translateY(-50%);
   pointer-events: none;
+  height: 20px;
+  width: 20px;
+}
+.numberSearch::before {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+  left: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon::after {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250317_112544/input_error.svg);
+  right: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon #numberSearch {
+  padding-right: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
 }
 
 #numberSearch {
@@ -246,10 +285,12 @@ body {
   width: inherit;
   height: 44px !important;
 }
+.free_tools-submit:hover {
+  background: #e0e0e0;
+}
 
 .initialContent img {
   margin-bottom: 16px;
-  max-width: 100%;
 }
 .initialContent p {
   color: #4d4950;
@@ -263,14 +304,10 @@ body {
   color: #4d4950;
   margin: 0 0 8px;
 }
-.checking_number > div:nth-child(2) {
+.checking_number .dummy_layout-container {
   border-radius: 12px;
   border: 1px solid rgba(209, 212, 220, 0.5);
-  display: flex;
-  padding-bottom: 37px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 31px;
+  overflow: hidden;
 }
 
 .progress-bar {
@@ -280,39 +317,24 @@ body {
   width: 100%;
 }
 
-.finalResult > div:first-child {
-  margin: 0 0 8px;
-}
-.finalResult > div:first-child p {
-  color: #4d4950 !important;
-}
-.finalResult > div:first-child span {
-  color: #8733ff;
-  font-weight: 600;
-}
-
 .dummy_layout {
-  width: 100%;
-}
-.dummy_layout > div {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 9px 0;
+  gap: 0 24px;
+  padding: 26px 12px 32px;
 }
 .dummy_layout .row {
   flex-wrap: nowrap !important;
   justify-content: space-between;
-  padding: 0 12px;
   gap: 0 24px;
-  height: 40px;
-  align-items: center;
+  width: 100%;
 }
 .dummy_layout span {
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.08);
-  flex-shrink: 1;
   height: 16px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  width: 100% !important;
   animation: testAnimation 1.9s linear infinite;
 }
 .dummy_layout span:first-child {
@@ -333,6 +355,17 @@ body {
     background: rgba(0, 0, 0, 0.18);
   }
 }
+.finalResult > div:first-child {
+  margin: 0 0 8px;
+}
+.finalResult > div:first-child p {
+  color: #4d4950 !important;
+}
+.finalResult > div:first-child span {
+  color: #8733ff;
+  font-weight: 600;
+}
+
 .resultData {
   display: flex;
   flex-wrap: wrap;
@@ -344,7 +377,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 16px 12px;
-  height: 57px;
+  height: 46px;
   align-items: center;
   border-bottom: 1px solid rgba(209, 212, 220, 0.5);
 }
@@ -354,11 +387,26 @@ body {
 .resultData > div:nth-child(n+5) {
   border-bottom: 0;
 }
+.resultData > div span {
+  color: #8733ff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: -0.02em;
+  border-radius: 4px;
+  background: rgba(135, 51, 255, 0.07);
+  padding: 8px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .resultData > div p {
   color: #4d4950;
+  white-space: nowrap;
 }
 .resultData > div p:first-child {
-  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -366,17 +414,66 @@ body {
   text-align: right;
 }
 
+.max_limit {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 320px;
+  width: 100%;
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(209, 212, 220, 0.2);
+  background: #fff;
+  box-shadow: 0px 20px 24px -4px rgba(10, 13, 18, 0.08), 0px 8px 8px -4px rgba(10, 13, 18, 0.03);
+}
+.max_limit .limit_request-btn {
+  margin-top: 20px;
+  color: #8733ff;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #8733ff;
+  display: flex;
+  height: 40px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.error_div {
+  border-radius: 12px;
+  border: 1px solid rgba(209, 212, 220, 0.2);
+  background: #fff;
+  box-shadow: 0px 20px 24px -4px rgba(10, 13, 18, 0.08), 0px 8px 8px -4px rgba(10, 13, 18, 0.03);
+  padding: 16px;
+  gap: 8px;
+}
+.error_div p {
+  line-height: 24px !important;
+}
+
+/* Get Real Country Numbers */
+/* Number Lists */
 .get_countryNumber {
   border-radius: 16px;
   border: 1px solid rgba(209, 212, 220, 0.3);
   background: #fff;
 }
 .get_countryNumber .numberLists {
-  display: flex;
   padding: 24px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
 }
 .get_countryNumber .numberLists .heading {
   color: #242424;
@@ -392,6 +489,7 @@ body {
   gap: var(--row_gap) var(--col_gap);
   --row_gap: 24px;
   --col_gap: 16px;
+  margin-top: 32px;
 }
 
 .gen_num {
@@ -402,11 +500,12 @@ body {
   padding: 12px 16px;
   justify-content: center;
   flex-basis: calc((100% - var(--col_gap) * 2) / 3);
-  min-width: 178px;
+  min-width: 176px;
   flex-grow: 1;
   cursor: pointer;
+  height: 48px;
 }
-.gen_num .number {
+.gen_num > span {
   color: #1a181b;
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -508,12 +607,17 @@ body {
   height: 44px;
 }
 
+@media (max-width: 1199px) {
+  .tool_heading-container {
+    margin-top: 24px;
+  }
+}
 @media (max-width: 991px) {
-  .tool-badge .tool_name-icon {
-    gap: 0 4px;
+  .v1_1-free_tools {
+    gap: 24px;
   }
   .tool_heading-container {
-    margin: 32px 0;
+    margin: 24px 0;
   }
   .tool_heading-container h1 {
     margin: 0 0 20px;
@@ -522,14 +626,25 @@ body {
     max-width: 490px;
     margin: 0 auto;
   }
+  .tool-container {
+    padding: 20px;
+    gap: 20px;
+  }
+  .tool-container.beforeSearch {
+    padding: 20px 20px 64px 20px;
+    gap: 64px;
+  }
+  .tool-container.beforeSearch .max_limit {
+    bottom: 10px;
+  }
   .checking_number > div:nth-child(2) {
     gap: 0;
     padding: 0;
   }
   .dummy_layout {
-    padding: 10.5px 16px;
+    padding: 32px 16px;
   }
-  .dummy_layout .right-div {
+  .dummy_layout .row:nth-child(n+2) {
     display: none;
   }
   .dummy_layout span:first-child {
@@ -563,7 +678,6 @@ body {
   }
   .get_countryNumber .numberLists {
     padding: 20px;
-    gap: 24px;
   }
   .get_countryNumber .numberLists .heading {
     font-size: 18px;
@@ -571,8 +685,9 @@ body {
   }
   .numbers_lists {
     --row_gap: 20px;
+    margin-top: 24px;
   }
-  .gen_num .number {
+  .gen_num > span {
     font-size: 14px;
     line-height: 20px;
   }
@@ -587,6 +702,14 @@ body {
   }
   .selectedNumber-container .btn-div {
     margin: 24px 0 0;
+  }
+  .max_limit {
+    bottom: unset;
+    top: calc(50% - 40px);
+  }
+  .error_div {
+    flex-direction: column;
+    text-align: center;
   }
   .request-bulk-free_tool {
     padding: 20px;
@@ -604,6 +727,9 @@ body {
   .free_tools-section::before, .free_tools-section::after {
     content: none;
   }
+  .free_tools-section .container {
+    padding: 0 20px;
+  }
   .tool-badge .tool-icon {
     width: 32px;
   }
@@ -611,8 +737,15 @@ body {
     font-size: 18px;
     line-height: 28px;
   }
-  .tool_heading-container {
-    margin: 24px 0;
+  .tool-badge .tool-powerBy {
+    font-size: 12px !important;
+  }
+  .tool_badge-container .close-icon {
+    height: 20px;
+    width: 20px;
+  }
+  .v1_1-free_tools {
+    gap: 20px;
   }
   .tool_heading-container h1 {
     margin: 0 0 16px;
@@ -629,6 +762,7 @@ body {
   .numberSearch {
     flex-grow: 1;
     flex-basis: 150px;
+    max-width: 100%;
   }
   .checkNumBtn {
     width: 100%;
@@ -638,6 +772,17 @@ body {
   }
   .initialContent p {
     font-size: 14px !important;
+  }
+  .dummy_layout {
+    padding: 16px 8px;
+  }
+  .dummy_layout span:first-child {
+    width: 52.5%;
+    max-width: 179px;
+  }
+  .dummy_layout span:last-child {
+    width: 34.3%;
+    max-width: 117px;
   }
   .finalResult > div:first-child {
     margin: 0 0 8px;
@@ -654,28 +799,21 @@ body {
   .finalResult > div:first-child p:nth-child(2) {
     order: 1;
   }
-  .dummy_layout {
-    padding: 10.5px 8px;
-  }
-  .dummy_layout span:first-child {
-    width: 52.5%;
-    max-width: 179px;
-  }
-  .dummy_layout span:last-child {
-    width: 34.3%;
-    max-width: 117px;
-  }
   .get_countryNumber .numberLists {
     padding: 16px;
-    gap: 20px;
   }
   .get_countryNumber .numberLists .heading {
     font-size: 16px;
     line-height: 20px;
   }
+  .gen_num {
+    padding: 12px;
+    gap: 6px;
+  }
   .numbers_lists {
     --row_gap: 12px;
     --col_gap: 8px;
+    margin-top: 20px;
   }
   .selectedNumber {
     padding: 24px 16px;
@@ -685,6 +823,13 @@ body {
   }
   .selectedNumber-container .btn-div {
     margin: 20px 0 0;
+  }
+  .max_limit {
+    bottom: unset;
+    top: 50%;
+  }
+  .error_div {
+    padding: 12px;
   }
   .request-bulk-free_tool {
     flex-direction: column;

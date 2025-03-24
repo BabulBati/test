@@ -194,16 +194,25 @@ body {
   width: 100%;
   position: relative;
 }
-.numberSearch::before {
-  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+.numberSearch::before, .numberSearch::after {
   position: absolute;
   top: 50%;
-  left: var(--inputs_padding-left_right);
-  height: 20px;
-  width: 20px;
   z-index: 1;
   transform: translateY(-50%);
   pointer-events: none;
+  height: 20px;
+  width: 20px;
+}
+.numberSearch::before {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+  left: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon::after {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250317_112544/input_error.svg);
+  right: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon #numberSearch {
+  padding-right: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
 }
 
 #numberSearch {

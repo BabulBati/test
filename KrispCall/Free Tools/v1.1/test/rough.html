@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form class="free_tools-form">
+        <div class="countrySelector">
+            <input type="tel" id="countryselector">
+        </div>
+        <div class="numberSearch">
+            <input type="tel" id="numberSearch" placeholder="Enter Phone Number" maxlength="20" required>
+        </div>
+        <div class="checkNumBtn">
+            <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
+        </div>
+    </form>
+    <script>
+        const countrySelector = document.getElementById("countryselector");
+        const searchNumber = document.getElementById("numberSearch");
+
+        // Initialize intlTelInput
+        const itiCountrySelector = window.intlTelInput(countrySelector, {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
+            initialCountry: "us",
+            separateDialCode: true,
+        });
+
+        countrySelector.addEventListener("countrychange", updateCountryInfo);
+    </script>
+</body>
+
+</html>

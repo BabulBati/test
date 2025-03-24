@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Speech to Text Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../typo.css">
+    <!-- <link rel="stylesheet" href="../section_style.css"> -->
+</head>
+
+<body>
+    <div class="container-fluid free_tools-section p-0">
+
+        <div class="container">
+
+            <!-- Tool Badge -->
+            <div class="d-flex justify-content-between tool_badge-container">
+                <!-- Tool icon and name -->
+                <div class="d-inline-flex flex-column align-items-end tool-badge">
+                    <div class="d-inline-flex align-items-center tool_name-icon">
+                        <div class="d-inline-flex tool-icon align-items-center justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="26" viewBox="0 0 39 26"
+                                fill="none">
+                                <circle cx="10.5" cy="12.5" r="10" fill="#FF3EAB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M13.2872 12.3699V9.36725C13.2097 8.79456 12.9272 8.2694 12.4921 7.88914C12.0569 7.50887 11.4985 7.29932 10.9206 7.29932C10.3427 7.29932 9.78444 7.50887 9.34927 7.88914C8.91409 8.2694 8.63159 8.79456 8.5541 9.36725V12.3699C8.63159 12.9426 8.91409 13.4678 9.34927 13.848C9.78444 14.2283 10.3427 14.4379 10.9206 14.4379C11.4985 14.4379 12.0569 14.2283 12.4921 13.848C12.9272 13.4678 13.2097 12.9426 13.2872 12.3699ZM11.3253 17.2704V15.9226H11.3037C12.2902 15.8249 13.205 15.3632 13.8697 14.6278C14.5345 13.8923 14.9015 12.9356 14.8994 11.9442C14.8994 11.837 14.8568 11.7342 14.7809 11.6584C14.7052 11.5825 14.6023 11.5399 14.4951 11.5399C14.3879 11.5399 14.285 11.5825 14.2091 11.6584C14.1334 11.7342 14.0908 11.837 14.0908 11.9442C14.0908 12.7906 13.7545 13.6024 13.1561 14.2009C12.5576 14.7994 11.7458 15.1356 10.8994 15.1356C10.053 15.1356 9.24125 14.7994 8.64275 14.2009C8.04426 13.6024 7.70804 12.7906 7.70804 11.9442C7.70804 11.837 7.66545 11.7342 7.58963 11.6584C7.51381 11.5825 7.41097 11.5399 7.30373 11.5399C7.19651 11.5399 7.09367 11.5825 7.01784 11.6584C6.94202 11.7342 6.89942 11.837 6.89942 11.9442C6.89727 12.9356 7.26433 13.8923 7.92906 14.6278C8.59379 15.3632 9.50855 15.8249 10.4951 15.9226V17.2704H8.95872C8.85149 17.2704 8.74865 17.313 8.67283 17.3888C8.597 17.4646 8.55441 17.5674 8.55441 17.6747C8.55441 17.7819 8.597 17.8847 8.67283 17.9606C8.74865 18.0364 8.85149 18.079 8.95872 18.079H12.8832C12.9904 18.079 13.0933 18.0364 13.1691 17.9606C13.2449 17.8847 13.2875 17.7819 13.2875 17.6747C13.2875 17.5674 13.2449 17.4646 13.1691 17.3888C13.0933 17.313 12.9904 17.2704 12.8832 17.2704H11.3253Z"
+                                    fill="white" />
+                                <g style="mix-blend-mode:multiply">
+                                    <path
+                                        d="M14.9239 7.73475C15.5426 6.21131 16.4618 4.82816 17.6268 3.66788C18.7945 2.5086 20.1754 1.58649 21.6937 0.952473C23.9809 0.00515397 26.4976 -0.242512 28.9256 0.240845C31.3535 0.724202 33.5835 1.91683 35.3334 3.66788C36.5034 4.82658 37.4271 6.20993 38.0488 7.73475C38.6761 9.25039 38.9992 10.8746 38.9999 12.5148C39.0075 14.1333 38.6927 15.7371 38.0738 17.2324L38.6995 21.7999C38.7833 22.1901 38.7701 22.5951 38.661 22.979C38.5519 23.363 38.3503 23.7143 38.0738 24.0022C37.7984 24.286 37.4596 24.5004 37.0853 24.6279C36.7143 24.7497 36.3192 24.7798 35.9341 24.7155L31.3666 24.0397C29.8328 24.6976 28.1804 25.034 26.5114 25.0283C24.4545 25.028 22.4295 24.5206 20.6153 23.5512C18.8012 22.5817 17.2542 21.1799 16.1109 19.4701C14.9677 17.7601 14.2636 15.7947 14.0609 13.7478C13.8583 11.701 14.1632 9.63566 14.9489 7.73475H14.9239ZM31.8422 14.5296C32.2406 14.5296 32.6302 14.4114 32.9615 14.19C33.2928 13.9687 33.551 13.6541 33.7035 13.2859C33.8559 12.9178 33.8958 12.5127 33.8181 12.1219C33.7404 11.731 33.5485 11.3721 33.2667 11.0903C32.985 10.8086 32.626 10.6167 32.2352 10.539C31.8444 10.4613 31.4393 10.501 31.0712 10.6536C30.7031 10.806 30.3884 11.0643 30.167 11.3956C29.9456 11.7269 29.8275 12.1164 29.8275 12.5148C29.8275 12.7795 29.8796 13.0414 29.9808 13.2859C30.0821 13.5303 30.2305 13.7524 30.4176 13.9395C30.6046 14.1266 30.8268 14.275 31.0712 14.3762C31.3156 14.4775 31.5776 14.5296 31.8422 14.5296ZM26.4865 14.5296C26.8849 14.5296 27.2744 14.4114 27.6057 14.19C27.937 13.9687 28.1952 13.6541 28.3477 13.2859C28.5001 12.9178 28.5401 12.5127 28.4623 12.1219C28.3846 11.731 28.1927 11.3721 27.911 11.0903C27.6292 10.8086 27.2702 10.6167 26.8794 10.539C26.4886 10.4613 26.0835 10.501 25.7154 10.6536C25.3472 10.806 25.0327 11.0643 24.8113 11.3956C24.5899 11.7269 24.4717 12.1164 24.4717 12.5148C24.4717 13.0492 24.684 13.5617 25.0618 13.9395C25.4396 14.3173 25.9521 14.5296 26.4865 14.5296ZM21.1307 14.5296C21.5291 14.5296 21.9186 14.4114 22.2499 14.19C22.5813 13.9687 22.8394 13.6541 22.992 13.2859C23.1444 12.9178 23.1843 12.5127 23.1066 12.1219C23.0289 11.731 22.8369 11.3721 22.5552 11.0903C22.2734 10.8086 21.9144 10.6167 21.5236 10.539C21.1328 10.4613 20.7278 10.501 20.3596 10.6536C19.9915 10.806 19.6769 11.0643 19.4555 11.3956C19.2342 11.7269 19.1159 12.1164 19.1159 12.5148C19.1159 13.0492 19.3283 13.5617 19.7061 13.9395C20.0838 14.3173 20.5964 14.5296 21.1307 14.5296Z"
+                                        fill="url(#paint0_linear_1803_64642)" />
+                                </g>
+                                <defs>
+                                    <linearGradient id="paint0_linear_1803_64642" x1="26.4859" y1="-4.40314"
+                                        x2="26.4859" y2="29.4315" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#B68AF4" />
+                                        <stop offset="1" stop-color="#8733FF" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="tool-name">Speech to Text</span>
+                    </div>
+                    <span class="tool-powerBy">By KrispCall</span>
+                </div>
+
+                <!-- close button -->
+                <div class="close_tool ">
+                    <a class="d-inline-flex align-items-center" href="/">
+                        <span class="close-icon d-inline-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.947 2H12.053C14.2009 2 15.8837 2 17.1963 2.17674C18.5405 2.35721 19.6009 2.73395 20.4335 3.56651C21.2651 4.39907 21.6428 5.45954 21.8233 6.80279C22 8.11628 22 9.79907 22 11.947V12.053C22 14.2009 22 15.8837 21.8233 17.1963C21.6428 18.5405 21.266 19.6009 20.4335 20.4335C19.6009 21.2651 18.5405 21.6428 17.1972 21.8233C15.8837 22 14.2009 22 12.053 22H11.947C9.79907 22 8.11628 22 6.80372 21.8233C5.45953 21.6428 4.39907 21.266 3.56651 20.4335C2.73488 19.6009 2.35721 18.5405 2.17674 17.1972C2 15.8837 2 14.2009 2 12.053V11.947C2 9.79907 2 8.11628 2.17674 6.80372C2.35721 5.45953 2.73395 4.39907 3.56651 3.56651C4.39907 2.73488 5.45954 2.35721 6.80279 2.17674C8.11628 2 9.79907 2 11.947 2ZM6.98977 3.55907C5.8 3.71907 5.08372 4.02326 4.55349 4.55349C4.02419 5.08372 3.71907 5.8 3.55907 6.98977C3.39721 8.19907 3.39535 9.78791 3.39535 12C3.39535 14.2121 3.39721 15.8009 3.55907 17.0102C3.71907 18.2 4.02326 18.9163 4.55256 19.4465C5.08279 19.9758 5.8 20.2809 6.98977 20.4409C8.19907 20.6028 9.78791 20.6047 12 20.6047C14.2121 20.6047 15.8009 20.6028 17.0102 20.4409C18.2 20.2809 18.9163 19.9767 19.4465 19.4474C19.9758 18.9172 20.2809 18.2 20.4409 17.0102C20.6028 15.8009 20.6047 14.2121 20.6047 12C20.6047 9.78791 20.6028 8.19907 20.4409 6.98977C20.2809 5.8 19.9767 5.08372 19.4474 4.55349C18.9172 4.02419 18.2 3.71907 17.0102 3.55907C15.8009 3.39721 14.2121 3.39535 12 3.39535C9.78791 3.39535 8.19907 3.39721 6.98977 3.55907ZM9.67943 8.99349C9.86018 8.9903 10.0351 9.05739 10.1674 9.18063L11.9999 11.0132L13.8325 9.18063C13.8963 9.11208 13.9734 9.05711 14.059 9.01897C14.1445 8.98084 14.2369 8.96034 14.3306 8.95868C14.4243 8.95703 14.5173 8.97426 14.6042 9.00935C14.6911 9.04444 14.77 9.09667 14.8362 9.16292C14.9025 9.22917 14.9547 9.30809 14.9898 9.39496C15.0249 9.48183 15.0421 9.57488 15.0405 9.66856C15.0388 9.76224 15.0183 9.85462 14.9802 9.9402C14.942 10.0258 14.8871 10.1028 14.8185 10.1667L12.986 11.9992L14.8185 13.8318C14.9418 13.964 15.0089 14.139 15.0057 14.3197C15.0025 14.5005 14.9293 14.6729 14.8014 14.8007C14.6736 14.9286 14.5011 15.0018 14.3204 15.005C14.1397 15.0082 13.9647 14.9411 13.8325 14.8178L11.9999 12.9853L10.1674 14.8178C10.1035 14.8864 10.0265 14.9414 9.94088 14.9795C9.8553 15.0176 9.76292 15.0381 9.66924 15.0398C9.57556 15.0414 9.48251 15.0242 9.39564 14.9891C9.30877 14.954 9.22985 14.9018 9.1636 14.8355C9.09735 14.7693 9.04513 14.6904 9.01004 14.6035C8.97495 14.5166 8.95771 14.4236 8.95937 14.3299C8.96102 14.2362 8.98152 14.1439 9.01966 14.0583C9.05779 13.9727 9.11277 13.8957 9.18131 13.8318L11.0139 11.9992L9.18131 10.1667C9.05808 10.0344 8.99098 9.85949 8.99417 9.67875C8.99736 9.498 9.07058 9.32555 9.19841 9.19773C9.32623 9.0699 9.49869 8.99668 9.67943 8.99349Z"
+                                    fill="#242424" />
+                            </svg>
+                        </span>
+                        <span class="d-none d-md-block">Close</span>
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- Tool Heading -->
+            <div class="text-center tool_heading-container">
+                <div class="customtypo-heading">
+                    <h1>Speech to Text Generator</h1>
+                </div>
+                <div class="customtext-l">
+                    <p>Turn your voice into text effortlessly – ready to share and use instantly.</p>
+                </div>
+            </div>
+
+            <!-- Tool functions -->
+            <div class="v1_1-free_tools d-flex flex-column">
+                <div class="tool-container">
+                    <!-- No. of attempts remain -->
+                    <div class="customtext-s d-flex justify-content-end">
+                        <p id="countDisplay">3 <span>free attempts</span> remaining.</p>
+                    </div>
+
+                    <div class="position-relative">
+                        <!-- Speech to Text  -->
+                        <div class="speech_to_text">
+                            <!-- Speech menu -->
+                            <div class="speech_menu d-flex justify-content-between">
+                                <!-- Voice Model selector -->
+                                <div class="voiceModel d-inline-flex position-relative custom-dropdown">
+                                    <!-- Selected Voice Model -->
+                                    <div class="voiceModel-toggle d-inline-flex align-items-center"
+                                        id="voiceModel-dropdown">
+                                        <div class="customtext-s custom-regular selected-voiceModel">
+                                            <p>American English</p>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13"
+                                            viewBox="0 0 12 13" fill="none" class="toggle_chevron">
+                                            <path
+                                                d="M2 4.7085L5.2933 8.00188C5.48165 8.18753 5.7355 8.29158 6 8.29158C6.2645 8.29158 6.51835 8.18753 6.7067 8.00188L10 4.7085"
+                                                stroke="#4D4950" stroke-width="1.2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Voice Model Options -->
+                                    <ul class="voiceModel-options custom-regular customtext-s" id="voiceModel-options">
+                                        <li>Select accent</li>
+                                        <li data-value="en-US">
+                                            <p>American English</p>
+                                        </li>
+                                        <li data-value="en-AU">
+                                            <p>Australian English</p>
+                                        </li>
+                                        <li data-value="en-GB">
+                                            <p>British English</p>
+                                        </li>
+                                        <li data-value="en-IN">
+                                            <p>Indian English</p>
+                                        </li>
+                                        <li data-value="en-NZ">
+                                            <p>New Zealand English</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="speech_text-action_btns d-flex">
+                                    <div class="copy_text-btn">
+                                        <div class="action_button" id="copyText">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M15.2721 6.07031H8.56907C7.68308 6.07031 6.96484 6.79337 6.96484 7.68531V16.092C6.96484 16.9839 7.68308 17.707 8.56907 17.707H15.2721C16.158 17.707 16.8762 16.9839 16.8762 16.092V7.68531C16.8762 6.79337 16.158 6.07031 15.2721 6.07031Z"
+                                                    stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M13.035 6.07098V3.90602C13.035 3.47769 12.866 3.06691 12.565 2.76404C12.2642 2.46117 11.8562 2.29102 11.4307 2.29102H4.72774C4.30228 2.29102 3.89424 2.46117 3.59339 2.76404C3.29255 3.06691 3.12354 3.47769 3.12354 3.90602V12.3128C3.12354 12.7411 3.29255 13.1518 3.59339 13.4547C3.89424 13.7576 4.30228 13.9278 4.72774 13.9278H6.96496"
+                                                    stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="button-tooltip">
+                                            <span class="tooltip-div">
+                                                Copy text
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="clear_text-btn">
+                                        <div class="action_button" id="clearText">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M14.6714 6.42108C14.0592 5.80592 13.3312 5.31813 12.5295 4.98584C11.7277 4.65356 10.8681 4.48338 10.0002 4.48512C8.24787 4.48512 6.56734 5.18125 5.32826 6.42032C4.08917 7.6594 3.39307 9.33994 3.39307 11.0922C3.39307 12.8454 4.08889 14.5269 5.32772 15.7674C6.56654 17.0079 8.24707 17.7059 10.0002 17.7083C11.7533 17.7059 13.4339 17.0079 14.6727 15.7674C15.9116 14.5269 16.6074 12.8454 16.6074 11.0922"
+                                                    stroke="#A8A8A8" stroke-width="1.5" stroke-miterlimit="10"
+                                                    stroke-linecap="round" />
+                                                <path
+                                                    d="M14.0671 2.29175L14.8574 5.50651C14.9273 5.79146 14.8814 6.09246 14.73 6.34373C14.5785 6.595 14.3339 6.77612 14.0493 6.84749L10.8257 7.63785"
+                                                    stroke="#A8A8A8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="button-tooltip">
+                                            <span class="tooltip-div">
+                                                Clear text
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Response/Output Section -->
+                            <div id="response" class="customtext-m custom-medium">
+                                <!-- Initial text -->
+                                <p id="initial_text">Please click on the microphone icon to start speaking.</p>
+
+                                <!-- Listining...... -->
+                                <p id="listening_status">Listening....</p>
+
+                                <!-- Generating....... -->
+                                <p id="generating_status">Generating...</p>
+
+                                <!-- Response text -->
+                                <p id="finalResponse_text">
+                                    <!-- Transcription text will appear here -->
+                                </p>
+
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-end">
+                                <!-- Record Button -->
+                                <button id="record" class="record_action-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M21.9063 7.78194V15.2086C21.7147 16.625 21.0159 17.924 19.9396 18.8645C18.8632 19.805 17.4823 20.3233 16.053 20.3233C14.6236 20.3233 13.2428 19.805 12.1664 18.8645C11.0901 17.924 10.3914 16.625 10.1997 15.2086V7.78194C10.3914 6.36549 11.0901 5.06658 12.1664 4.12606C13.2428 3.18554 14.6236 2.66724 16.053 2.66724C17.4823 2.66724 18.8632 3.18554 19.9396 4.12606C21.0159 5.06658 21.7147 6.36549 21.9063 7.78194Z"
+                                            fill="white" />
+                                        <path
+                                            d="M17.0531 23.9923V27.3256H20.9065C21.1717 27.3256 21.4261 27.4311 21.6135 27.6186C21.8011 27.8062 21.9065 28.0604 21.9065 28.3256C21.9065 28.591 21.8011 28.8452 21.6135 29.0328C21.4261 29.2203 21.1717 29.3256 20.9065 29.3256H11.1998C10.9346 29.3256 10.6802 29.2203 10.4927 29.0328C10.3052 28.8452 10.1998 28.591 10.1998 28.3256C10.1998 28.0604 10.3052 27.8062 10.4927 27.6186C10.6802 27.4311 10.9346 27.3256 11.1998 27.3256H14.9998V23.9923C12.5597 23.7504 10.2972 22.6087 8.65311 20.7896C7.009 18.9704 6.10114 16.6043 6.10647 14.1523C6.10647 13.8871 6.21183 13.6328 6.39936 13.4452C6.5869 13.2577 6.84126 13.1523 7.10647 13.1523C7.3717 13.1523 7.62606 13.2577 7.81359 13.4452C8.00112 13.6328 8.10647 13.8871 8.10647 14.1523C8.10647 16.2458 8.93804 18.2535 10.4183 19.7338C11.8986 21.214 13.9063 22.0458 15.9998 22.0458C18.0933 22.0458 20.101 21.214 21.5813 19.7338C23.0615 18.2535 23.8931 16.2458 23.8931 14.1523C23.8931 13.8871 23.9985 13.6328 24.1859 13.4452C24.3735 13.2577 24.6279 13.1523 24.8931 13.1523C25.1583 13.1523 25.4127 13.2577 25.6002 13.4452C25.7878 13.6328 25.8931 13.8871 25.8931 14.1523C25.8985 16.6043 24.9906 18.9704 23.3465 20.7896C21.7023 22.6087 19.4398 23.7504 16.9998 23.9923H17.0531Z"
+                                            fill="white" />
+                                    </svg>
+                                    <!-- Record Button -->
+                                    <button id="listening_btn" class="record_action-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                            viewBox="0 0 32 32" fill="none">
+                                            <rect x="5" y="5" width="22" height="22" rx="4" fill="white" />
+                                        </svg>
+                                    </button>
+                            </div>
+                        </div>
+                        <!-- Limit Reached  -->
+                        <div class="max_limit" style="display: none;">
+                            <div class="text-center">
+                                <div class="customtext-m custom-medium">
+                                    <p style="color: #242424;">Maximum Limit Reached</p>
+                                </div>
+                                <div class="customtext-s custom-regular">
+                                    <p style="color: #4d4950;">You have reached the maximum limit for free text to
+                                        voice
+                                        generator.</p>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                                        class="limit_request-btn">Request Access</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Access -->
+                <div class="request-bulk-free_tool d-flex">
+                    <div class="customtext-m flex-grow-1 d-flex flex-column">
+                        <div class="title">Need Bulk Voicemail Greeting Generator?</div>
+                        <p>We offer bulk APIs for Voicemail Greeting generators. Get in touch with us.</p>
+                    </div>
+                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                        class="bulk-requestAccess d-inline-flex align-items-center flex-shrink-0 justify-content-center">
+                        Request Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Initialize Voice Model value
+        let voiceModelValue = "en-US";
+
+        // Music Menu
+        const voiceModelDropdown = document.getElementById("voiceModel-dropdown");
+        const voiceModelOptions = document.getElementById("voiceModel-options");
+        const selectedVoiceModel = voiceModelDropdown?.querySelector("p");
+        const voiceModelChevron = voiceModelDropdown?.querySelector(".toggle_chevron");
+
+        // Toggle Dropdown (Music)
+        if (voiceModelDropdown && voiceModelOptions && voiceModelChevron) {
+            voiceModelDropdown.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent immediate closing
+                voiceModelOptions.classList.toggle("show");
+                voiceModelChevron.classList.toggle("rotated");
+            });
+
+            // Handle Selection using Event Delegation (Music)
+            voiceModelOptions.addEventListener("click", (event) => {
+                const item = event.target.closest("li");
+                if (item) {
+                    event.stopPropagation();
+                    selectedVoiceModel.textContent = item.querySelector("p").textContent;
+                    voiceModelValue = item.getAttribute("data-value");
+                    console.log(voiceModelValue);
+                    voiceModelOptions.classList.remove("show");
+                    voiceModelChevron.classList.remove("rotated");
+                }
+            });
+        }
+
+        // Close both dropdowns when clicking outside of them
+        document.addEventListener("click", ({ target }) => {
+            if (voiceModelDropdown && !voiceModelDropdown.contains(target)) {
+                voiceModelOptions.classList.remove("show");
+                voiceModelChevron.classList.remove("rotated");
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

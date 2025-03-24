@@ -9,8 +9,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Css to remove header and footer */
+#header,
+footer {
+  display: none !important;
+}
+
+.hentry {
+  padding: 0 !important;
+}
+
+/*------------*/
 .free_tools-section {
   position: relative;
+  background: #fafafa;
 }
 .free_tools-section::before, .free_tools-section::after {
   content: "";
@@ -36,9 +48,22 @@ body {
   z-index: 1;
 }
 
-.tool-badge {
-  padding-left: 40px;
+.tool_badge-container .close_tool > a {
+  gap: 0 6px;
+  color: #4d4950;
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  cursor: pointer;
 }
+.tool_badge-container .close-icon svg {
+  height: 100%;
+  width: 100%;
+}
+
 .tool-badge .tool_name-icon {
   gap: 0 6px;
 }
@@ -58,16 +83,16 @@ body {
   letter-spacing: -0.02em;
 }
 .tool-badge .tool-powerBy {
+  margin-top: -4px;
   color: #242424;
   font-size: 14px !important;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: -0.02em;
-  padding: 3px 6px;
 }
 
 .tool_heading-container {
-  margin: 0 0 40px;
+  margin: 48px 0 40px;
 }
 .tool_heading-container * {
   margin: 0;
@@ -194,16 +219,25 @@ body {
   width: 100%;
   position: relative;
 }
-.numberSearch::before {
-  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+.numberSearch::before, .numberSearch::after {
   position: absolute;
   top: 50%;
-  left: var(--inputs_padding-left_right);
-  height: 20px;
-  width: 20px;
   z-index: 1;
   transform: translateY(-50%);
   pointer-events: none;
+  height: 20px;
+  width: 20px;
+}
+.numberSearch::before {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+  left: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon::after {
+  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250317_112544/input_error.svg);
+  right: var(--inputs_padding-left_right);
+}
+.numberSearch.ero_icon #numberSearch {
+  padding-right: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
 }
 
 #numberSearch {
@@ -251,13 +285,8 @@ body {
   width: inherit;
   height: 44px !important;
 }
-
-.resultContainer.errorMSG {
-  filter: blur(2.5px);
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+.free_tools-submit:hover {
+  background: #e0e0e0;
 }
 
 .initialContent img {
@@ -305,6 +334,7 @@ body {
   height: 16px;
   flex-shrink: 1;
   flex-grow: 1;
+  width: 100% !important;
   animation: testAnimation 1.9s linear infinite;
 }
 .dummy_layout span:first-child {
@@ -334,16 +364,6 @@ body {
 .finalResult > div:first-child span {
   color: #8733ff;
   font-weight: 600;
-}
-.finalResult.limitReached > div:first-child p:last-child span {
-  color: #ff4b55;
-}
-.finalResult.limitReached .resultData {
-  filter: blur(2.5px);
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 
 .resultData {
@@ -395,7 +415,6 @@ body {
 }
 
 .max_limit {
-  display: none;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -439,7 +458,7 @@ body {
   border: 1px solid rgba(209, 212, 220, 0.2);
   background: #fff;
   box-shadow: 0px 20px 24px -4px rgba(10, 13, 18, 0.08), 0px 8px 8px -4px rgba(10, 13, 18, 0.03);
-  padding: 24px 20px;
+  padding: 16px;
   gap: 8px;
 }
 .error_div p {
@@ -455,8 +474,6 @@ body {
 }
 .get_countryNumber .numberLists {
   padding: 24px;
-  flex-direction: column;
-  align-items: flex-start;
 }
 .get_countryNumber .numberLists .heading {
   color: #242424;
@@ -483,7 +500,7 @@ body {
   padding: 12px 16px;
   justify-content: center;
   flex-basis: calc((100% - var(--col_gap) * 2) / 3);
-  min-width: 178px;
+  min-width: 176px;
   flex-grow: 1;
   cursor: pointer;
   height: 48px;
@@ -590,15 +607,17 @@ body {
   height: 44px;
 }
 
-@media (max-width: 991px) {
-  .tool-badge {
-    padding-left: 0;
+@media (max-width: 1199px) {
+  .tool_heading-container {
+    margin-top: 24px;
   }
-  .tool-badge .tool_name-icon {
-    gap: 0 4px;
+}
+@media (max-width: 991px) {
+  .v1_1-free_tools {
+    gap: 24px;
   }
   .tool_heading-container {
-    margin: 32px 0;
+    margin: 24px 0;
   }
   .tool_heading-container h1 {
     margin: 0 0 20px;
@@ -614,6 +633,9 @@ body {
   .tool-container.beforeSearch {
     padding: 20px 20px 64px 20px;
     gap: 64px;
+  }
+  .tool-container.beforeSearch .max_limit {
+    bottom: 10px;
   }
   .checking_number > div:nth-child(2) {
     gap: 0;
@@ -684,6 +706,14 @@ body {
   .selectedNumber-container .btn-div {
     margin: 24px 0 0;
   }
+  .max_limit {
+    bottom: unset;
+    top: calc(50% - 40px);
+  }
+  .error_div {
+    flex-direction: column;
+    text-align: center;
+  }
   .request-bulk-free_tool {
     padding: 20px;
     gap: 20px;
@@ -700,6 +730,9 @@ body {
   .free_tools-section::before, .free_tools-section::after {
     content: none;
   }
+  .free_tools-section .container {
+    padding: 0 20px;
+  }
   .tool-badge .tool-icon {
     width: 32px;
   }
@@ -707,8 +740,15 @@ body {
     font-size: 18px;
     line-height: 28px;
   }
-  .tool_heading-container {
-    margin: 24px 0;
+  .tool-badge .tool-powerBy {
+    font-size: 12px !important;
+  }
+  .tool_badge-container .close-icon {
+    height: 20px;
+    width: 20px;
+  }
+  .v1_1-free_tools {
+    gap: 20px;
   }
   .tool_heading-container h1 {
     margin: 0 0 16px;
@@ -725,6 +765,7 @@ body {
   .numberSearch {
     flex-grow: 1;
     flex-basis: 150px;
+    max-width: 100%;
   }
   .checkNumBtn {
     width: 100%;
@@ -768,6 +809,10 @@ body {
     font-size: 16px;
     line-height: 20px;
   }
+  .gen_num {
+    padding: 12px;
+    gap: 6px;
+  }
   .numbers_lists {
     --row_gap: 12px;
     --col_gap: 8px;
@@ -781,6 +826,13 @@ body {
   }
   .selectedNumber-container .btn-div {
     margin: 20px 0 0;
+  }
+  .max_limit {
+    bottom: unset;
+    top: 50%;
+  }
+  .error_div {
+    padding: 12px;
   }
   .request-bulk-free_tool {
     flex-direction: column;
