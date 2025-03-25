@@ -11,8 +11,18 @@ body {
 
 // -------------------------
 
+/* Css to remove header and footer */
+#header,
+footer {
+    display: none !important;
+}
+.hentry {
+    padding: 0 !important;
+}
+/*------------*/
 .free_tools-section {
     position: relative;
+    background: #fafafa;
     &::before,
     &::after {
         content: "";
@@ -40,9 +50,25 @@ body {
     }
 }
 
-// Tool Badge
+// Tool Badge ---------------------------------------------------------------------------------
+.tool_badge-container {
+    .close_tool > a {
+        gap: 0 6px;
+        color: #4d4950;
+        font-family: "Inter", sans-serif !important;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .close-icon svg {
+        height: 100%;
+        width: 100%;
+    }
+}
 .tool-badge {
-    padding-left: 60px;
     .tool_name-icon {
         gap: 0 6px;
     }
@@ -62,18 +88,19 @@ body {
         letter-spacing: -0.02em;
     }
     .tool-powerBy {
+        margin-top: -4px;
         color: #242424;
         font-size: 14px !important;
         font-weight: 400;
         line-height: 16px;
         letter-spacing: -0.02em;
-        padding: 3px 6px;
     }
 }
+// --------------------------------------------------------------------------------------------
 
-// Tool Heading
+// Tool Heading -------------------------------------------------------------------------------
 .tool_heading-container {
-    margin: 0 0 40px;
+    margin: 48px 0 40px;
     * {
         margin: 0;
     }
@@ -84,8 +111,6 @@ body {
     p {
         color: #4d4950;
         font-weight: 400;
-        max-width: 782px;
-        margin: 0 auto;
     }
 }
 // --------------------------------------------------------------------------------------------
@@ -130,7 +155,7 @@ body {
     height: 154px;
 }
 
-#text_here {
+#text {
     resize: none !important;
     border: 0 !important;
     outline: 0 !important;
@@ -236,6 +261,9 @@ body {
     width: 27.33px;
     aspect-ratio: 1;
     position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     &::before {
         content: "";
         position: absolute;
@@ -302,7 +330,7 @@ body {
     }
 }
 
-// Request Access
+// Request Access -----------------------------------------------------------------------------
 .request-bulk-free_tool {
     border-radius: 12px;
     border: 1px solid rgba(209, 212, 220, 0.6);
@@ -408,7 +436,7 @@ body {
         height: 282px;
     }
 
-    #text_here {
+    #text {
         font-size: 14px !important;
     }
 
