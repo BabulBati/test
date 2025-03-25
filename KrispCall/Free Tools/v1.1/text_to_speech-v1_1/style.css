@@ -9,8 +9,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Css to remove header and footer */
+#header,
+footer {
+  display: none !important;
+}
+
+.hentry {
+  padding: 0 !important;
+}
+
+/*------------*/
 .free_tools-section {
   position: relative;
+  background: #fafafa;
 }
 .free_tools-section::before, .free_tools-section::after {
   content: "";
@@ -36,9 +48,22 @@ body {
   z-index: 1;
 }
 
-.tool-badge {
-  padding-left: 60px;
+.tool_badge-container .close_tool > a {
+  gap: 0 6px;
+  color: #4d4950;
+  font-family: "Inter", sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  cursor: pointer;
 }
+.tool_badge-container .close-icon svg {
+  height: 100%;
+  width: 100%;
+}
+
 .tool-badge .tool_name-icon {
   gap: 0 6px;
 }
@@ -58,16 +83,16 @@ body {
   letter-spacing: -0.02em;
 }
 .tool-badge .tool-powerBy {
+  margin-top: -4px;
   color: #242424;
   font-size: 14px !important;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: -0.02em;
-  padding: 3px 6px;
 }
 
 .tool_heading-container {
-  margin: 0 0 40px;
+  margin: 48px 0 40px;
 }
 .tool_heading-container * {
   margin: 0;
@@ -79,8 +104,6 @@ body {
 .tool_heading-container p {
   color: #4d4950;
   font-weight: 400;
-  max-width: 782px;
-  margin: 0 auto;
 }
 
 .v1_1-free_tools {
@@ -117,7 +140,7 @@ body {
   height: 154px;
 }
 
-#text_here {
+#text {
   resize: none !important;
   border: 0 !important;
   outline: 0 !important;
@@ -132,13 +155,13 @@ body {
   line-height: 150%;
   letter-spacing: -0.02em;
 }
-#text_here::-moz-placeholder {
+#text::-moz-placeholder {
   color: #a8a8a8;
 }
-#text_here::placeholder {
+#text::placeholder {
   color: #a8a8a8;
 }
-#text_here::-moz-placeholder {
+#text::-moz-placeholder {
   color: #a8a8a8;
 }
 
@@ -225,6 +248,9 @@ body {
   width: 27.33px;
   aspect-ratio: 1;
   position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .loadingDiv::before {
   content: "";
@@ -385,7 +411,7 @@ body {
   .textarea_div {
     height: 282px;
   }
-  #text_here {
+  #text {
     font-size: 14px !important;
   }
   .voice_menu {
