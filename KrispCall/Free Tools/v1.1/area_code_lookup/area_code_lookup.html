@@ -86,12 +86,12 @@
                     <!-- Number Search and Results -->
                     <div class="tool-container beforeSearch position-relative">
                         <div class="d-flex switchTab">
-                            <div class="selectTab active" id="lookByPlace">Lookup by Place</div>
-                            <div class="selectTab" id="lookByAreaCode">Area Code</div>
+                            <div class="selectTab active" data-target="lookByPlace" aria-selected="true">Lookup by Place</div>
+                            <div class="selectTab" data-target="lookByAreaCode" aria-selected="false">Area Code</div>
                         </div>
                         <div>
                             <!-- Input from -->
-                            <form class="free_tools-form">
+                            <form class="tab-form place-lookup" data-id="lookByPlace">
                                 <div>
                                     <div class="countrySelector">
                                         <input type="tel" id="countryselector" maxlength="0">
@@ -101,170 +101,174 @@
                                             maxlength="30" required>
                                     </div>
                                 </div>
-                                <div>
-                                    <div>
-                                        <input type="number" placeholder="Enter 3 Digit Area Code">
-                                    </div>
-                                </div>
                                 <div class="checkNumBtn">
-                                    <button type="submit" class="free_tools-submit" id="check_num-btn">Validate</button>
+                                    <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
                                 </div>
 
                             </form>
-
-                            <div class="resultContainer">
-                                <!-- Initial Content to display -->
-                                <div class="initialContent">
-                                    <div class="text-center">
-                                        <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250307_111817/Free_tools_initial_table_img.png"
-                                            alt="">
-                                        <p>Your results will appear here.</p>
-                                    </div>
+                            <form class="tab-form area_code-lookup displayNone" data-id="lookByAreaCode">
+                                <div class="globe_icon">
+                                    <input type="text" placeholder="Enter 3 Digit Area Code">
                                 </div>
-
-                                <!-- When searching -->
-                                <div class="checking_number">
-                                    <div class="customtext-s custom-medium">
-                                        <p id="validate">Validating phone number in <span id="seconds">10</span>s
-                                            <span class="d-inline-flex">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    viewBox="0 0 16 16" fill="none">
-                                                    <path
-                                                        d="M14.4923 10.7529C14.4957 10.8987 14.4512 11.0415 14.3656 11.1596C14.2812 11.2799 14.1593 11.369 14.0189 11.4129L12.8789 11.7929C12.5275 11.9088 12.2079 12.1051 11.9456 12.3663C11.6831 12.6275 11.4867 12.9473 11.3723 13.2995L10.9723 14.4329C10.9306 14.5689 10.8465 14.6881 10.7323 14.7729C10.6107 14.8565 10.4665 14.9007 10.3189 14.8995C10.1711 14.9059 10.0253 14.8628 9.90453 14.7771C9.78387 14.6914 9.69507 14.5679 9.65227 14.4262L9.27227 13.2863C9.15793 12.9341 8.9614 12.6141 8.69893 12.3529C8.4342 12.0934 8.11553 11.8954 7.7656 11.7729L6.62563 11.3995C6.49085 11.3519 6.37275 11.2663 6.28562 11.1529C6.19732 11.0329 6.14841 10.8885 6.14563 10.7396C6.13931 10.5917 6.18239 10.4459 6.26809 10.3251C6.3538 10.2045 6.47724 10.1157 6.61895 10.0729L7.7656 9.69294C8.12127 9.57801 8.44447 9.38028 8.70873 9.11601C8.973 8.85174 9.17073 8.52848 9.2856 8.17288L9.6656 7.04621C9.70447 6.90761 9.7872 6.78528 9.90134 6.69754C10.0155 6.60982 10.155 6.56142 10.2989 6.55957C10.4423 6.55992 10.5828 6.59908 10.7056 6.67288C10.8269 6.75654 10.9199 6.87514 10.9723 7.01288L11.3589 8.17288C11.4739 8.52848 11.6716 8.85174 11.9359 9.11601C12.2001 9.38028 12.5233 9.57801 12.8789 9.69294L14.0123 10.0929C14.1502 10.1381 14.2695 10.227 14.3523 10.3462C14.4426 10.4626 14.4919 10.6056 14.4923 10.7529Z"
-                                                        fill="url(#paint0_linear_1803_62558)" />
-                                                    <path
-                                                        d="M7.82571 6.51326C7.82464 6.64395 7.78524 6.77144 7.71231 6.87991C7.63351 6.98724 7.52444 7.06851 7.39904 7.11324L6.559 7.39324C6.32438 7.47484 6.11047 7.60684 5.93234 7.77991C5.75798 7.95711 5.62581 8.17131 5.54567 8.40664L5.259 9.23324C5.21883 9.36104 5.13659 9.47144 5.02567 9.54658C4.91607 9.62311 4.786 9.66491 4.65234 9.66658C4.51568 9.66431 4.38303 9.62011 4.27234 9.53998C4.16749 9.46018 4.0886 9.35118 4.04567 9.22658L3.77234 8.39324C3.69214 8.15998 3.55992 7.94791 3.38568 7.77324C3.21458 7.59458 3.0014 7.46164 2.76567 7.38658L1.93234 7.10658C1.80303 7.06591 1.69063 6.98398 1.61234 6.87331C1.55927 6.79018 1.5253 6.69631 1.51288 6.59846C1.50046 6.50064 1.50989 6.40131 1.5405 6.30757C1.57111 6.21384 1.62213 6.12803 1.68988 6.05639C1.75764 5.98475 1.84045 5.92904 1.93234 5.89326L2.76567 5.61995C3.00147 5.53762 3.21565 5.40312 3.39226 5.22652C3.56886 5.04991 3.70334 4.83573 3.78567 4.59993L4.059 3.77994C4.0983 3.65706 4.17241 3.54819 4.27234 3.46659C4.37854 3.38658 4.50622 3.34013 4.639 3.33325C4.77353 3.32963 4.90601 3.36684 5.019 3.43994C5.13022 3.51501 5.21618 3.6219 5.26567 3.74662L5.54567 4.59993C5.628 4.83573 5.76248 5.04991 5.93909 5.22652C6.1157 5.40312 6.32988 5.53762 6.56568 5.61995L7.39904 5.90661C7.52364 5.94942 7.63118 6.03122 7.70564 6.13993C7.78458 6.24833 7.82664 6.37918 7.82571 6.51326Z"
-                                                        fill="url(#paint1_linear_1803_62558)" />
-                                                    <path
-                                                        d="M11.6857 2.93963C11.6797 3.06118 11.6405 3.17877 11.5724 3.27963C11.503 3.3747 11.4048 3.44484 11.2924 3.47963L10.879 3.61964C10.7988 3.64735 10.7258 3.69296 10.6658 3.75302C10.6057 3.81308 10.5601 3.88599 10.5324 3.96628L10.3857 4.38628C10.3455 4.48855 10.2788 4.57829 10.1924 4.64629C10.0941 4.72503 9.97165 4.76741 9.84572 4.76629C9.73038 4.75965 9.61838 4.72533 9.51905 4.66627C9.42005 4.59224 9.34565 4.49003 9.30571 4.37298L9.16571 3.95961C9.14105 3.87791 9.09505 3.8043 9.03238 3.74631C8.97365 3.68463 8.90025 3.63877 8.81905 3.61297L8.40572 3.47963C8.29578 3.43674 8.19912 3.36543 8.12572 3.27296C8.05578 3.17343 8.01852 3.05461 8.01905 2.93295C8.02292 2.81101 8.06231 2.69283 8.13238 2.59295C8.20365 2.49979 8.30118 2.43014 8.41238 2.39295L8.81905 2.25961C8.90112 2.23141 8.97612 2.18593 9.03905 2.12627C9.09825 2.06295 9.14365 1.98807 9.17238 1.9063L9.31238 1.49297C9.35165 1.39003 9.41578 1.29839 9.49905 1.22629C9.59471 1.1557 9.70752 1.11196 9.82572 1.09962C9.95158 1.0989 10.0746 1.13609 10.179 1.20631C10.273 1.27701 10.3466 1.37129 10.3924 1.47963L10.5324 1.9063C10.5612 1.98807 10.6066 2.06295 10.6657 2.12627C10.7277 2.18385 10.8001 2.22911 10.879 2.25961L11.299 2.39963C11.4058 2.44165 11.5 2.51053 11.5724 2.59962C11.6451 2.69815 11.6848 2.81717 11.6857 2.93963Z"
-                                                        fill="url(#paint2_linear_1803_62558)" />
-                                                    <defs>
-                                                        <linearGradient id="paint0_linear_1803_62558" x1="10.3187"
-                                                            y1="6.55957" x2="10.3187" y2="14.9002"
-                                                            gradientUnits="userSpaceOnUse">
-                                                            <stop stop-color="#C99AFE" />
-                                                            <stop offset="0.5" stop-color="#9234FE" />
-                                                            <stop offset="1" stop-color="#5301B1" />
-                                                        </linearGradient>
-                                                        <linearGradient id="paint1_linear_1803_62558" x1="4.66665"
-                                                            y1="3.33301" x2="4.66665" y2="9.66658"
-                                                            gradientUnits="userSpaceOnUse">
-                                                            <stop stop-color="#C99AFE" />
-                                                            <stop offset="0.5" stop-color="#9234FE" />
-                                                            <stop offset="1" stop-color="#5301B1" />
-                                                        </linearGradient>
-                                                        <linearGradient id="paint2_linear_1803_62558" x1="9.85238"
-                                                            y1="1.09961" x2="9.85238" y2="4.76631"
-                                                            gradientUnits="userSpaceOnUse">
-                                                            <stop stop-color="#C99AFE" />
-                                                            <stop offset="0.5" stop-color="#9234FE" />
-                                                            <stop offset="1" stop-color="#5301B1" />
-                                                        </linearGradient>
-                                                    </defs>
-                                                </svg>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="dummy_layout-container">
-                                        <div class="progress-bar"></div>
-                                        <div class="dummy_layout d-flex">
-                                            <div class="row">
-                                                <span></span>
-                                                <span></span>
-                                            </div>
-                                            <div class="row">
-                                                <span></span>
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="checkNumBtn">
+                                    <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
                                 </div>
+                            </form>
+                        </div>
 
-                                <!-- Final Results -->
-                                <div class="finalResult">
-                                    <!-- add/remove 'limitReached' class to toggle between (attempts remaining/ 0 free attempts remaining) -->
-                                    <div class="customtext-s d-flex justify-content-between">
-                                        <p>Result for <span>+44 - 7404007274</span></p>
-                                        <p id="countDisplay">3 <span>free attempts</span> remaining.</p>
-                                    </div>
-                                    <div class="resultData">
-                                        <!-- Local Formatted Number -->
-                                        <div class="result-local customtext-s custom-medium order_1">
-                                            <p>Local Formatted Number</p>
-                                            <p>07404 007274</p>
-                                        </div>
-
-                                        <!-- City -->
-                                        <div class="result-city customtext-s custom-medium order_4">
-                                            <p>City</p>
-                                            <p>Bristol</p>
-                                        </div>
-
-                                        <!-- Validity -->
-                                        <div class="result-validity customtext-s custom-medium order_2">
-                                            <p>Validity</p>
-                                            <span>Valid Number</span>
-                                        </div>
-
-                                        <!-- Region -->
-                                        <div class="result-region customtext-s custom-medium order_5">
-                                            <p>Region</p>
-                                            <p>Northwestern Europe</p>
-                                        </div>
-
-                                        <!-- Country -->
-                                        <div class="result-country customtext-s custom-medium order_3">
-                                            <p>Country</p>
-                                            <div class="d-inline-flex align-items-center" style="gap: 0 8px;">
-                                                <div class="iti__flag flex-shrink-0"></div>
-                                                <p>USA</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Line Type -->
-                                        <div class="result-line_type customtext-s custom-medium order_6">
-                                            <p>Line Type</p>
-                                            <p>Mobile</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <!-- Limit Reached  -->
-                            <div class="max_limit" style="display: none;">
+                        <div class="resultContainer">
+                            <!-- Initial Content to display -->
+                            <div class="initialContent">
                                 <div class="text-center">
-                                    <div class="customtext-m custom-medium">
-                                        <p style="color: #242424;">Maximum Limit Reached</p>
-                                    </div>
-                                    <div class="customtext-s custom-regular">
-                                        <p style="color: #4d4950;">You have reached the maximum limit for free phone
-                                            number
-                                            validator.</p>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
-                                            class="limit_request-btn">Request Access</a>
+                                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250307_111817/Free_tools_initial_table_img.png"
+                                        alt="">
+                                    <p>Your results will appear here.</p>
+                                </div>
+                            </div>
+
+                            <!-- When searching -->
+                            <div class="checking_number">
+                                <div class="customtext-s custom-medium">
+                                    <p id="validate">Validating phone number in <span id="seconds">10</span>s
+                                        <span class="d-inline-flex">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path
+                                                    d="M14.4923 10.7529C14.4957 10.8987 14.4512 11.0415 14.3656 11.1596C14.2812 11.2799 14.1593 11.369 14.0189 11.4129L12.8789 11.7929C12.5275 11.9088 12.2079 12.1051 11.9456 12.3663C11.6831 12.6275 11.4867 12.9473 11.3723 13.2995L10.9723 14.4329C10.9306 14.5689 10.8465 14.6881 10.7323 14.7729C10.6107 14.8565 10.4665 14.9007 10.3189 14.8995C10.1711 14.9059 10.0253 14.8628 9.90453 14.7771C9.78387 14.6914 9.69507 14.5679 9.65227 14.4262L9.27227 13.2863C9.15793 12.9341 8.9614 12.6141 8.69893 12.3529C8.4342 12.0934 8.11553 11.8954 7.7656 11.7729L6.62563 11.3995C6.49085 11.3519 6.37275 11.2663 6.28562 11.1529C6.19732 11.0329 6.14841 10.8885 6.14563 10.7396C6.13931 10.5917 6.18239 10.4459 6.26809 10.3251C6.3538 10.2045 6.47724 10.1157 6.61895 10.0729L7.7656 9.69294C8.12127 9.57801 8.44447 9.38028 8.70873 9.11601C8.973 8.85174 9.17073 8.52848 9.2856 8.17288L9.6656 7.04621C9.70447 6.90761 9.7872 6.78528 9.90134 6.69754C10.0155 6.60982 10.155 6.56142 10.2989 6.55957C10.4423 6.55992 10.5828 6.59908 10.7056 6.67288C10.8269 6.75654 10.9199 6.87514 10.9723 7.01288L11.3589 8.17288C11.4739 8.52848 11.6716 8.85174 11.9359 9.11601C12.2001 9.38028 12.5233 9.57801 12.8789 9.69294L14.0123 10.0929C14.1502 10.1381 14.2695 10.227 14.3523 10.3462C14.4426 10.4626 14.4919 10.6056 14.4923 10.7529Z"
+                                                    fill="url(#paint0_linear_1803_62558)" />
+                                                <path
+                                                    d="M7.82571 6.51326C7.82464 6.64395 7.78524 6.77144 7.71231 6.87991C7.63351 6.98724 7.52444 7.06851 7.39904 7.11324L6.559 7.39324C6.32438 7.47484 6.11047 7.60684 5.93234 7.77991C5.75798 7.95711 5.62581 8.17131 5.54567 8.40664L5.259 9.23324C5.21883 9.36104 5.13659 9.47144 5.02567 9.54658C4.91607 9.62311 4.786 9.66491 4.65234 9.66658C4.51568 9.66431 4.38303 9.62011 4.27234 9.53998C4.16749 9.46018 4.0886 9.35118 4.04567 9.22658L3.77234 8.39324C3.69214 8.15998 3.55992 7.94791 3.38568 7.77324C3.21458 7.59458 3.0014 7.46164 2.76567 7.38658L1.93234 7.10658C1.80303 7.06591 1.69063 6.98398 1.61234 6.87331C1.55927 6.79018 1.5253 6.69631 1.51288 6.59846C1.50046 6.50064 1.50989 6.40131 1.5405 6.30757C1.57111 6.21384 1.62213 6.12803 1.68988 6.05639C1.75764 5.98475 1.84045 5.92904 1.93234 5.89326L2.76567 5.61995C3.00147 5.53762 3.21565 5.40312 3.39226 5.22652C3.56886 5.04991 3.70334 4.83573 3.78567 4.59993L4.059 3.77994C4.0983 3.65706 4.17241 3.54819 4.27234 3.46659C4.37854 3.38658 4.50622 3.34013 4.639 3.33325C4.77353 3.32963 4.90601 3.36684 5.019 3.43994C5.13022 3.51501 5.21618 3.6219 5.26567 3.74662L5.54567 4.59993C5.628 4.83573 5.76248 5.04991 5.93909 5.22652C6.1157 5.40312 6.32988 5.53762 6.56568 5.61995L7.39904 5.90661C7.52364 5.94942 7.63118 6.03122 7.70564 6.13993C7.78458 6.24833 7.82664 6.37918 7.82571 6.51326Z"
+                                                    fill="url(#paint1_linear_1803_62558)" />
+                                                <path
+                                                    d="M11.6857 2.93963C11.6797 3.06118 11.6405 3.17877 11.5724 3.27963C11.503 3.3747 11.4048 3.44484 11.2924 3.47963L10.879 3.61964C10.7988 3.64735 10.7258 3.69296 10.6658 3.75302C10.6057 3.81308 10.5601 3.88599 10.5324 3.96628L10.3857 4.38628C10.3455 4.48855 10.2788 4.57829 10.1924 4.64629C10.0941 4.72503 9.97165 4.76741 9.84572 4.76629C9.73038 4.75965 9.61838 4.72533 9.51905 4.66627C9.42005 4.59224 9.34565 4.49003 9.30571 4.37298L9.16571 3.95961C9.14105 3.87791 9.09505 3.8043 9.03238 3.74631C8.97365 3.68463 8.90025 3.63877 8.81905 3.61297L8.40572 3.47963C8.29578 3.43674 8.19912 3.36543 8.12572 3.27296C8.05578 3.17343 8.01852 3.05461 8.01905 2.93295C8.02292 2.81101 8.06231 2.69283 8.13238 2.59295C8.20365 2.49979 8.30118 2.43014 8.41238 2.39295L8.81905 2.25961C8.90112 2.23141 8.97612 2.18593 9.03905 2.12627C9.09825 2.06295 9.14365 1.98807 9.17238 1.9063L9.31238 1.49297C9.35165 1.39003 9.41578 1.29839 9.49905 1.22629C9.59471 1.1557 9.70752 1.11196 9.82572 1.09962C9.95158 1.0989 10.0746 1.13609 10.179 1.20631C10.273 1.27701 10.3466 1.37129 10.3924 1.47963L10.5324 1.9063C10.5612 1.98807 10.6066 2.06295 10.6657 2.12627C10.7277 2.18385 10.8001 2.22911 10.879 2.25961L11.299 2.39963C11.4058 2.44165 11.5 2.51053 11.5724 2.59962C11.6451 2.69815 11.6848 2.81717 11.6857 2.93963Z"
+                                                    fill="url(#paint2_linear_1803_62558)" />
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_1803_62558" x1="10.3187"
+                                                        y1="6.55957" x2="10.3187" y2="14.9002"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#C99AFE" />
+                                                        <stop offset="0.5" stop-color="#9234FE" />
+                                                        <stop offset="1" stop-color="#5301B1" />
+                                                    </linearGradient>
+                                                    <linearGradient id="paint1_linear_1803_62558" x1="4.66665"
+                                                        y1="3.33301" x2="4.66665" y2="9.66658"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#C99AFE" />
+                                                        <stop offset="0.5" stop-color="#9234FE" />
+                                                        <stop offset="1" stop-color="#5301B1" />
+                                                    </linearGradient>
+                                                    <linearGradient id="paint2_linear_1803_62558" x1="9.85238"
+                                                        y1="1.09961" x2="9.85238" y2="4.76631"
+                                                        gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#C99AFE" />
+                                                        <stop offset="0.5" stop-color="#9234FE" />
+                                                        <stop offset="1" stop-color="#5301B1" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="dummy_layout-container">
+                                    <div class="progress-bar"></div>
+                                    <div class="dummy_layout d-flex">
+                                        <div class="row">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <div class="row">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Error div -->
-                            <div class="error-container" style="display: none;">
-                                <div
-                                    class="error_div customtext-l custom-medium d-inline-flex align-items-center justify-content-center">
-                                    <span class="error_icon d-inline-flex align-items-center justify-content-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path
-                                                d="M21.8594 17.2488L14.2495 4.05887C14.0156 3.66066 13.6817 3.33049 13.2809 3.10108C12.8801 2.87166 12.4263 2.75098 11.9645 2.75098C11.5027 2.75098 11.0488 2.87166 10.648 3.10108C10.2472 3.33049 9.91333 3.66066 9.67944 4.05887L2.06945 17.2488C1.83376 17.6488 1.70947 18.1046 1.70947 18.5688C1.70947 19.0331 1.83376 19.4889 2.06945 19.8888C2.30399 20.3082 2.65013 20.6543 3.06945 20.8888C3.47071 21.1214 3.92566 21.2455 4.38946 21.2488H19.6195C20.0824 21.2486 20.5372 21.1279 20.9395 20.8988C21.3588 20.6643 21.7049 20.3182 21.9395 19.8988C22.1692 19.4968 22.2901 19.0418 22.2901 18.5788C22.2901 18.1158 22.1692 17.7652 21.9395 17.3632L21.8594 17.2488ZM10.9595 7.54886C10.9595 7.28364 11.0648 7.02929 11.2523 6.84175C11.4399 6.65422 11.6943 6.54886 11.9595 6.54886C12.2247 6.54886 12.479 6.65422 12.6666 6.84175C12.8541 7.02929 12.9595 7.28364 12.9595 7.54886V13.8288C12.9595 14.094 12.8541 14.3484 12.6666 14.5359C12.479 14.7235 12.2247 14.8288 11.9595 14.8288C11.6943 14.8288 11.4399 14.7235 11.2523 14.5359C11.0648 14.3484 10.9595 14.094 10.9595 13.8288V7.54886ZM12.0095 18.5488C11.7622 18.5488 11.5206 18.4755 11.315 18.3382C11.1095 18.2008 10.9492 18.0056 10.8546 17.7772C10.76 17.5488 10.7352 17.2974 10.7835 17.055C10.8317 16.8125 10.9507 16.5898 11.1256 16.4149C11.3004 16.2401 11.5231 16.1211 11.7656 16.0728C12.0081 16.0246 12.2594 16.0494 12.4878 16.144C12.7162 16.2386 12.9114 16.3988 13.0488 16.6044C13.1861 16.8099 13.2595 17.0516 13.2595 17.2988C13.2595 17.4638 13.2268 17.6272 13.1633 17.7795C13.0999 17.9318 13.007 18.0701 12.8898 18.1863C12.7727 18.3025 12.6337 18.3943 12.4809 18.4566C12.3281 18.5188 12.1645 18.5501 11.9995 18.5488H12.0095Z"
-                                                fill="#F95933" />
-                                        </svg>
-                                    </span>
-                                    <p style="color: #242424;">Invalid phone number</p>
+                            <!-- Final Results -->
+                            <div class="finalResult">
+                                <!-- add/remove 'limitReached' class to toggle between (attempts remaining/ 0 free attempts remaining) -->
+                                <div class="customtext-s d-flex justify-content-between">
+                                    <p>Result for <span>+44 - 7404007274</span></p>
+                                    <p id="countDisplay">3 <span>free attempts</span> remaining.</p>
+                                </div>
+                                <div class="resultData">
+                                    <!-- Local Formatted Number -->
+                                    <div class="result-local customtext-s custom-medium order_1">
+                                        <p>Local Formatted Number</p>
+                                        <p>07404 007274</p>
+                                    </div>
+
+                                    <!-- City -->
+                                    <div class="result-city customtext-s custom-medium order_4">
+                                        <p>City</p>
+                                        <p>Bristol</p>
+                                    </div>
+
+                                    <!-- Validity -->
+                                    <div class="result-validity customtext-s custom-medium order_2">
+                                        <p>Validity</p>
+                                        <span>Valid Number</span>
+                                    </div>
+
+                                    <!-- Region -->
+                                    <div class="result-region customtext-s custom-medium order_5">
+                                        <p>Region</p>
+                                        <p>Northwestern Europe</p>
+                                    </div>
+
+                                    <!-- Country -->
+                                    <div class="result-country customtext-s custom-medium order_3">
+                                        <p>Country</p>
+                                        <div class="d-inline-flex align-items-center" style="gap: 0 8px;">
+                                            <div class="iti__flag flex-shrink-0"></div>
+                                            <p>USA</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Line Type -->
+                                    <div class="result-line_type customtext-s custom-medium order_6">
+                                        <p>Line Type</p>
+                                        <p>Mobile</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+                        <!-- Limit Reached  -->
+                        <div class="max_limit" style="display: none;">
+                            <div class="text-center">
+                                <div class="customtext-m custom-medium">
+                                    <p style="color: #242424;">Maximum Limit Reached</p>
+                                </div>
+                                <div class="customtext-s custom-regular">
+                                    <p style="color: #4d4950;">You have reached the maximum limit for free phone
+                                        number
+                                        validator.</p>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                                        class="limit_request-btn">Request Access</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Error div -->
+                        <div class="error-container" style="display: none;">
+                            <div
+                                class="error_div customtext-l custom-medium d-inline-flex align-items-center justify-content-center">
+                                <span class="error_icon d-inline-flex align-items-center justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M21.8594 17.2488L14.2495 4.05887C14.0156 3.66066 13.6817 3.33049 13.2809 3.10108C12.8801 2.87166 12.4263 2.75098 11.9645 2.75098C11.5027 2.75098 11.0488 2.87166 10.648 3.10108C10.2472 3.33049 9.91333 3.66066 9.67944 4.05887L2.06945 17.2488C1.83376 17.6488 1.70947 18.1046 1.70947 18.5688C1.70947 19.0331 1.83376 19.4889 2.06945 19.8888C2.30399 20.3082 2.65013 20.6543 3.06945 20.8888C3.47071 21.1214 3.92566 21.2455 4.38946 21.2488H19.6195C20.0824 21.2486 20.5372 21.1279 20.9395 20.8988C21.3588 20.6643 21.7049 20.3182 21.9395 19.8988C22.1692 19.4968 22.2901 19.0418 22.2901 18.5788C22.2901 18.1158 22.1692 17.7652 21.9395 17.3632L21.8594 17.2488ZM10.9595 7.54886C10.9595 7.28364 11.0648 7.02929 11.2523 6.84175C11.4399 6.65422 11.6943 6.54886 11.9595 6.54886C12.2247 6.54886 12.479 6.65422 12.6666 6.84175C12.8541 7.02929 12.9595 7.28364 12.9595 7.54886V13.8288C12.9595 14.094 12.8541 14.3484 12.6666 14.5359C12.479 14.7235 12.2247 14.8288 11.9595 14.8288C11.6943 14.8288 11.4399 14.7235 11.2523 14.5359C11.0648 14.3484 10.9595 14.094 10.9595 13.8288V7.54886ZM12.0095 18.5488C11.7622 18.5488 11.5206 18.4755 11.315 18.3382C11.1095 18.2008 10.9492 18.0056 10.8546 17.7772C10.76 17.5488 10.7352 17.2974 10.7835 17.055C10.8317 16.8125 10.9507 16.5898 11.1256 16.4149C11.3004 16.2401 11.5231 16.1211 11.7656 16.0728C12.0081 16.0246 12.2594 16.0494 12.4878 16.144C12.7162 16.2386 12.9114 16.3988 13.0488 16.6044C13.1861 16.8099 13.2595 17.0516 13.2595 17.2988C13.2595 17.4638 13.2268 17.6272 13.1633 17.7795C13.0999 17.9318 13.007 18.0701 12.8898 18.1863C12.7727 18.3025 12.6337 18.3943 12.4809 18.4566C12.3281 18.5188 12.1645 18.5501 11.9995 18.5488H12.0095Z"
+                                            fill="#F95933" />
+                                    </svg>
+                                </span>
+                                <p style="color: #242424;">Invalid phone number</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Real Corresponding country numbers -->
@@ -362,28 +366,30 @@
     </div>
 
     <script>
-        byPlace=document.getElementById("lookByPlace");
-        byAreaCode=document.getElementById("lookByAreaCode");
-        byAreaCode.addEventListener("click",()=>{
-            byPlace.classList.remove("active");
-            byAreaCode.classList.add("active"); 
-        })
-        byPlace.addEventListener("click",()=>{
-            byAreaCode.classList.remove("active");
-            byPlace.classList.add("active"); 
-        })
+        const switchTabs = document.querySelector('.switchTab');
+        const tabForms = document.querySelectorAll('.tab-form');
 
-        // let switchTabs=document.querySelectorAll('.selectTab');
-        // switchTabs.forEach("click",(tabs)=>{
-        //     tabs.classList.remove("active");
-        // })
+        switchTabs.addEventListener('click', (event) => {
+            if (!event.target.classList.contains('selectTab')) return;
 
+            // Toggle active class for tabs
+            document.querySelector('.selectTab.active')?.classList.remove('active');
+            event.target.classList.add('active');
 
+            // Update ARIA selected state
+            document.querySelectorAll('.selectTab').forEach(tab => {
+                tab.setAttribute('aria-selected', tab === event.target ? 'true' : 'false');
+            });
 
+            // Toggle visibility based on the data-id
+            const targetId = event.target.getAttribute('data-target');
+            tabForms.forEach((el) => {
+                el.classList.toggle('displayNone', el.getAttribute('data-id') !== targetId);
+            });
+        });
+    </script>
 
-
-
-
+    <script>
         let countryISO;
         const countrySelector = document.getElementById("countryselector");
 

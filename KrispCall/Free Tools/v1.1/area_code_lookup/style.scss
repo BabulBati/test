@@ -149,6 +149,26 @@ footer {
     }
 }
 
+// Form
+.free_tools-form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    
+}
+
+.tab-form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    --inputs_padding-top_bottom: 12px;
+    --inputs_padding-left_right: var(--inputs_padding-top_bottom);
+    --inputs_gaps: 12px;
+    &.displayNone {
+        display: none;
+    }
+}
+
 .switchTab {
     border-radius: 12px;
     background: #f5f5f5;
@@ -175,16 +195,63 @@ footer {
         }
     }
 }
-
-// Form
-.free_tools-form {
-    display: flex;
-    gap: 16px;
+.globe_icon {
+    flex-grow: 1;
     width: 100%;
-    --inputs_padding-top_bottom: 12px;
-    --inputs_padding-left_right: var(--inputs_padding-top_bottom);
-    --inputs_gaps: 12px;
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        pointer-events: none;
+        height: 20px;
+        width: 20px;
+    }
+    &::before {
+        content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
+        left: var(--inputs_padding-left_right);
+    }
+    &.ero_icon {
+        &::after {
+            content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250317_112544/input_error.svg);
+            right: var(--inputs_padding-left_right);
+        }
+        input {
+            padding-right: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
+        }
+    }
+    input {
+        border: 1px solid #d1d4dc !important;
+        border-radius: 8px !important;
+        outline: none !important;
+        width: 100%;
+        color: #0d0d0d;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        background-color: #fff !important;
+        padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right) !important;
+        padding-left: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
+
+        &::placeholder {
+            color: #a8a8a8 !important;
+        }
+
+        &::-moz-placeholder {
+            color: #a8a8a8 !important;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #a8a8a8 !important;
+        }
+    }
 }
+
+// .area_code-lookup {
+// }
 
 .countrySelector {
     max-width: 278px;
