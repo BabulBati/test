@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -85,34 +84,73 @@
                 <div class="d-flex flex-column">
                     <!-- Number Search and Results -->
                     <div class="tool-container beforeSearch position-relative">
-                        <div class="d-flex switchTab">
-                            <div class="selectTab active" data-target="lookByPlace" aria-selected="true">Lookup by Place
+                        <div class="tabs-forms">
+                            <div class="d-flex toggleTab">
+                                <div class="selectTab active" data-target="lookByPlace" aria-selected="true">Lookup by
+                                    Place
+                                </div>
+                                <div class="selectTab" data-target="lookByAreaCode" aria-selected="false">Area Code
+                                </div>
                             </div>
-                            <div class="selectTab" data-target="lookByAreaCode" aria-selected="false">Area Code</div>
-                        </div>
-                        <div>
-                            <!-- Input from -->
-                            <form class="tab-form place-lookup" data-id="lookByPlace">
-                                <div class="countrySelector">
-                                    <input type="tel" id="countryselector" maxlength="0">
-                                </div>
-                                <div class="numberSearch">
-                                    <input type="tel" id="numberSearch" placeholder="Enter Phone Number" maxlength="30"
-                                        required>
-                                </div>
-                                <div class="checkNumBtn">
-                                    <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
-                                </div>
+                            <div class="forms-div">
+                                <!-- Search Area Code -->
+                                <div class="tab-content" data-id="lookByPlace">
+                                    <div>
+                                        <span>Search Area Code</span>
+                                    </div>
 
-                            </form>
-                            <form class="tab-form area_code-lookup displayNone" data-id="lookByAreaCode">
-                                <div class="globe_icon">
-                                    <input type="text" placeholder="Enter 3 Digit Area Code">
+                                    <form class="tab-form place-lookup">
+                                        <div class="input-fields">
+                                            <div class="countrySelector d-inline-flex align-items-center">
+                                                <div class="iti__flag iti__us"></div>
+                                                <div class="country-name" style="color:#0D0D0D ;">United States (+1)
+                                                </div>
+                                            </div>
+                                            <div class="state-province">
+                                                <div
+                                                    class="state-province-selector d-flex align-items-center justify-content-between">
+                                                    <span class="flex-shrink-0">
+                                                        <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg"
+                                                            alt="globe_icon" width="20" height="20">
+                                                    </span>
+                                                    <span class="selected-state flex-grow-1" style="color: #0D0D0D;"><span style="color: #A8A8A8;">State / Province</span></span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"
+                                                        viewBox="0 0 10 6" fill="none">
+                                                        <path
+                                                            d="M0.219754 0.220246C0.15009 0.289811 0.094824 0.372427 0.0571165 0.463369C0.019409 0.554311 0 0.651796 0 0.750246C0 0.848695 0.019409 0.94618 0.0571165 1.03712C0.094824 1.12806 0.15009 1.21068 0.219754 1.28025L4.46975 5.53025C4.53932 5.59991 4.62194 5.65518 4.71288 5.69288C4.80382 5.73059 4.9013 5.75 4.99975 5.75C5.0982 5.75 5.19569 5.73059 5.28663 5.69288C5.37757 5.65518 5.46019 5.59991 5.52975 5.53025L9.77975 1.28025C9.84936 1.21064 9.90456 1.12802 9.94223 1.03708C9.9799 0.946142 9.99929 0.848676 9.99929 0.750246C9.99929 0.651815 9.9799 0.554349 9.94223 0.463412C9.90456 0.372474 9.84936 0.289846 9.77975 0.220246C9.71015 0.150645 9.62753 0.0954351 9.53659 0.0577674C9.44565 0.0200996 9.34818 0.000711918 9.24975 0.000711918C9.15132 0.000711918 9.05386 0.0200996 8.96292 0.0577674C8.87198 0.0954351 8.78936 0.150645 8.71976 0.220246L4.99975 3.93925L1.27975 0.220246C1.21019 0.150582 1.12757 0.0953145 1.03663 0.0576072C0.945688 0.0198998 0.848204 0.000491619 0.749754 0.000491619C0.651305 0.000491619 0.553821 0.0198998 0.462878 0.0576072C0.371936 0.0953145 0.289319 0.150582 0.219754 0.220246Z"
+                                                            fill="#0D0D0D" />
+                                                    </svg>
+                                                </div>
+                                                <div class="state-province-options" style="display: none;"></div>
+                                            </div>
+                                            <div class="town-city globe_icon">
+                                                <input type="text" id="townCity" placeholder="Town / City">
+                                            </div>
+                                        </div>
+                                        <div class="checkNumBtn">
+                                            <button type="submit" class="free_tools-submit"
+                                                id="check_num-btn">Lookup</button>
+                                        </div>
+
+                                    </form>
                                 </div>
-                                <div class="checkNumBtn">
-                                    <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
+                                <!-- Find The Place -->
+                                <div class="tab-content displayNone" data-id="lookByAreaCode">
+                                    <div>
+                                        <span>Find The Place</span>
+                                    </div>
+
+                                    <form class="tab-form area_code-lookup">
+                                        <div class="globe_icon">
+                                            <input type="text" placeholder="Enter 3 Digit Area Code">
+                                        </div>
+                                        <div class="checkNumBtn">
+                                            <button type="submit" class="free_tools-submit"
+                                                id="check_num-btn">Lookup</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                         <div class="resultContainer">
@@ -126,7 +164,7 @@
                             </div>
 
                             <!-- When searching -->
-                            <div class="checking_number">
+                            <div class="checking_number" style="display: none;">
                                 <div class="customtext-s custom-medium">
                                     <p id="validate">Validating phone number in <span id="seconds">10</span>s
                                         <span class="d-inline-flex">
@@ -184,50 +222,55 @@
                             </div>
 
                             <!-- Final Results -->
-                            <div class="finalResult">
+                            <div class="finalResult" style="display: none;">
                                 <!-- add/remove 'limitReached' class to toggle between (attempts remaining/ 0 free attempts remaining) -->
                                 <div class="customtext-s d-flex justify-content-between">
-                                    <p>Result for <span>+44 - 7404007274</span></p>
+                                    <p>Result for <span>Texas, Austin</span></p>
                                     <p id="countDisplay">3 <span>free attempts</span> remaining.</p>
                                 </div>
-                                <div class="resultData">
-                                    <!-- Local Formatted Number -->
-                                    <div class="result-local customtext-s custom-medium order_1">
-                                        <p>Local Formatted Number</p>
-                                        <p>07404 007274</p>
-                                    </div>
-
-                                    <!-- City -->
-                                    <div class="result-city customtext-s custom-medium order_4">
-                                        <p>City</p>
-                                        <p>Bristol</p>
-                                    </div>
-
-                                    <!-- Validity -->
-                                    <div class="result-validity customtext-s custom-medium order_2">
-                                        <p>Validity</p>
-                                        <span>Valid Number</span>
-                                    </div>
-
-                                    <!-- Region -->
-                                    <div class="result-region customtext-s custom-medium order_5">
-                                        <p>Region</p>
-                                        <p>Northwestern Europe</p>
-                                    </div>
-
-                                    <!-- Country -->
-                                    <div class="result-country customtext-s custom-medium order_3">
-                                        <p>Country</p>
-                                        <div class="d-inline-flex align-items-center" style="gap: 0 8px;">
-                                            <div class="iti__flag flex-shrink-0"></div>
-                                            <p>USA</p>
+                                <div>
+                                    <!-- map here -->
+                                    <div class="lookup-map"></div>
+                                    <!-- Other results here -->
+                                    <div class="resultData customtext-s custom-medium">
+                                        <!-- Area Code -->
+                                        <div class="result-area_code order_1">
+                                            <p>Area Code</p>
+                                            <p>512/737</p>
                                         </div>
-                                    </div>
 
-                                    <!-- Line Type -->
-                                    <div class="result-line_type customtext-s custom-medium order_6">
-                                        <p>Line Type</p>
-                                        <p>Mobile</p>
+                                        <!-- Country -->
+                                        <div class="result-country order_3">
+                                            <p>Country</p>
+                                            <div class="d-inline-flex align-items-center" style="gap: 0 8px;">
+                                                <div class="iti__flag iti__us flex-shrink-0"></div>
+                                                <p>USA</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Time Zone -->
+                                        <div class="result-time_zone order_4">
+                                            <p>Time Zone</p>
+                                            <p>Central</p>
+                                        </div>
+
+                                        <!-- State -->
+                                        <div class="result-state order_2">
+                                            <p>State</p>
+                                            <p>Texas</p>
+                                        </div>
+
+                                        <!-- City -->
+                                        <div class="result-city order_5">
+                                            <p>City</p>
+                                            <p>Austin</p>
+                                        </div>
+
+                                        <!-- Line Type -->
+                                        <div class="result-current_time order_6">
+                                            <p>Current Time</p>
+                                            <p>1:00 am</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -241,9 +284,7 @@
                                     <p style="color: #242424;">Maximum Limit Reached</p>
                                 </div>
                                 <div class="customtext-s custom-regular">
-                                    <p style="color: #4d4950;">You have reached the maximum limit for free phone
-                                        number
-                                        validator.</p>
+                                    <p style="color: #4d4950;">You have reached the maximum limit for free area code lookup.</p>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
@@ -275,39 +316,39 @@
                         <!-- Numbers Lists -->
                         <div class="numberLists">
                             <div class="heading">
-                                Get these real <span id="country_name"></span> phone numbers
+                                Get these real US phone numbers
                             </div>
                             <div class="numbers_lists">
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-1">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-1">+1 8564694201</span>
                                 </div>
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-2">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-2">+1 8564694201</span>
                                 </div>
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-3">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-3">+1 8564694201</span>
                                 </div>
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-4">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-4">+1 8564694201</span>
                                 </div>
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-5">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-5">+1 8564694201</span>
                                 </div>
                                 <div class="gen_num d-inline-flex align-items-center">
-                                    <div class="iti__flag flex-shrink-0"></div>
-                                    <span class="number-6">+44 2286 827889</span>
+                                    <div class="iti__flag iti__us flex-shrink-0"></div>
+                                    <span class="number-6">+1 8564694201</span>
                                 </div>
 
                             </div>
                         </div>
 
                         <!-- After a number is clicked -->
-                        <div class="selectedNumber">
+                        <div class="selectedNumber" style="display: none;">
                             <span id="back-numberLists" class="d-inline-flex align-items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
                                     fill="none">
@@ -322,7 +363,7 @@
                             </span>
                             <div class="selectedNumber-container">
                                 <div class="heading">
-                                    Get <span id="selected_number" style="color: #8733FF;">+44 2286 827889</span> when
+                                    Get <span id="selected_number" style="color: #8733FF;">+1 8564694201</span> when
                                     you
                                     join KrispCall
                                 </div>
@@ -353,8 +394,8 @@
                 <!-- Request Access -->
                 <div class="request-bulk-free_tool d-flex">
                     <div class="customtext-m flex-grow-1 d-flex flex-column">
-                        <div class="title">Need Bulk Verification?</div>
-                        <p>We provide bulk phone number validation API solutions. Reach out to us.</p>
+                        <div class="title">Need Bulk Area Code Lookup?</div>
+                        <p>We offer bulk area code looker API solutions. Contact us.</p>
                     </div>
                     <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
                         class="bulk-requestAccess d-inline-flex align-items-center flex-shrink-0 justify-content-center">Request
@@ -365,10 +406,10 @@
     </div>
 
     <script>
-        const switchTabs = document.querySelector('.switchTab');
-        const tabForms = document.querySelectorAll('.tab-form');
+        const toggleTabs = document.querySelector('.toggleTab');
+        const tabContent = document.querySelectorAll('.tab-content');
 
-        switchTabs.addEventListener('click', (event) => {
+        toggleTabs.addEventListener('click', (event) => {
             if (!event.target.classList.contains('selectTab')) return;
 
             // Toggle active class for tabs
@@ -382,52 +423,57 @@
 
             // Toggle visibility based on the data-id
             const targetId = event.target.getAttribute('data-target');
-            tabForms.forEach((el) => {
-                el.classList.toggle('displayNone', el.getAttribute('data-id') !== targetId);
+            tabContent.forEach((el) => {
+                if (el.getAttribute('data-id') === targetId) {
+                    el.classList.remove('displayNone');
+                } else {
+                    el.classList.add('displayNone');
+                }
             });
         });
-    </script>
 
-    <script>
-        let countryISO;
-        const countrySelector = document.getElementById("countryselector");
+        const states = [
+            "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+            "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+            "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
+            "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+            "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+            "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+            "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
+            "Wisconsin", "Wyoming"
+        ];
 
-        // Initialize intlTelInput
-        const itiCountrySelector = window.intlTelInput(countrySelector, {
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
-            initialCountry: "us",
-            separateDialCode: true,
+        const stateSelector = document.querySelector('.state-province-selector');
+        const selectorSvg = document.querySelector('.state-province-selector > svg');
+        const selectedState = document.querySelector('.selected-state');
+        const stateOptions = document.querySelector('.state-province-options');
+
+        // Populate the dropdown
+        states.forEach(state => {
+            const option = document.createElement('div');
+            option.classList.add('state-province-option');
+            option.textContent = state;
+            option.addEventListener('click', () => {
+                selectedState.textContent = state; // Set the selected state
+                stateOptions.style.display = 'none'; // Hide the dropdown
+                selectorSvg.style.transform = 'rotate(0deg)'; // Reset the arrow
+            });
+            stateOptions.appendChild(option);
         });
 
-        // Function to update country name and dial code
-        function updateCountryInfo() {
-            const countryData = itiCountrySelector.getSelectedCountryData();
-            const dialCodeElement = document.querySelector(".iti__selected-dial-code");
-            if (dialCodeElement) {
-                dialCodeElement.textContent = `${countryData.name} (+${countryData.dialCode})`;
+        // Toggle dropdown on click
+        stateSelector.addEventListener('click', () => {
+            stateOptions.style.display = stateOptions.style.display === 'block' ? 'none' : 'block';
+            selectorSvg.style.transform = stateOptions.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+            if (!stateSelector.contains(event.target)) {
+                stateOptions.style.display = 'none';
+                selectorSvg.style.transform = 'rotate(0deg)';
             }
-            countryISO = countryData.iso2;
-            console.log(countryISO);
-        }
-
-        // Call function on country change or input focus
-        countrySelector.addEventListener("countrychange", updateCountryInfo);
-        countrySelector.addEventListener("focus", updateCountryInfo);
-
-        // Initial call to set country name and dial code
-        updateCountryInfo();
-
-    </script>
-
-    <!-- Toggle Maximun Limit Reached by checking "limitReached" class in "finalResult" when 0 free attempts remain -->
-    <script>
-        const finalResult = document.querySelector('.finalResult');
-        const maxLimit = document.querySelector('.max_limit');
-
-        function toggleMaxLimit() {
-            maxLimit.style.display = finalResult.classList.contains('limitReached') ? 'flex' : 'none';
-        }
-
+        });
     </script>
 </body>
 

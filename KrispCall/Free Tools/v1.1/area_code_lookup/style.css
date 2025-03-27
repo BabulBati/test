@@ -132,31 +132,13 @@ footer {
   gap: 80px;
 }
 
-.free_tools-form {
-  display: flex;
-  gap: 16px;
-  width: 100%;
-}
-
-.tab-form {
-  display: flex;
-  gap: 16px;
-  width: 100%;
-  --inputs_padding-top_bottom: 12px;
-  --inputs_padding-left_right: var(--inputs_padding-top_bottom);
-  --inputs_gaps: 12px;
-}
-.tab-form.displayNone {
-  display: none;
-}
-
-.switchTab {
+.toggleTab {
   border-radius: 12px;
   background: #f5f5f5;
   padding: 6px 7px;
+  margin: 0 0 24px;
 }
-.switchTab .selectTab {
-  display: flex;
+.toggleTab .selectTab {
   display: flex;
   padding: 12px 24px;
   justify-content: center;
@@ -171,16 +153,52 @@ footer {
   letter-spacing: -0.02em;
   cursor: pointer;
 }
-.switchTab .selectTab.active {
+.toggleTab .selectTab.active {
   background: #fff;
   color: #8733ff;
   cursor: auto;
 }
 
-.globe_icon {
-  flex-grow: 1;
+.tab-content > div {
+  margin-bottom: 8px;
+}
+.tab-content > div span {
+  color: #0d0d0d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+.tab-content.displayNone {
+  display: none;
+}
+
+.tab-form {
+  display: flex;
+  gap: 16px;
   width: 100%;
+  --inputs_padding-top_bottom: 12px;
+  --inputs_padding-left_right: var(--inputs_padding-top_bottom);
+  --inputs_gaps: 12px;
+  --inputs_height: 44px;
+}
+.tab-form.place-lookup .input-fields {
+  display: inherit;
+  gap: 8px;
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+.tab-form.place-lookup .input-fields > div {
+  flex: 1;
+}
+
+.globe_icon {
   position: relative;
+  flex: 1;
+  height: var(--inputs_height);
 }
 .globe_icon::before, .globe_icon::after {
   position: absolute;
@@ -215,6 +233,7 @@ footer {
   background-color: #fff !important;
   padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right) !important;
   padding-left: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
+  height: inherit !important;
 }
 .globe_icon input::-moz-placeholder {
   color: #a8a8a8 !important;
@@ -230,129 +249,55 @@ footer {
 }
 
 .countrySelector {
-  max-width: 278px;
-  width: 100%;
-}
-
-#countryselector {
-  width: 100%;
-  border-radius: 0;
-  border: none !important;
-  background: none !important;
-  padding: 0 !important;
-  outline: none !important;
-}
-
-.iti {
-  width: 100%;
-  height: 100%;
-}
-.iti__flag-container {
-  width: 100% !important;
-  padding: 0 !important;
-}
-.iti__selected-flag {
-  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d1d4dc;
+  background: #fff;
   padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right);
-  padding-right: calc(var(--inputs_padding-left_right) + 14px);
   gap: var(--inputs_gaps);
-  background: #fff !important;
-  border-radius: 8px;
-  border: 1px solid #d1d4dc !important;
-  height: 44px;
-}
-.iti__selected-dial-code {
-  margin: 0 !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #0d0d0d;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.02em;
-}
-.iti__arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: var(--inputs_padding-left_right);
-  border: 0;
-  background: url(https://krispcall.com/wp-content/themes/mitech/src/assets/images/caret-down.png) center no-repeat;
-  height: 14px;
-  width: 14px;
-  margin: 0;
-}
-.iti__selected-flag-primary {
-  padding: 0;
-}
-.iti__arrow.iti__arrow--up {
-  transform: rotate(180deg);
-  transform-origin: center center;
-  top: unset;
-}
-.iti__country-list {
-  width: 100%;
-  border-radius: 8px;
-  overflow-x: hidden;
+  height: var(--inputs_height);
 }
 
-#countryselector,
-#numberSearch {
-  height: 44px !important;
-}
-
-.numberSearch {
-  flex-grow: 1;
-  width: 100%;
+.state-province {
   position: relative;
 }
-.numberSearch::before, .numberSearch::after {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-  height: 20px;
-  width: 20px;
-}
-.numberSearch::before {
-  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg);
-  left: var(--inputs_padding-left_right);
-}
-.numberSearch.ero_icon::after {
-  content: url(https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250317_112544/input_error.svg);
-  right: var(--inputs_padding-left_right);
-}
-.numberSearch.ero_icon #numberSearch {
-  padding-right: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
+
+.state-province-selector {
+  border-radius: 8px;
+  border: 1px solid #d1d4dc;
+  background: #fff;
+  padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right);
+  gap: var(--inputs_gaps);
+  height: var(--inputs_height);
+  cursor: pointer;
 }
 
-#numberSearch {
-  border: 1px solid #d1d4dc !important;
-  border-radius: 8px !important;
-  outline: none !important;
+.state-province-options {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 6px);
   width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d1d4dc;
+  background: #fff;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+  height: 150px;
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.state-province-option {
+  padding: 8px 12px;
   color: #0d0d0d;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.02em;
-  background-color: #fff !important;
-  padding: var(--inputs_padding-top_bottom) var(--inputs_padding-left_right) !important;
-  padding-left: calc(var(--inputs_padding-left_right) + 20px + var(--inputs_gaps)) !important;
 }
-#numberSearch::-moz-placeholder {
-  color: #a8a8a8 !important;
+.state-province-option:not(:first-child) {
+  border-top: 1px solid #d1d4dc;
 }
-#numberSearch::placeholder {
-  color: #a8a8a8 !important;
-}
-#numberSearch::-moz-placeholder {
-  color: #a8a8a8 !important;
-}
-#numberSearch::-webkit-input-placeholder {
-  color: #a8a8a8 !important;
+.state-province-option:hover {
+  background-color: #f9f9f9;
 }
 
 .free_tools-submit {
@@ -371,7 +316,7 @@ footer {
   letter-spacing: -0.01em;
   cursor: pointer;
   width: inherit;
-  height: 44px !important;
+  height: var(--inputs_height) !important;
 }
 .free_tools-submit:hover {
   background: #e0e0e0;
@@ -454,6 +399,14 @@ footer {
   font-weight: 600;
 }
 
+.lookup-map {
+  height: 340px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(209, 212, 220, 0.5);
+  margin-bottom: 24px;
+}
+
 .resultData {
   display: flex;
   flex-wrap: wrap;
@@ -474,21 +427,6 @@ footer {
 }
 .resultData > div:nth-child(n+5) {
   border-bottom: 0;
-}
-.resultData > div span {
-  color: #8733ff;
-  font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 14px;
-  letter-spacing: -0.02em;
-  border-radius: 4px;
-  background: rgba(135, 51, 255, 0.07);
-  padding: 8px;
-  height: 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 .resultData > div p {
   color: #4d4950;
@@ -725,6 +663,19 @@ footer {
   .tool-container.beforeSearch .max_limit {
     bottom: 10px;
   }
+  .toggleTab {
+    padding: 6px;
+    margin: 0 0 20px;
+  }
+  .toggleTab .selectTab {
+    padding: 10px 24px;
+  }
+  .tab-form.place-lookup {
+    flex-direction: column;
+  }
+  .tab-form.place-lookup .checkNumBtn {
+    width: 100%;
+  }
   .checking_number > div:nth-child(2) {
     gap: 0;
     padding: 0;
@@ -740,6 +691,10 @@ footer {
   }
   .dummy_layout span:last-child {
     max-width: 131px;
+  }
+  .lookup-map {
+    height: 264px;
+    margin-bottom: 20px;
   }
   .resultData > div {
     width: 100%;
@@ -841,10 +796,21 @@ footer {
   .tool_heading-container h1 {
     margin: 0 0 16px;
   }
-  .free_tools-form {
+  .toggleTab {
+    padding: 4px;
+  }
+  .toggleTab .selectTab {
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  .tab-form {
     flex-wrap: wrap;
     gap: 12px 8px;
-    --inputs_gaps: 8px;
+  }
+  .tab-form.place-lookup .input-fields {
+    flex-direction: column;
+    gap: inherit;
   }
   #countryselector {
     width: 100%;
@@ -889,6 +855,10 @@ footer {
   }
   .finalResult > div:first-child p:nth-child(2) {
     order: 1;
+  }
+  .lookup-map {
+    height: 156px;
+    margin-bottom: 16px;
   }
   .get_countryNumber .numberLists {
     padding: 16px;

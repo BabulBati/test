@@ -37,6 +37,44 @@
 
         countrySelector.addEventListener("countrychange", updateCountryInfo);
     </script>
+
+    <style>
+        .displayNone {
+            display: none;
+        }
+    </style>
+    <div class="switchTabs">
+        <div class="tabs active" data-target="placeTab" aria-selected="true">1</div>
+        <div class="tabs" data-target="area_codeTab" aria-selected="false">2</div>
+    </div>
+
+    <div>
+        <div class="tab-form" data-id="placeTab">1</div>
+        <div class="tab-form displayNone" data-id="area_codeTab">2</div>
+    </div>
+    <script>
+        const switchTabs = document.querySelector('.switchTabs');
+        const tabForms = document.querySelectorAll('.tab-form');
+
+        switchTabs.addEventListener('click', (event) => {
+            if (!event.target.classList.contains('tabs')) return;
+
+            // Toggle active class for tabs
+            document.querySelector('.tabs.active')?.classList.remove('active');
+            event.target.classList.add('active');
+
+            // Update ARIA selected state
+            document.querySelectorAll('.tabs').forEach(tab => {
+                tab.setAttribute('aria-selected', tab === event.target ? 'true' : 'false');
+            });
+
+            // Toggle visibility based on the data-id
+            const targetId = event.target.getAttribute('data-target');
+            tabForms.forEach((el) => {
+                el.classList.toggle('displayNone', el.getAttribute('data-id') !== targetId);
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .testimonials-outer {
+            border: 1px solid #EFE6FC;
+            border-radius: 16px;
+            padding: 48px 85px;
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+            /* Allow items to wrap to the next line */
+        }
+
+        .testimonials-inner {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-col {
+            flex: 1 1;
+            /* Adjust the width of columns to be around 30% of container */
+            max-width: 354px;
+            box-sizing: border-box;
+        }
+
+
+        .testimonial-box {
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #E6E6E6;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-box-top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #D1D4DC;
+        }
+
+        .testimonial-box-heading {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .testimonial-box-heading img {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .testimonial-g2-logo img {
+            width: 24px !important;
+            height: 24px !important;
+        }
+
+        .testimonial-box-heading .heading-text h6 {
+            color: #242424;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            /* 20.8px */
+            letter-spacing: -0.32px;
+            margin: 0;
+        }
+
+        .testimonial-box-heading .heading-text p {
+            color: #444;
+            font-family: "Inter", sans-serif !important;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 21px */
+            letter-spacing: -0.28px;
+            margin: 8px 0px 0px 0px;
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 8px;
+        }
+
+        .review-rating img {
+            max-width: 106px;
+            height: 17px;
+        }
+
+        .review-rating p {
+            margin: 0;
+            color: #444;
+            font-family: "Inter", sans-serif !important;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 21px */
+            letter-spacing: -0.28px;
+        }
+
+        .testimonial-box-bottom p {
+            color: #242424;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            /* 150% */
+            letter-spacing: -0.16px;
+        }
+
+        .see-more-btn {
+            text-align: center;
+        }
+
+        .see-more-btn .seebtn {
+            width: 150px !important;
+            display: inline-flex;
+            justify-content: center;
+            padding: 16px 24px;
+            background: linear-gradient(to right, #8733ff 0%, #d262eb 38.5%, #8733ff 100%) !important;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: "Inter", sans-serif !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+            /* 125% */
+            letter-spacing: -0.16px;
+        }
+
+        @media(min-width:1441px) {
+            .testimonials-inner {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width:1199px) and (min-width:992px) {
+            .testimonials-outer {
+                padding: 48px;
+            }
+        }
+
+        @media(max-width: 991px) and (min-width:768px) {
+            .testimonials-outer {
+                padding: 32px;
+                /* width:624px; */
+
+            }
+
+            .testimonials-inner {
+                gap: 20px;
+            }
+
+            .testimonial-col {
+                flex: 1 1;
+                /* Adjust for two columns */
+                max-width: 48%;
+            }
+
+            .testimonial-box {
+                width: 302px !important;
+            }
+
+            .no-margin-tab {
+                margin: 0 !important;
+            }
+
+            .tab-flex {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 100%;
+                gap: 20px;
+            }
+
+            .tab-flex .full-width {
+                width: 100% !important;
+            }
+
+            .tab-none {
+                display: none;
+            }
+        }
+
+        @media(max-width:991px) {
+
+            .testimonial-box-heading .heading-text h6,
+            .testimonial-box-bottom p {
+                font-size: 14px;
+                line-height: 20px;
+                /* 142.857% */
+                letter-spacing: -0.14px;
+            }
+
+            .testimonial-box-heading .heading-text p {
+                font-size: 12px;
+                margin-top: 4px;
+            }
+
+            .review-rating p {
+                font-size: 12px;
+
+            }
+
+            .no-margin {
+                margin: 0px !important;
+            }
+        }
+
+        @media(max-width: 767px) {
+            .testimonials-outer {
+                padding: 20px;
+                gap: 20px;
+            }
+
+
+            .testimonial-col {
+                flex: 1 1 100%;
+                /* Adjust for single column */
+                max-width: 100%;
+            }
+
+            .testimonial-box {
+                padding: 16px;
+            }
+
+            .mobile-none {
+                display: none;
+            }
+
+            .see-more-btn .seebtn {
+                width: 173px !important;
+                padding: 14px 24px;
+            }
+        }
+    </style>
+    <style>
+        .g2-img-container {
+            column-gap: 28px;
+        }
+
+        .g2-img-container a {
+            color: #4d4950;
+            font-family: "Manrope";
+            font-size: 20px !important;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .g2-images {
+            column-gap: 16px;
+        }
+
+        .g2-images img {
+            max-width: 100%;
+        }
+
+        div[class^="badge-img-"] {
+            width: auto;
+        }
+
+        .badge-img-130 {
+            max-height: 130px;
+        }
+
+        .badge-img-152 {
+            max-height: 152px;
+        }
+
+        .badge-img-170 {
+            max-height: 170px;
+        }
+
+        @media (max-width: 991px) {
+
+            .g2-images,
+            .g2-img-container {
+                column-gap: 12px;
+            }
+
+            .g2-img-container a {
+                font-size: 16px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .g2-images {
+                column-gap: 6px;
+            }
+
+            .g2-img-container a {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="testimonials-outer">
+        <div
+            class="g2-img-container d-flex align-items-md-center align-items-end justify-content-center flex-column flex-md-row">
+            <div class="d-flex align-items-center g2-images">
+                <div class="badge-img-130">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_ANZ_Regional_Leader.svg"
+                        alt="ANZ Regional Leader by G2" />
+                </div>
+                <div class="badge-img-130">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_EMEA_Regional_Leader.svg"
+                        alt="EMEA Regional Leader by G2" />
+                </div>
+                <div class="badge-img-152">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_Momentum_Leader.svg"
+                        alt="Momentum Leader by G2" />
+                </div>
+                <div class="badge-img-170">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/KrispCall_Best_Software_2025_by_G2.svg"
+                        alt="KrispCall Best Software 2025 by G2" />
+                </div>
+                <div class="badge-img-152">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_Grid_Leader.svg"
+                        alt="Grid Leader by G2" />
+                </div>
+                <div class="badge-img-130">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_Europe_Regional_Leader.svg"
+                        alt="Europe Regional Leader by G2" />
+                </div>
+                <div class="badge-img-130">
+                    <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250327_065424/Spring_2025_AsiaPacific_Regional_Leader.svg"
+                        alt="AsiaPacific Regional Leader by G2" />
+                </div>
+
+            </div>
+            <a href="https://www.g2.com/products/krispcall/reviews" target="_blank" rel="noopener">+55 more</a>
+        </div>
+        <div class="testimonials-inner">
+            <!-- column 1 -->
+            <div class="testimonial-col">
+                <!-- testimonials box 1 -->
+                <div class="testimonial-box">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Amanda-C.png" alt="">
+                            <div class="heading-text">
+                                <h6>Amanda C.</h6>
+                                <p>CEO</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Jan 22, 2025</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“KrispCall’s quick, respectful customer support helped me find the perfect solution for
+                            global
+                            calls and a customer service number!”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 2-->
+                <div class="testimonial-box">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Nagendra-V.png" alt="">
+                            <div class="heading-text">
+                                <h6>Nagendra V.</h6>
+                                <p>Digital Marketing Specialist</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Oct 07, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“KrispCall makes global calling effortless with all the tools I need in one place—perfect for
+                            connecting with clients worldwide &  my digital marketing needs!”
+                        </p>
+                    </div>
+                </div>
+                <!-- testimonials box 3-->
+                <div class="testimonial-box ">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Brighton-Tashobya.png" alt="">
+                            <div class="heading-text">
+                                <h6>Brighton Tashobya</h6>
+                                <p>Contributing Author</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Jun 21, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“An all-action dashboard for monitoring and analyzing your connections makes KrispCall
+                            worthwhile. Having a local number breaks the ice on its own, and the easy-to-use interface
+                            with
+                            a great user experience simplifies your work.”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 4-->
+                <div class="testimonial-box ">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Eduardo-Almeida.png" alt="">
+                            <div class="heading-text">
+                                <h6>Eduardo Almeida</h6>
+                                <p>Member</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Mar 27, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“KrispCall is easy to use and simply works. Good support service”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 5-->
+                <div class="testimonial-box no-margin">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Shazzadul-Islam-Fahim.png" alt="">
+                            <div class="heading-text">
+                                <h6>Shazzadul Islam Fahim</h6>
+                                <p>CRM Administrator</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Feb 13, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“KrispCall is hassle-free to implement. I can now use an international number while staying
+                            in
+                            another country, which has helped my business grow.”</p>
+                    </div>
+                </div>
+            </div>
+            <!-- column 2 -->
+            <div class="testimonial-col ">
+                <!-- testimonials box 6-->
+                <div class="testimonial-box">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Lucas-W.png" alt="">
+                            <div class="heading-text">
+                                <h6>Lucas W.</h6>
+                                <p>Product Manager</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Dec 3, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>"KrispCall’s authentic, professional service and exceptional customer understanding make
+                            staying
+                            connected with clients effortless—I’m very happy with it!"</p>
+                    </div>
+                </div>
+                <!-- testimonials box 7 -->
+                <div class="testimonial-box">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Pushkar-Verma.png" alt="">
+                            <div class="heading-text">
+                                <h6>Pushkar Verma</h6>
+                                <p>Director</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Aug 12, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“The setup process was very easy, with chat support available during our business hours. We
+                            needed a UK number with WhatsApp setup, and this solution met our needs at a reasonable
+                            price.”
+                        </p>
+                    </div>
+                </div>
+                <!-- testimonials box 8 -->
+                <div class="testimonial-box ">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/James-Edward-Allan.png" alt="">
+                            <div class="heading-text">
+                                <h6>James Edward Allan</h6>
+                                <p>Director</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Jun 11, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>"The call quality is excellent and the customer service is miles better than so many
+                            services"
+                        </p>
+                    </div>
+                </div>
+                <!-- testimonials box 9 -->
+                <div class="testimonial-box">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2024/08/Saurav-Sahni1-img.png" alt="">
+                            <div class="heading-text">
+                                <h6>Rajendra Shrestha</h6>
+                                <p>Founder & CEO</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Mar 23, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“KrispCall solves the problem of relying on country-specific telecom providers by offering
+                            instant access to phone numbers from multiple countries, making it easy to get international
+                            numbers and make calls.”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 10 -->
+                <div class="testimonial-box no-margin">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Jeronimo-Arias-Gomez.png" alt="">
+                            <div class="heading-text">
+                                <h6>Jeronimo Arias Gomez</h6>
+                                <p>Founder & CEO</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Feb 10, 2024
+                        </p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“Great service, I can get calls from the US on my Spanish line”</p>
+                    </div>
+                </div>
+            </div>
+            <!-- column 3 -->
+            <div class="testimonial-col tab-flex ">
+
+                <!-- testimonials box 11-->
+                <div class="testimonial-box no-margin-tab">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Hunter-F.png" alt="">
+                            <div class="heading-text">
+                                <h6>Hunter F.</h6>
+                                <p>Business Analyst </p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Nov 12, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>"KrispCall’s amazing VoIP features and seamless number porting have been essential for
+                            managing
+                            my international business calls and remote team—highly recommended!"</p>
+                    </div>
+                </div>
+
+                <!-- testimonials box 12-->
+                <div class="testimonial-box no-margin-tab">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Matthew-Jones-JP-AFIML.png" alt="">
+                            <div class="heading-text">
+                                <h6>Matthew Jones (JP, AFIML)</h6>
+                                <p>Associate Fellow</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Jul 18, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“Been using KrispCall for a while now and the service is great and the customer support is so
+                            responsive”</p>
+                    </div>
+                </div>
+
+                <!-- testimonials box 13 -->
+                <div class="testimonial-box no-margin-tab">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Achref-Ben-Hadj-M.png" alt="">
+                            <div class="heading-text">
+                                <h6>Achref Ben Hadj M.</h6>
+                                <p>Building Designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Apr 05, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“Navigating through calls, managing contacts, and accessing features are streamlined
+                            processes,
+                            allowing users to focus on their conversations”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 14 -->
+                <div class="testimonial-box no-margin-tab">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Nomanqoba-Mthembu.png" alt="">
+                            <div class="heading-text">
+                                <h6>Nomanqoba Mthembu</h6>
+                                <p>Member </p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Feb 19, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“I enjoy the ease of the app, which allows me to make calls even without having a phone, and
+                            the
+                            support team is always there to help.”</p>
+                    </div>
+                </div>
+                <!-- testimonials box 15 -->
+                <div class="testimonial-box full-width no-margin-tab no-margin">
+                    <!-- box top  -->
+                    <div class="testimonial-box-top">
+                        <div class="testimonial-box-heading">
+                            <img src="/wp-content/uploads/2025/01/Vuong-Nguyen.png" alt="">
+                            <div class="heading-text">
+                                <h6>Vuong Nguyen</h6>
+                                <p>AEM Developer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-g2-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2354_31886)">
+                                    <path
+                                        d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                        fill="#FF492C" />
+                                    <path
+                                        d="M17.1946 9.19201H15.1449C15.2001 8.87041 15.3994 8.69041 15.8026 8.48641L16.1793 8.29441C16.8537 7.94881 17.2137 7.55761 17.2137 6.91921C17.2137 6.51841 17.0577 6.20161 16.7481 5.97361C16.4385 5.74561 16.0738 5.63281 15.6466 5.63281C15.3161 5.62892 14.9916 5.7215 14.7129 5.89921C14.4321 6.07201 14.2233 6.29521 14.0938 6.57361L14.6866 7.16881C14.917 6.70321 15.2505 6.47521 15.6897 6.47521C16.0617 6.47521 16.2897 6.66721 16.2897 6.93361C16.2897 7.15681 16.1793 7.34161 15.7521 7.55761L15.5097 7.67521C14.9841 7.94161 14.6193 8.24641 14.4081 8.59201C14.1969 8.93761 14.0938 9.37201 14.0938 9.89761V10.0416H17.1946V9.19201Z"
+                                        fill="white" />
+                                    <path
+                                        d="M16.9205 11.0208H13.5269L11.8301 13.9584H15.2237L16.9205 16.8984L18.6173 13.9584L16.9205 11.0208Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12.1224 15.9192C9.96242 15.9192 8.20322 14.16 8.20322 12C8.20322 9.83999 9.96242 8.08079 12.1224 8.08079L13.464 5.27519C13.0222 5.18734 12.5729 5.14312 12.1224 5.14319C8.33523 5.14319 5.26562 8.21279 5.26562 12C5.26562 15.7872 8.33523 18.8568 12.1224 18.8568C13.5738 18.8595 14.988 18.3987 16.1592 17.5416L14.676 14.9688C13.9664 15.5817 13.0601 15.9191 12.1224 15.9192Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2354_31886">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="review-rating">
+                        <img src="/wp-content/uploads/2024/08/5-star-rating-img.png" alt="">
+                        <p class="review-date">Jan 07, 2024</p>
+                    </div>
+                    <!-- box bottom -->
+                    <div class="testimonial-box-bottom">
+                        <p>“I am able to register multiple phone numbers across different countries for SMS and phone
+                            call
+                            functionalities in a Public Sector Project”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="see-more-btn">
+            <a href="/krispcall-reviews/" target="_blank" class="seebtn">See more</a>
+        </div>
+    </div>
+</body>
+
+</html>

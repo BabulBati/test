@@ -223,7 +223,7 @@
                                         validator.</p>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                                    <a href="https://form.typeform.com/to/PEOkOl9Z" target="_blank" rel="nofollow"
                                         class="limit_request-btn">Request Access</a>
                                 </div>
                             </div>
@@ -333,7 +333,7 @@
                         <div class="title">Need Bulk Verification?</div>
                         <p>We provide bulk phone number validation API solutions. Reach out to us.</p>
                     </div>
-                    <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
+                    <a href="https://form.typeform.com/to/PEOkOl9Z" target="_blank" rel="nofollow"
                         class="bulk-requestAccess d-inline-flex align-items-center flex-shrink-0 justify-content-center">Request
                         Access</a>
                 </div>
@@ -342,18 +342,45 @@
     </div>
 
     <script>
+        const toolContainer = document.querySelector(".tool-container");
+        const input = document.getElementById("numberSearch");
+        console.log("input is", input);
         let countryISO;
         const countrySelector = document.getElementById("countryselector");
+        input.addEventListener("beforeinput", function (e) {
+            if (!/[0-9+\-]/.test(e.data) && e.data !== null) {
+                e.preventDefault(); // Block invalid character
+            }
+        });
 
+        input.addEventListener("input", () => {
+            itiCountrySelector.setNumber(input.value);
+            const inputLength = input.value.length;
+            console.log("input length is", inputLength);
+            let error_container = document.querySelector(".error-container");
+            error_container.style.display = "none";
+            const phoneNumberBtn = document.getElementById("check_num-btn");
+            document.querySelector(".numberSearch").classList.remove("ero_icon");
+            //handle error here like undefined and all
+            if (inputLength > 0) {
+                phoneNumberBtn.style.background = "#8733ff";
+            } else {
+                phoneNumberBtn.style.background = "#e0e0e0";
+            }
+        });
         // Initialize intlTelInput
         const itiCountrySelector = window.intlTelInput(countrySelector, {
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
+            utilsScript:
+                "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
             initialCountry: "us",
             separateDialCode: true,
+            nationalMode: false,
         });
 
         // Function to update country name and dial code
         function updateCountryInfo() {
+            const error_container = document.querySelector(".error-container");
+            error_container.style.display = "none";
             const countryData = itiCountrySelector.getSelectedCountryData();
             const dialCodeElement = document.querySelector(".iti__selected-dial-code");
             if (dialCodeElement) {
@@ -370,16 +397,373 @@
         // Initial call to set country name and dial code
         updateCountryInfo();
 
-    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var checking_number = document.querySelector(".checking_number");
+            var resultBox = document.querySelector(".get_countryNumber");
+            var finalResult = document.querySelector(".finalResult");
 
-    <!-- Toggle Maximun Limit Reached by checking "limitReached" class in "finalResult" when 0 free attempts remain -->
-    <script>
-        const finalResult = document.querySelector('.finalResult');
-        const maxLimit = document.querySelector('.max_limit');
+            var initialContent = document.querySelector(".initialContent");
 
-        function toggleMaxLimit() {
-            maxLimit.style.display = finalResult.classList.contains('limitReached') ? 'flex' : 'none';
+            var error_container = document.querySelector(".error-container");
+
+            document.querySelector(".numberSearch").classList.remove("ero_icon");
+            if (checking_number) checking_number.style.display = "none";
+            if (finalResult) finalResult.style.display = "none";
+            if (resultBox) resultBox.style.display = "none";
+            if (error_container) error_container.style.display = "none";
+            if (initialContent) initialContent.style.display = "block"; // Ensure initial content is shown
+
+            var checkButton = document.querySelector(".checkNumBtn");
+            if (checkButton) {
+                checkButton.addEventListener("click", handleCheck);
+            } else {
+                console.log("Check button not found.");
+            }
+        });
+
+        function setCookie(name, value, minutes, path = "/tools/phone-number-validator/") {
+            let date = new Date();
+            date.setTime(date.getTime() + minutes * 60 * 1000);
+            document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=${path}`;
         }
+        function getCookie(name) {
+            let cookies = document.cookie.split("; ");
+            for (let cookie of cookies) {
+                let [key, value] = cookie.split("=");
+                if (key === name) return value;
+            }
+            return null;
+        }
+
+        // Function to handle button disabling based on cookies
+        function checkAttempts() {
+            let attempts = getCookie("checkAttempts");
+            let lastAttemptTime = getCookie("lastAttemptTime");
+
+            if (!attempts) {
+                setCookie("checkAttempts", 0, 10, "/tools/phone-number-validator/"); // Initialize if not present
+                attempts = 0;
+            } else {
+                attempts = parseInt(attempts);
+            }
+
+            let checkButton = document.querySelector(".checkNumBtn");
+            let max_limit = document.querySelector(".max_limit");
+            if (attempts >= 5) {
+                checkButton.disabled = true;
+                max_limit.style.display = "block";
+                let remainingTime = Math.max(
+                    600 - Math.floor((Date.now() - lastAttemptTime) / 1000),
+                    0
+                );
+
+                setTimeout(() => {
+                    setCookie("checkAttempts", 0, 10, "/tools/phone-number-validator/");
+                    checkButton.disabled = false;
+
+                    location.reload();
+                }, remainingTime * 1000);
+            }
+        }
+        document
+            .getElementById("check_num-btn")
+            .addEventListener("click", async function (e) {
+                e.preventDefault();
+                // async function handleCheck() {
+                console.log("in handle check");
+                const inputField = document.getElementById("numberSearch");
+                hasErrorOccured = false;
+                let resultBox = document.querySelector(".get_countryNumber");
+                let checking_number = document.querySelector(".checking_number");
+                let finalResult = document.querySelector(".finalResult");
+                let resultData = finalResult.querySelector(".resultData");
+                let back_container = document.querySelector(".selectedNumber");
+                let list = document.querySelector(".numberLists");
+                let error_container = document.querySelector(".error-container");
+                error_container.style.display = "none";
+                errorText = error_container.querySelector("p");
+                const inputLength = inputField.value.length;
+                if (inputLength === 0) {
+                    console.log("length is 0");
+                    errorText.textContent = "input is required";
+                    error_container.style.display = "block";
+                    return;
+                }
+                const resultDataContainer = document.querySelector(".resultData");
+                const result_country =
+                    resultDataContainer.querySelector(".result-country ");
+
+                const flagElement = result_country.querySelector(".iti__flag");
+
+                if (flagElement) {
+                    flagElement.className = `iti__flag iti__${countryISO.toLowerCase()} flex-shrink-0`;
+                }
+                back_container.style.display = "none";
+
+                document.querySelector(".numberSearch").classList.remove("ero_icon");
+                let initialContent = document.querySelector(".initialContent");
+
+                let max_limit = document.querySelector(".max_limit");
+                let button = document.getElementById("check_num-btn");
+                let attempts = getCookie("checkAttempts")
+                    ? parseInt(getCookie("checkAttempts"))
+                    : 0;
+
+                if (attempts >= 4) {
+                    button.style.background = "#E0E0E0";
+                    button.disabled = true;
+                    resultData.style.filter = "blur(5px)";
+                    document.getElementById("countDisplay").innerHTML =
+                        '0 <span style="color:red;">free attempts</span> remaining';
+                    max_limit.style.display = "block";
+
+                    return;
+                }
+                toolContainer.classList.remove("beforeSearch");
+                setCookie("checkAttempts", attempts + 1, 10, "/tools/phone-number-validator/");
+                setCookie("lastAttemptTime", Date.now(), 10, "/tools/phone-number-validator/");
+
+                checkAttempts(); // Check if attempts exceed the limit
+                list.querySelectorAll(".iti__flag").forEach((flag) => {
+                    flag.className = `iti__flag iti__${countryISO.toLowerCase()} flex-shrink-0`;
+                });
+                if (resultBox) resultBox.style.display = "none";
+                if (checking_number) checking_number.style.display = "block";
+                if (finalResult) finalResult.style.display = "none";
+                if (list) list.style.display = "none";
+                if (initialContent) initialContent.style.display = "none"; // Ensure initial content is shown
+                const countryData = itiCountrySelector.getSelectedCountryData();
+                let countryName = document.querySelector(".iti__selected-dial-code");
+                countryName.textContent = `${countryData.name} (+${countryData.dialCode})`;
+                countryISO = countryData.iso2.toUpperCase();
+                try {
+                    let response = await fetch("https://uat.safefamilyapp.com/get-numbers", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ limit: 10, country: countryISO, locality: "" }),
+                    });
+                    let data = await response.json();
+                    // Extract dialing numbers if available, otherwise keep empty array
+                    let numbers =
+                        data && Array.isArray(data) ? data.map((n) => n.dialing_number) : [];
+                    // If numbers are less than 6, fetch from generator API
+                    if (numbers.length < 6) {
+                        const urls = `https://freetoolsv2.marktivities.guru/api/phone/number-generator/?country=${encodeURIComponent(
+                            countryISO
+                        )}`;
+
+                        try {
+                            const response = await fetch(urls, {
+                                method: "GET",
+                                headers: { "Content-Type": "application/json" },
+                            });
+                            const generatorResult = await response.json();
+                            // Extract generator numbers if available
+                            let generatedNumbers =
+                                generatorResult.Data && Array.isArray(generatorResult.Data)
+                                    ? generatorResult.Data.slice(0, 6 - numbers.length)
+                                    : [];
+
+                            // Append generated numbers to existing numbers
+                            numbers = numbers.concat(generatedNumbers);
+                        } catch (error) {
+                            console.log("Error fetching generator numbers:", error);
+                        }
+                    }
+                    // Ensure we only take the first 6 numbers
+                    numbers = numbers.slice(0, 6);
+                    const maxItems = 6; // Total number of boxes available
+                    // Loop through available data (up to 6 items)
+                    for (let i = 0; i < maxItems; i++) {
+                        let number = numbers[i]; // Ensure data[i] exists before accessing its properties
+                        let element = document.querySelector(`.number-${i + 1}`);
+                        let genNumElement = element ? element.closest(".gen_num") : null; // Get the parent .gen_num element
+                        if (genNumElement) {
+                            // If there's a valid dialing number, display the box and update the number
+                            if (number && number) {
+                                element.innerText = number;
+                                genNumElement.style.display = "inline-flex"; // Show the box
+                            } else {
+                                // If no valid number for this box, hide it
+                                genNumElement.style.setProperty("display", "none", "important");
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                }
+
+                document.getElementById("countDisplay").innerHTML = `${3 - attempts
+                    } <span class="highlights">free attempts</span> remaining`;
+
+                button.style.background = "#e0e0e0";
+                button.disabled = true;
+                if (initialContent) {
+                    initialContent.style.display = "none";
+                }
+
+                if (checking_number) {
+                    checking_number.style.display = "block";
+                } else {
+                    console.log("not found");
+                }
+                resultBox.style.display = "block";
+                list.style.display = "block";
+
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.style.background = "#8733ff";
+                    checking_number.style.display = "none";
+                    finalResult.style.display = "block"; // Show the final result block
+                    if (hasErrorOccured) {
+                        error_container.style.display = "block"; // Show error
+                        document.querySelector(".numberSearch").classList.add("ero_icon");
+                    } else {
+                        error_container.style.display = "none"; // Hide error
+                        document.querySelector(".numberSearch").classList.remove("ero_icon");
+                    }
+
+                    // document.getElementById("validate").innerText = "Results for";
+                }, 10000);
+                const number = document.getElementById("numberSearch").value;
+
+                const url = `https://freetoolsv2.marktivities.guru/api/phone/validator/?country=${encodeURIComponent(
+                    countryISO
+                )}&number=${encodeURIComponent(number)}`;
+
+                try {
+                    const response = await fetch(url, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+
+                    const jsonResult = await response.json(); // Parse the response body once
+
+                    const local_number = resultDataContainer.querySelector(".result-local");
+                    const localNumber = local_number.querySelectorAll("p")[1];
+
+                    const result_validity = resultDataContainer.querySelector(
+                        ".result-validity span"
+                    );
+                    const resultCountry = result_country.querySelectorAll("p")[1];
+                    const result_city = resultDataContainer.querySelector(".result-city");
+                    const resultCity = result_city.querySelectorAll("p")[1];
+
+                    const result_region = resultDataContainer.querySelector(".result-region");
+                    const resultRegion = result_region.querySelectorAll("p")[1];
+
+                    const result_lineType =
+                        resultDataContainer.querySelector(".result-line_type");
+                    const line_type = result_lineType.querySelectorAll("p")[1];
+
+                    if (response.ok) {
+                        resultDataContainer.style.filter = "blur(0px)";
+                        line_type.textContent = jsonResult["line_type"];
+                        resultRegion.textContent = jsonResult["location"];
+                        error_container.style.display = "none";
+                        hasErrorOccured = false;
+
+                        resultCity.textContent = jsonResult["location"];
+                        resultCountry.textContent = jsonResult["country_name"];
+                        result_validity.textContent = jsonResult["valid"];
+                        localNumber.textContent = jsonResult["local_format"];
+
+                        // Replace or insert HTML dynamically based on the response data
+                    } else {
+                        handleError(
+                            response.status,
+                            line_type,
+                            resultRegion,
+                            resultCity,
+                            resultCountry,
+                            result_validity,
+                            localNumber,
+                            jsonResult.Error
+                        );
+                    }
+                } catch (error) {
+                    console.log("in catch error", error);
+                }
+                function handleError(
+                    status,
+                    line_type,
+                    resultRegion,
+                    resultCity,
+                    resultCountry,
+                    result_validity,
+                    localNumber,
+                    error
+                ) {
+                    line_type.textContent = "N/A";
+                    resultRegion.textContent = "N/A";
+                    resultCity.textContent = "N/A";
+                    resultCountry.textContent = "N/A";
+                    result_validity.textContent = "N/A";
+                    localNumber.textContent = "N/A";
+                    resultDataContainer.style.filter = "blur(5px)";
+                    hasErrorOccured = true;
+
+                    if (status === 400) {
+                        errorText.textContent = error;
+                    } else if (status === 401) {
+                        errorText.textContent = error;
+                    } else {
+                        errorText.textContent = error;
+                    }
+                }
+                const resultNumber = document.querySelector(".finalResult span");
+
+                let input = document.getElementById("numberSearch");
+
+                resultNumber.textContent = input.value;
+                // Progress bar logic
+                let progressBar = document.querySelector(".progress-bar");
+
+                progressBar.style.width = "0%";
+                progressBar.style.background = "#10bc3b";
+                let currentProgress = 5;
+                let interval = setInterval(() => {
+                    if (currentProgress <= 100) {
+                        progressBar.style.width = `${currentProgress}%`;
+
+                        document.getElementById("seconds").innerText =
+                            10 - Math.floor(currentProgress / 10);
+                        if (currentProgress === 100) {
+                            // document.getElementById("validate").innerText = "Result for";
+                            clearInterval(interval);
+                            document.getElementById("seconds").innerText = 10;
+                            progressBar.style.width = "5%";
+                        }
+                        currentProgress++;
+                    }
+                }, 100);
+                document
+                    .querySelector(".numbers_lists")
+                    .addEventListener("click", function (event) {
+                        if (
+                            event.target.tagName === "SPAN" &&
+                            event.target.className.startsWith("number-")
+                        ) {
+                            back_number = event.target.textContent.trim();
+
+                            const replace_value = document.getElementById("selected_number");
+
+                            replace_value.textContent = back_number;
+                            list.style.display = "none";
+                            back_container.style.display = "block";
+                        }
+                    });
+                document
+                    .getElementById("back-numberLists") // Ensure you have an element with class "back_button"
+                    .addEventListener("click", function () {
+                        list.style.display = "block";
+                        back_container.style.display = "none";
+                    });
+                // 🛑 Ensure it stays visible for at least 5 seconds
+            });
+
 
     </script>
 </body>
