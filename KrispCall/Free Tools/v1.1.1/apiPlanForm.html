@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Plan Form</title>
+    <link rel="stylesheet" href="apiPlanForm.css">
+    <link rel="stylesheet" href="typo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <!-- API Plan From -->
+    <div class="container">
+        <div class="apiPlan-container" id="api_plan">
+            <div class="apiPlan-header customtypo-heading customtext-l">
+                <h2>Activate Your API Plan</h2>
+                <p>
+                    You're just one step away from unlocking your
+                    <span class="plan-name">Ultimate</span> plan.
+                </p>
+            </div>
+            <form class="apiPlan-form">
+                <div class="form-input-div d-flex flex-column">
+                    <label for="emailAddress">Email Address</label>
+                    <div class="apiForm-input apiForm-input-email">
+                        <input type="email" placeholder="Enter your email address" name="emailAddress" id="emailAddress"
+                            required />
+                        <span class="input-icon"></span>
+                    </div>
+                    <span class="error-input-msg" style="display: none">Please enter valid email</span>
+                </div>
+                <div class="form-input-div d-flex flex-column">
+                    <label for="phoneNumber">Phone Number</label>
+                    <div class="apiForm-input apiForm-input-phone">
+                        <input type="tel" placeholder="Enter your phone number" name="phoneNumber" id="phoneNumber"
+                            required />
+                        <span class="input-icon"></span>
+                    </div>
+                    <span class="error-input-msg" style="display: none" id="phoneError">Please enter valid phone
+                        number</span>
+                </div>
+                <div class="form-checkbox d-flex align-items-start">
+                    <label class="form-custom-checkbox">
+                        <input type="checkbox" name="agreePolicy" id="agreePolicy" />
+                        <span class="checkMark"></span>
+                    </label>
+                    <span>I agree to
+                        <a href="https://krispcall.com/legal/privacy-policy/" target="_blank">privacy policy</a>
+                        including KrispCall using my contact details to contact me.</span>
+                </div>
+                <button id="proceedToPayment" onclick="checkout(event)"
+                    class="form-proceed-btn d-flex align-items-center justify-content-center" disabled>
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const tool_type = "carrier-lookup";
+        const emailInput = document.getElementById("emailAddress");
+        const phoneInput = document.getElementById("phoneNumber");
+        const proceedButton = document.getElementById("proceedToPayment");
+        const emailError = document.querySelector(".error-input-msg:nth-of-type(1)");
+        const phoneError = document.getElementById("phoneError");
+        const checkBox = document.getElementById("agreePolicy");
+        const planName = document.querySelector(".plan-name").textContent;
+        //   console.log(planName);
+        //   emailInput.closest(".apiForm-input-email")?.classList.remove("alert-circle");
+        //   emailInput.classList.remove("alert-circle");
+        const stripe = Stripe(
+            "pk_live_51H9XKFEqbGBBUQhZG0vax5snqNx3xcbxpa2XXyfGu4KjJiaKewM8Qda31xErlJR1V0Cvq3EP3TuSKIRTaD1vZSfx004cYUw9ly"
+        );
+
+        const map = {
+            Basic: "price_1QuQVcEqbGBBUQhZLbUVVNTc",
+            Pro: "price_1QuQVYEqbGBBUQhZffnzWddF",
+            Elite: "price_1QuQVWEqbGBBUQhZrZki0rT3",
+            Ultimate: "price_1QuQVREqbGBBUQhZwR0u2fnE",
+        };
+
+        function getPriceId(planName) {
+            return map[planName] || null;
+        }
+        const priceId = getPriceId(planName);
+        //   console.log(priceId);
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validatePhone(phone) {
+            const phoneRegex = /^\d{10}$/;
+            return phoneRegex.test(phone);
+        }
+
+        function toggleProceedButton() {
+            if (emailInput.value && phoneInput.value && checkBox.checked) {
+                proceedButton.removeAttribute("disabled");
+            } else {
+                proceedButton.setAttribute("disabled", true);
+            }
+        }
+
+        emailInput.addEventListener("input", () => {
+            const isValidEmail = validateEmail(emailInput.value.trim());
+
+            if (!isValidEmail) {
+                emailError.style.display = "block";
+                emailInput.closest(".apiForm-input-email")?.classList.add("alert-circle");
+            } else {
+                emailError.style.display = "none";
+                emailInput
+                    .closest(".apiForm-input-email")
+                    ?.classList.remove("alert-circle");
+            }
+
+            toggleProceedButton();
+        });
+        phoneInput.addEventListener("input", () => {
+            if (!validatePhone(phoneInput.value)) {
+                phoneError.style.display = "block";
+                phoneInput.closest(".apiForm-input-phone")?.classList.add("alert-circle");
+            } else {
+                phoneError.style.display = "none";
+                phoneInput.closest(".apiForm-input-phone")?.classList.remove("alert-circle");
+            }
+            toggleProceedButton();
+        });
+
+        checkBox.addEventListener("change", toggleProceedButton);
+        async function checkout(e) {
+            e.preventDefault();
+            try {
+                success_url =
+                    "https://wp-dev.safefamilyapp.com/api_pricing_success-page/";
+                cancel_url = `https://wp-dev.safefamilyapp.com/api_pricing_${tool_type}/`;
+                url =
+                    "https://freetoolsv2.marktivities.guru/api/stripe/create-checkout-session/";
+
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        price_id: priceId,
+                        success_url: success_url,
+                        cancel_url: cancel_url,
+                    }),
+                });
+                const session = await response.json();
+                if (session.error) {
+                    console.error("Error creating checkout session:", session.error);
+                    return;
+                }
+                stripe.redirectToCheckout({ sessionId: session.id });
+            } catch (error) {
+                console.error("Fetch error:", error);
+            }
+        }
+    </script>
+</body>
+
+</html>

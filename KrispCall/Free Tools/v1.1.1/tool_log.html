@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="typo.css">
+    <style>
+        .tool-name-control {
+            padding: 24px 0;
+        }
+
+        .bulk-pricing,
+        .back-btn,
+        .mobile-control-flow {
+            display: none !important;
+        }
+
+        .bulk-pricing.show,
+        .back-btn.show {
+            display: block !important;
+            cursor: pointer;
+        }
+
+        .bulk-pricing>div {
+            gap: 0 6px;
+        }
+
+        .star-gif {
+            width: 30px;
+            aspect-ratio: 1;
+        }
+
+        .star-gif>img {
+            width: 24px;
+            aspect-ratio: 24.00/22.40;
+        }
+
+        .bulk-pricing-text {
+            color: #8733FF;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .back-btn>div {
+            gap: 0 4px;
+        }
+
+        .mobile-bulk-pricing {
+            display: none;
+        }
+
+        @media (max-width:991px) {
+            .tool-name-control {
+                padding: 6px 0;
+            }
+
+            .bulk-pricing-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width:767px) {
+            .desktop-control-flow {
+                display: none !important;
+            }
+
+            .mobile-control-flow {
+                display: block !important;
+                width: 100%;
+            }
+
+            .mobile-control-flow>div {
+                border-radius: 8px;
+                border: 1px solid #D1D4DC;
+                background: #FFF;
+                padding: 8px 8px 8px 12px;
+            }
+
+            .mobile-bulk-pricing-text {
+                color: #474E5A;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+            }
+
+            .view-pricing {
+                gap: 0 4px;
+                color: #8733FF;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        class="d-flex flex-md-row flex-column justify-content-between align-items-md-center align-items-start tool-name-control">
+        <div>Tool Name and Icon</div>
+
+        <!-- For WEB and TAB -->
+        <div class="desktop-control-flow">
+            <div class="bulk-pricing show">
+                <div class="d-flex align-items-center">
+                    <div class="star-gif d-inline-flex align-items-center justify-content-center">
+                        <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250407_113721/Free-tools-Star-GIF.gif"
+                            alt="">
+                    </div>
+                    <span class="bulk-pricing-text">Bulk Phone Validator Pricing</span>
+                </div>
+            </div>
+
+            <div class="back-btn">
+                <div class="d-inline-flex align-items-center">
+                    <span class="back-btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M12.986 3.33333L7.49705 8.82216C7.18762 9.13608 7.01416 9.55916 7.01416 9.99999C7.01416 10.4408 7.18762 10.8639 7.49705 11.1778L12.986 16.6667"
+                                stroke="#4D4950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <span class="back-btn-text">Go Back</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- For Mobile -->
+    <div class="mobile-control-flow show">
+        <div class="d-flex justify-content-between">
+            <span class="mobile-bulk-pricing-text">Bulk Phone Validator Pricing</span>
+            <span class="view-pricing d-inline-flex align-items-center">
+                View
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                        d="M6.31269 3L11.2527 7.93995C11.5312 8.22247 11.6873 8.60325 11.6873 9C11.6873 9.39675 11.5312 9.77752 11.2527 10.06L6.31269 15"
+                        stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>
+        </div>
+    </div>
+
+</body>
+
+</html>

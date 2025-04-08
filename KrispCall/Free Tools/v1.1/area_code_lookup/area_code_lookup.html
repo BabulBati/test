@@ -113,7 +113,9 @@
                                                         <img src="https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250310_073925/input_globe.svg"
                                                             alt="globe_icon" width="20" height="20">
                                                     </span>
-                                                    <span class="selected-state flex-grow-1" style="color: #0D0D0D;"><span style="color: #A8A8A8;">State / Province</span></span>
+                                                    <span class="selected-state flex-grow-1"
+                                                        style="color: #0D0D0D;"><span style="color: #A8A8A8;">State /
+                                                            Province</span></span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"
                                                         viewBox="0 0 10 6" fill="none">
                                                         <path
@@ -146,7 +148,7 @@
                                         </div>
                                         <div class="checkNumBtn">
                                             <button type="submit" class="free_tools-submit"
-                                                id="check_num-btn">Lookup</button>
+                                                id="areaCode-check_num-btn">Lookup</button>
                                         </div>
                                     </form>
                                 </div>
@@ -222,7 +224,7 @@
                             </div>
 
                             <!-- Final Results -->
-                            <div class="finalResult" style="display: none;">
+                            <div class="finalResult">
                                 <!-- add/remove 'limitReached' class to toggle between (attempts remaining/ 0 free attempts remaining) -->
                                 <div class="customtext-s d-flex justify-content-between">
                                     <p>Result for <span>Texas, Austin</span></p>
@@ -284,7 +286,8 @@
                                     <p style="color: #242424;">Maximum Limit Reached</p>
                                 </div>
                                 <div class="customtext-s custom-regular">
-                                    <p style="color: #4d4950;">You have reached the maximum limit for free area code lookup.</p>
+                                    <p style="color: #4d4950;">You have reached the maximum limit for free area code
+                                        lookup.</p>
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <a href="https://krispcall.com/request-api-for-free-tools/" target="_blank"
@@ -442,6 +445,13 @@
             "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
             "Wisconsin", "Wyoming"
         ];
+
+
+        let areaCodeSubmitBtn = document.getElementById('areaCode-check_num-btn');
+        let areaCodeInput = document.querySelector('.area_code-lookup input[type="text"]');
+        areaCodeInput.addEventListener('input', function () {
+            areaCodeSubmitBtn.style.backgroundColor = areaCodeInput.value.length == 0 ? '' : '#8733FF';
+        });
 
         const stateSelector = document.querySelector('.state-province-selector');
         const selectorSvg = document.querySelector('.state-province-selector > svg');

@@ -13,67 +13,164 @@
 
 <body>
 
-    <form class="free_tools-form">
-        <div class="countrySelector">
-            <input type="tel" id="countryselector">
-        </div>
-        <div class="numberSearch">
-            <input type="tel" id="numberSearch" placeholder="Enter Phone Number" maxlength="20" required>
-        </div>
-        <div class="checkNumBtn">
-            <button type="submit" class="free_tools-submit" id="check_num-btn">Lookup</button>
-        </div>
-    </form>
+    <button id="encryptButton">Encrypt data</button>
+    <button id="decryptButton">Decrypt data</button>
     <script>
-        const countrySelector = document.getElementById("countryselector");
-        const searchNumber = document.getElementById("numberSearch");
+        // AES Encryption with CBC mode (symmetric key encryption).
+        // Uses a 256-bit secret key and a random Initialization Vector (IV) for each encryption.
+        // The ciphertext and IV are encoded in URL-safe Base64 to ensure safe transmission/storage.
+        // CBC mode ensures unique ciphertext for identical plaintext by chaining blocks of data.
 
-        // Initialize intlTelInput
-        const itiCountrySelector = window.intlTelInput(countrySelector, {
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js",
-            initialCountry: "us",
-            separateDialCode: true,
-        });
+        // AES Encryption and Decryption Utilities
+        // TODO: update secret key to something unique
+        const secretKey = 'secret@';
 
-        countrySelector.addEventListener("countrychange", updateCountryInfo);
-    </script>
+        // Adjust the key size to 32 bytes if it's smaller or longer
+        function getKey() {
+            const encoder = new TextEncoder();
+            let keyData = encoder.encode(secretKey);
 
-    <style>
-        .displayNone {
-            display: none;
+            // Ensure the key is exactly 32 bytes (AES-256)
+            if (keyData.length < 32) {
+                // If the key is too short, pad it with 0s
+                const padding = new Uint8Array(32 - keyData.length); // Create padding array of the required length
+                keyData = new Uint8Array([...keyData, ...padding]); // Concatenate the padding
+            } else if (keyData.length > 32) {
+                // If the key is too long, trim it to 32 bytes
+                keyData = keyData.slice(0, 32);
+            }
+
+            return crypto.subtle.importKey('raw', keyData, { name: 'AES-CBC' }, false, [
+                'encrypt',
+                'decrypt',
+            ]);
         }
-    </style>
-    <div class="switchTabs">
-        <div class="tabs active" data-target="placeTab" aria-selected="true">1</div>
-        <div class="tabs" data-target="area_codeTab" aria-selected="false">2</div>
-    </div>
 
-    <div>
-        <div class="tab-form" data-id="placeTab">1</div>
-        <div class="tab-form displayNone" data-id="area_codeTab">2</div>
-    </div>
-    <script>
-        const switchTabs = document.querySelector('.switchTabs');
-        const tabForms = document.querySelectorAll('.tab-form');
+        // Convert ArrayBuffer to Base64
+        function arrayBufferToBase64(buffer) {
+            return btoa(String.fromCharCode(...new Uint8Array(buffer)));
+        }
 
-        switchTabs.addEventListener('click', (event) => {
-            if (!event.target.classList.contains('tabs')) return;
+        // Utility function to convert ArrayBuffer to URL-safe Base64
+        function arrayBufferToUrlSafeBase64(buffer) {
+            let base64 = arrayBufferToBase64(buffer);
+            // Replace special characters for URL-safe Base64
+            base64 = base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+            return base64;
+        }
 
-            // Toggle active class for tabs
-            document.querySelector('.tabs.active')?.classList.remove('active');
-            event.target.classList.add('active');
+        // Convert Base64 to ArrayBuffer using Uint8Array.from()
+        function base64ToArrayBuffer(base64) {
+            // Make it URL-safe Base64
+            let urlSafeBase64 = base64.replace(/-/g, '+').replace(/_/g, '/');
 
-            // Update ARIA selected state
-            document.querySelectorAll('.tabs').forEach(tab => {
-                tab.setAttribute('aria-selected', tab === event.target ? 'true' : 'false');
-            });
+            // Add padding if necessary
+            while (urlSafeBase64.length % 4) {
+                urlSafeBase64 += '=';
+            }
 
-            // Toggle visibility based on the data-id
-            const targetId = event.target.getAttribute('data-target');
-            tabForms.forEach((el) => {
-                el.classList.toggle('displayNone', el.getAttribute('data-id') !== targetId);
+            try {
+                const binaryString = atob(urlSafeBase64);
+                const bytes = Uint8Array.from(binaryString, char => char.charCodeAt(0));
+                return bytes.buffer;
+            } catch (e) {
+                console.error('Failed to decode Base64:', e);
+                throw new Error('Invalid Base64 input');
+            }
+        }
+
+        // Encrypt the JSON data and return a string (URL-safe Base64 encoded)
+        async function encryptData(jsonData) {
+            const key = await getKey();
+
+            // Convert JSON object to string
+            const jsonString = JSON.stringify(jsonData);
+
+            // Generate random IV (Initialization Vector)
+            const iv = crypto.getRandomValues(new Uint8Array(16));
+
+            // Encrypt the data
+            const encoder = new TextEncoder();
+            const encodedData = encoder.encode(jsonString);
+
+            const encryptedData = await crypto.subtle.encrypt({ name: 'AES-CBC', iv }, key, encodedData);
+
+            // Convert encrypted data and IV to URL-safe Base64 for storage/transmission as string
+            const encryptedDataBase64 = arrayBufferToUrlSafeBase64(encryptedData);
+            const ivBase64 = arrayBufferToUrlSafeBase64(iv);
+
+            // Return both encrypted data and IV as URL-safe Base64 strings concatenated into one string
+            return `${encryptedDataBase64}|${ivBase64}`; // Concatenate them with a delimiter (|) for easy separation later
+        }
+
+        // Decrypt the encrypted data using the same key and IV
+        async function decryptData(encryptedString) {
+            const key = await getKey();
+
+            try {
+                // Split the encrypted string into encrypted data and IV (separated by '|')
+                const [encryptedDataBase64, ivBase64] = encryptedString.split('|');
+
+                // Decode Base64 to get the encrypted data and IV
+                const encryptedData = base64ToArrayBuffer(encryptedDataBase64);
+                const iv = base64ToArrayBuffer(ivBase64);
+
+                // Decrypt the data
+                const decryptedData = await crypto.subtle.decrypt({ name: 'AES-CBC', iv }, key, encryptedData);
+
+                // Decode the decrypted data back to string
+                const decoder = new TextDecoder();
+                const decryptedString = decoder.decode(decryptedData);
+
+                // Parse the decrypted string back to JSON
+                const decryptedJson = JSON.parse(decryptedString);
+                return decryptedJson;
+            } catch (e) {
+                console.error('Invalid string', e);
+                // throw new Error('result Invalid string');
+                return null;
+            }
+        }
+
+
+        let encryptButton = document.getElementById('encryptButton');
+        let decryptButton = document.getElementById('decryptButton');
+        let encryptInput;
+        // Initialize the buttons
+        encryptButton.addEventListener('click', function () {
+            // Define the data to encrypt
+            const data = {
+                "type": "Local",
+                "dialingNumber": "+19857469538",
+                "capabilities": {
+                    "voice": true,
+                    "sms": true,
+                    "mms": true
+                },
+                "addressRequirements": "foreign",
+                "countryIso": "US",
+                "price": 4,
+                "isFree": true
+            };
+
+            // Encrypt the data and log the result
+            encryptData(data).then(encryptedString => {
+                encryptInput = encryptedString;
+                console.log('Encrypted string:', encryptedString);
+            }).catch(err => {
+                console.error('Encryption failed:', err);
             });
         });
+
+        decryptButton.addEventListener('click', function () {
+            // Decrypt the data and log the result
+            decryptData(encryptInput).then(decryptedData => {
+                console.log('Decrypted data:', decryptedData);
+            }).catch(err => {
+                console.error('Decryption failed:', err);
+            });
+        });
+       
     </script>
 </body>
 
