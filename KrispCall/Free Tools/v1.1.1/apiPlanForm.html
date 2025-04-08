@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+
 </head>
 
 <body>
@@ -59,7 +62,16 @@
             </form>
         </div>
     </div>
+
     <script>
+        const input = document.querySelector("#phoneNumber");
+        let phoneNumber = window.intlTelInput(input, {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/utils.js",
+            initialCountry: 'us',
+            separateDialCode: true,
+        });
+    </script>
+    <!-- <script>
         const tool_type = "carrier-lookup";
         const emailInput = document.getElementById("emailAddress");
         const phoneInput = document.getElementById("phoneNumber");
@@ -163,7 +175,7 @@
                 console.error("Fetch error:", error);
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

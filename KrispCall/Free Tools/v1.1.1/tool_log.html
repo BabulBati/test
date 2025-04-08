@@ -82,6 +82,7 @@
                 border: 1px solid #D1D4DC;
                 background: #FFF;
                 padding: 8px 8px 8px 12px;
+                gap: 0 8px;
             }
 
             .mobile-bulk-pricing-text {
@@ -94,14 +95,28 @@
                 letter-spacing: -0.02em;
             }
 
-            .view-pricing {
+            .view-pricing,
+            .go-back-btn {
+                display: none !important;
+            }
+
+            .view-pricing.show,
+            .go-back-btn.show {
+                display: inline-flex !important;
                 gap: 0 4px;
-                color: #8733FF;
                 font-family: "Inter", sans-serif;
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 24px;
                 letter-spacing: -0.02em;
+            }
+
+            .view-pricing {
+                color: #8733FF;
+            }
+
+            .go-back-btn {
+                color: #4D4950;
             }
         }
     </style>
@@ -149,16 +164,24 @@
     </div>
 
     <!-- For Mobile -->
-    <div class="mobile-control-flow show">
+    <div class="mobile-control-flow">
         <div class="d-flex justify-content-between">
-            <span class="mobile-bulk-pricing-text">Bulk Phone Validator Pricing</span>
-            <span class="view-pricing d-inline-flex align-items-center">
+            <span class="mobile-bulk-pricing-text">Bulk Phone Validator <span>Pricing</span></span>
+            <span class="view-pricing align-items-center show">
                 View
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                     <path
                         d="M6.31269 3L11.2527 7.93995C11.5312 8.22247 11.6873 8.60325 11.6873 9C11.6873 9.39675 11.5312 9.77752 11.2527 10.06L6.31269 15"
                         stroke="#8733FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
+            </span>
+            <span class="go-back-btn align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                        d="M11.6874 3L6.74735 7.93995C6.46886 8.22247 6.31274 8.60325 6.31274 9C6.31274 9.39675 6.46886 9.77752 6.74735 10.06L11.6874 15"
+                        stroke="#4D4950" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Go Back
             </span>
         </div>
     </div>

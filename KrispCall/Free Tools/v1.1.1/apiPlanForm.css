@@ -74,15 +74,15 @@
 .apiForm-input.apiForm-input-email .input-icon {
     background-image: url("https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250404_101732/apiPlan-mail-icon.svg");
 }
-.apiForm-input.apiForm-input-phone .input-icon {
+/* .apiForm-input.apiForm-input-phone .input-icon {
     background-image: url("https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250404_101732/apiPlan-globe-icon.svg");
-}
+} */
 .apiForm-input.apiForm-input-email input:focus + .input-icon {
     background-image: url("https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250404_101732/apiPlan-mail-focus-icon.svg");
 }
-.apiForm-input.apiForm-input-phone input:focus + .input-icon {
+/* .apiForm-input.apiForm-input-phone input:focus + .input-icon {
     background-image: url("https://krispcall-website.sgp1.cdn.digitaloceanspaces.com/20250404_101732/apiPlan-globe-focus-icon.svg");
-}
+} */
 .apiForm-input.alert-circle input {
     border: 1px solid rgba(232, 17, 17, 0.5);
     padding: 10px 36px 10px 40px;
@@ -195,4 +195,11 @@
     .apiPlan-header {
         margin: 24px auto 32px;
     }
+}
+
+
+/*  country Flag */
+
+.iti__flag-container{
+    left: 12px !important;
 }
